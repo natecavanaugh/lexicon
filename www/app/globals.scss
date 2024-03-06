@@ -1,0 +1,54 @@
+:root {
+	--max-width: 1056px;
+	--border-radius: 12px;
+	--font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+		'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+		'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+	--foreground-rgb: 0, 0, 0;
+	--background-rgb: 255, 255, 255;
+	--docsearch-muted-color: #6b6c7e !important;
+	--docsearch-text-color: #757575 !important;
+	--docsearch-searchbox-background: #ffffff !important;
+	--docsearch-searchbox-shadow: inset 0 0 0 2px #b3472d !important;
+	--docsearch-key-gradient: transparent !important;
+	--docsearch-key-shadow: transparent !important;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html,
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	max-width: 100vw;
+	overflow-x: hidden;
+}
+
+body {
+	color: rgb(var(--foreground-rgb));
+	background: rgb(var(--background-rgb));
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.DocSearch-Button {
+	border: 1px solid #e7e7ed !important;
+	margin: 0 !important;
+	padding: 0 14px !important;
+	width: 300px;
+}
+
+.DocSearch-Button-Key {
+	align-items: baseline !important;
+	border: 1px solid #e7e7ed !important;
+	padding: 0 !important;
+	top: 0 !important;
+}

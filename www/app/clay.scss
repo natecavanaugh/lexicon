@@ -1,0 +1,9 @@
+@use 'sass:math' as *;
+
+@import 'atlas-variables';
+@import 'atlas.scss';
+
+.btn-cta {
+	@extend .btn;
+	padding: 0.67rem 1.25rem;
+}

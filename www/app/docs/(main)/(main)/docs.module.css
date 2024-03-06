@@ -1,0 +1,14 @@
+.content {
+  max-width: 869px;
+  padding-top: 38px;
+}
+
+.banner {
+  margin: 45px 0;
+}
+
+.section {
+  display: grid;
+  gap: 35px;
+  grid-template-columns: 1fr 1fr 1fr;
+}

@@ -1,0 +1,298 @@
+import Heading from '@/app/_components/Heading';
+import {Example, MenuTrigger} from '@/app/_examples/autocomplete';
+
+export const metadata = {
+	title: 'Autocomplete',
+	description:
+		'An autocomplete text field is an input that offers the user text suggestions while they type.',
+};
+
+<Heading
+	title="Autocomplete"
+	description="An autocomplete text field is an input that offers the user text suggestions while they type."
+	npmPackage="@clayui/core"
+	use="import {Autocomplete} from '@clayui/core'"
+/>
+
+## Example
+
+<Example />
+
+## Introduction
+
+Autocomplete provides as a mid-level API as it was done for TreeView and follows the same standards that exist in Clay components. A new implementation of Autocomplete provides new OOTB functionality and lessens the verbose composition of the old implementation but still provides backward compatibility but will be deprecated in the next major release, so if you are using this component for the first time, consider using the new implementation.
+
+## Content
+
+Autocomplete follows the Collection pattern, the same as TreeView and VerticalBar, it accepts static and dynamic contents. Similar to TreeView, the content accepts the `Item` component but the Item that belongs to Autocomplete, `<Autocomplete.Item />`.
+
+### Static
+
+```jsx
+<Autocomplete
+	messages={{
+		loading: 'Loading...',
+		notFound: 'No results found',
+	}}
+	placeholder="Enter the name of a fruit"
+>
+	<Autocomplete.Item key="Apples">Apples</Autocomplete.Item>
+	<Autocomplete.Item key="Bananas">Bananas</Autocomplete.Item>
+	<Autocomplete.Item key="Cantaloupe">Cantaloupe</Autocomplete.Item>
+	<Autocomplete.Item key="Mangos">Mangos</Autocomplete.Item>
+	<Autocomplete.Item key="Oranges">Oranges</Autocomplete.Item>
+	<Autocomplete.Item key="Strawberries">Strawberries</Autocomplete.Item>
+</Autocomplete>
+```
+
+### Dynamic
+
+Dynamic content works when the data comes from a service, there are two possible scenarios:
+
+-   All data exists on the client and the filter is done on the client
+-   The filter is done on the server
+
+```jsx
+<Autocomplete
+	messages={{
+		loading: 'Loading...',
+		notFound: 'No results found',
+	}}
+	defaultItems={[
+		'Apples',
+		'Bananas',
+		'Cantaloupe',
+		'Mangos',
+		'Oranges',
+		'Strawberries',
+	]}
+	placeholder="Enter the name of a fruit"
+>
+	{(item) => <Autocomplete.Item key={item}>{item}</Autocomplete.Item>}
+</Autocomplete>
+```
+
+The most common scenario for a large list of data is the filter is done on the server and it is necessary to make a request to the server as soon as the input value changes and update the list respectively. You need to make Autocomplete a controlled component that allows you to state control.
+
+```jsx
+function Example() {
+	const [value, setValue] = useState('');
+
+	const [networkStatus, setNetworkStatus] = useState(4);
+	const {resource} = useResource({
+		fetchPolicy: 'cache-first',
+		link: 'https://api.clay.example/devs/',
+		onNetworkStatusChange: setNetworkStatus,
+		variables: {name: value},
+	});
+
+	return (
+		<Autocomplete
+			messages={{
+				loading: 'Loading...',
+				notFound: 'No results found',
+			}}
+			items={resource ?? []}
+			loadingState={networkStatus}
+			onChange={setValue}
+			onItemsChange={() => {}}
+			placeholder="Enter the name of a fruit"
+			value={value}
+		>
+			{(item) => (
+				<Autocomplete.Item key={item.name}>
+					{item.name}
+				</Autocomplete.Item>
+			)}
+		</Autocomplete>
+	);
+}
+```
+
+### Internationalization
+
+To internationalize data in Autocomplete, you must pass the data to each child of the `Item`. Autocomplete also handles "Not found" and "Loading" messages for the respective scenarios, it is necessary to define the internationalized messages by defining the `messages` prop.
+
+## Value
+
+The value of Autocomplete by default is an empty value, but it can start with a value using the `defaultValue` prop. Also, a value can be controlled by providing the `value` and `onChange` properties to switch to the controlled state.
+
+```jsx
+function Example() {
+	const [value, setValue] = useState('Apples');
+
+	return (
+		<>
+			<Autocomplete
+				defaultItems={[
+					'Apples',
+					'Bananas',
+					'Cantaloupe',
+					'Mangos',
+					'Oranges',
+					'Strawberries',
+				]}
+				defaultValue="Apples"
+			>
+				{(item) => (
+					<Autocomplete.Item key={item}>{item}</Autocomplete.Item>
+				)}
+			</Autocomplete>
+
+			<Autocomplete
+				defaultItems={[
+					'Apples',
+					'Bananas',
+					'Cantaloupe',
+					'Mangos',
+					'Oranges',
+					'Strawberries',
+				]}
+				onChange={setValue}
+				value={value}
+			>
+				{(item) => (
+					<Autocomplete.Item key={item}>{item}</Autocomplete.Item>
+				)}
+			</Autocomplete>
+		</>
+	);
+}
+```
+
+## Asynchronous loading
+
+Autocomplete supports loading data asynchronously, and displays the loading indicator reflecting the current loading state, by setting the `loadingState` prop.
+
+```jsx
+function Example() {
+	const [value, setValue] = useState('');
+
+	const [networkStatus, setNetworkStatus] = useState(4);
+	const {resource} = useResource({
+		fetchPolicy: 'cache-first',
+		link: 'https://api.clay.example/devs/',
+		onNetworkStatusChange: setNetworkStatus,
+		variables: {name: value},
+	});
+
+	return (
+		<Autocomplete
+			messages={{
+				loading: 'Loading...',
+				notFound: 'No results found',
+			}}
+			filterKey="name"
+			items={resource ?? []}
+			loadingState={networkStatus}
+			onChange={setValue}
+			onItemsChange={() => {}}
+			placeholder="Enter a name"
+			value={value}
+		>
+			{(item) => (
+				<Autocomplete.Item key={item.name}>
+					{item.name}
+				</Autocomplete.Item>
+			)}
+		</Autocomplete>
+	);
+}
+```
+
+Autocomplete also supports infinite scrolling to load more data on demand as the user scrolls. This is works with the `useResource` hook.
+
+```jsx
+function Example() {
+	const [value, setValue] = useState('');
+
+	const [networkStatus, setNetworkStatus] = useState(4);
+	const {loadMore, resource} = useResource({
+		fetch: async (link, options) => {
+			const result = await fetch(link, options);
+			const json = await result.json();
+
+			return {
+				cursor: json.next,
+				items: json.results,
+			};
+		},
+		fetchPolicy: 'cache-first',
+		link: 'https://api.clay.example/devs/',
+		onNetworkStatusChange: setNetworkStatus,
+		variables: {name: value},
+	});
+
+	return (
+		<Autocomplete
+			messages={{
+				loading: 'Loading...',
+				notFound: 'No results found',
+			}}
+			filterKey="name"
+			items={resource ?? []}
+			loadingState={networkStatus}
+			onChange={setValue}
+			onItemsChange={() => {}}
+			onLoadMore={loadMore}
+			placeholder="Enter a name"
+			value={value}
+		>
+			{(item) => (
+				<Autocomplete.Item key={item.name}>
+					{item.name}
+				</Autocomplete.Item>
+			)}
+		</Autocomplete>
+	);
+}
+```
+
+## Custom Filtering
+
+By default, Autocomplete uses the `contains` string filtering strategy to decide which items should be visible in the menu. This filtering strategy can be replaced by your own filtering rule by passing the data through the `items` prop.
+
+```jsx
+function Example() {
+	const options = [
+		'Apples',
+		'Bananas',
+		'Cantaloupe',
+		'Mangos',
+		'Oranges',
+		'Strawberries',
+	];
+
+	const [value, setValue] = useState('');
+
+	const filteredItems = useMemo(
+		() =>
+			options.filter(
+				(item) => value.match(new RegExp(value, 'i')) !== null
+			),
+		[value]
+	);
+
+	return (
+		<Autocomplete
+			messages={{
+				loading: 'Loading...',
+				notFound: 'No results found',
+			}}
+			items={filteredItems}
+			onChange={setValue}
+			onItemsChange={() => {}}
+			placeholder="Enter the name of a fruit"
+			value={value}
+		>
+			{(item) => <Autocomplete.Item key={item}>{item}</Autocomplete.Item>}
+		</Autocomplete>
+	);
+}
+```
+
+## Trigger options
+
+By default, Autocomplete show the menu when the user types in the input field. Alternatively this mode can be modified by setting the `menuTrigger` property to `focus`, which shows the menu when Autocomplete is focused.
+
+<MenuTrigger />
