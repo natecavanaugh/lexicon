@@ -45,7 +45,7 @@ export default function Heading({description, title, npmPackage, use}: Props) {
 						</tbody>
 					</table>
 
-					<ClayLinkContext.Provider value={Link}>
+					<ClayLinkContext.Provider value={Link as any}>
 						<NavigationBar
 							triggerLabel="Navigation"
 							className={styles.nav}

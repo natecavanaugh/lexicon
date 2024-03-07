@@ -18,7 +18,7 @@ export const Example = () => (
 			}}
 			placeholder="Enter a number from One to Five"
 		>
-			{(item) => <Autocomplete.Item key={item}>{item}</Autocomplete.Item>}
+			{(item) => <Autocomplete.Item key={item} placeholder="">{item}</Autocomplete.Item>}
 		</Autocomplete>
 	</Form.Group>
 );
@@ -46,7 +46,7 @@ export const MenuTrigger = () => (
 			placeholder="Enter the name of a fruit"
 			menuTrigger="focus"
 		>
-			{(item) => <Autocomplete.Item key={item}>{item}</Autocomplete.Item>}
+			{(item) => <Autocomplete.Item key={item} placeholder="">{item}</Autocomplete.Item>}
 		</Autocomplete>
 	</Form.Group>
 );
