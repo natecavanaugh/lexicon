@@ -3,50 +3,139 @@ title: 'TreeView'
 description: 'A tree view is a component based on nodes that are shown in a hierarchical structure.'
 packageNpm: '@clayui/core'
 packageStatus: 'Beta'
+packageUse: "import {TreeView} from '@clayui/core';"
 lexiconDefinition: 'https://liferay.design/lexicon/core-components/tree-view/'
 storybookPath: 'design-system-components-treeview'
 ---
 
-import {Example, MultipleSelection} from '$packages/clay-core/docs/treeview';
-
-<div class="nav-toc-absolute">
-<div class="nav-toc">
-
--   [Example](#example)
--   [Introduction](#introduction)
--   [Content](#content)
-    -   [Static](#static)
-    -   [Dynamic](#dynamic)
-        -   [Asynchronous Item](#asynchronous-item)
-    -   [Item](#item)
-        -   [Key](#key)
-        -   [String](#string)
-        -   [Single Level](#single-level)
-        -   [Nested](#nested)
-        -   [Actions](#actions)
-        -   [Disabled](#item-disabled)
--   [Expander](#expander)
-    -   [Custom expander](#custom-expander)
-    -   [Disabled](#expander-disabled)
-    -   [Manual Expand](#manual-expand)
--   [Selection](#selection)
-    -   [Single Selection](#single-selection)
-    -   [Multiple Selection](#multiple-selection)
-    -   [Recursive Multiple Selection](#recursive-multiple-selection)
-    -   [Manual Selection](#manual-selection)
--   [Drag and Drop](#drag-and-drop)
--   [Shortcuts](#shortcuts)
-    -   [Rename Item](#rename-item)
-    -   [Remove Item](#remove-item)
--   [Performance](#performance)
-    -   [Selection hydration](#selection-hydration)
-
-</div>
-</div>
-
 ## Example
 
-<Example />
+```jsx preview
+import {Provider, TreeView} from '@clayui/core';
+import Icon from '@clayui/icon';
+
+import '@clayui/css/lib/css/atlas.css';
+
+const spritemap = '/public/icons.svg';
+
+export default function FileExplorer() {
+	const items = [
+		{
+			children: [
+				{
+					children: [
+						{
+							children: [{name: 'Research 1'}],
+							name: 'Research',
+						},
+						{
+							children: [{name: 'News 1'}],
+							name: 'News',
+						},
+					],
+					name: 'Blogs',
+				},
+				{
+					children: [
+						{
+							children: [
+								{
+									name: 'Instructions.pdf',
+									status: 'success',
+									type: 'pdf',
+								},
+							],
+							name: 'PDF',
+						},
+						{
+							children: [
+								{
+									name: 'Treeview review.docx',
+									status: 'success',
+									type: 'document',
+								},
+								{
+									name: 'Heuristics Evaluation.docx',
+									status: 'success',
+									type: 'document',
+								},
+							],
+							name: 'Word',
+						},
+					],
+					name: 'Documents and Media',
+				},
+			],
+			name: 'Liferay Drive',
+			type: 'cloud',
+		},
+		{
+			children: [{name: 'Blogs'}, {name: 'Documents and Media'}],
+			name: 'Repositories',
+			type: 'repository',
+		},
+		{
+			children: [{name: 'PDF'}, {name: 'Word'}],
+			name: 'Documents and Media',
+			status: 'warning',
+		},
+	];
+
+	const TYPES_TO_SYMBOLS = {
+		document: 'document-text',
+		pdf: 'document-pdf',
+		success: 'check-circle-full',
+		warning: 'warning-full',
+	};
+
+	const TYPES_TO_COLORS = {
+		document: 'text-primary',
+		pdf: 'text-danger',
+		success: 'text-success',
+		warning: 'text-warning',
+	};
+
+	return (
+		<Provider spritemap={spritemap}>
+			<TreeView defaultItems={items} dragAndDrop nestedKey="children">
+				{(item) => (
+					<TreeView.Item>
+						<TreeView.ItemStack>
+							<Icon symbol={item.type ? item.type : 'folder'} />
+							{item.name}
+							{item.status && (
+								<Icon
+									className={TYPES_TO_COLORS[item.status]}
+									symbol={TYPES_TO_SYMBOLS[item.status]}
+								/>
+							)}
+						</TreeView.ItemStack>
+						<TreeView.Group items={item.children}>
+							{({name, status, type}) => (
+								<TreeView.Item>
+									{type && (
+										<Icon
+											className={TYPES_TO_COLORS[type]}
+											symbol={TYPES_TO_SYMBOLS[type]}
+										/>
+									)}
+									{name}
+									{status && (
+										<Icon
+											className={TYPES_TO_COLORS[status]}
+											symbol={TYPES_TO_SYMBOLS[status]}
+										/>
+									)}
+								</TreeView.Item>
+							)}
+						</TreeView.Group>
+					</TreeView.Item>
+				)}
+			</TreeView>
+		</Provider>
+	);
+}
+```
 
 ## Introduction
 
@@ -174,8 +263,8 @@ The TreeView doesn't know when an item is asynchronous, so the developer must sp
 
 When adding a new asynchronous item to the tree, the `onItemsChange` method is respectively called to update the tree with a new value if the `items` prop is controlled.
 
-<div class="clay-site-alert alert alert-info">
-	<strong class="lead">Warning</strong>
+<div className="clay-site-alert alert alert-info">
+	<strong className="lead">Warning</strong>
 	If you have an error in the asynchronous call of the <code className="gatsby-code-text">
 		onLoadMore
 	</code> method, only the suppression is done and an error is thrown on the console.
@@ -187,7 +276,7 @@ When adding a new asynchronous item to the tree, the `onItemsChange` method is r
 		return await fetch(`example.com/tree/item?parent_id=${item.id}`);
 	}}
 >
-	{...}
+	...
 </TreeView>
 ```
 
@@ -198,7 +287,9 @@ The `onLoadMore` API can also be used to load paginated data for a specific item
 ```jsx
 <TreeView
 	onLoadMore={async (item, cursor) => {
-		const result = await fetch(cursor ?? `example.com/tree/item?parent_id=${item.id}`);
+		const result = await fetch(
+			cursor ?? `example.com/tree/item?parent_id=${item.id}`
+		);
 
 		return {
 			cursor: result.next,
@@ -206,21 +297,19 @@ The `onLoadMore` API can also be used to load paginated data for a specific item
 		};
 	}}
 >
-	{...}
+	...
 </TreeView>
 ```
 
 The `cursor` helps to store the data that will be used to identify which will be the next request, this can be an `offset`, `cursor`, `id` the URL or any other data that represents the item cursor, when there is no more data just sets the cursor to `null`. The TreeView also exposes a public API that can invoke `loadMore` and find out if there is a cursor for a specific item.
 
 ```jsx
-<TreeView {...}>
+<TreeView>
 	{(item, selection, expand, load) => (
 		<TreeView.Item>
 			<TreeView.ItemStack>{item.name}</TreeView.ItemStack>
 			<TreeView.Group items={item.children}>
-				{(item) => (
-					<TreeView.Item>{item.name}</TreeView.Item>
-				)}
+				{(item) => <TreeView.Item>{item.name}</TreeView.Item>}
 			</TreeView.Group>
 
 			{expand.has(item.id) && load.has(item.id) !== null && (
@@ -323,7 +412,7 @@ Actions are added using the `actions` property on each item. The component abstr
 </TreeView>
 ```
 
-#### Disabled(#item-disabled)
+#### Disabled
 
 An item can be disabled by setting the `disabled` prop in the `<TreeView.ItemStack />` and `<TreeView.Item />` components. By default, the `Expander` and `Checkbox` are also disabled, and any other clickable elements other than these need to be set to disabled in the composition.
 
@@ -352,16 +441,14 @@ The TreeView exposes the `expandedKeys` property and the `onExpandedChange` call
 
 ```jsx
 function Example() {
-	const [expandedKeys, setExpandedKeys] = useState(
-		new Set(['1', '2', '3'])
-	);
+	const [expandedKeys, setExpandedKeys] = useState(new Set(['1', '2', '3']));
 
 	return (
 		<TreeView
 			expandedKeys={expandedKeys}
 			onExpandedChange={setExpandedKeys}
 		>
-			{...}
+			...
 		</TreeView>
 	);
 }
@@ -378,11 +465,11 @@ Customizing the expander is possible using the `expanderIcons` property. Changin
 		open: <Icon symbol="plus" />,
 	}}
 >
-	{...}
+	...
 </TreeView>
 ```
 
-### Disabled(#expander-disabled)
+### Disabled
 
 The `Expander` is automatically disabled when the item is disabled but you can optionally control its state.
 
@@ -470,8 +557,8 @@ return (
 
 Rendering the TreeView with pre-selected items will cause their parent items to be expanded so that the selected item is visible on the first render. In recursive multiple selection, the parents items will marked as intermediate.
 
-<div class="clay-site-alert alert alert-info">
-	<strong class="lead">Info</strong>
+<div className="clay-site-alert alert alert-info">
+	<strong className="lead">Info</strong>
 	Expanding selected items in the first render implies performance degradation
 	if the TreeView has too many items; but there are some possibilities to work
 	around depending on the use case, read the <a href="#selection-hydration">
@@ -484,8 +571,6 @@ Rendering the TreeView with pre-selected items will cause their parent items to 
 
 The single selection state works independently of adding the `<Checkbox />` and this state is set by default.
 
-<Example selectionMode="single" />
-
 ### Multiple Selection
 
 The multi-selection in TreeView is a achieved by composing with the `<Checkbox />` component that must be added explicitly in the item rendering.
@@ -495,15 +580,15 @@ The multi-selection in TreeView is a achieved by composing with the `<Checkbox /
 	<Checkbox />
 	Drive
 </TreeView.Item>
+```
 
+```jsx
 <TreeView.Item>
 	<TreeView.ItemStack>
 		<Checkbox />
 		Drive
 	</TreeView.ItemStack>
-	<TreeView.Group>
-		{...}
-	</TreeView.Group>
+	<TreeView.Group>...</TreeView.Group>
 </TreeView.Item>
 ```
 
@@ -523,7 +608,7 @@ function Example() {
 			selectedKeys={selectedKeys}
 			selectionMode="multiple"
 		>
-			{...}
+			...
 		</TreeView>
 	);
 }
@@ -535,12 +620,10 @@ By default, when selecting an item with nested items, its children are recursive
 
 There are some limitations: for static content the recursive selection only works if the item is expanded, (i.e visible). For dynamic content, it works independently.
 
-<div class="clay-site-alert alert alert-warning">
-	<strong class="lead">Warning</strong>
+<div className="clay-site-alert alert alert-warning">
+	<strong className="lead">Warning</strong>
 	Recursive selection will not select items from an asynchronous Item.
 </div>
-
-<MultipleSelection />
 
 ### Manual Selection
 
@@ -592,12 +675,8 @@ function Example() {
 	const [items, setItems] = useState([]);
 
 	return (
-		<TreeView
-			dragAndDrop
-			items={items}
-			onItemsChange={setItems}
-		>
-			{...}
+		<TreeView dragAndDrop items={items} onItemsChange={setItems}>
+			...
 		</TreeView>
 	);
 }
@@ -634,7 +713,7 @@ In some cases it is necessary to check if the item can be dropped in another ite
 		return false;
 	}}
 >
-	{...}
+	...
 </TreeView>
 ```
 
@@ -642,8 +721,8 @@ In some cases it is necessary to check if the item can be dropped in another ite
 
 The TreeView implements shortcuts and manages the focus. Some shortcuts and focus trigger some actions like renaming, removing or asynchronous loading if any.
 
-<div class="clay-site-alert alert alert-warning">
-	<strong class="lead">Warning</strong>
+<div className="clay-site-alert alert alert-warning">
+	<strong className="lead">Warning</strong>
 	If an Item is asynchronous the <code className="gatsby-code-text">
 		onLoadMore
 	</code> method will be called as described in the Asynchronous Item section.
@@ -662,7 +741,7 @@ The `onRenameItem` property receives the `item` object corresponding to the curr
 		return await openRenameModal(item);
 	}}
 >
-	{...}
+	...
 </TreeView>
 ```
 
@@ -687,8 +766,8 @@ This can lead to a performance problem on the first render if you have too many 
 -   `render-first` will render first and then hydrate. It doesn't block the initial rendering but it is possible to see the items being expanded.
 -   `hydrate-first` will hydrate first and then render. This blocks rendering first until it traverses the tree, when rendered the items are already expanded.
 
-<div class="clay-site-alert alert alert-info">
-	<strong class="lead">Info</strong>
+<div className="clay-site-alert alert alert-info">
+	<strong className="lead">Info</strong>
 	The tree traversal implementation internally has some performance optimizations.
 	Depending on the number of selected items, the TreeView stops traversing the
 	tree when it finds all the selected items. In most scenarios, the TreeView will

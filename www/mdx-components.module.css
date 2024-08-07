@@ -1,5 +1,5 @@
 .code {
-  background-color: #ffd6cc;
+  background-color: #ffebe6;
   color: initial;
 }
 
@@ -20,4 +20,20 @@
 
 .sp {
 	--sp-layout-height: auto !important;
+}
+
+.code_preview {
+  border: 1px solid #F3F3F3;
+  border-radius: 4px;
+  height: 300px;
+}
+
+.code_preview > div {
+  height: 300px;
+}
+
+.code_editor {
+  padding: 7px !important;
+  tab-size: 2;
+  margin-bottom: 16px !important;
 }

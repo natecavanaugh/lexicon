@@ -70,9 +70,9 @@ export default function Home() {
 						</span>
 					</h1>
 					<p className={styles.cta_description}>
-						Clay is an extensive Component Library, where you&apos;ll
-						find useful components—with extensive code examples—for
-						your web application.
+						Clay is an extensive Component Library, where
+						you&apos;ll find useful components—with extensive code
+						examples—for your web application.
 					</p>
 					<div className={styles.cta_action_section}>
 						<a

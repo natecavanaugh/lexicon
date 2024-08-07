@@ -3,16 +3,6 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-export {
-	default as Button,
-	ClayButtonWithIcon as ButtonWithIcon,
-} from '@clayui/button';
-export {default as Icon} from '@clayui/icon';
-export {
-	default as Modal,
-	Context as ModalContext,
-	useModal,
-} from '@clayui/modal';
 export {Provider, useProvider} from '@clayui/provider';
 
 export {Heading, Text, TextHighlight} from './typography';

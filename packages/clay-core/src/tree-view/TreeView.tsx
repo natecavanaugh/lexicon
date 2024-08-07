@@ -124,14 +124,6 @@ const Application = ({children}: {children: React.ReactNode}) => (
 	<div role="application">{children}</div>
 );
 
-export function TreeView<T extends Record<string, any>>(
-	props: ITreeViewProps<T>
-): JSX.Element & {
-	Item: typeof TreeViewItem;
-	Group: typeof TreeViewGroup;
-	ItemStack: typeof TreeViewItemStack;
-};
-
 export function TreeView<T extends Record<string, any>>({
 	children,
 	className,

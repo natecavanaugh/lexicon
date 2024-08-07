@@ -1,14 +1,7 @@
-import Heading from '@/app/_components/Heading';
-
-export const metadata = {
-	title: 'Composition Philosophy',
-	description: 'Component composition philosophy.',
-};
-
-<Heading
-	title="Composition Philosophy"
-	description="Component composition philosophy."
-/>
+---
+title: 'Composition Philosophy'
+description: 'Component composition philosophy.'
+---
 
 Clay follows some fundamentals for creating new components by following a common React
 pattern of composition. We believe that using composition is helpful and is a widely used standard
@@ -20,7 +13,7 @@ The composition is very common in React because the JSX syntactic sugar makes it
 and more viable when coupled with the children prop for passing arbitrary child elements. Props in
 React components allows us to pass objects and consequently React elements since they are objects.
 
-```jsx{expanded}
+```jsx
 <ClayModal>
 	<ClayModal.Footer
 		first={
@@ -68,7 +61,7 @@ Clay follows a namespace pattern for low-level layer components, components are 
 -   ClayDropDown.ItemList
 -   ClayDropDown.Search
 
-```jsx{expanded}
+```jsx
 <ClayDropDown
 	active={expand}
 	onActiveChange={setExpand}
@@ -94,12 +87,12 @@ The standard for differentiating high-level components from low-level components
 -   ClayCardWithNavigation
 -   ClayDropDownWithItems
 
-<div class="alert alert-warning">
+<div className="alert alert-warning">
 	There are some exceptions to some components, Date Picker, Color Picker and
 	Time Picker are examples of this.
 </div>
 
-```jsx{expanded}
+```jsx
 <ClayDropDownWithItems
 	items={[
 		{

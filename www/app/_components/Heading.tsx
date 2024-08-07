@@ -10,7 +10,7 @@ type Props = {
 	description?: string;
 	title: string;
 	npmPackage?: string;
-	use?: string;
+	use?: React.ReactNode;
 };
 
 export default function Heading({description, title, npmPackage, use}: Props) {

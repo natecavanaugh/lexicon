@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import type {SourceTreeItem} from 'mdxts';
+
 import ClayLink from '../_components/Link';
 import styles from './sidebar.module.css';
 
@@ -8,10 +10,11 @@ type Item = {
 };
 
 type Props = {
-	items: Array<Item>;
+	items?: Array<Item>;
+	tree?: Array<SourceTreeItem>;
 };
 
-export function Sidebar({items}: Props) {
+export function Sidebar({items, tree}: Props) {
 	return (
 		<nav className={styles.sidebar}>
 			<Link className={styles.logo} href="/docs">
@@ -33,7 +36,7 @@ export function Sidebar({items}: Props) {
 				<span className={styles.logo_title}>Clay</span>
 			</Link>
 
-			{items.map((item) => (
+			{items?.map((item) => (
 				<ul key={item.name} className={styles.sidebar_nav}>
 					<p className={styles.sidebar_nav_title}>{item.name}</p>
 					<ul>
@@ -47,6 +50,44 @@ export function Sidebar({items}: Props) {
 					</ul>
 				</ul>
 			))}
+
+			{tree && <Tree children={tree} depth={0} />}
 		</nav>
+	);
+}
+
+type TreeProps = {
+	children: Array<SourceTreeItem>;
+	depth: number;
+};
+
+function Tree({children, depth}: TreeProps) {
+	return children.map((item) => (
+		<ul key={item.pathname} className={styles.sidebar_nav}>
+			<p className={styles.sidebar_nav_title}>{item.label}</p>
+			{!!item.children.length && (
+				<Item children={item.children} depth={depth + 1} />
+			)}
+		</ul>
+	));
+}
+
+function Item({children, depth}: TreeProps) {
+	return (
+		<ul>
+			{children.map((item) => (
+				<li key={item.pathname}>
+					<ClayLink
+						href={`/docs${item.pathname}`}
+						style={{textTransform: 'capitalize'}}
+					>
+						{item.label}
+					</ClayLink>
+					{!!item.children.length && (
+						<Item children={item.children} depth={depth + 1} />
+					)}
+				</li>
+			))}
+		</ul>
 	);
 }

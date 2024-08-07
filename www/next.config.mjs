@@ -1,11 +1,14 @@
 import clay from '@clayui/css';
-import createMDX from '@next/mdx';
+import { createMdxtsPlugin } from 'mdxts/next';
+import rehypeMdxCodeProps from 'rehype-mdx-code-props';
 import remarkGfm from 'remark-gfm';
 
-const withMDX = createMDX({
+const withMDX = createMdxtsPlugin({
+  theme: 'github-light',
+  gitSource: 'https://github.com/liferay/clay',
   options: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [],
+    rehypePlugins: [rehypeMdxCodeProps],
   },
 });
 

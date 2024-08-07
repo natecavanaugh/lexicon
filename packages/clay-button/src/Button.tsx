@@ -106,16 +106,16 @@ const ClayButton = React.forwardRef<HTMLButtonElement, IProps>(
 	) => {
 		const childArray = React.Children.toArray(children);
 
-		warning(
-			!(
-				childArray.length === 1 &&
-				// @ts-ignore
-				childArray[0].type?.displayName === 'ClayIcon' &&
-				typeof otherProps['aria-label'] !== 'string' &&
-				typeof otherProps['aria-labelledby'] !== 'string'
-			),
-			'Button Accessibility: Component has only the Icon declared. Define an `aria-label` or `aria-labelledby` attribute that labels the interactive button that screen readers can read. The `title` attribute is optional but consult your design team.'
-		);
+	warning(
+		!(
+			childArray.length === 1 &&
+			// @ts-ignore
+			childArray[0].type?.displayName === 'ClayIcon' &&
+			typeof otherProps['aria-label'] !== 'string' &&
+			typeof otherProps['aria-labelledby'] !== 'string'
+		),
+		'Button Accessibility: Component has only the Icon declared. Define an `aria-label` or `aria-labelledby` attribute that labels the interactive button that screen readers can read. The `title` attribute is optional but consult your design team.'
+	);
 
 		if (displayType === 'beta') {
 			displayType = 'info';
@@ -140,7 +140,6 @@ const ClayButton = React.forwardRef<HTMLButtonElement, IProps>(
 						displayType && !outline && !borderless,
 					[`btn-outline-${displayType}`]:
 						displayType && (outline || borderless),
-					'rounded-pill': rounded,
 					[`btn-${size}`]: size && size !== 'regular',
 				})}
 				ref={ref}
@@ -151,8 +150,35 @@ const ClayButton = React.forwardRef<HTMLButtonElement, IProps>(
 			</button>
 		);
 	}
-);
 
-ClayButton.displayName = 'ClayButton';
+	return (
+		<button
+			className={classNames(className, 'btn', {
+				'alert-btn': alert,
+				'btn-block': block,
+				'btn-monospaced': monospaced,
+				'btn-outline-borderless': borderless,
+				'btn-sm': small && !size,
+				'btn-translucent': translucent,
+				'clay-dark': dark,
+				[`btn-${displayType}`]:
+					displayType && !outline && !borderless,
+				[`btn-outline-${displayType}`]:
+		</button>
+	);
+};
 
-export default Object.assign(ClayButton, {Group});
+type ForwardRef = {
+	displayName: string;
+	Group: typeof Group;
+	(props: IProps & {ref?: React.Ref<HTMLButtonElement>}): JSX.Element;
+};
+
+const Button = React.forwardRef(ButtonInner) as unknown as ForwardRef;
+
+Button.Group = Group;
+
+Button.displayName = 'ClayButton';
+
+export {Button};
+export default Button;
