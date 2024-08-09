@@ -18,7 +18,16 @@ const nextConfig = {
   sassOptions: {
     includePaths: [clay.includePaths[0]],
     precision: 8,
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/docs/components',
+        destination: '/docs/introduction/how-to-use-clay',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default withMDX(nextConfig);

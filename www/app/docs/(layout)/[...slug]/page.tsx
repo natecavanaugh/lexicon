@@ -40,8 +40,6 @@ export default async function Page({params}: Props) {
 		notFound();
 	}
 
-	console.log(data.paths())
-
 	const Content = document.Content!;
 
 	return (
