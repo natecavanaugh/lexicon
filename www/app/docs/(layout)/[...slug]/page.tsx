@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import Heading from '@/app/_components/Heading';
 import {Fragment} from 'react';
-import {data} from '@/data';
+import {data, sidebar} from '@/data';
 import {CodeInline, MDXContent, MDXComponents} from 'mdxts/components';
 
 const mdxComponents = {
@@ -17,6 +17,14 @@ type Props = {
 		slug: Array<string>;
 	};
 };
+
+export async function generateStaticParams() {
+	const paths = sidebar.paths();
+
+	return paths.map((path) => ({
+		slug: path,
+	}));
+}
 
 export async function generateMetadata({params}: Props): Promise<Metadata> {
 	const document = await data.get(params.slug);
