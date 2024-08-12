@@ -58,14 +58,18 @@ export default async function Page({params}: Props) {
 					description={document.frontMatter!.description}
 					npmPackage={document.frontMatter!.packageNpm}
 					use={
-						<CodeInline
-							value={document.frontMatter.packageUse}
-							language="jsx"
-							style={{
-								backgroundColor: 'transparent',
-								boxShadow: 'none',
-							}}
-						/>
+						document.frontMatter.packageUse ? (
+							<CodeInline
+								value={document.frontMatter.packageUse}
+								language="jsx"
+								style={{
+									backgroundColor: 'transparent',
+									boxShadow: 'none',
+								}}
+							/>
+						) : (
+							''
+						)
 					}
 				/>
 				<Content />
