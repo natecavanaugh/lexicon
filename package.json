@@ -128,5 +128,8 @@
 		"js-beautify": "1.7.5",
 		"event-stream": "3.3.4",
 		"graceful-fs": "^4.2.4"
+	},
+	"dependencies": {
+		"next": "^14.2.5"
 	}
 }
