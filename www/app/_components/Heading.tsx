@@ -9,11 +9,20 @@ import styles from './heading.module.css';
 type Props = {
 	description?: string;
 	title: string;
+	path: Array<string>;
+	markup: boolean;
 	npmPackage?: string;
 	use?: React.ReactNode;
 };
 
-export default function Heading({description, title, npmPackage, use}: Props) {
+export default function Heading({
+	description,
+	title,
+	path,
+	markup,
+	npmPackage,
+	use,
+}: Props) {
 	return (
 		<div className={styles.heading_container}>
 			<h1 className="text-10">{title}</h1>
@@ -45,19 +54,40 @@ export default function Heading({description, title, npmPackage, use}: Props) {
 						</tbody>
 					</table>
 
-					<ClayLinkContext.Provider value={Link as any}>
-						<NavigationBar
-							triggerLabel="Navigation"
-							className={styles.nav}
-						>
-							<NavigationBar.Item active>
-								<ClayLink href="#">React</ClayLink>
-							</NavigationBar.Item>
-							<NavigationBar.Item>
-								<ClayLink href="#">HTML/CSS</ClayLink>
-							</NavigationBar.Item>
-						</NavigationBar>
-					</ClayLinkContext.Provider>
+					{markup && (
+						<ClayLinkContext.Provider value={Link as any}>
+							<NavigationBar
+								triggerLabel="Navigation"
+								className={styles.nav}
+							>
+								<NavigationBar.Item
+									active={!path.includes('markup')}
+								>
+									<ClayLink
+										href={`/docs/${path
+											.filter((item) => item !== 'markup')
+											.join('/')}`}
+									>
+										React
+									</ClayLink>
+								</NavigationBar.Item>
+
+								<NavigationBar.Item
+									active={path.includes('markup')}
+								>
+									<ClayLink
+										href={`/docs/${path.join('/')}${
+											path.includes('markup')
+												? ''
+												: '/markup'
+										}`}
+									>
+										HTML/CSS
+									</ClayLink>
+								</NavigationBar.Item>
+							</NavigationBar>
+						</ClayLinkContext.Provider>
+					)}
 				</>
 			)}
 		</div>

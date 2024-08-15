@@ -75,19 +75,21 @@ function Tree({children, depth}: TreeProps) {
 function Item({children, depth}: TreeProps) {
 	return (
 		<ul>
-			{children.map((item) => (
-				<li key={item.pathname}>
-					<ClayLink
-						href={`/docs${item.pathname}`}
-						style={{textTransform: 'capitalize'}}
-					>
-						{item.label}
-					</ClayLink>
-					{!!item.children.length && (
-						<Item children={item.children} depth={depth + 1} />
-					)}
-				</li>
-			))}
+			{children
+				.filter((item) => item.label.toLowerCase() !== 'markup')
+				.map((item) => (
+					<li key={item.pathname}>
+						<ClayLink
+							href={`/docs${item.pathname}`}
+							style={{textTransform: 'capitalize'}}
+						>
+							{item.label}
+						</ClayLink>
+						{!!item.children.length && (
+							<Item children={item.children} depth={depth + 1} />
+						)}
+					</li>
+				))}
 		</ul>
 	);
 }

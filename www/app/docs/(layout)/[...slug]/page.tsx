@@ -43,11 +43,13 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
 export default async function Page({params}: Props) {
 	const document = await data.get(params.slug);
 	const component = await data.get(['packages', ...params.slug.slice(1)]);
+	const paths = data.paths();
 
 	if (!document) {
 		notFound();
 	}
 
+	const markupPath = [...params.slug, 'markup'];
 	const Content = document.Content!;
 
 	return (
@@ -56,6 +58,15 @@ export default async function Page({params}: Props) {
 				<Heading
 					title={document.frontMatter!.title}
 					description={document.frontMatter!.description}
+					path={params.slug}
+					markup={
+						params.slug.includes('markup') ||
+						!!paths.find((path) =>
+							markupPath.every(
+								(item, index) => item === path[index]
+							)
+						)
+					}
 					npmPackage={document.frontMatter!.packageNpm}
 					use={
 						document.frontMatter.packageUse ? (

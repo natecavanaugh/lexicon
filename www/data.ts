@@ -4,10 +4,13 @@ export const docs = createSource('./docs/**/*.mdx', {
 	baseDirectory: './docs',
 });
 
-export const documents = createSource('../packages/clay-core/docs/**/*.mdx', {
-	baseDirectory: '../packages/clay-core/docs',
-	basePathname: 'components',
-});
+export const documents = createSource(
+	'../packages/clay-(core|alert)/docs/**/*.mdx',
+	{
+		baseDirectory: 'docs',
+		basePathname: 'components',
+	}
+);
 
 export const packages = createSource(
 	// TODO: Temporary
