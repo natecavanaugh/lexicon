@@ -1055,6 +1055,7 @@ Just add `image-card` class on the same element that `card` class have being add
             </div>
         </div>
     </div>
+
   </div>
 </div>
 
@@ -1165,16 +1166,25 @@ Just add `image-card` class on the same element that `card` class have being add
 ### Hover
 
 <div className="sheet-example">
-  <div className="col-md-4">
-    <div className="card-type-asset form-check form-check-card form-check-top-left image-card">
+	<div className="col-md-4">
+		<div className="card-type-asset form-check form-check-card form-check-top-left image-card">
 			<div className="card">
 				<div className="aspect-ratio card-item-first">
 					<div className="custom-control custom-checkbox">
 						<label>
-							<input className="custom-control-input" type="checkbox" />
+							<input
+								className="custom-control-input"
+								type="checkbox"
+							/>
 							<span className="custom-control-label"></span>
-							<img alt="thumbnail" className="aspect-ratio-item aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="/images/thumbnail_coffee.jpg" />
-							<span className="sticker sticker-bottom-left sticker-danger">JPG</span>
+							<img
+								alt="thumbnail"
+								className="aspect-ratio-item aspect-ratio-item-center-middle aspect-ratio-item-fluid"
+								src="/images/thumbnail_coffee.jpg"
+							/>
+							<span className="sticker sticker-bottom-left sticker-danger">
+								JPG
+							</span>
 						</label>
 					</div>
 				</div>
@@ -1182,33 +1192,65 @@ Just add `image-card` class on the same element that `card` class have being add
 					<div className="card-row">
 						<div className="autofit-col autofit-col-expand">
 							<section className="autofit-section">
-								<h3 className="card-title" title="thumbnail_coffee.jpg">
+								<h3
+									className="card-title"
+									title="thumbnail_coffee.jpg"
+								>
 									<span className="text-truncate-inline">
-                                        <a className="text-truncate" href="#1">thumbnail_coffee.jpg</a>
+										<a className="text-truncate" href="#1">
+											thumbnail_coffee.jpg
+										</a>
 									</span>
 								</h3>
-								<p className="card-subtitle" title="Author Action">
+								<p
+									className="card-subtitle"
+									title="Author Action"
+								>
 									<span className="text-truncate-inline">
-										<span className="text-truncate">Author Action</span>
+										<span className="text-truncate">
+											Author Action
+										</span>
 									</span>
 								</p>
 								<div className="card-detail">
 									<span className="label label-success">
-										<span className="label-item label-item-expand">Approved</span>
+										<span className="label-item label-item-expand">
+											Approved
+										</span>
 									</span>
 								</div>
 							</section>
 						</div>
 						<div className="autofit-col">
 							<div className="dropdown dropdown-action">
-								<a aria-label="More Actions" aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-                  <svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
-                    <use href="/images/icons/icons.svg#ellipsis-v"></use>
-                  </svg>
+								<a
+									aria-label="More Actions"
+									aria-expanded="false"
+									aria-haspopup="true"
+									className="component-action dropdown-toggle"
+									data-toggle="dropdown"
+									href="#1"
+									role="button"
+								>
+									<svg
+										className="lexicon-icon lexicon-icon-ellipsis-v"
+										focusable="false"
+										role="presentation"
+									>
+										<use href="/images/icons/icons.svg#ellipsis-v"></use>
+									</svg>
 								</a>
 								<ul className="dropdown-menu dropdown-menu-right">
-									<li><a className="dropdown-item" href="#1">Download</a></li>
-									<li><a className="dropdown-item" href="#1">Edit</a></li>
+									<li>
+										<a className="dropdown-item" href="#1">
+											Download
+										</a>
+									</li>
+									<li>
+										<a className="dropdown-item" href="#1">
+											Edit
+										</a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -1216,7 +1258,7 @@ Just add `image-card` class on the same element that `card` class have being add
 				</div>
 			</div>
 		</div>
-  </div>
+	</div>
 </div>
 
 ```html
@@ -1436,100 +1478,176 @@ To make the whole card clickable just wrap the checkbox and card in:
 ```
 
 <div className="sheet-example">
-    <div className="row">
-        <div className="col-md-4">
-            <div className="card-type-asset form-check form-check-card form-check-top-left image-card">
-                <div className="card">
-                    <div className="aspect-ratio card-item-first">
-                        <label className="form-check-label">
-                            <input className="form-check-input" type="checkbox" />
-                            <span className="sticker sticker-bottom-left sticker-danger">JPG</span>
-                        </label>
-                    </div>
-                    <div className="card-body">
-                        <div className="card-row">
-                            <div className="autofit-col autofit-col-expand">
-                                <section className="autofit-section">
-                                    <h3 className="card-title">
-                                        <span className="text-truncate-inline">
-                                            <span className="text-truncate">Aldcott Gage George Polwarth-Kitchener</span>
-                                        </span>
-                                    </h3>
-                                    <p className="card-subtitle" title="empty.jpg">
-                                        <span className="text-truncate-inline">
-                                            <a className="text-truncate">empty.jpg</a>
-                                        </span>
-                                    </p>
-                                    <div className="card-detail">
-                                        <span className="label label-success">
-                                            <span className="label-item label-item-expand">Approved</span>
-                                        </span>
-                                    </div>
-                                </section>
-                            </div>
-                            <div className="autofit-col">
-                                <div className="dropdown dropdown-action">
-                                    <a aria-label="More Actions" aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-                                        <svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
-                                            <use href="/images/icons/icons.svg#ellipsis-v"></use>
-                                        </svg>
-                                    </a>
-                                    <ul className="dropdown-menu dropdown-menu-right">
-                                        <li><a className="dropdown-item" href="#1">Download</a></li>
-                                        <li><a className="dropdown-item" href="#1">Edit</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className="col-md-8">
-            <div className="card-type-directory form-check form-check-card form-check-middle-left">
-                <label className="form-check-labe#l">
-                    <input className="form-check-input" type="checkbox" />
-                    <div className="card card-horizontal">
-                        <div className="card-body">
-                            <div className="card-row">
-                                <div className="autofit-col">
-                                    <span className="sticker">
-                                            <span className="inline-item">
-                                                <svg className="lexicon-icon lexicon-icon-folder" focusable="false" role="presentation">
-                                                    <use href="/images/icons/icons.svg#folder"></use>
-                                                </svg>
-                                            </span>
-                                    </span>
-                                </div>
-                                <div className="autofit-col autofit-col-expand autofit-col-gutters">
-                                    <section className="autofit-section">
-                                        <h3 className="card-title" title="ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual">
-                                                <span className="text-truncate-inline">
-                                                    <span className="text-truncate">ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual</span>
-                                                </span>
-                                            </h3>
-                                    </section>
-                                </div>
-                                <div className="autofit-col">
-                                    <div className="dropdown dropdown-action">
-                                        <a aria-label="More Actions" aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-                                            <svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
-                                                <use href="/images/icons/icons.svg#ellipsis-v"></use>
-                                            </svg>
-                                        </a>
-                                        <ul className="dropdown-menu dropdown-menu-right">
-                                            <li><a className="dropdown-item" href="#1">Download</a></li>
-                                            <li><a className="dropdown-item" href="#1">Edit</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </label>
-            </div>
-        </div>
-    </div>
+	<div className="row">
+		<div className="col-md-4">
+			<div className="card-type-asset form-check form-check-card form-check-top-left image-card">
+				<div className="card">
+					<div className="aspect-ratio card-item-first">
+						<label className="form-check-label">
+							<input
+								className="form-check-input"
+								type="checkbox"
+							/>
+							<span className="sticker sticker-bottom-left sticker-danger">
+								JPG
+							</span>
+						</label>
+					</div>
+					<div className="card-body">
+						<div className="card-row">
+							<div className="autofit-col autofit-col-expand">
+								<section className="autofit-section">
+									<h3 className="card-title">
+										<span className="text-truncate-inline">
+											<span className="text-truncate">
+												Aldcott Gage George
+												Polwarth-Kitchener
+											</span>
+										</span>
+									</h3>
+									<p
+										className="card-subtitle"
+										title="empty.jpg"
+									>
+										<span className="text-truncate-inline">
+											<a className="text-truncate">
+												empty.jpg
+											</a>
+										</span>
+									</p>
+									<div className="card-detail">
+										<span className="label label-success">
+											<span className="label-item label-item-expand">
+												Approved
+											</span>
+										</span>
+									</div>
+								</section>
+							</div>
+							<div className="autofit-col">
+								<div className="dropdown dropdown-action">
+									<a
+										aria-label="More Actions"
+										aria-expanded="false"
+										aria-haspopup="true"
+										className="component-action dropdown-toggle"
+										data-toggle="dropdown"
+										href="#1"
+										role="button"
+									>
+										<svg
+											className="lexicon-icon lexicon-icon-ellipsis-v"
+											focusable="false"
+											role="presentation"
+										>
+											<use href="/images/icons/icons.svg#ellipsis-v"></use>
+										</svg>
+									</a>
+									<ul className="dropdown-menu dropdown-menu-right">
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Download
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Edit
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div className="col-md-8">
+			<div className="card-type-directory form-check form-check-card form-check-middle-left">
+				<label className="form-check-labe#l">
+					<input className="form-check-input" type="checkbox" />
+					<div className="card card-horizontal">
+						<div className="card-body">
+							<div className="card-row">
+								<div className="autofit-col">
+									<span className="sticker">
+										<span className="inline-item">
+											<svg
+												className="lexicon-icon lexicon-icon-folder"
+												focusable="false"
+												role="presentation"
+											>
+												<use href="/images/icons/icons.svg#folder"></use>
+											</svg>
+										</span>
+									</span>
+								</div>
+								<div className="autofit-col autofit-col-expand autofit-col-gutters">
+									<section className="autofit-section">
+										<h3
+											className="card-title"
+											title="ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual"
+										>
+											<span className="text-truncate-inline">
+												<span className="text-truncate">
+													ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual
+												</span>
+											</span>
+										</h3>
+									</section>
+								</div>
+								<div className="autofit-col">
+									<div className="dropdown dropdown-action">
+										<a
+											aria-label="More Actions"
+											aria-expanded="false"
+											aria-haspopup="true"
+											className="component-action dropdown-toggle"
+											data-toggle="dropdown"
+											href="#1"
+											role="button"
+										>
+											<svg
+												className="lexicon-icon lexicon-icon-ellipsis-v"
+												focusable="false"
+												role="presentation"
+											>
+												<use href="/images/icons/icons.svg#ellipsis-v"></use>
+											</svg>
+										</a>
+										<ul className="dropdown-menu dropdown-menu-right">
+											<li>
+												<a
+													className="dropdown-item"
+													href="#1"
+												>
+													Download
+												</a>
+											</li>
+											<li>
+												<a
+													className="dropdown-item"
+													href="#1"
+												>
+													Edit
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</label>
+			</div>
+		</div>
+	</div>
 </div>
 
 ```html
@@ -1701,101 +1819,189 @@ To make the whole card clickable just wrap the radio input and card in:
 ```
 
 <div className="sheet-example">
-    <div className="row">
-        <div className="col-md-4">
-            <div className="card-type-asset form-check form-check-card form-check-top-left image-card">
-                <label className="form-check-label">
-                    <input className="form-check-input" name="cardRadios" type="radio" value="cardOption1" />
-                    <div className="card">
-                        <div className="aspect-ratio card-item-first">
-                            <img alt="thumbnail" className="aspect-ratio-item aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="/images/thumbnail_coffee.jpg" />
-                            <span className="sticker sticker-bottom-left sticker-warning">PNG</span>
-                        </div>
-                        <div className="card-body">
-                            <div className="card-row">
-                                <div className="autofit-col autofit-col-expand">
-                                    <section className="autofit-section">
-                                        <h3 className="card-title">
-                                            <span className="text-truncate-inline">
-                                                <span className="text-truncate">Aldcott Gage George Polwarth-Kitchener</span>
-                                            </span>
-                                        </h3>
-                                        <p className="card-subtitle" title="thumbnail_dock.jpg">
-                                            <span className="text-truncate-inline">
-                                                <a className="text-truncate" href="#1">thumbnail_dock.jpg</a>
-                                            </span>
-                                        </p>
-                                        <div className="card-detail">
-                                            <span className="label label-success">
-                                                <span className="label-item label-item-expand">Approved</span>
-                                            </span>
-                                        </div>
-                                    </section>
-                                </div>
-                                <div className="autofit-col">
-                                    <div className="dropdown dropdown-action">
-                                        <a aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-                                            <svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
-                                                <use href="/images/icons/icons.svg#ellipsis-v"></use>
-                                            </svg>
-                                        </a>
-                                        <ul className="dropdown-menu dropdown-menu-right">
-                                            <li><a className="dropdown-item" href="#1">Download</a></li>
-                                            <li><a className="dropdown-item" href="#1">Edit</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </label>
-            </div>
-        </div>
-        <div className="col-md-8">
-            <div className="card-type-directory form-check form-check-card form-check-middle-left">
-                <label className="form-check-label">
-                    <input className="form-check-input" name="cardRadios" type="radio" value="cardOption2" />
-                    <div className="card card-horizontal">
-                        <div className="card-body">
-                            <div className="card-row">
-                                <div className="autofit-col">
-                                    <span className="sticker">
-                                        <span className="inline-item">
-                                            <svg className="lexicon-icon lexicon-icon-folder" focusable="false" role="presentation">
-                                                <use href="/images/icons/icons.svg#folder"></use>
-                                            </svg>
-                                        </span>
-                                    </span>
-                                </div>
-                                <div className="autofit-col autofit-col-expand autofit-col-gutters">
-                                    <section className="autofit-section">
-                                        <h3 className="card-title" title="ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual">
-                                            <span className="text-truncate-inline">
-                                                <span className="text-truncate">ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual</span>
-                                            </span>
-                                        </h3>
-                                    </section>
-                                </div>
-                                <div className="autofit-col">
-                                    <div className="dropdown dropdown-action">
-                                        <a aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-                                            <svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
-                                                <use href="/images/icons/icons.svg#ellipsis-v"></use>
-                                            </svg>
-                                        </a>
-                                        <ul className="dropdown-menu dropdown-menu-right">
-                                            <li><a className="dropdown-item" href="#1">Download</a></li>
-                                            <li><a className="dropdown-item" href="#1">Edit</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </label>
-            </div>
-        </div>
-    </div>
+	<div className="row">
+		<div className="col-md-4">
+			<div className="card-type-asset form-check form-check-card form-check-top-left image-card">
+				<label className="form-check-label">
+					<input
+						className="form-check-input"
+						name="cardRadios"
+						type="radio"
+						value="cardOption1"
+					/>
+					<div className="card">
+						<div className="aspect-ratio card-item-first">
+							<img
+								alt="thumbnail"
+								className="aspect-ratio-item aspect-ratio-item-center-middle aspect-ratio-item-fluid"
+								src="/images/thumbnail_coffee.jpg"
+							/>
+							<span className="sticker sticker-bottom-left sticker-warning">
+								PNG
+							</span>
+						</div>
+						<div className="card-body">
+							<div className="card-row">
+								<div className="autofit-col autofit-col-expand">
+									<section className="autofit-section">
+										<h3 className="card-title">
+											<span className="text-truncate-inline">
+												<span className="text-truncate">
+													Aldcott Gage George
+													Polwarth-Kitchener
+												</span>
+											</span>
+										</h3>
+										<p
+											className="card-subtitle"
+											title="thumbnail_dock.jpg"
+										>
+											<span className="text-truncate-inline">
+												<a
+													className="text-truncate"
+													href="#1"
+												>
+													thumbnail_dock.jpg
+												</a>
+											</span>
+										</p>
+										<div className="card-detail">
+											<span className="label label-success">
+												<span className="label-item label-item-expand">
+													Approved
+												</span>
+											</span>
+										</div>
+									</section>
+								</div>
+								<div className="autofit-col">
+									<div className="dropdown dropdown-action">
+										<a
+											aria-expanded="false"
+											aria-haspopup="true"
+											className="component-action dropdown-toggle"
+											data-toggle="dropdown"
+											href="#1"
+											role="button"
+										>
+											<svg
+												className="lexicon-icon lexicon-icon-ellipsis-v"
+												focusable="false"
+												role="presentation"
+											>
+												<use href="/images/icons/icons.svg#ellipsis-v"></use>
+											</svg>
+										</a>
+										<ul className="dropdown-menu dropdown-menu-right">
+											<li>
+												<a
+													className="dropdown-item"
+													href="#1"
+												>
+													Download
+												</a>
+											</li>
+											<li>
+												<a
+													className="dropdown-item"
+													href="#1"
+												>
+													Edit
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</label>
+			</div>
+		</div>
+		<div className="col-md-8">
+			<div className="card-type-directory form-check form-check-card form-check-middle-left">
+				<label className="form-check-label">
+					<input
+						className="form-check-input"
+						name="cardRadios"
+						type="radio"
+						value="cardOption2"
+					/>
+					<div className="card card-horizontal">
+						<div className="card-body">
+							<div className="card-row">
+								<div className="autofit-col">
+									<span className="sticker">
+										<span className="inline-item">
+											<svg
+												className="lexicon-icon lexicon-icon-folder"
+												focusable="false"
+												role="presentation"
+											>
+												<use href="/images/icons/icons.svg#folder"></use>
+											</svg>
+										</span>
+									</span>
+								</div>
+								<div className="autofit-col autofit-col-expand autofit-col-gutters">
+									<section className="autofit-section">
+										<h3
+											className="card-title"
+											title="ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual"
+										>
+											<span className="text-truncate-inline">
+												<span className="text-truncate">
+													ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual
+												</span>
+											</span>
+										</h3>
+									</section>
+								</div>
+								<div className="autofit-col">
+									<div className="dropdown dropdown-action">
+										<a
+											aria-expanded="false"
+											aria-haspopup="true"
+											className="component-action dropdown-toggle"
+											data-toggle="dropdown"
+											href="#1"
+											role="button"
+										>
+											<svg
+												className="lexicon-icon lexicon-icon-ellipsis-v"
+												focusable="false"
+												role="presentation"
+											>
+												<use href="/images/icons/icons.svg#ellipsis-v"></use>
+											</svg>
+										</a>
+										<ul className="dropdown-menu dropdown-menu-right">
+											<li>
+												<a
+													className="dropdown-item"
+													href="#1"
+												>
+													Download
+												</a>
+											</li>
+											<li>
+												<a
+													className="dropdown-item"
+													href="#1"
+												>
+													Edit
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</label>
+			</div>
+		</div>
+	</div>
 </div>
 
 ```html
@@ -2212,11 +2418,8 @@ Nest `card-row` in `card-body` on to add some spacing around a horizontal card.
 	<div className="card-body">
 		<div className="card-row">
 			<div className="autofit-col">
-				<img
-					alt="thumbnail"
-					className="card-item-first"
-					src="/images/thumbnail_placeholder.gif"
-					style={{width: '121px'}}
+				<img alt="thumbnail" className="card-item-first"
+				src="/images/thumbnail_placeholder.gif" style={{width: '121px'}}
 				/>
 			</div>
 			<div className="autofit-col autofit-col-expand autofit-col-gutters">
@@ -2403,7 +2606,7 @@ Use classes `rounded`, `rounded-circle`, or `rounded-0` on the card to quickly s
 			<div className="card-row">
 				<div
 					className="autofit-col autofit-col-expand"
-					style={{overflow:'hidden'}}
+					style={{overflow: 'hidden'}}
 				>
 					<section className="autofit-section">
 						<img
@@ -2523,42 +2726,6 @@ The example below adds the custom modifier class `my-custom-grid` to `card-page`
 }
 </style>
 ```
-
-{/* <style>
-.my-custom-grid {
-margin-left: -8px;
-margin-right: -8px;
-}
-
-.my-custom-grid .card-page-item {
-flex-basis: 100%;
-max-width: 100%;
-padding-left: 8px;
-padding-right: 8px;
-}
-
-@media (min-width: 480px) {
-.my-custom-grid .card-page-item {
-flex-basis: 50%;
-max-width: 50%;
-}
-}
-
-@media (min-width: 992px) {
-.my-custom-grid .card-page-item {
-flex-basis: 33.33333%;
-max-width: 33.33333%;
-}
-}
-
-@media (min-width: 1600px) {
-.my-custom-grid .card-page-item {
-flex-basis: 25%;
-max-width: 25%;
-}
-}
-
-</style> */}
 
 <div className="sheet-example">
 	<ul className="card-page my-custom-grid">
@@ -3029,10 +3196,19 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 					<div className="aspect-ratio card-item-first">
 						<div className="custom-control custom-checkbox">
 							<label>
-								<input className="custom-control-input" type="checkbox" />
+								<input
+									className="custom-control-input"
+									type="checkbox"
+								/>
 								<span className="custom-control-label"></span>
-								<img alt="thumbnail"className="aspect-ratio-item aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="/images/thumbnail_coffee.jpg" />
-								<span className="sticker sticker-bottom-left sticker-danger">JPG</span>
+								<img
+									alt="thumbnail"
+									className="aspect-ratio-item aspect-ratio-item-center-middle aspect-ratio-item-fluid"
+									src="/images/thumbnail_coffee.jpg"
+								/>
+								<span className="sticker sticker-bottom-left sticker-danger">
+									JPG
+								</span>
 							</label>
 						</div>
 					</div>
@@ -3040,37 +3216,106 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 						<div className="card-row">
 							<div className="autofit-col autofit-col-expand">
 								<section className="autofit-section">
-									<h3 className="card-title" title="thumbnail_coffee.jpg">
+									<h3
+										className="card-title"
+										title="thumbnail_coffee.jpg"
+									>
 										<span className="text-truncate-inline">
-											<a className="text-truncate" href="#1">thumbnail_coffee.jpg</a>
+											<a
+												className="text-truncate"
+												href="#1"
+											>
+												thumbnail_coffee.jpg
+											</a>
 										</span>
 									</h3>
-									<p className="card-subtitle" title="Author Action">
+									<p
+										className="card-subtitle"
+										title="Author Action"
+									>
 										<span className="text-truncate-inline">
-											<span className="text-truncate">Author Action</span>
+											<span className="text-truncate">
+												Author Action
+											</span>
 										</span>
 									</p>
 									<div className="card-detail">
 										<span className="label label-success">
-											<span className="label-item label-item-expand">Approved</span>
+											<span className="label-item label-item-expand">
+												Approved
+											</span>
 										</span>
 									</div>
 								</section>
 							</div>
 							<div className="autofit-col">
 								<div className="dropdown dropdown-action">
-									<a aria-label="More Actions" aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-										<svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
+									<a
+										aria-label="More Actions"
+										aria-expanded="false"
+										aria-haspopup="true"
+										className="component-action dropdown-toggle"
+										data-toggle="dropdown"
+										href="#1"
+										role="button"
+									>
+										<svg
+											className="lexicon-icon lexicon-icon-ellipsis-v"
+											focusable="false"
+											role="presentation"
+										>
 											<use xlink:href="/images/icons/icons.svg#ellipsis-v" />
 										</svg>
 									</a>
 									<ul className="dropdown-menu dropdown-menu-right">
-										<li><a className="dropdown-item" href="#1">Download</a></li>
-										<li><a className="dropdown-item" href="#1">Edit</a></li>
-										<li><a className="dropdown-item" href="#1">Move</a></li>
-										<li><a className="dropdown-item" href="#1">Checkout</a></li>
-										<li><a className="dropdown-item" href="#1">Permissions</a></li>
-										<li><a className="dropdown-item" href="#1">Move to Recycle Bin</a></li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Download
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Edit
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Move
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Checkout
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Permissions
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Move to Recycle Bin
+											</a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -3085,10 +3330,19 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 					<div className="aspect-ratio card-item-first">
 						<div className="custom-control custom-checkbox">
 							<label>
-								<input className="custom-control-input" type="checkbox" />
+								<input
+									className="custom-control-input"
+									type="checkbox"
+								/>
 								<span className="custom-control-label"></span>
-								<img alt="thumbnail"className="aspect-ratio-item aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="/images/thumbnail_coffee.jpg" />
-								<span className="sticker sticker-bottom-left sticker-danger">JPG</span>
+								<img
+									alt="thumbnail"
+									className="aspect-ratio-item aspect-ratio-item-center-middle aspect-ratio-item-fluid"
+									src="/images/thumbnail_coffee.jpg"
+								/>
+								<span className="sticker sticker-bottom-left sticker-danger">
+									JPG
+								</span>
 							</label>
 						</div>
 					</div>
@@ -3096,37 +3350,106 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 						<div className="card-row">
 							<div className="autofit-col autofit-col-expand">
 								<section className="autofit-section">
-									<h3 className="card-title" title="thumbnail_coffee.jpg">
+									<h3
+										className="card-title"
+										title="thumbnail_coffee.jpg"
+									>
 										<span className="text-truncate-inline">
-											<a className="text-truncate" href="#1">thumbnail_coffee.jpg</a>
+											<a
+												className="text-truncate"
+												href="#1"
+											>
+												thumbnail_coffee.jpg
+											</a>
 										</span>
 									</h3>
-									<p className="card-subtitle" title="Author Action">
+									<p
+										className="card-subtitle"
+										title="Author Action"
+									>
 										<span className="text-truncate-inline">
-											<span className="text-truncate">Author Action</span>
+											<span className="text-truncate">
+												Author Action
+											</span>
 										</span>
 									</p>
 									<div className="card-detail">
 										<span className="label label-success">
-											<span className="label-item label-item-expand">Approved</span>
+											<span className="label-item label-item-expand">
+												Approved
+											</span>
 										</span>
 									</div>
 								</section>
 							</div>
 							<div className="autofit-col">
 								<div className="dropdown dropdown-action">
-									<a aria-label="More Actions" aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-										<svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
+									<a
+										aria-label="More Actions"
+										aria-expanded="false"
+										aria-haspopup="true"
+										className="component-action dropdown-toggle"
+										data-toggle="dropdown"
+										href="#1"
+										role="button"
+									>
+										<svg
+											className="lexicon-icon lexicon-icon-ellipsis-v"
+											focusable="false"
+											role="presentation"
+										>
 											<use xlink:href="/images/icons/icons.svg#ellipsis-v" />
 										</svg>
 									</a>
 									<ul className="dropdown-menu dropdown-menu-right">
-										<li><a className="dropdown-item" href="#1">Download</a></li>
-										<li><a className="dropdown-item" href="#1">Edit</a></li>
-										<li><a className="dropdown-item" href="#1">Move</a></li>
-										<li><a className="dropdown-item" href="#1">Checkout</a></li>
-										<li><a className="dropdown-item" href="#1">Permissions</a></li>
-										<li><a className="dropdown-item" href="#1">Move to Recycle Bin</a></li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Download
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Edit
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Move
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Checkout
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Permissions
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Move to Recycle Bin
+											</a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -3141,10 +3464,19 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 					<div className="aspect-ratio card-item-first">
 						<div className="custom-control custom-checkbox">
 							<label>
-								<input className="custom-control-input" type="checkbox" />
+								<input
+									className="custom-control-input"
+									type="checkbox"
+								/>
 								<span className="custom-control-label"></span>
-								<img alt="thumbnail"className="aspect-ratio-item aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="/images/thumbnail_coffee.jpg" />
-								<span className="sticker sticker-bottom-left sticker-danger">JPG</span>
+								<img
+									alt="thumbnail"
+									className="aspect-ratio-item aspect-ratio-item-center-middle aspect-ratio-item-fluid"
+									src="/images/thumbnail_coffee.jpg"
+								/>
+								<span className="sticker sticker-bottom-left sticker-danger">
+									JPG
+								</span>
 							</label>
 						</div>
 					</div>
@@ -3152,37 +3484,106 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 						<div className="card-row">
 							<div className="autofit-col autofit-col-expand">
 								<section className="autofit-section">
-									<h3 className="card-title" title="thumbnail_coffee.jpg">
+									<h3
+										className="card-title"
+										title="thumbnail_coffee.jpg"
+									>
 										<span className="text-truncate-inline">
-											<a className="text-truncate" href="#1">thumbnail_coffee.jpg</a>
+											<a
+												className="text-truncate"
+												href="#1"
+											>
+												thumbnail_coffee.jpg
+											</a>
 										</span>
 									</h3>
-									<p className="card-subtitle" title="Author Action">
+									<p
+										className="card-subtitle"
+										title="Author Action"
+									>
 										<span className="text-truncate-inline">
-											<span className="text-truncate">Author Action</span>
+											<span className="text-truncate">
+												Author Action
+											</span>
 										</span>
 									</p>
 									<div className="card-detail">
 										<span className="label label-success">
-											<span className="label-item label-item-expand">Approved</span>
+											<span className="label-item label-item-expand">
+												Approved
+											</span>
 										</span>
 									</div>
 								</section>
 							</div>
 							<div className="autofit-col">
 								<div className="dropdown dropdown-action">
-									<a aria-label="More Actions" aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-										<svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
+									<a
+										aria-label="More Actions"
+										aria-expanded="false"
+										aria-haspopup="true"
+										className="component-action dropdown-toggle"
+										data-toggle="dropdown"
+										href="#1"
+										role="button"
+									>
+										<svg
+											className="lexicon-icon lexicon-icon-ellipsis-v"
+											focusable="false"
+											role="presentation"
+										>
 											<use xlink:href="/images/icons/icons.svg#ellipsis-v" />
 										</svg>
 									</a>
 									<ul className="dropdown-menu dropdown-menu-right">
-										<li><a className="dropdown-item" href="#1">Download</a></li>
-										<li><a className="dropdown-item" href="#1">Edit</a></li>
-										<li><a className="dropdown-item" href="#1">Move</a></li>
-										<li><a className="dropdown-item" href="#1">Checkout</a></li>
-										<li><a className="dropdown-item" href="#1">Permissions</a></li>
-										<li><a className="dropdown-item" href="#1">Move to Recycle Bin</a></li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Download
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Edit
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Move
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Checkout
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Permissions
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Move to Recycle Bin
+											</a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -3197,10 +3598,19 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 					<div className="aspect-ratio card-item-first">
 						<div className="custom-control custom-checkbox">
 							<label>
-								<input className="custom-control-input" type="checkbox" />
+								<input
+									className="custom-control-input"
+									type="checkbox"
+								/>
 								<span className="custom-control-label"></span>
-								<img alt="thumbnail"className="aspect-ratio-item aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="/images/thumbnail_coffee.jpg" />
-								<span className="sticker sticker-bottom-left sticker-danger">JPG</span>
+								<img
+									alt="thumbnail"
+									className="aspect-ratio-item aspect-ratio-item-center-middle aspect-ratio-item-fluid"
+									src="/images/thumbnail_coffee.jpg"
+								/>
+								<span className="sticker sticker-bottom-left sticker-danger">
+									JPG
+								</span>
 							</label>
 						</div>
 					</div>
@@ -3208,37 +3618,106 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 						<div className="card-row">
 							<div className="autofit-col autofit-col-expand">
 								<section className="autofit-section">
-									<h3 className="card-title" title="thumbnail_coffee.jpg">
+									<h3
+										className="card-title"
+										title="thumbnail_coffee.jpg"
+									>
 										<span className="text-truncate-inline">
-											<a className="text-truncate" href="#1">thumbnail_coffee.jpg</a>
+											<a
+												className="text-truncate"
+												href="#1"
+											>
+												thumbnail_coffee.jpg
+											</a>
 										</span>
 									</h3>
-									<p className="card-subtitle" title="Author Action">
+									<p
+										className="card-subtitle"
+										title="Author Action"
+									>
 										<span className="text-truncate-inline">
-											<span className="text-truncate">Author Action</span>
+											<span className="text-truncate">
+												Author Action
+											</span>
 										</span>
 									</p>
 									<div className="card-detail">
 										<span className="label label-success">
-											<span className="label-item label-item-expand">Approved</span>
+											<span className="label-item label-item-expand">
+												Approved
+											</span>
 										</span>
 									</div>
 								</section>
 							</div>
 							<div className="autofit-col">
 								<div className="dropdown dropdown-action">
-									<a aria-label="More Actions" aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-										<svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
+									<a
+										aria-label="More Actions"
+										aria-expanded="false"
+										aria-haspopup="true"
+										className="component-action dropdown-toggle"
+										data-toggle="dropdown"
+										href="#1"
+										role="button"
+									>
+										<svg
+											className="lexicon-icon lexicon-icon-ellipsis-v"
+											focusable="false"
+											role="presentation"
+										>
 											<use xlink:href="/images/icons/icons.svg#ellipsis-v" />
 										</svg>
 									</a>
 									<ul className="dropdown-menu dropdown-menu-right">
-										<li><a className="dropdown-item" href="#1">Download</a></li>
-										<li><a className="dropdown-item" href="#1">Edit</a></li>
-										<li><a className="dropdown-item" href="#1">Move</a></li>
-										<li><a className="dropdown-item" href="#1">Checkout</a></li>
-										<li><a className="dropdown-item" href="#1">Permissions</a></li>
-										<li><a className="dropdown-item" href="#1">Move to Recycle Bin</a></li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Download
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Edit
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Move
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Checkout
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Permissions
+											</a>
+										</li>
+										<li>
+											<a
+												className="dropdown-item"
+												href="#1"
+											>
+												Move to Recycle Bin
+											</a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -3269,7 +3748,10 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 			<div className="card-type-directory form-check form-check-card form-check-middle-left">
 				<div className="custom-control custom-checkbox">
 					<label>
-						<input className="custom-control-input" type="checkbox" />
+						<input
+							className="custom-control-input"
+							type="checkbox"
+						/>
 						<span className="custom-control-label"></span>
 						<div className="card card-horizontal">
 							<div className="card-body">
@@ -3277,7 +3759,11 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 									<div className="autofit-col">
 										<span className="sticker">
 											<span className="inline-item">
-												<svg className="lexicon-icon lexicon-icon-folder" focusable="false" role="presentation">
+												<svg
+													className="lexicon-icon lexicon-icon-folder"
+													focusable="false"
+													role="presentation"
+												>
 													<use xlink:href="/images/icons/icons.svg#folder" />
 												</svg>
 											</span>
@@ -3285,27 +3771,89 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 									</div>
 									<div className="autofit-col autofit-col-expand autofit-col-gutters">
 										<section className="autofit-section">
-											<h3 className="card-title" title="UX Team">
+											<h3
+												className="card-title"
+												title="UX Team"
+											>
 												<span className="text-truncate-inline">
-													<a className="text-truncate" href="#1">UX Team</a>
+													<a
+														className="text-truncate"
+														href="#1"
+													>
+														UX Team
+													</a>
 												</span>
 											</h3>
 										</section>
 									</div>
 									<div className="autofit-col">
 										<div className="dropdown dropdown-action">
-											<a aria-label="More Actions" aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-												<svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
+											<a
+												aria-label="More Actions"
+												aria-expanded="false"
+												aria-haspopup="true"
+												className="component-action dropdown-toggle"
+												data-toggle="dropdown"
+												href="#1"
+												role="button"
+											>
+												<svg
+													className="lexicon-icon lexicon-icon-ellipsis-v"
+													focusable="false"
+													role="presentation"
+												>
 													<use xlink:href="/images/icons/icons.svg#ellipsis-v" />
 												</svg>
 											</a>
 											<ul className="dropdown-menu dropdown-menu-right">
-												<li><a className="dropdown-item" href="#1">Download</a></li>
-												<li><a className="dropdown-item" href="#1">Edit</a></li>
-												<li><a className="dropdown-item" href="#1">Move</a></li>
-												<li><a className="dropdown-item" href="#1">Checkout</a></li>
-												<li><a className="dropdown-item" href="#1">Permissions</a></li>
-												<li><a className="dropdown-item" href="#1">Move to Recycle Bin</a></li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Download
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Edit
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Move
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Checkout
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Permissions
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Move to Recycle Bin
+													</a>
+												</li>
 											</ul>
 										</div>
 									</div>
@@ -3320,7 +3868,10 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 			<div className="card-type-directory form-check form-check-card form-check-middle-left">
 				<div className="custom-control custom-checkbox">
 					<label>
-						<input className="custom-control-input" type="checkbox" />
+						<input
+							className="custom-control-input"
+							type="checkbox"
+						/>
 						<span className="custom-control-label"></span>
 						<div className="card card-horizontal">
 							<div className="card-body">
@@ -3328,7 +3879,11 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 									<div className="autofit-col">
 										<span className="sticker">
 											<span className="inline-item">
-												<svg className="lexicon-icon lexicon-icon-folder" focusable="false" role="presentation">
+												<svg
+													className="lexicon-icon lexicon-icon-folder"
+													focusable="false"
+													role="presentation"
+												>
 													<use xlink:href="/images/icons/icons.svg#folder" />
 												</svg>
 											</span>
@@ -3336,27 +3891,86 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 									</div>
 									<div className="autofit-col autofit-col-expand autofit-col-gutters">
 										<section className="autofit-section">
-											<h3 className="card-title" title="Talks">
+											<h3
+												className="card-title"
+												title="Talks"
+											>
 												<span className="text-truncate-inline">
-													<span className="text-truncate">Talks</span>
+													<span className="text-truncate">
+														Talks
+													</span>
 												</span>
 											</h3>
 										</section>
 									</div>
 									<div className="autofit-col">
 										<div className="dropdown dropdown-action">
-											<a aria-label="More Actions" aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-												<svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
+											<a
+												aria-label="More Actions"
+												aria-expanded="false"
+												aria-haspopup="true"
+												className="component-action dropdown-toggle"
+												data-toggle="dropdown"
+												href="#1"
+												role="button"
+											>
+												<svg
+													className="lexicon-icon lexicon-icon-ellipsis-v"
+													focusable="false"
+													role="presentation"
+												>
 													<use xlink:href="/images/icons/icons.svg#ellipsis-v" />
 												</svg>
 											</a>
 											<ul className="dropdown-menu dropdown-menu-right">
-												<li><a className="dropdown-item" href="#1">Download</a></li>
-												<li><a className="dropdown-item" href="#1">Edit</a></li>
-												<li><a className="dropdown-item" href="#1">Move</a></li>
-												<li><a className="dropdown-item" href="#1">Checkout</a></li>
-												<li><a className="dropdown-item" href="#1">Permissions</a></li>
-												<li><a className="dropdown-item" href="#1">Move to Recycle Bin</a></li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Download
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Edit
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Move
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Checkout
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Permissions
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Move to Recycle Bin
+													</a>
+												</li>
 											</ul>
 										</div>
 									</div>
@@ -3371,7 +3985,10 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 			<div className="card-type-directory form-check form-check-card form-check-middle-left">
 				<div className="custom-control custom-checkbox">
 					<label>
-						<input className="custom-control-input" type="checkbox" />
+						<input
+							className="custom-control-input"
+							type="checkbox"
+						/>
 						<span className="custom-control-label"></span>
 						<div className="card card-horizontal">
 							<div className="card-body">
@@ -3379,7 +3996,11 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 									<div className="autofit-col">
 										<span className="sticker">
 											<span className="inline-item">
-												<svg className="lexicon-icon lexicon-icon-folder" focusable="false" role="presentation">
+												<svg
+													className="lexicon-icon lexicon-icon-folder"
+													focusable="false"
+													role="presentation"
+												>
 													<use xlink:href="/images/icons/icons.svg#folder" />
 												</svg>
 											</span>
@@ -3387,27 +4008,86 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 									</div>
 									<div className="autofit-col autofit-col-expand autofit-col-gutters">
 										<section className="autofit-section">
-											<h3 className="card-title" title="Branding">
+											<h3
+												className="card-title"
+												title="Branding"
+											>
 												<span className="text-truncate-inline">
-													<span className="text-truncate">Branding</span>
+													<span className="text-truncate">
+														Branding
+													</span>
 												</span>
 											</h3>
 										</section>
 									</div>
 									<div className="autofit-col">
 										<div className="dropdown dropdown-action">
-											<a aria-label="More Actions" aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-												<svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
+											<a
+												aria-label="More Actions"
+												aria-expanded="false"
+												aria-haspopup="true"
+												className="component-action dropdown-toggle"
+												data-toggle="dropdown"
+												href="#1"
+												role="button"
+											>
+												<svg
+													className="lexicon-icon lexicon-icon-ellipsis-v"
+													focusable="false"
+													role="presentation"
+												>
 													<use xlink:href="/images/icons/icons.svg#ellipsis-v" />
 												</svg>
 											</a>
 											<ul className="dropdown-menu dropdown-menu-right">
-												<li><a className="dropdown-item" href="#1">Download</a></li>
-												<li><a className="dropdown-item" href="#1">Edit</a></li>
-												<li><a className="dropdown-item" href="#1">Move</a></li>
-												<li><a className="dropdown-item" href="#1">Checkout</a></li>
-												<li><a className="dropdown-item" href="#1">Permissions</a></li>
-												<li><a className="dropdown-item" href="#1">Move to Recycle Bin</a></li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Download
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Edit
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Move
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Checkout
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Permissions
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Move to Recycle Bin
+													</a>
+												</li>
 											</ul>
 										</div>
 									</div>
@@ -3422,7 +4102,10 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 			<div className="card-type-directory form-check form-check-card form-check-middle-left">
 				<div className="custom-control custom-checkbox">
 					<label>
-						<input className="custom-control-input" type="checkbox" />
+						<input
+							className="custom-control-input"
+							type="checkbox"
+						/>
 						<span className="custom-control-label"></span>
 						<div className="card card-horizontal">
 							<div className="card-body">
@@ -3430,7 +4113,11 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 									<div className="autofit-col">
 										<span className="sticker">
 											<span className="inline-item">
-												<svg className="lexicon-icon lexicon-icon-folder" focusable="false" role="presentation">
+												<svg
+													className="lexicon-icon lexicon-icon-folder"
+													focusable="false"
+													role="presentation"
+												>
 													<use xlink:href="/images/icons/icons.svg#folder" />
 												</svg>
 											</span>
@@ -3438,27 +4125,86 @@ A predefined `card-page` column used in Liferay Portal's card view layouts, gene
 									</div>
 									<div className="autofit-col autofit-col-expand autofit-col-gutters">
 										<section className="autofit-section">
-											<h3 className="card-title" title="Side Projects">
+											<h3
+												className="card-title"
+												title="Side Projects"
+											>
 												<span className="text-truncate-inline">
-													<span className="text-truncate">Side Projects</span>
+													<span className="text-truncate">
+														Side Projects
+													</span>
 												</span>
 											</h3>
 										</section>
 									</div>
 									<div className="autofit-col">
 										<div className="dropdown dropdown-action">
-											<a aria-label="More Actions" aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-												<svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
+											<a
+												aria-label="More Actions"
+												aria-expanded="false"
+												aria-haspopup="true"
+												className="component-action dropdown-toggle"
+												data-toggle="dropdown"
+												href="#1"
+												role="button"
+											>
+												<svg
+													className="lexicon-icon lexicon-icon-ellipsis-v"
+													focusable="false"
+													role="presentation"
+												>
 													<use xlink:href="/images/icons/icons.svg#ellipsis-v" />
 												</svg>
 											</a>
 											<ul className="dropdown-menu dropdown-menu-right">
-												<li><a className="dropdown-item" href="#1">Download</a></li>
-												<li><a className="dropdown-item" href="#1">Edit</a></li>
-												<li><a className="dropdown-item" href="#1">Move</a></li>
-												<li><a className="dropdown-item" href="#1">Checkout</a></li>
-												<li><a className="dropdown-item" href="#1">Permissions</a></li>
-												<li><a className="dropdown-item" href="#1">Move to Recycle Bin</a></li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Download
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Edit
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Move
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Checkout
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Permissions
+													</a>
+												</li>
+												<li>
+													<a
+														className="dropdown-item"
+														href="#1"
+													>
+														Move to Recycle Bin
+													</a>
+												</li>
 											</ul>
 										</div>
 									</div>

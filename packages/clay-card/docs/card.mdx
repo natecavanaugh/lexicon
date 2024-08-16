@@ -29,8 +29,17 @@ export default function App() {
 				<div className="col-md-5">
 					<Card>
 						<Card.Body>
-							<Card.Description displayType="title">{'Card Title'}</Card.Description>
-							<Card.Description truncate={false} displayType="text">{'Some quick example text to build on the card title and make up the bulk of the card content.'}</Card.Description>
+							<Card.Description displayType="title">
+								{'Card Title'}
+							</Card.Description>
+							<Card.Description
+								truncate={false}
+								displayType="text"
+							>
+								{
+									'Some quick example text to build on the card title and make up the bulk of the card content.'
+								}
+							</Card.Description>
 							<Button>{'Go somewhere'}</Button>
 						</Card.Body>
 					</Card>
@@ -44,7 +53,6 @@ export default function App() {
 #### Horizontal composing
 
 You can use the Card in horizontal format and use the `autofit` utilities to create more possibilities.
-
 
 ```jsx preview
 import {Provider} from '@clayui/core';
@@ -60,12 +68,24 @@ export default function App() {
 				<Card horizontal>
 					<Card.Row>
 						<div className="autofit-col">
-							<img alt="thumbnail" className="card-item-first" src="/images/thumbnail_placeholder.gif" style={{width: '150px'}} />
+							<img
+								alt="thumbnail"
+								className="card-item-first"
+								src="/images/thumbnail_placeholder.gif"
+								style={{width: '150px'}}
+							/>
 						</div>
 						<div className="autofit-col autofit-col-expand autofit-col-gutters">
 							<section className="autofit-section">
-								<Card.Description displayType="title">{'So ristretto cappuccino'}</Card.Description>
-								<Card.Description truncate={false} displayType="text">{'Wings eu, pumpkin spice robusta.'}</Card.Description>
+								<Card.Description displayType="title">
+									{'So ristretto cappuccino'}
+								</Card.Description>
+								<Card.Description
+									truncate={false}
+									displayType="text"
+								>
+									{'Wings eu, pumpkin spice robusta.'}
+								</Card.Description>
 							</section>
 						</div>
 					</Card.Row>
@@ -102,7 +122,10 @@ export default function App() {
 							<div className="aspect-ratio-item aspect-ratio-item-center-middle aspect-ratio-item-fluid card-type-asset-icon">
 								<Icon symbol="documents-and-media" />
 							</div>
-							<Sticker displayType="danger" position="bottom-left">
+							<Sticker
+								displayType="danger"
+								position="bottom-left"
+							>
 								{'DOC'}
 							</Sticker>
 						</Card.AspectRatio>
@@ -110,10 +133,16 @@ export default function App() {
 							<Card.Row>
 								<div className="autofit-col autofit-col-expand">
 									<section className="autofit-section">
-										<Card.Description displayType="title">{'deliverable.doc'}</Card.Description>
-										<Card.Description displayType="subtitle">{'Stevie Ray Vaughn'}</Card.Description>
+										<Card.Description displayType="title">
+											{'deliverable.doc'}
+										</Card.Description>
+										<Card.Description displayType="subtitle">
+											{'Stevie Ray Vaughn'}
+										</Card.Description>
 										<Card.Caption>
-											<Label displayType="success">{'Approved'}</Label>
+											<Label displayType="success">
+												{'Approved'}
+											</Label>
 										</Card.Caption>
 									</section>
 								</div>
@@ -157,35 +186,35 @@ export default function App() {
 				<div className="col-md-4">
 					<ClayCardWithInfo
 						actions={[
-						{
-							label: 'clickable',
-							onClick: () => {
-							alert('you clicked!');
+							{
+								label: 'clickable',
+								onClick: () => {
+									alert('you clicked!');
+								},
 							},
-						},
-						{ type: 'divider' },
-						{
-							href: '#',
-							label: 'linkable',
-						},
+							{type: 'divider'},
+							{
+								href: '#',
+								label: 'linkable',
+							},
 						]}
 						description="A cool description"
 						href="#"
 						labels={[
-						{
-							displayType: 'success',
-							value: 'Awesome',
-						},
-						{
-							displayType: 'danger',
-							value: 'Crazy',
-						},
+							{
+								displayType: 'success',
+								value: 'Awesome',
+							},
+							{
+								displayType: 'danger',
+								value: 'Crazy',
+							},
 						]}
-						onSelectChange={newVal => setValue(newVal)}
+						onSelectChange={(newVal) => setValue(newVal)}
 						selected={value}
 						stickerProps={{
-						content: 'DOC',
-						displayType: 'danger',
+							content: 'DOC',
+							displayType: 'danger',
 						}}
 						title="Selectable File"
 					/>
@@ -248,29 +277,29 @@ export default function App() {
 					<div className="col-md-4">
 						<ClayCardWithUser
 							actions={[
-							{
-								label: 'clickable',
-								onClick: () => {
-								alert('you clicked!');
+								{
+									label: 'clickable',
+									onClick: () => {
+										alert('you clicked!');
+									},
 								},
-							},
-							{ type: 'divider' },
-							{
-								href: '#',
-								label: 'linkable',
-							},
+								{type: 'divider'},
+								{
+									href: '#',
+									label: 'linkable',
+								},
 							]}
 							description="Assistant to the regional manager"
 							href="#"
 							labels={[
-							{
-								displayType: 'success',
-								value: 'Awesome',
-							},
-							{
-								displayType: 'danger',
-								value: 'Crazy',
-							},
+								{
+									displayType: 'success',
+									value: 'Awesome',
+								},
+								{
+									displayType: 'danger',
+									value: 'Crazy',
+								},
 							]}
 							name="Abraham Kuyper"
 							onSelectChange={() => {}}
@@ -303,17 +332,17 @@ export default function App() {
 					<div className="col-md-4">
 						<ClayCardWithHorizontal
 							actions={[
-							{
-								label: 'clickable',
-								onClick: () => {
-								alert('you clicked!');
+								{
+									label: 'clickable',
+									onClick: () => {
+										alert('you clicked!');
+									},
 								},
-							},
-							{ type: 'divider' },
-							{
-								href: '#',
-								label: 'linkable',
-							},
+								{type: 'divider'},
+								{
+									href: '#',
+									label: 'linkable',
+								},
 							]}
 							href="#"
 							onSelectChange={setValue}
