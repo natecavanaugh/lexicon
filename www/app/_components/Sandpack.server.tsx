@@ -41,6 +41,7 @@ export async function Sandpack({language, children}: Props) {
 					'@clayui/badge': 'latest',
 					'@clayui/breadcrumb': 'latest',
 					'@clayui/card': 'latest',
+					'@clayui/color-picker': 'latest',
 				},
 			}}
 			files={{
