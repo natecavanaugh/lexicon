@@ -5,7 +5,7 @@ export const docs = createSource('./docs/**/*.mdx', {
 });
 
 export const documents = createSource(
-	'../packages/clay-(core|alert)/docs/**/*.mdx',
+	'../packages/clay-(core|alert|autocomplete)/docs/**/*.mdx',
 	{
 		baseDirectory: 'docs',
 		basePathname: 'components',

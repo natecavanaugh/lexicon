@@ -36,6 +36,7 @@ export async function Sandpack({language, children}: Props) {
 					'@clayui/drop-down': 'latest',
 					'@clayui/label': 'latest',
 					'@clayui/alert': 'latest',
+					'@clayui/autocomplete': 'latest',
 				},
 			}}
 			files={{
