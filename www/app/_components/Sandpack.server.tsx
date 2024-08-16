@@ -29,6 +29,7 @@ export async function Sandpack({language, children}: Props) {
 				dependencies: {
 					'@clayui/core': 'latest',
 					'@clayui/icon': 'latest',
+					'@clayui/button': 'latest',
 					'@clayui/css': 'latest',
 					'@clayui/form': 'latest',
 					'@clayui/shared': 'latest',
