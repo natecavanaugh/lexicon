@@ -7,7 +7,12 @@ packageUse: "import DropDown from '@clayui/drop-down';"
 ---
 
 <div className="clay-site-alert alert alert-warning">
-	This page uses Bootstrap's dropdown plugin which requires JQuery. Liferay 7.4 no longer includes JQuery by default. We have included a standalone dropdown plugin in 7.4, just replace the attribute <code>data-toggle="dropdown"</code> with <code>data-toggle="liferay-dropdown"</code> on the <code>dropdown-toggle</code>.
+	This page uses Bootstrap's dropdown plugin which requires JQuery. Liferay
+	7.4 no longer includes JQuery by default. We have included a standalone
+	dropdown plugin in 7.4, just replace the attribute{' '}
+	<code>data-toggle="dropdown"</code> with{' '}
+	<code>data-toggle="liferay-dropdown"</code> on the{' '}
+	<code>dropdown-toggle</code>.
 </div>
 
 ## Variations
@@ -20,9 +25,25 @@ The default dropdown is a panel that does not support scrolling of the content i
 	<div className="clay-site-dropdown-menu-container">
 		<div aria-labelledby="theDropdownToggleId" className="dropdown-menu">
 			<ul className="list-unstyled">
-				<li><a className="active dropdown-item" href="#1">Selected Option</a></li>
-				<li><a className="dropdown-item" href="#3">Normal Option</a></li>
-				<li><a className="disabled dropdown-item" href="#4" tabindex="-1">Disabled Option</a></li>
+				<li>
+					<a className="active dropdown-item" href="#1">
+						Selected Option
+					</a>
+				</li>
+				<li>
+					<a className="dropdown-item" href="#3">
+						Normal Option
+					</a>
+				</li>
+				<li>
+					<a
+						className="disabled dropdown-item"
+						href="#4"
+						tabindex="-1"
+					>
+						Disabled Option
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -31,7 +52,9 @@ The default dropdown is a panel that does not support scrolling of the content i
 ```html
 <div aria-labelledby="theDropdownToggleId" className="dropdown-menu">
 	<ul className="list-unstyled">
-		<li><a className="active dropdown-item" href="#1">Selected Option</a></li>
+		<li>
+			<a className="active dropdown-item" href="#1">Selected Option</a>
+		</li>
 		<li><a className="dropdown-item" href="#3">Normal Option</a></li>
 		<li>
 			<a className="disabled dropdown-item" href="#4" tabindex="-1"
@@ -48,48 +71,137 @@ Use `.dropdown-wide` with `.dropdown` to make the dropdown menu big. The default
 
 <div className="sheet-example">
 	<div className="clay-site-dropdown-menu-container">
-		<div aria-labelledby="" className="dropdown-wide dropdown-wide-container">
+		<div
+			aria-labelledby=""
+			className="dropdown-wide dropdown-wide-container"
+		>
 			<div className="dropdown-menu">
 				<div className="row">
 					<div className="col-sm-4">
 						<ul className="list-unstyled">
 							<li className="dropdown-subheader">By Resource</li>
-							<li><a className="dropdown-item" href="#1">Support Home</a></li>
-							<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled Link</a></li>
-							<li><a className="dropdown-item" href="#1">Chat or Call</a></li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Support Home
+								</a>
+							</li>
+							<li>
+								<a
+									className="disabled dropdown-item"
+									href="#1"
+									tabindex="-1"
+								>
+									Disabled Link
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Chat or Call
+								</a>
+							</li>
 						</ul>
 						<ul className="list-unstyled">
 							<li className="dropdown-subheader">By Product</li>
-							<li><a className="active dropdown-item" href="#1">Developing for the Platform</a></li>
-							<li><a className="dropdown-item" href="#1">Mastering Fundamentals</a></li>
-							<li><a className="dropdown-item" href="#1">Styling with Themes</a></li>
-							<li><a className="dropdown-item" href="#1">Managing Content</a></li>
+							<li>
+								<a className="active dropdown-item" href="#1">
+									Developing for the Platform
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Mastering Fundamentals
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Styling with Themes
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Managing Content
+								</a>
+							</li>
 						</ul>
 					</div>
 					<div className="col-sm-4">
 						<ul className="list-unstyled">
-							<li className="dropdown-subheader">Popular Picks</li>
-							<li><a className="dropdown-item" href="#1">Error Messages</a></li>
-							<li><a className="dropdown-item" href="#1">Updates: Service Packs &amp; Fixes</a></li>
-							<li><a className="dropdown-item" href="#1">Install, Upgrade, &amp; Activate</a></li>
-							<li><a className="dropdown-item" href="#1">Regular Drivers</a></li>
-							<li><a className="dropdown-item" href="#1">Hardware Drivers</a></li>
+							<li className="dropdown-subheader">
+								Popular Picks
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Error Messages
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Updates: Service Packs &amp; Fixes
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Install, Upgrade, &amp; Activate
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Regular Drivers
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Hardware Drivers
+								</a>
+							</li>
 						</ul>
 						<ul className="list-unstyled">
 							<li className="dropdown-subheader">Security</li>
-							<li><a className="dropdown-item" href="#1">Security Home</a></li>
-							<li><a className="dropdown-item" href="#1">Security Essentials</a></li>
-							<li><a className="dropdown-item" href="#1">Protecting Your Data</a></li>
-							<li><a className="dropdown-item" href="#1">Securing Your Browser</a></li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Security Home
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Security Essentials
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Protecting Your Data
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Securing Your Browser
+								</a>
+							</li>
 						</ul>
 					</div>
 					<div className="col-sm-4">
 						<ul className="list-unstyled">
 							<li className="dropdown-subheader">By Audience</li>
-							<li><a className="dropdown-item" href="#1">For Home Users</a></li>
-							<li><a className="dropdown-item" href="#1">For Small Business</a></li>
-							<li><a className="dropdown-item" href="#1">For IT Professionals</a></li>
-							<li><a className="dropdown-item" href="#1">For Developers</a></li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									For Home Users
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									For Small Business
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									For IT Professionals
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									For Developers
+								</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -105,7 +217,9 @@ Use `.dropdown-wide` with `.dropdown` to make the dropdown menu big. The default
 			<div className="col-sm-4">
 				<ul className="list-unstyled">
 					<li className="dropdown-subheader">By Resource</li>
-					<li><a className="dropdown-item" href="#1">Support Home</a></li>
+					<li>
+						<a className="dropdown-item" href="#1">Support Home</a>
+					</li>
 					<li>
 						<a
 							className="disabled dropdown-item"
@@ -114,7 +228,9 @@ Use `.dropdown-wide` with `.dropdown` to make the dropdown menu big. The default
 							>Disabled Link</a
 						>
 					</li>
-					<li><a className="dropdown-item" href="#1">Chat or Call</a></li>
+					<li>
+						<a className="dropdown-item" href="#1">Chat or Call</a>
+					</li>
 				</ul>
 				<ul className="list-unstyled">
 					<li className="dropdown-subheader">By Product</li>
@@ -134,7 +250,9 @@ Use `.dropdown-wide` with `.dropdown` to make the dropdown menu big. The default
 						>
 					</li>
 					<li>
-						<a className="dropdown-item" href="#1">Managing Content</a>
+						<a className="dropdown-item" href="#1"
+							>Managing Content</a
+						>
 					</li>
 				</ul>
 			</div>
@@ -142,7 +260,9 @@ Use `.dropdown-wide` with `.dropdown` to make the dropdown menu big. The default
 				<ul className="list-unstyled">
 					<li className="dropdown-subheader">Popular Picks</li>
 					<li>
-						<a className="dropdown-item" href="#1">Error Messages</a>
+						<a className="dropdown-item" href="#1"
+							>Error Messages</a
+						>
 					</li>
 					<li>
 						<a className="dropdown-item" href="#1"
@@ -155,10 +275,14 @@ Use `.dropdown-wide` with `.dropdown` to make the dropdown menu big. The default
 						>
 					</li>
 					<li>
-						<a className="dropdown-item" href="#1">Regular Drivers</a>
+						<a className="dropdown-item" href="#1"
+							>Regular Drivers</a
+						>
 					</li>
 					<li>
-						<a className="dropdown-item" href="#1">Hardware Drivers</a>
+						<a className="dropdown-item" href="#1"
+							>Hardware Drivers</a
+						>
 					</li>
 				</ul>
 				<ul className="list-unstyled">
@@ -187,7 +311,9 @@ Use `.dropdown-wide` with `.dropdown` to make the dropdown menu big. The default
 				<ul className="list-unstyled">
 					<li className="dropdown-subheader">By Audience</li>
 					<li>
-						<a className="dropdown-item" href="#1">For Home Users</a>
+						<a className="dropdown-item" href="#1"
+							>For Home Users</a
+						>
 					</li>
 					<li>
 						<a className="dropdown-item" href="#1"
@@ -200,7 +326,9 @@ Use `.dropdown-wide` with `.dropdown` to make the dropdown menu big. The default
 						>
 					</li>
 					<li>
-						<a className="dropdown-item" href="#1">For Developers</a>
+						<a className="dropdown-item" href="#1"
+							>For Developers</a
+						>
 					</li>
 				</ul>
 			</div>
@@ -216,47 +344,134 @@ Use `.dropdown-full` to create a dropdown menu as wide as its relative parent.
 <div className="sheet-example">
 	<div className="clay-site-dropdown-menu-container">
 		<div className="dropdown dropdown-full nav-item">
-			<ul aria-labelledby="navbarDropdownMenuLink3" className="dropdown-menu">
+			<ul
+				aria-labelledby="navbarDropdownMenuLink3"
+				className="dropdown-menu"
+			>
 				<div className="row">
 					<div className="col-sm-4">
 						<ul className="list-unstyled">
 							<li className="dropdown-header">By Resource</li>
-							<li><a className="dropdown-item" href="#1">Support Home</a></li>
-							<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled Link</a></li>
-							<li><a className="dropdown-item" href="#1">Chat or Call</a></li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Support Home
+								</a>
+							</li>
+							<li>
+								<a
+									className="disabled dropdown-item"
+									href="#1"
+									tabindex="-1"
+								>
+									Disabled Link
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Chat or Call
+								</a>
+							</li>
 						</ul>
 						<ul className="list-unstyled">
 							<li className="dropdown-header">By Product</li>
-							<li><a className="dropdown-item" href="#1">Developing for the Platform</a></li>
-							<li><a className="dropdown-item" href="#1">Mastering Fundamentals</a></li>
-							<li><a className="dropdown-item" href="#1">Styling with Themes</a></li>
-							<li><a className="dropdown-item" href="#1">Managing Content</a></li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Developing for the Platform
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Mastering Fundamentals
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Styling with Themes
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Managing Content
+								</a>
+							</li>
 						</ul>
 					</div>
 					<div className="col-sm-4">
 						<ul className="list-unstyled">
 							<li className="dropdown-header">Popular Picks</li>
-							<li><a className="dropdown-item" href="#1">Error Messages</a></li>
-							<li><a className="dropdown-item" href="#1">Updates: Service Packs &amp; Fixes</a></li>
-							<li><a className="dropdown-item" href="#1">Install, Upgrade, &amp; Activate</a></li>
-							<li><a className="dropdown-item" href="#1">Regular Drivers</a></li>
-							<li><a className="dropdown-item" href="#1">Hardware Drivers</a></li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Error Messages
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Updates: Service Packs &amp; Fixes
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Install, Upgrade, &amp; Activate
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Regular Drivers
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Hardware Drivers
+								</a>
+							</li>
 						</ul>
 						<ul className="list-unstyled">
 							<li className="dropdown-header">Security</li>
-							<li><a className="dropdown-item" href="#1">Security Home</a></li>
-							<li><a className="dropdown-item" href="#1">Security Essentials</a></li>
-							<li><a className="dropdown-item" href="#1">Protecting Your Data</a></li>
-							<li><a className="dropdown-item" href="#1">Securing Your Browser</a></li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Security Home
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Security Essentials
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Protecting Your Data
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									Securing Your Browser
+								</a>
+							</li>
 						</ul>
 					</div>
 					<div className="col-sm-4">
 						<ul className="list-unstyled">
 							<li className="dropdown-header">By Audience</li>
-							<li><a className="active dropdown-item" href="#1">For Home Users</a></li>
-							<li><a className="dropdown-item" href="#1">For Small Business</a></li>
-							<li><a className="dropdown-item" href="#1">For IT Professionals</a></li>
-							<li><a className="dropdown-item" href="#1">For Developers</a></li>
+							<li>
+								<a className="active dropdown-item" href="#1">
+									For Home Users
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									For Small Business
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									For IT Professionals
+								</a>
+							</li>
+							<li>
+								<a className="dropdown-item" href="#1">
+									For Developers
+								</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -272,7 +487,9 @@ Use `.dropdown-full` to create a dropdown menu as wide as its relative parent.
 			<div className="col-sm-4">
 				<ul className="list-unstyled">
 					<li className="dropdown-header">By Resource</li>
-					<li><a className="dropdown-item" href="#1">Support Home</a></li>
+					<li>
+						<a className="dropdown-item" href="#1">Support Home</a>
+					</li>
 					<li>
 						<a
 							className="disabled dropdown-item"
@@ -281,7 +498,9 @@ Use `.dropdown-full` to create a dropdown menu as wide as its relative parent.
 							>Disabled Link</a
 						>
 					</li>
-					<li><a className="dropdown-item" href="#1">Chat or Call</a></li>
+					<li>
+						<a className="dropdown-item" href="#1">Chat or Call</a>
+					</li>
 				</ul>
 				<ul className="list-unstyled">
 					<li className="dropdown-header">By Product</li>
@@ -301,7 +520,9 @@ Use `.dropdown-full` to create a dropdown menu as wide as its relative parent.
 						>
 					</li>
 					<li>
-						<a className="dropdown-item" href="#1">Managing Content</a>
+						<a className="dropdown-item" href="#1"
+							>Managing Content</a
+						>
 					</li>
 				</ul>
 			</div>
@@ -309,7 +530,9 @@ Use `.dropdown-full` to create a dropdown menu as wide as its relative parent.
 				<ul className="list-unstyled">
 					<li className="dropdown-header">Popular Picks</li>
 					<li>
-						<a className="dropdown-item" href="#1">Error Messages</a>
+						<a className="dropdown-item" href="#1"
+							>Error Messages</a
+						>
 					</li>
 					<li>
 						<a className="dropdown-item" href="#1"
@@ -322,10 +545,14 @@ Use `.dropdown-full` to create a dropdown menu as wide as its relative parent.
 						>
 					</li>
 					<li>
-						<a className="dropdown-item" href="#1">Regular Drivers</a>
+						<a className="dropdown-item" href="#1"
+							>Regular Drivers</a
+						>
 					</li>
 					<li>
-						<a className="dropdown-item" href="#1">Hardware Drivers</a>
+						<a className="dropdown-item" href="#1"
+							>Hardware Drivers</a
+						>
 					</li>
 				</ul>
 				<ul className="list-unstyled">
@@ -369,7 +596,9 @@ Use `.dropdown-full` to create a dropdown menu as wide as its relative parent.
 						>
 					</li>
 					<li>
-						<a className="dropdown-item" href="#1">For Developers</a>
+						<a className="dropdown-item" href="#1"
+							>For Developers</a
+						>
 					</li>
 				</ul>
 			</div>
@@ -380,7 +609,9 @@ Use `.dropdown-full` to create a dropdown menu as wide as its relative parent.
 
 ### Dropdown Menu Width Full
 
-<div className="clay-site-alert alert alert-warning">This is a separate component from `.dropdown-full`, use one or the other.</div>
+<div className="clay-site-alert alert alert-warning">
+	This is a separate component from `.dropdown-full`, use one or the other.
+</div>
 
 The modifier class `dropdown-menu-width-full` on `dropdown-menu` makes the menu expand the full width of the page. This should be used with the Clay Drop Down plugin which renders the `dropdown-menu` as a direct child of the `body` element.
 
@@ -392,7 +623,9 @@ The modifier class `dropdown-menu-width-full` on `dropdown-menu` makes the menu 
 	<li className="dropdown-header">Dropdown Header</li>
 	<li><a className="dropdown-item" href="#1">Action</a></li>
 	<li>
-		<a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a>
+		<a className="disabled dropdown-item" href="#1" tabindex="-1"
+			>Disabled</a
+		>
 	</li>
 	<li className="dropdown-divider"></li>
 	<li><a className="dropdown-item" href="#1">Scope</a></li>
@@ -401,18 +634,36 @@ The modifier class `dropdown-menu-width-full` on `dropdown-menu` makes the menu 
 
 ### Dropdown Menu Width Sm
 
-<div className="clay-site-alert alert alert-warning">This is a separate component from `.dropdown-wide`, use one or the other.</div>
+<div className="clay-site-alert alert alert-warning">
+	This is a separate component from `.dropdown-wide`, use one or the other.
+</div>
 
 The modifier class `dropdown-menu-width-sm` on `dropdown-menu` makes the menu 500px wide. The `dropdown-menu` becomes 100% wide at screen sizes 767px and below. This should be used with the Clay Drop Down plugin which renders the `dropdown-menu` as a direct child of the `body` element.
 
 <div className="sheet-example">
 	<div className="clay-site-dropdown-menu-container">
-		<ul aria-labelledby="dropdownMenuWide1" className="dropdown-menu dropdown-menu-width-sm show" style="position:static;">
+		<ul
+			aria-labelledby="dropdownMenuWide1"
+			className="dropdown-menu dropdown-menu-width-sm show"
+			style="position:static;"
+		>
 			<li className="dropdown-header">Dropdown Header</li>
-			<li><a className="dropdown-item" href="#1">Action</a></li>
-			<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Action
+				</a>
+			</li>
+			<li>
+				<a className="disabled dropdown-item" href="#1" tabindex="-1">
+					Disabled
+				</a>
+			</li>
 			<li className="dropdown-divider"></li>
-			<li><a className="dropdown-item" href="#1">Scope</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Scope
+				</a>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -425,7 +676,9 @@ The modifier class `dropdown-menu-width-sm` on `dropdown-menu` makes the menu 50
 	<li className="dropdown-header">Dropdown Header</li>
 	<li><a className="dropdown-item" href="#1">Action</a></li>
 	<li>
-		<a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a>
+		<a className="disabled dropdown-item" href="#1" tabindex="-1"
+			>Disabled</a
+		>
 	</li>
 	<li className="dropdown-divider"></li>
 	<li><a className="dropdown-item" href="#1">Scope</a></li>
@@ -438,12 +691,28 @@ The modifier class `dropdown-menu-width-shrink` on `dropdown-menu` makes the men
 
 <div className="sheet-example">
 	<div className="clay-site-dropdown-menu-container">
-		<ul aria-labelledby="dropdownMenuWide1" className="dropdown-menu dropdown-menu-width-shrink show" style="position:static;">
+		<ul
+			aria-labelledby="dropdownMenuWide1"
+			className="dropdown-menu dropdown-menu-width-shrink show"
+			style="position:static;"
+		>
 			<li className="dropdown-header">Header</li>
-			<li><a className="dropdown-item" href="#1">Action</a></li>
-			<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Action
+				</a>
+			</li>
+			<li>
+				<a className="disabled dropdown-item" href="#1" tabindex="-1">
+					Disabled
+				</a>
+			</li>
 			<li className="dropdown-divider"></li>
-			<li><a className="dropdown-item" href="#1">Scope</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Scope
+				</a>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -456,7 +725,9 @@ The modifier class `dropdown-menu-width-shrink` on `dropdown-menu` makes the men
 	<li className="dropdown-header">Header</li>
 	<li><a className="dropdown-item" href="#1">Action</a></li>
 	<li>
-		<a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a>
+		<a className="disabled dropdown-item" href="#1" tabindex="-1"
+			>Disabled</a
+		>
 	</li>
 	<li className="dropdown-divider"></li>
 	<li><a className="dropdown-item" href="#1">Scope</a></li>
@@ -475,7 +746,9 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 	<li className="dropdown-header">Dropdown Header</li>
 	<li><a className="dropdown-item" href="#1">Action</a></li>
 	<li>
-		<a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a>
+		<a className="disabled dropdown-item" href="#1" tabindex="-1"
+			>Disabled</a
+		>
 	</li>
 	<li className="dropdown-divider"></li>
 	<li><a className="dropdown-item" href="#1">Scope</a></li>
@@ -490,12 +763,32 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 	<div className="clay-site-dropdown-menu-container">
 		<ul aria-labelledby="theDropdownToggleId" className="dropdown-menu">
 			<li className="dropdown-subheader">Order by</li>
-			<li><a className="active dropdown-item" href="#1">Author</a></li>
-			<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Title Entry</a></li>
+			<li>
+				<a className="active dropdown-item" href="#1">
+					Author
+				</a>
+			</li>
+			<li>
+				<a className="disabled dropdown-item" href="#1" tabindex="-1">
+					Title Entry
+				</a>
+			</li>
 			<li className="dropdown-divider"></li>
-			<li><a className="dropdown-item" href="#1">Date</a></li>
-			<li><a className="dropdown-item" href="#1">Description</a></li>
-			<li><a className="dropdown-item" href="#1">Status</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Date
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Description
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Status
+				</a>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -529,9 +822,15 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 					<div className="active dropdown-item">
 						<div className="custom-control custom-checkbox">
 							<label>
-								<input checked="" className="custom-control-input" type="checkbox" />
+								<input
+									checked=""
+									className="custom-control-input"
+									type="checkbox"
+								/>
 								<span className="custom-control-label">
-									<span className="custom-control-label-text">Selected Option</span>
+									<span className="custom-control-label-text">
+										Selected Option
+									</span>
 								</span>
 							</label>
 						</div>
@@ -541,9 +840,14 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 					<div className="dropdown-item">
 						<div className="custom-control custom-checkbox">
 							<label>
-								<input className="custom-control-input" type="checkbox" />
+								<input
+									className="custom-control-input"
+									type="checkbox"
+								/>
 								<span className="custom-control-label">
-									<span className="custom-control-label-text">Normal Option</span>
+									<span className="custom-control-label-text">
+										Normal Option
+									</span>
 								</span>
 							</label>
 						</div>
@@ -553,9 +857,15 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 					<div className="disabled dropdown-item">
 						<div className="custom-control custom-checkbox">
 							<label>
-								<input disabled="" className="custom-control-input" type="checkbox" />
+								<input
+									disabled=""
+									className="custom-control-input"
+									type="checkbox"
+								/>
 								<span className="custom-control-label">
-									<span className="custom-control-label-text">Disabled Option</span>
+									<span className="custom-control-label-text">
+										Disabled Option
+									</span>
 								</span>
 							</label>
 						</div>
@@ -570,9 +880,17 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 					<div className="active dropdown-item">
 						<div className="custom-control custom-radio">
 							<label>
-								<input checked="" className="custom-control-input" id="dropdownRadio1" name="dropdownRadio" type="radio" />
+								<input
+									checked=""
+									className="custom-control-input"
+									id="dropdownRadio1"
+									name="dropdownRadio"
+									type="radio"
+								/>
 								<span className="custom-control-label">
-									<span className="custom-control-label-text">Selected Option</span>
+									<span className="custom-control-label-text">
+										Selected Option
+									</span>
 								</span>
 							</label>
 						</div>
@@ -582,9 +900,16 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 					<div className="dropdown-item">
 						<div className="custom-control custom-radio">
 							<label>
-								<input className="custom-control-input" id="dropdownRadio2" name="dropdownRadio" type="radio" />
+								<input
+									className="custom-control-input"
+									id="dropdownRadio2"
+									name="dropdownRadio"
+									type="radio"
+								/>
 								<span className="custom-control-label">
-									<span className="custom-control-label-text">Normal Option</span>
+									<span className="custom-control-label-text">
+										Normal Option
+									</span>
 								</span>
 							</label>
 						</div>
@@ -594,9 +919,17 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 					<div className="disabled dropdown-item">
 						<div className="custom-control custom-radio">
 							<label>
-								<input disabled="" className="custom-control-input" id="dropdownRadio3" name="dropdownRadio" type="radio" />
+								<input
+									disabled=""
+									className="custom-control-input"
+									id="dropdownRadio3"
+									name="dropdownRadio"
+									type="radio"
+								/>
 								<span className="custom-control-label">
-									<span className="custom-control-label-text">Disabled Option</span>
+									<span className="custom-control-label-text">
+										Disabled Option
+									</span>
 								</span>
 							</label>
 						</div>
@@ -733,10 +1066,18 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 			<li className="dropdown-section">
 				<div className="input-group input-group-sm">
 					<div className="input-group-item">
-						<input className="form-control input-group-inset input-group-inset-after" placeholder="Search for..." type="text" />
+						<input
+							className="form-control input-group-inset input-group-inset-after"
+							placeholder="Search for..."
+							type="text"
+						/>
 						<span className="input-group-inset-item input-group-inset-item-after">
 							<button className="btn btn-unstyled" type="button">
-								<svg className="lexicon-icon lexicon-icon-search" focusable="false" role="presentation">
+								<svg
+									className="lexicon-icon lexicon-icon-search"
+									focusable="false"
+									role="presentation"
+								>
 									<use href="/images/icons/icons.svg#search"></use>
 								</svg>
 							</button>
@@ -749,9 +1090,15 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 				<div className="active dropdown-item">
 					<div className="custom-control custom-checkbox">
 						<label>
-							<input checked="" className="custom-control-input" type="checkbox" />
+							<input
+								checked=""
+								className="custom-control-input"
+								type="checkbox"
+							/>
 							<span className="custom-control-label">
-								<span className="custom-control-label-text">Selected Option</span>
+								<span className="custom-control-label-text">
+									Selected Option
+								</span>
 							</span>
 						</label>
 					</div>
@@ -815,35 +1162,56 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 	<div className="clay-site-dropdown-menu-container">
 		<ul aria-labelledby="theDropdownToggleId" className="dropdown-menu">
 			<li className="dropdown-section form-group">
-				<label for="basicInputTypeText1">
-					Text 1
-				</label>
-				<input className="form-control form-control-sm" id="basicInputTypeText1" placeholder="Placeholder" type="text" />
+				<label for="basicInputTypeText1">Text 1</label>
+				<input
+					className="form-control form-control-sm"
+					id="basicInputTypeText1"
+					placeholder="Placeholder"
+					type="text"
+				/>
 			</li>
 			<li className="dropdown-subheader">Form Section</li>
 			<li className="dropdown-section">
 				<div className="form-group">
-					<label for="basicInputTypeText2">
-						Text 2
-					</label>
-					<input className="form-control form-control-sm" id="basicInputTypeText2" placeholder="Placeholder" type="text" />
+					<label for="basicInputTypeText2">Text 2</label>
+					<input
+						className="form-control form-control-sm"
+						id="basicInputTypeText2"
+						placeholder="Placeholder"
+						type="text"
+					/>
 				</div>
 			</li>
 			<li className="dropdown-section">
 				<div className="form-group">
-					<label for="basicInputTypeText3">
-						Text 3
-					</label>
-					<input className="form-control form-control-sm" id="basicInputTypeText3" placeholder="Placeholder" type="text" />
+					<label for="basicInputTypeText3">Text 3</label>
+					<input
+						className="form-control form-control-sm"
+						id="basicInputTypeText3"
+						placeholder="Placeholder"
+						type="text"
+					/>
 				</div>
 				<div className="form-group">
 					<label for="basicInputTypeTextarea">Textarea</label>
-					<textarea className="form-control form-control-sm" id="basicInputTypeTextarea" placeholder="Placeholder"></textarea>
+					<textarea
+						className="form-control form-control-sm"
+						id="basicInputTypeTextarea"
+						placeholder="Placeholder"
+					></textarea>
 				</div>
 			</li>
 			<li className="dropdown-subheader">Order by</li>
-			<li><a className="active dropdown-item" href="#1">Author</a></li>
-			<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Title Entry</a></li>
+			<li>
+				<a className="active dropdown-item" href="#1">
+					Author
+				</a>
+			</li>
+			<li>
+				<a className="disabled dropdown-item" href="#1" tabindex="-1">
+					Title Entry
+				</a>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -906,14 +1274,21 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 
 <div className="sheet-example">
 	<div className="clay-site-dropdown-menu-container">
-		<ul aria-labelledby="theDropdownToggleId" className="dropdown-menu dropdown-menu-indicator-start">
+		<ul
+			aria-labelledby="theDropdownToggleId"
+			className="dropdown-menu dropdown-menu-indicator-start"
+		>
 			<li className="dropdown-header">Dropdown Header</li>
 			<li className="dropdown-divider"></li>
 			<li className="dropdown-subheader">Dropdown Sub Header</li>
 			<li>
 				<a className="dropdown-item" href="#1">
 					<span className="dropdown-item-indicator-start">
-						<svg className="lexicon-icon lexicon-icon-check" focusable="false" role="presentation">
+						<svg
+							className="lexicon-icon lexicon-icon-check"
+							focusable="false"
+							role="presentation"
+						>
 							<use href="/images/icons/icons.svg#check"></use>
 						</svg>
 					</span>
@@ -923,7 +1298,11 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 			<li>
 				<a className="dropdown-item" href="#1">
 					<span className="dropdown-item-indicator-start">
-						<svg className="lexicon-icon lexicon-icon-check" focusable="false" role="presentation">
+						<svg
+							className="lexicon-icon lexicon-icon-check"
+							focusable="false"
+							role="presentation"
+						>
 							<use href="/images/icons/icons.svg#check"></use>
 						</svg>
 					</span>
@@ -933,15 +1312,27 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 			<li>
 				<a className="dropdown-item" href="#1">
 					<span className="dropdown-item-indicator-start">
-						<svg className="lexicon-icon lexicon-icon-check" focusable="false" role="presentation">
+						<svg
+							className="lexicon-icon lexicon-icon-check"
+							focusable="false"
+							role="presentation"
+						>
 							<use href="/images/icons/icons.svg#check"></use>
 						</svg>
 					</span>
 					Seat Assignment
 				</a>
 			</li>
-			<li><a className="active dropdown-item" href="#1">Dinner Preference</a></li>
-			<li><a className="dropdown-item" href="#1">Submit Payment</a></li>
+			<li>
+				<a className="active dropdown-item" href="#1">
+					Dinner Preference
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Submit Payment
+				</a>
+			</li>
 			<li className="dropdown-caption">Dropdown Caption</li>
 		</ul>
 	</div>
@@ -1007,7 +1398,10 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 
 <div className="sheet-example">
 	<div className="clay-site-dropdown-menu-container">
-		<ul aria-labelledby="theDropdownToggleId" className="dropdown-menu dropdown-menu-indicator-end">
+		<ul
+			aria-labelledby="theDropdownToggleId"
+			className="dropdown-menu dropdown-menu-indicator-end"
+		>
 			<li className="dropdown-header">Folder</li>
 			<li className="dropdown-divider"></li>
 			<li className="dropdown-subheader">Order By</li>
@@ -1015,7 +1409,11 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 				<a className="active dropdown-item" href="#1">
 					Step 01
 					<span className="dropdown-item-indicator-end">
-						<svg className="lexicon-icon lexicon-icon-check" focusable="false" role="presentation">
+						<svg
+							className="lexicon-icon lexicon-icon-check"
+							focusable="false"
+							role="presentation"
+						>
 							<use href="/images/icons/icons.svg#check"></use>
 						</svg>
 					</span>
@@ -1025,7 +1423,11 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 				<a className="disabled dropdown-item" href="#1" tabindex="-1">
 					Step 02
 					<span className="dropdown-item-indicator-end">
-						<svg className="lexicon-icon lexicon-icon-check" focusable="false" role="presentation">
+						<svg
+							className="lexicon-icon lexicon-icon-check"
+							focusable="false"
+							role="presentation"
+						>
 							<use href="/images/icons/icons.svg#check"></use>
 						</svg>
 					</span>
@@ -1035,15 +1437,29 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 				<a className="dropdown-item" href="#1">
 					Step 03
 					<span className="dropdown-item-indicator-end">
-						<svg className="lexicon-icon lexicon-icon-times" focusable="false" role="presentation">
+						<svg
+							className="lexicon-icon lexicon-icon-times"
+							focusable="false"
+							role="presentation"
+						>
 							<use href="/images/icons/icons.svg#times"></use>
 						</svg>
 					</span>
 				</a>
 			</li>
-			<li><a className="dropdown-item" href="#1">Step 04</a></li>
-			<li><a className="dropdown-item" href="#1">Step 05</a></li>
-			<li className="dropdown-caption">Showing 190,722 of 192,842 Things</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Step 04
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Step 05
+				</a>
+			</li>
+			<li className="dropdown-caption">
+				Showing 190,722 of 192,842 Things
+			</li>
 		</ul>
 	</div>
 </div>
@@ -1108,20 +1524,31 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 
 <div className="sheet-example">
 	<div className="clay-site-dropdown-menu-container">
-		<ul aria-labelledby="theDropdownToggleId" className="dropdown-menu dropdown-menu-indicator-end dropdown-menu-indicator-start">
+		<ul
+			aria-labelledby="theDropdownToggleId"
+			className="dropdown-menu dropdown-menu-indicator-end dropdown-menu-indicator-start"
+		>
 			<li className="dropdown-header">Dropdown Header</li>
 			<li className="dropdown-divider"></li>
 			<li className="dropdown-subheader">Dropdown Sub Header</li>
 			<li>
 				<a className="dropdown-item" href="#1">
 					<span className="dropdown-item-indicator-start">
-						<svg className="lexicon-icon lexicon-icon-pencil" focusable="false" role="presentation">
+						<svg
+							className="lexicon-icon lexicon-icon-pencil"
+							focusable="false"
+							role="presentation"
+						>
 							<use href="/images/icons/icons.svg#pencil"></use>
 						</svg>
 					</span>
 					ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual
 					<span className="dropdown-item-indicator-end">
-						<svg className="lexicon-icon lexicon-icon-angle-right" focusable="false" role="presentation">
+						<svg
+							className="lexicon-icon lexicon-icon-angle-right"
+							focusable="false"
+							role="presentation"
+						>
 							<use href="/images/icons/icons.svg#angle-right"></use>
 						</svg>
 					</span>
@@ -1130,7 +1557,11 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 			<li>
 				<a className="dropdown-item" href="#1">
 					<span className="dropdown-item-indicator-start">
-						<svg className="lexicon-icon lexicon-icon-view" focusable="false" role="presentation">
+						<svg
+							className="lexicon-icon lexicon-icon-view"
+							focusable="false"
+							role="presentation"
+						>
 							<use href="/images/icons/icons.svg#view"></use>
 						</svg>
 					</span>
@@ -1140,15 +1571,27 @@ The modifier class `dropdown-menu-height-auto` on `dropdown-menu` removes the `m
 			<li>
 				<a className="dropdown-item" href="#1">
 					<span className="dropdown-item-indicator">
-						<svg className="lexicon-icon lexicon-icon-check" focusable="false" role="presentation">
+						<svg
+							className="lexicon-icon lexicon-icon-check"
+							focusable="false"
+							role="presentation"
+						>
 							<use href="/images/icons/icons.svg#check"></use>
 						</svg>
 					</span>
 					Seat Assignment
 				</a>
 			</li>
-			<li><a className="active dropdown-item" href="#1">Dinner Preference</a></li>
-			<li><a className="dropdown-item" href="#1">Submit Payment</a></li>
+			<li>
+				<a className="active dropdown-item" href="#1">
+					Dinner Preference
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Submit Payment
+				</a>
+			</li>
 			<li className="dropdown-caption">Dropdown Caption</li>
 		</ul>
 	</div>
@@ -1225,13 +1668,20 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 
 <div className="sheet-example">
 	<div className="clay-site-dropdown-menu-container">
-		<ul aria-labelled-by="theDropdownToggleId" className="dropdown-menu show">
+		<ul
+			aria-labelled-by="theDropdownToggleId"
+			className="dropdown-menu show"
+		>
 			<li>
 				<a className="autofit-row dropdown-item" href="#1">
 					<span className="autofit-col autofit-col-expand">
 						<span className="autofit-section">
 							<span className="inline-item inline-item-before">
-								<svg className="lexicon-icon lexicon-icon-en-us" focusable="false" role="presentation">
+								<svg
+									className="lexicon-icon lexicon-icon-en-us"
+									focusable="false"
+									role="presentation"
+								>
 									<use xlink:href="/images/icons/icons.svg#en-us"></use>
 								</svg>
 							</span>
@@ -1240,7 +1690,9 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 					</span>
 					<span className="autofit-col">
 						<span className="label label-info">
-							<span className="label-item label-item-expand">Default</span>
+							<span className="label-item label-item-expand">
+								Default
+							</span>
 						</span>
 					</span>
 				</a>
@@ -1250,7 +1702,11 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 					<span className="autofit-col autofit-col-expand">
 						<span className="autofit-section">
 							<span className="inline-item inline-item-before">
-								<svg className="lexicon-icon lexicon-icon-en-gb" focusable="false" role="presentation">
+								<svg
+									className="lexicon-icon lexicon-icon-en-gb"
+									focusable="false"
+									role="presentation"
+								>
 									<use xlink:href="/images/icons/icons.svg#en-gb"></use>
 								</svg>
 							</span>
@@ -1259,17 +1715,27 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 					</span>
 					<span className="autofit-col">
 						<span className="label label-success">
-							<span className="label-item label-item-expand">Translated</span>
+							<span className="label-item label-item-expand">
+								Translated
+							</span>
 						</span>
 					</span>
 				</a>
 			</li>
 			<li>
-				<a className="active autofit-row dropdown-item" href="#1" tabindex="-1">
+				<a
+					className="active autofit-row dropdown-item"
+					href="#1"
+					tabindex="-1"
+				>
 					<span className="autofit-col autofit-col-expand">
 						<span className="autofit-section">
 							<span className="inline-item inline-item-before">
-								<svg className="lexicon-icon lexicon-icon-es-es" focusable="false" role="presentation">
+								<svg
+									className="lexicon-icon lexicon-icon-es-es"
+									focusable="false"
+									role="presentation"
+								>
 									<use xlink:href="/images/icons/icons.svg#es-es"></use>
 								</svg>
 							</span>
@@ -1278,7 +1744,9 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 					</span>
 					<span className="autofit-col">
 						<span className="label label-success">
-							<span className="label-item label-item-expand">Translated</span>
+							<span className="label-item label-item-expand">
+								Translated
+							</span>
 						</span>
 					</span>
 				</a>
@@ -1288,7 +1756,11 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 					<span className="autofit-col autofit-col-expand">
 						<span className="autofit-section">
 							<span className="inline-item inline-item-before">
-								<svg className="lexicon-icon lexicon-icon-fr-fr" focusable="false" role="presentation">
+								<svg
+									className="lexicon-icon lexicon-icon-fr-fr"
+									focusable="false"
+									role="presentation"
+								>
 									<use xlink:href="/images/icons/icons.svg#fr-fr"></use>
 								</svg>
 							</span>
@@ -1297,7 +1769,9 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 					</span>
 					<span className="autofit-col">
 						<span className="label label-warning">
-							<span className="label-item label-item-expand">Not Translated</span>
+							<span className="label-item label-item-expand">
+								Not Translated
+							</span>
 						</span>
 					</span>
 				</a>
@@ -1328,7 +1802,9 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 			</span>
 			<span className="autofit-col">
 				<span className="label label-info">
-					<span className="label-item label-item-expand">Default</span>
+					<span className="label-item label-item-expand"
+						>Default</span
+					>
 				</span>
 			</span>
 		</a>
@@ -1353,7 +1829,9 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 			</span>
 			<span className="autofit-col">
 				<span className="label label-success">
-					<span className="label-item label-item-expand">Translated</span>
+					<span className="label-item label-item-expand"
+						>Translated</span
+					>
 				</span>
 			</span>
 		</a>
@@ -1378,7 +1856,9 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 			</span>
 			<span className="autofit-col">
 				<span className="label label-success">
-					<span className="label-item label-item-expand">Translated</span>
+					<span className="label-item label-item-expand"
+						>Translated</span
+					>
 				</span>
 			</span>
 		</a>
@@ -1417,9 +1897,16 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 
 <div className="sheet-example">
 	<div className="clay-site-dropdown-menu-container">
-		<ul aria-labelledby="theDropdownToggleId" className="dropdown-menu show">
+		<ul
+			aria-labelledby="theDropdownToggleId"
+			className="dropdown-menu show"
+		>
 			<li>
-				<a className="active autofit-row dropdown-item" href="#1" tabindex="-1">
+				<a
+					className="active autofit-row dropdown-item"
+					href="#1"
+					tabindex="-1"
+				>
 					<span className="autofit-col autofit-col-expand">
 						First Option
 					</span>
@@ -1431,14 +1918,18 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 				</a>
 			</li>
 			<li>
-				<a className="autofit-row disabled dropdown-item" href="#1" tabindex="-1">
+				<a
+					className="autofit-row disabled dropdown-item"
+					href="#1"
+					tabindex="-1"
+				>
 					<span className="autofit-col autofit-col-expand">
 						Second Option
 					</span>
 					<span className="autofit-col">
 						<kbd className="c-kbd c-kbd-inline">
 							<kbd className="c-kbd">⌘</kbd>
-              <kbd className="c-kbd">K</kbd>
+							<kbd className="c-kbd">K</kbd>
 						</kbd>
 					</span>
 				</a>
@@ -1447,15 +1938,16 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 			<li>
 				<button className="autofit-row dropdown-item" type="button">
 					<span className="autofit-col autofit-col-expand">
-						Third Option is the Button Option ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual
+						Third Option is the Button Option
+						ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual
 					</span>
 					<span className="autofit-col">
 						<kbd className="c-kbd c-kbd-inline">
 							<kbd className="c-kbd">⌘</kbd>
-              <span className="c-kbd-separator">+</span>
-              <kbd className="c-kbd">Shift</kbd>
-              <span className="c-kbd-separator">+</span>
-              <kbd className="c-kbd">Y</kbd>
+							<span className="c-kbd-separator">+</span>
+							<kbd className="c-kbd">Shift</kbd>
+							<span className="c-kbd-separator">+</span>
+							<kbd className="c-kbd">Y</kbd>
 						</kbd>
 					</span>
 				</button>
@@ -1491,7 +1983,7 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 					<span className="autofit-col">
 						<kbd className="c-kbd c-kbd-inline">
 							<kbd className="c-kbd">⌘</kbd>
-              <kbd className="c-kbd">P</kbd>
+							<kbd className="c-kbd">P</kbd>
 						</kbd>
 					</span>
 				</a>
@@ -1512,7 +2004,9 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 <ul aria-labelledby="theDropdownToggleId" className="dropdown-menu show">
 	<li>
 		<a className="active autofit-row dropdown-item" href="#1" tabindex="-1">
-			<span className="autofit-col autofit-col-expand"> First Option </span>
+			<span className="autofit-col autofit-col-expand">
+				First Option
+			</span>
 			<span className="autofit-col">
 				<kbd className="c-kbd c-kbd-inline">
 					<kbd className="c-kbd">⌘</kbd>
@@ -1521,8 +2015,14 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 		</a>
 	</li>
 	<li>
-		<a className="autofit-row disabled dropdown-item" href="#1" tabindex="-1">
-			<span className="autofit-col autofit-col-expand"> Second Option </span>
+		<a
+			className="autofit-row disabled dropdown-item"
+			href="#1"
+			tabindex="-1"
+		>
+			<span className="autofit-col autofit-col-expand">
+				Second Option
+			</span>
 			<span className="autofit-col">
 				<kbd className="c-kbd c-kbd-inline">
 					<kbd className="c-kbd">⌘</kbd><kbd className="c-kbd">K</kbd>
@@ -1550,24 +2050,32 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 	</li>
 	<li>
 		<a className="autofit-row dropdown-item" href="#1">
-			<span className="autofit-col autofit-col-expand"> Fourth Option </span>
+			<span className="autofit-col autofit-col-expand">
+				Fourth Option
+			</span>
 		</a>
 	</li>
 	<li className="dropdown-divider"></li>
 	<li>
 		<a className="autofit-row dropdown-item" href="#1">
-			<span className="autofit-col autofit-col-expand"> Fifth Option </span>
+			<span className="autofit-col autofit-col-expand">
+				Fifth Option
+			</span>
 		</a>
 	</li>
 	<li className="dropdown-divider"></li>
 	<li>
 		<a className="autofit-row dropdown-item" href="#1">
-			<span className="autofit-col autofit-col-expand"> Sixth Option </span>
+			<span className="autofit-col autofit-col-expand">
+				Sixth Option
+			</span>
 		</a>
 	</li>
 	<li>
 		<a className="autofit-row dropdown-item" href="#1">
-			<span className="autofit-col autofit-col-expand"> Seventh Option </span>
+			<span className="autofit-col autofit-col-expand">
+				Seventh Option
+			</span>
 			<span className="autofit-col">
 				<kbd className="c-kbd c-kbd-inline">
 					<kbd className="c-kbd">⌘</kbd><kbd className="c-kbd">P</kbd>
@@ -1578,7 +2086,9 @@ Make content expand to fill remaining space in a `dropdown-item` or create equal
 	<li className="dropdown-divider"></li>
 	<li>
 		<a className="autofit-row dropdown-item" href="#1">
-			<span className="autofit-col autofit-col-expand"> Eighth Option </span>
+			<span className="autofit-col autofit-col-expand">
+				Eighth Option
+			</span>
 		</a>
 	</li>
 </ul>
@@ -1594,27 +2104,99 @@ Nest `<div className="inline-scroller"></div>` inside a `.dropdown-menu` list it
 			<li className="dropdown-header">Dropdown Header</li>
 			<li>
 				<ul className="inline-scroller">
-					<li><a className="dropdown-item" href="#1">Actions</a></li>
-					<li><a className="dropdown-item" href="#1">Edit</a></li>
-					<li><a className="dropdown-item" href="#1">View</a></li>
-					<li><a className="dropdown-item" href="#1">Permissions</a></li>
-					<li><a className="dropdown-item" href="#1">Actions</a></li>
-					<li><a className="dropdown-item" href="#1">Edit</a></li>
-					<li><a className="dropdown-item" href="#1">View</a></li>
-					<li><a className="dropdown-item" href="#1">Permissions</a></li>
-					<li><a className="dropdown-item" href="#1">Actions</a></li>
-					<li><a className="dropdown-item" href="#1">Edit</a></li>
-					<li><a className="dropdown-item" href="#1">View</a></li>
-					<li><a className="dropdown-item" href="#1">Permissions</a></li>
-					<li><a className="dropdown-item" href="#1">Actions</a></li>
-					<li><a className="dropdown-item" href="#1">Edit</a></li>
-					<li><a className="dropdown-item" href="#1">View</a></li>
-					<li><a className="dropdown-item" href="#1">Permissions</a></li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Actions
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Edit
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							View
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Permissions
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Actions
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Edit
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							View
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Permissions
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Actions
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Edit
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							View
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Permissions
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Actions
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Edit
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							View
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Permissions
+						</a>
+					</li>
 				</ul>
 			</li>
-			<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+			<li>
+				<a className="disabled dropdown-item" href="#1" tabindex="-1">
+					Disabled
+				</a>
+			</li>
 			<li className="dropdown-divider"></li>
-			<li><a className="dropdown-item" href="#1">Scope</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Scope
+				</a>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -1643,7 +2225,9 @@ Nest `<div className="inline-scroller"></div>` inside a `.dropdown-menu` list it
 		</ul>
 	</li>
 	<li>
-		<a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a>
+		<a className="disabled dropdown-item" href="#1" tabindex="-1"
+			>Disabled</a
+		>
 	</li>
 	<li className="dropdown-divider"></li>
 	<li><a className="dropdown-item" href="#1">Scope</a></li>
@@ -1658,18 +2242,55 @@ A monospaced `dropdown-toggle` for a dropdown containing several actions, add `d
 
 <div className="sheet-example">
 	<div className="dropdown dropdown-action">
-		<a aria-label="More Actions" aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" id="dropdownAction1" role="button">
-			<svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
+		<a
+			aria-label="More Actions"
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="component-action dropdown-toggle"
+			data-toggle="dropdown"
+			href="#1"
+			id="dropdownAction1"
+			role="button"
+		>
+			<svg
+				className="lexicon-icon lexicon-icon-ellipsis-v"
+				focusable="false"
+				role="presentation"
+			>
 				<use href="/images/icons/icons.svg#ellipsis-v"></use>
 			</svg>
 		</a>
 		<ul aria-labelledby="dropdownAction1" className="dropdown-menu">
-			<li><a className="dropdown-item" href="#1">Download</a></li>
-			<li><a className="dropdown-item" href="#1">Edit</a></li>
-			<li><a className="dropdown-item" href="#1">Move</a></li>
-			<li><a className="dropdown-item" href="#1">Checkout</a></li>
-			<li><a className="dropdown-item" href="#1">Permissions</a></li>
-			<li><a className="dropdown-item" href="#1">Move to Recycle Bin</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Download
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Edit
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Move
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Checkout
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Permissions
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Move to Recycle Bin
+				</a>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -1708,18 +2329,54 @@ A monospaced `dropdown-toggle` for a dropdown containing several actions, add `d
 
 <div className="sheet-example">
 	<div className="dropdown dropdown-action">
-		<button aria-label="More Actions" aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" id="dropdownBtnAction1" type="button">
-			<svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
+		<button
+			aria-label="More Actions"
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="component-action dropdown-toggle"
+			data-toggle="dropdown"
+			id="dropdownBtnAction1"
+			type="button"
+		>
+			<svg
+				className="lexicon-icon lexicon-icon-ellipsis-v"
+				focusable="false"
+				role="presentation"
+			>
 				<use href="/images/icons/icons.svg#ellipsis-v"></use>
 			</svg>
 		</button>
 		<ul aria-labelledby="dropdownBtnAction1" className="dropdown-menu">
-			<li><a className="dropdown-item" href="#1">Download</a></li>
-			<li><a className="dropdown-item" href="#1">Edit</a></li>
-			<li><a className="dropdown-item" href="#1">Move</a></li>
-			<li><a className="dropdown-item" href="#1">Checkout</a></li>
-			<li><a className="dropdown-item" href="#1">Permissions</a></li>
-			<li><a className="dropdown-item" href="#1">Move to Recycle Bin</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Download
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Edit
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Move
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Checkout
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Permissions
+				</a>
+			</li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Move to Recycle Bin
+				</a>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -1761,55 +2418,145 @@ Align a dropdown menu on the top or bottom side with classes `dropdown-menu`, `d
 
 <div className="sheet-example">
 	<div className="dropdown" style={{display: 'inline-block'}}>
-		<button aria-expanded="false" aria-haspopup="true" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownAlignment1" type="button">
+		<button
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="btn btn-secondary dropdown-toggle"
+			data-toggle="dropdown"
+			id="dropdownAlignment1"
+			type="button"
+		>
 			Default
 			<span aria-hidden="true" className="icon-caret-down"></span>
 		</button>
-		<ul aria-labelledby="dropdownAlignment1" className="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
+		<ul
+			aria-labelledby="dropdownAlignment1"
+			className="dropdown-menu"
+			x-placement="bottom-start"
+			style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);"
+		>
 			<li className="dropdown-header">Dropdown Header</li>
-			<li><a className="dropdown-item" href="#1">Action</a></li>
-			<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Action
+				</a>
+			</li>
+			<li>
+				<a className="disabled dropdown-item" href="#1" tabindex="-1">
+					Disabled
+				</a>
+			</li>
 			<li className="dropdown-divider"></li>
-			<li><a className="dropdown-item" href="#1">Scope</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Scope
+				</a>
+			</li>
 		</ul>
 	</div>
 	<div className="dropdown" style={{display: 'inline-block'}}>
-		<button aria-expanded="false" aria-haspopup="true" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownAlignment2" type="button">
+		<button
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="btn btn-secondary dropdown-toggle"
+			data-toggle="dropdown"
+			id="dropdownAlignment2"
+			type="button"
+		>
 			Right
 			<span aria-hidden="true" className="icon-caret-down"></span>
 		</button>
-		<ul aria-labelledby="dropdownAlignment2" className="dropdown-menu dropdown-menu-right">
+		<ul
+			aria-labelledby="dropdownAlignment2"
+			className="dropdown-menu dropdown-menu-right"
+		>
 			<li className="dropdown-header">Dropdown Header</li>
-			<li><a className="dropdown-item" href="#1">Action</a></li>
-			<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Action
+				</a>
+			</li>
+			<li>
+				<a className="disabled dropdown-item" href="#1" tabindex="-1">
+					Disabled
+				</a>
+			</li>
 			<li className="dropdown-divider"></li>
-			<li><a className="dropdown-item" href="#1">Scope</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Scope
+				</a>
+			</li>
 		</ul>
 	</div>
 	<div className="dropdown" style={{display: 'inline-block'}}>
-		<button aria-expanded="false" aria-haspopup="true" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownAlignment3" type="button">
+		<button
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="btn btn-secondary dropdown-toggle"
+			data-toggle="dropdown"
+			id="dropdownAlignment3"
+			type="button"
+		>
 			Top
 			<span aria-hidden="true" className="icon-caret-up"></span>
 		</button>
-		<ul aria-labelledby="dropdownAlignment3" className="dropdown-menu dropdown-menu-top">
+		<ul
+			aria-labelledby="dropdownAlignment3"
+			className="dropdown-menu dropdown-menu-top"
+		>
 			<li className="dropdown-header">Dropdown Header</li>
-			<li><a className="dropdown-item" href="#1">Action</a></li>
-			<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Action
+				</a>
+			</li>
+			<li>
+				<a className="disabled dropdown-item" href="#1" tabindex="-1">
+					Disabled
+				</a>
+			</li>
 			<li className="dropdown-divider"></li>
-			<li><a className="dropdown-item" href="#1">Scope</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Scope
+				</a>
+			</li>
 		</ul>
 	</div>
 	<div className="dropdown" style={{display: 'inline-block'}}>
-		<button aria-expanded="false" aria-haspopup="true" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownAlignment4" type="button">
+		<button
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="btn btn-secondary dropdown-toggle"
+			data-toggle="dropdown"
+			id="dropdownAlignment4"
+			type="button"
+		>
 			Top Right
 			<span aria-hidden="true" className="icon-caret-up"></span>
 		</button>
-		<ul aria-labelledby="dropdownAlignment4" className="dropdown-menu dropdown-menu-top-right">
+		<ul
+			aria-labelledby="dropdownAlignment4"
+			className="dropdown-menu dropdown-menu-top-right"
+		>
 			<li className="dropdown-header">Dropdown Header</li>
-			<li><a className="dropdown-item" href="#1">Action</a></li>
-			<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Action
+				</a>
+			</li>
+			<li>
+				<a className="disabled dropdown-item" href="#1" tabindex="-1">
+					Disabled
+				</a>
+			</li>
 			<li className="dropdown-divider"></li>
-			<li><a className="dropdown-item" href="#1">Scope</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Scope
+				</a>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -1933,69 +2680,193 @@ Add the `dropdown-menu-right-side`, `dropdown-menu-left-side`, `dropdown-menu-ri
 
 <div className="sheet-example">
 	<div className="dropdown" style={{display: 'inline-block'}}>
-		<button aria-expanded="false" aria-haspopup="true" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownAlignment5" type="button">
+		<button
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="btn btn-secondary dropdown-toggle"
+			data-toggle="dropdown"
+			id="dropdownAlignment5"
+			type="button"
+		>
 			Right Side
 			<span className="icon-caret-right"></span>
 		</button>
-		<ul aria-labelledby="dropdownAlignment5" className="dropdown-menu dropdown-menu-right-side">
+		<ul
+			aria-labelledby="dropdownAlignment5"
+			className="dropdown-menu dropdown-menu-right-side"
+		>
 			<li className="dropdown-header">Dropdown Header</li>
-			<li><a className="dropdown-item" href="#1">Action</a></li>
-			<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Action
+				</a>
+			</li>
+			<li>
+				<a className="disabled dropdown-item" href="#1" tabindex="-1">
+					Disabled
+				</a>
+			</li>
 			<li className="dropdown-divider"></li>
-			<li><a className="dropdown-item" href="#1">Scope</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Scope
+				</a>
+			</li>
 		</ul>
 	</div>
 	<div className="dropdown" style={{display: 'inline-block'}}>
-		<button aria-expanded="false" aria-haspopup="true" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownAlignment6" type="button">
+		<button
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="btn btn-secondary dropdown-toggle"
+			data-toggle="dropdown"
+			id="dropdownAlignment6"
+			type="button"
+		>
 			<span className="icon-caret-left"></span>
 			Left Side
 		</button>
-		<ul aria-labelledby="dropdownAlignment6" className="dropdown-menu dropdown-menu-left-side">
+		<ul
+			aria-labelledby="dropdownAlignment6"
+			className="dropdown-menu dropdown-menu-left-side"
+		>
 			<li className="dropdown-header">Dropdown Header</li>
 			<ul className="inline-scroller">
-				<li><a className="dropdown-item" href="#1">Action</a></li>
-				<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+				<li>
+					<a className="dropdown-item" href="#1">
+						Action
+					</a>
+				</li>
+				<li>
+					<a
+						className="disabled dropdown-item"
+						href="#1"
+						tabindex="-1"
+					>
+						Disabled
+					</a>
+				</li>
 				<li className="dropdown-divider"></li>
-				<li><a className="dropdown-item" href="#1">Scope</a></li>
-				<li><a className="dropdown-item" href="#1">Scope</a></li>
-				<li><a className="dropdown-item" href="#1">Scope</a></li>
+				<li>
+					<a className="dropdown-item" href="#1">
+						Scope
+					</a>
+				</li>
+				<li>
+					<a className="dropdown-item" href="#1">
+						Scope
+					</a>
+				</li>
+				<li>
+					<a className="dropdown-item" href="#1">
+						Scope
+					</a>
+				</li>
 			</ul>
 		</ul>
 	</div>
 	<div className="dropdown" style={{display: 'inline-block'}}>
-		<button aria-expanded="false" aria-haspopup="true" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownAlignment7" type="button">
+		<button
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="btn btn-secondary dropdown-toggle"
+			data-toggle="dropdown"
+			id="dropdownAlignment7"
+			type="button"
+		>
 			Right Side Bottom
 			<span className="icon-caret-right"></span>
 		</button>
-		<ul aria-labelledby="dropdownAlignment7" className="dropdown-menu dropdown-menu-right-side-bottom">
+		<ul
+			aria-labelledby="dropdownAlignment7"
+			className="dropdown-menu dropdown-menu-right-side-bottom"
+		>
 			<li>
 				<ul className="inline-scroller">
 					<li className="dropdown-header">Dropdown Header</li>
-					<li><a className="dropdown-item" href="#1">Action</a></li>
-					<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Action
+						</a>
+					</li>
+					<li>
+						<a
+							className="disabled dropdown-item"
+							href="#1"
+							tabindex="-1"
+						>
+							Disabled
+						</a>
+					</li>
 					<li className="dropdown-divider"></li>
-					<li><a className="dropdown-item" href="#1">Scope</a></li>
-					<li><a className="dropdown-item" href="#1">Scope</a></li>
-					<li><a className="dropdown-item" href="#1">Scope</a></li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Scope
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Scope
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Scope
+						</a>
+					</li>
 				</ul>
 			</li>
 		</ul>
 	</div>
 	<div className="dropdown" style={{display: 'inline-block'}}>
-		<button aria-expanded="false" aria-haspopup="true" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownAlignment8" type="button">
+		<button
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="btn btn-secondary dropdown-toggle"
+			data-toggle="dropdown"
+			id="dropdownAlignment8"
+			type="button"
+		>
 			<span className="icon-caret-left"></span>
 			Left Side Bottom
 		</button>
-		<ul aria-labelledby="dropdownAlignment8" className="dropdown-menu dropdown-menu-left-side-bottom">
+		<ul
+			aria-labelledby="dropdownAlignment8"
+			className="dropdown-menu dropdown-menu-left-side-bottom"
+		>
 			<li>
 				<ul className="inline-scroller">
 					<li className="dropdown-header">Dropdown Header</li>
-					<li><a className="dropdown-item" href="#1">Action</a></li>
-					<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Action
+						</a>
+					</li>
+					<li>
+						<a
+							className="disabled dropdown-item"
+							href="#1"
+							tabindex="-1"
+						>
+							Disabled
+						</a>
+					</li>
 					<li className="dropdown-divider"></li>
-					<li><a className="dropdown-item" href="#1">Scope</a></li>
-					<li><a className="dropdown-item" href="#1">Scope</a></li>
-					<li><a className="dropdown-item" href="#1">Scope</a></li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Scope
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Scope
+						</a>
+					</li>
+					<li>
+						<a className="dropdown-item" href="#1">
+							Scope
+						</a>
+					</li>
 				</ul>
 			</li>
 		</ul>
@@ -2135,33 +3006,89 @@ You can also center the dropdown menu to its trigger with these four helper clas
 
 <div className="sheet-example">
 	<div className="dropdown" style={{display: 'inline-block'}}>
-		<button aria-expanded="false" aria-haspopup="true" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownAlignment11" type="button">
+		<button
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="btn btn-secondary dropdown-toggle"
+			data-toggle="dropdown"
+			id="dropdownAlignment11"
+			type="button"
+		>
 			<span className="icon-caret-left"></span>
 			Left Side Middle
 		</button>
-		<ul aria-labelledby="dropdownAlignment11" className="dropdown-menu dropdown-menu-left-side-middle">
+		<ul
+			aria-labelledby="dropdownAlignment11"
+			className="dropdown-menu dropdown-menu-left-side-middle"
+		>
 			<li className="dropdown-header">Dropdown Header</li>
 			<ul className="inline-scroller">
-				<li><a className="dropdown-item" href="#1">Action</a></li>
-				<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+				<li>
+					<a className="dropdown-item" href="#1">
+						Action
+					</a>
+				</li>
+				<li>
+					<a
+						className="disabled dropdown-item"
+						href="#1"
+						tabindex="-1"
+					>
+						Disabled
+					</a>
+				</li>
 				<li className="dropdown-divider"></li>
-				<li><a className="dropdown-item" href="#1">Scope</a></li>
-				<li><a className="dropdown-item" href="#1">Scope</a></li>
-				<li><a className="dropdown-item" href="#1">Scope</a></li>
+				<li>
+					<a className="dropdown-item" href="#1">
+						Scope
+					</a>
+				</li>
+				<li>
+					<a className="dropdown-item" href="#1">
+						Scope
+					</a>
+				</li>
+				<li>
+					<a className="dropdown-item" href="#1">
+						Scope
+					</a>
+				</li>
 			</ul>
 		</ul>
 	</div>
 	<div className="dropdown" style={{display: 'inline-block'}}>
-		<button aria-expanded="false" aria-haspopup="true" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownAlignment12" type="button">
+		<button
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="btn btn-secondary dropdown-toggle"
+			data-toggle="dropdown"
+			id="dropdownAlignment12"
+			type="button"
+		>
 			Right Side Middle
 			<span className="icon-caret-right"></span>
 		</button>
-		<ul aria-labelledby="dropdownAlignment12" className="dropdown-menu dropdown-menu-right-side-middle">
+		<ul
+			aria-labelledby="dropdownAlignment12"
+			className="dropdown-menu dropdown-menu-right-side-middle"
+		>
 			<li className="dropdown-header">Dropdown Header</li>
-			<li><a className="dropdown-item" href="#1">Action</a></li>
-			<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Action
+				</a>
+			</li>
+			<li>
+				<a className="disabled dropdown-item" href="#1" tabindex="-1">
+					Disabled
+				</a>
+			</li>
 			<li className="dropdown-divider"></li>
-			<li><a className="dropdown-item" href="#1">Scope</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Scope
+				</a>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -2233,29 +3160,73 @@ To center the dropdown menu in browsers that don't support CSS transforms, set a
 
 <div className="sheet-example">
 	<div className="dropdown" style={{display: 'inline-block'}}>
-		<button aria-expanded="false" aria-haspopup="true" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownAlignment9" type="button">
+		<button
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="btn btn-secondary dropdown-toggle"
+			data-toggle="dropdown"
+			id="dropdownAlignment9"
+			type="button"
+		>
 			Center
 			<span className="icon-caret-down"></span>
 		</button>
-		<ul aria-labelledby="dropdownAlignment9" className="dropdown-menu dropdown-menu-center">
+		<ul
+			aria-labelledby="dropdownAlignment9"
+			className="dropdown-menu dropdown-menu-center"
+		>
 			<li className="dropdown-header">dropdown-menu-center</li>
-			<li><a className="dropdown-item" href="#1">Action</a></li>
-			<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Action
+				</a>
+			</li>
+			<li>
+				<a className="disabled dropdown-item" href="#1" tabindex="-1">
+					Disabled
+				</a>
+			</li>
 			<li className="dropdown-divider"></li>
-			<li><a className="dropdown-item" href="#1">Scope</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Scope
+				</a>
+			</li>
 		</ul>
 	</div>
 	<div className="dropdown" style={{display: 'inline-block'}}>
-		<button aria-expanded="false" aria-haspopup="true" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownAlignment10" type="button">
+		<button
+			aria-expanded="false"
+			aria-haspopup="true"
+			className="btn btn-secondary dropdown-toggle"
+			data-toggle="dropdown"
+			id="dropdownAlignment10"
+			type="button"
+		>
 			Top Center
 			<span className="icon-caret-up"></span>
 		</button>
-		<ul aria-labelledby="dropdownAlignment10" className="dropdown-menu dropdown-menu-top-center">
+		<ul
+			aria-labelledby="dropdownAlignment10"
+			className="dropdown-menu dropdown-menu-top-center"
+		>
 			<li className="dropdown-header">dropdown-menu-top-center</li>
-			<li><a className="dropdown-item" href="#1">Action</a></li>
-			<li><a className="disabled dropdown-item" href="#1" tabindex="-1">Disabled</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Action
+				</a>
+			</li>
+			<li>
+				<a className="disabled dropdown-item" href="#1" tabindex="-1">
+					Disabled
+				</a>
+			</li>
 			<li className="dropdown-divider"></li>
-			<li><a className="dropdown-item" href="#1">Scope</a></li>
+			<li>
+				<a className="dropdown-item" href="#1">
+					Scope
+				</a>
+			</li>
 		</ul>
 	</div>
 </div>

@@ -21,9 +21,7 @@ ClayDataProvider gives functionality of data caching, attempts, polling, network
 To consume data, you can work with two different ways in React, using the `<ClayDataProvider />` component or `useResource` hook. We recommend that you use `useResource` for cases where your component has more logic to handle data, so it decreases the complexity and eliminates logic within JSX, use `<ClayDataProvider />` for simpler cases that do not have so much logic involved in the data or when you are not familiar with hooks.
 
 ```jsx
-<ClayDataProvider
-	link="https://rickandmortyapi.com/api/character"
->
+<ClayDataProvider link="https://rickandmortyapi.com/api/character">
 	{({data, error, loading, refetch}) => {}}
 </ClayDataProvider>
 ```
@@ -64,7 +62,7 @@ const App = () => {
 			delay: {
 				initial: 300,
 				jitter: true,
-			}
+			},
 		},
 	});
 
@@ -101,11 +99,12 @@ const App = () => {
 	}));
 	const {resource} = useResource({
 		link: 'https://rickandmortyapi.com/api/character/',
-		onNetworkStatusChange: status => setState({
-			error: status === 5,
-			loading: status < 4,
-			networkStatus: status,
-		}),
+		onNetworkStatusChange: (status) =>
+			setState({
+				error: status === 5,
+				loading: status < 4,
+				networkStatus: status,
+			}),
 	});
 
 	return null;
@@ -122,7 +121,7 @@ const App = () => {
 	const {resource} = useResource({
 		link: 'https://rickandmortyapi.com/api/character/',
 		fetchDelay: 300,
-		variables: {name: value}
+		variables: {name: value},
 	});
 
 	return null;
@@ -280,8 +279,10 @@ The DataProvider can be used on small components that need some data and if it i
 
 <div className="clay-site-alert alert alert-warning">
 	<strong className="lead">Warning</strong>
-	The use of the <code className="language-text">storage</code> property has been deprecated
-	since v3.67.0 in favor of declaring the <code className="language-text">storageMaxSize={100}</code> component in the application root to control cache state and other internal
+	The use of the <code className="language-text">storage</code> property has been
+	deprecated since v3.67.0 in favor of declaring the <code className="language-text">
+		storageMaxSize={100}
+	</code> component in the application root to control cache state and other internal
 	details.
 </div>
 
