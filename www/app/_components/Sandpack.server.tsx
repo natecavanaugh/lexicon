@@ -44,6 +44,7 @@ export async function Sandpack({language, children}: Props) {
 					'@clayui/color-picker': 'latest',
 					'@clayui/date-picker': 'latest',
 					'@clayui/empty-state': 'latest',
+					'@clayui/link': 'latest',
 				},
 			}}
 			files={{
