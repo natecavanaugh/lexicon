@@ -54,6 +54,7 @@ export async function Sandpack({language, children}: Props) {
 					'@clayui/sticker': 'latest',
 					'@clayui/multi-step-nav': 'latest',
 					'@clayui/nav': 'latest',
+					'@clayui/navigation-bar': 'latest',
 				},
 			}}
 			files={{
