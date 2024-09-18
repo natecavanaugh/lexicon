@@ -15,7 +15,7 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const [state, setState] = useState({
+	const [state, setState] = useState({
 		hours: '--',
 		minutes: '--',
 	});
@@ -23,12 +23,12 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-    		<TimePicker
-     			onChange={setState}
-     			timezone="GMT+01:00"
-     			use12Hours
-     			value={state}
-    		/>
+				<TimePicker
+					onChange={setState}
+					timezone="GMT+01:00"
+					use12Hours
+					value={state}
+				/>
 			</div>
 		</Provider>
 	);

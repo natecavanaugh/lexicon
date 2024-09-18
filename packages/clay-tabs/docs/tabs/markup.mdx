@@ -1816,7 +1816,7 @@ $nav-underline-font-size: null !default;
 
 $nav-underline-link-highlight-palette: null !default;
 
-$nav-underline-link-color: #6B6C7E !default;
+$nav-underline-link-color: #6b6c7e !default;
 $nav-underline-link-padding-x: null !default;
 $nav-underline-link-padding-y: null !default;
 
@@ -1824,7 +1824,7 @@ $nav-underline-link-hover-color: null !default;
 
 $nav-underline-link-active-color: #272833 !default;
 
-$nav-underline-link-disabled-color: #A7A9BC !default;
+$nav-underline-link-disabled-color: #a7a9bc !default;
 
 // .nav-underline .nav-link[aria-expanded='true']
 
@@ -1867,7 +1867,8 @@ $nav-underline-link: map-deep-merge(
 			color: $nav-underline-link-hover-color,
 		),
 		focus: (
-			box-shadow: #{0 0 0 0.125rem #FFF, 0 0 0 0.25rem #80ACFF},
+			box-shadow: #{0 0 0 0.125rem #fff,
+			0 0 0 0.25rem #80acff},
 			color: $nav-underline-link-hover-color,
 			outline: 0,
 		),
@@ -1923,7 +1924,7 @@ $nav-underline-link-highlight-left: 0.5rem !default;
 $nav-underline-link-highlight-right: 0.5rem !default;
 $nav-underline-link-highlight-top: null !default;
 
-$nav-underline-link-active-highlight: #47A0FF !default;
+$nav-underline-link-active-highlight: #47a0ff !default;
 $nav-underline-link-active-content: '' !default;
 $nav-underline-link-active-highlight-height: 0.1875rem !default;
 
@@ -1953,8 +1954,8 @@ $nav-underline-link-show: map-deep-merge(
 		color: $nav-underline-link-active-color,
 		after: (
 			content: $nav-underline-link-active-content,
-			height: $nav-underline-link-active-highlight-height,
-		),
+			height: $nav-underline-link-active-highlight-height
+		)
 	),
 	$nav-underline-link-show
 );
@@ -1976,29 +1977,29 @@ $nav-underline-link: map-deep-merge(
 			left: $nav-underline-link-highlight-left,
 			right: $nav-underline-link-highlight-right,
 			top: $nav-underline-link-highlight-top,
-			width: auto,
+			width: auto
 		),
 		hover: (
-			color: $nav-underline-link-hover-color,
+			color: $nav-underline-link-hover-color
 		),
 		focus: (
-			color: $nav-underline-link-hover-color,
+			color: $nav-underline-link-hover-color
 		),
 		active-class: (
 			color: $nav-underline-link-active-color,
 			after: (
 				background-color: $nav-underline-link-active-highlight,
 				content: $nav-underline-link-active-content,
-				height: $nav-underline-link-active-highlight-height,
-			),
+				height: $nav-underline-link-active-highlight-height
+			)
 		),
 		show: $nav-underline-link-show,
 		disabled: (
 			color: $nav-underline-link-disabled-color,
 			after: (
-				background-color: $nav-underline-link-disabled-highlight,
-			),
-		),
+				background-color: $nav-underline-link-disabled-highlight
+			)
+		)
 	),
 	$nav-underline-link
 );
@@ -2009,7 +2010,7 @@ $nav-underline: () !default;
 $nav-underline: map-deep-merge(
 	(
 		font-size: $nav-underline-font-size,
-		nav-link: $nav-underline-link,
+		nav-link: $nav-underline-link
 	),
 	$nav-underline
 );
@@ -2017,7 +2018,7 @@ $nav-underline: map-deep-merge(
 $nav-palette: () !default;
 $nav-palette: map-deep-merge(
 	(
-		nav-underline: $nav-underline,
+		nav-underline: $nav-underline
 	),
 	$nav-palette
 );

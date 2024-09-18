@@ -23,150 +23,287 @@ storybookPath: 'design-system-components-table--dynamic'
 A table is styled like a list. The active state can be invoked by adding class `table-active` to the `<tr></tr>` element.
 
 <div className="sheet-example">
-    <table className="show-quick-actions-on-hover table table-autofit table-list table-nowrap">
-        <thead>
-            <tr>
-                <th></th>
-                <th className="table-head-title">
-                    <span className="inline-item inline-item-before">
-                        <a href="#1">
-                            <svg className="lexicon-icon lexicon-icon-drag" focusable="false" role="presentation">
-                                <use href="/images/icons/icons.svg#drag"></use>
-                            </svg>
-                        </a>
-                    </span>
-                    <a className="inline-item text-truncate-inline" href="#1">
-                        <span className="text-truncate">ID</span>
-                        <span className="inline-item inline-item-after">
-                            <svg className="lexicon-icon lexicon-icon-arrow-down" focusable="false" role="presentation">
-                                <use href="/images/icons/icons.svg#arrow-down"></use>
-                            </svg>
-                        </span>
-                    </a>
-                </th>
-                <th className="table-cell-expand table-head-title">
-                    <span className="text-truncate">Title</span>
-                </th>
-                <th className="table-head-title">
-                    <a className="inline-item text-truncate-inline" href="#1">
-                        <span className="text-truncate">Modified Date</span>
-                    </a>
-                </th>
-                <th className="table-head-title">
-                    <a className="inline-item text-truncate-inline" href="#1">
-                        <span className="text-truncate">Author</span>
-                    </a>
-                </th>
-                <th><span className="inline-item">Type</span></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr className="table-divider">
-                <td colspan="9">Group 1</td>
-            </tr>
-            <tr>
-                <td>
-                    <div className="custom-control custom-checkbox">
-                        <label>
-                            <input className="custom-control-input" type="checkbox" />
-                            <span className="custom-control-label"></span>
-                        </label>
-                    </div>
-                </td>
-                <td>21146</td>
-                <td className="table-cell-expand">
-                    <div className="table-list-title">
-                        .table-list-title (not a link)
-                    </div>
-                    <div className="table-list-title">
-                        <a href="#1">.table-list-title a</a>
-                    </div>
-                    <div><a className="table-list-link" href="#1">.table-list-link</a></div>
-                    <div><a href="#1">link</a></div>
-                    <div>Some regular text</div>
-                </td>
-                <td>2 Hours Ago</td>
-                <td>Stanley Nelson</td>
-                <td>Folder</td>
-                <td>
-                    <div className="quick-action-menu">
-                        <a className="component-action quick-action-item" href="#1" role="button">
-                            <svg className="lexicon-icon lexicon-icon-trash" focusable="false" role="presentation">
-                                <use href="/images/icons/icons.svg#trash"></use>
-                            </svg>
-                        </a>
-                        <a className="component-action quick-action-item" href="#1" role="button">
-                            <svg className="lexicon-icon lexicon-icon-download" focusable="false" role="presentation">
-                                <use href="/images/icons/icons.svg#download"></use>
-                            </svg>
-                        </a>
-                    </div>
-                    <div className="dropdown dropdown-action">
-                        <a aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" id="dropdownAction1" role="button">
-                            <svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
-                                <use href="/images/icons/icons.svg#ellipsis-v"></use>
-                            </svg>
-                        </a>
-                        <ul aria-labelledby="" className="dropdown-menu dropdown-menu-right">
-                            <li><a className="dropdown-item" href="#1" role="button">Remove</a></li>
-                            <li><a className="dropdown-item" href="#1" role="button">Download</a></li>
-                            <li><a className="dropdown-item" href="#1" role="button">Checkout</a></li>
-                        </ul>
-                    </div>
-                </td>
-            </tr>
-            <tr className="table-active">
-                <td>
-                    <div className="custom-control custom-checkbox">
-                        <label>
-                            <input checked="" className="custom-control-input" type="checkbox" />
-                            <span className="custom-control-label"></span>
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    21148
-                </td>
-                <td className="table-cell-expand">
-                    <div className="table-list-title">
-                        <a className="text-truncate-inline" href="#1">
-                            <span className="text-truncate" title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.">Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.</span>
-                        </a>
-                    </div>
-                </td>
-                <td>2 Hours Ago</td>
-                <td>Stanley Nelson</td>
-                <td>Folder</td>
-                <td>
-                    <div className="quick-action-menu">
-                        <a className="component-action quick-action-item" href="#1" role="button">
-                            <svg className="lexicon-icon lexicon-icon-trash" focusable="false" role="presentation">
-                                <use href="/images/icons/icons.svg#trash"></use>
-                            </svg>
-                        </a>
-                        <a className="component-action quick-action-item" href="#1" role="button">
-                            <svg className="lexicon-icon lexicon-icon-download" focusable="false" role="presentation">
-                                <use href="/images/icons/icons.svg#download"></use>
-                            </svg>
-                        </a>
-                    </div>
-                    <div className="dropdown dropdown-action">
-                        <a aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" id="dropdownAction1" role="button">
-                            <svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
-                                <use href="/images/icons/icons.svg#ellipsis-v"></use>
-                            </svg>
-                        </a>
-                        <ul aria-labelledby="" className="dropdown-menu dropdown-menu-right">
-                            <li><a className="dropdown-item" href="#1" role="button">Remove</a></li>
-                            <li><a className="dropdown-item" href="#1" role="button">Download</a></li>
-                            <li><a className="dropdown-item" href="#1" role="button">Checkout</a></li>
-                        </ul>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+	<table className="show-quick-actions-on-hover table table-autofit table-list table-nowrap">
+		<thead>
+			<tr>
+				<th></th>
+				<th className="table-head-title">
+					<span className="inline-item inline-item-before">
+						<a href="#1">
+							<svg
+								className="lexicon-icon lexicon-icon-drag"
+								focusable="false"
+								role="presentation"
+							>
+								<use href="/images/icons/icons.svg#drag"></use>
+							</svg>
+						</a>
+					</span>
+					<a className="inline-item text-truncate-inline" href="#1">
+						<span className="text-truncate">ID</span>
+						<span className="inline-item inline-item-after">
+							<svg
+								className="lexicon-icon lexicon-icon-arrow-down"
+								focusable="false"
+								role="presentation"
+							>
+								<use href="/images/icons/icons.svg#arrow-down"></use>
+							</svg>
+						</span>
+					</a>
+				</th>
+				<th className="table-cell-expand table-head-title">
+					<span className="text-truncate">Title</span>
+				</th>
+				<th className="table-head-title">
+					<a className="inline-item text-truncate-inline" href="#1">
+						<span className="text-truncate">Modified Date</span>
+					</a>
+				</th>
+				<th className="table-head-title">
+					<a className="inline-item text-truncate-inline" href="#1">
+						<span className="text-truncate">Author</span>
+					</a>
+				</th>
+				<th>
+					<span className="inline-item">Type</span>
+				</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr className="table-divider">
+				<td colspan="9">Group 1</td>
+			</tr>
+			<tr>
+				<td>
+					<div className="custom-control custom-checkbox">
+						<label>
+							<input
+								className="custom-control-input"
+								type="checkbox"
+							/>
+							<span className="custom-control-label"></span>
+						</label>
+					</div>
+				</td>
+				<td>21146</td>
+				<td className="table-cell-expand">
+					<div className="table-list-title">
+						.table-list-title (not a link)
+					</div>
+					<div className="table-list-title">
+						<a href="#1">.table-list-title a</a>
+					</div>
+					<div>
+						<a className="table-list-link" href="#1">
+							.table-list-link
+						</a>
+					</div>
+					<div>
+						<a href="#1">link</a>
+					</div>
+					<div>Some regular text</div>
+				</td>
+				<td>2 Hours Ago</td>
+				<td>Stanley Nelson</td>
+				<td>Folder</td>
+				<td>
+					<div className="quick-action-menu">
+						<a
+							className="component-action quick-action-item"
+							href="#1"
+							role="button"
+						>
+							<svg
+								className="lexicon-icon lexicon-icon-trash"
+								focusable="false"
+								role="presentation"
+							>
+								<use href="/images/icons/icons.svg#trash"></use>
+							</svg>
+						</a>
+						<a
+							className="component-action quick-action-item"
+							href="#1"
+							role="button"
+						>
+							<svg
+								className="lexicon-icon lexicon-icon-download"
+								focusable="false"
+								role="presentation"
+							>
+								<use href="/images/icons/icons.svg#download"></use>
+							</svg>
+						</a>
+					</div>
+					<div className="dropdown dropdown-action">
+						<a
+							aria-expanded="false"
+							aria-haspopup="true"
+							className="component-action dropdown-toggle"
+							data-toggle="dropdown"
+							href="#1"
+							id="dropdownAction1"
+							role="button"
+						>
+							<svg
+								className="lexicon-icon lexicon-icon-ellipsis-v"
+								focusable="false"
+								role="presentation"
+							>
+								<use href="/images/icons/icons.svg#ellipsis-v"></use>
+							</svg>
+						</a>
+						<ul
+							aria-labelledby=""
+							className="dropdown-menu dropdown-menu-right"
+						>
+							<li>
+								<a
+									className="dropdown-item"
+									href="#1"
+									role="button"
+								>
+									Remove
+								</a>
+							</li>
+							<li>
+								<a
+									className="dropdown-item"
+									href="#1"
+									role="button"
+								>
+									Download
+								</a>
+							</li>
+							<li>
+								<a
+									className="dropdown-item"
+									href="#1"
+									role="button"
+								>
+									Checkout
+								</a>
+							</li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+			<tr className="table-active">
+				<td>
+					<div className="custom-control custom-checkbox">
+						<label>
+							<input
+								checked=""
+								className="custom-control-input"
+								type="checkbox"
+							/>
+							<span className="custom-control-label"></span>
+						</label>
+					</div>
+				</td>
+				<td>21148</td>
+				<td className="table-cell-expand">
+					<div className="table-list-title">
+						<a className="text-truncate-inline" href="#1">
+							<span
+								className="text-truncate"
+								title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds."
+							>
+								Wings eu, pumpkin spice robusta, kopi-luwak
+								mocha caffeine froth grounds.
+							</span>
+						</a>
+					</div>
+				</td>
+				<td>2 Hours Ago</td>
+				<td>Stanley Nelson</td>
+				<td>Folder</td>
+				<td>
+					<div className="quick-action-menu">
+						<a
+							className="component-action quick-action-item"
+							href="#1"
+							role="button"
+						>
+							<svg
+								className="lexicon-icon lexicon-icon-trash"
+								focusable="false"
+								role="presentation"
+							>
+								<use href="/images/icons/icons.svg#trash"></use>
+							</svg>
+						</a>
+						<a
+							className="component-action quick-action-item"
+							href="#1"
+							role="button"
+						>
+							<svg
+								className="lexicon-icon lexicon-icon-download"
+								focusable="false"
+								role="presentation"
+							>
+								<use href="/images/icons/icons.svg#download"></use>
+							</svg>
+						</a>
+					</div>
+					<div className="dropdown dropdown-action">
+						<a
+							aria-expanded="false"
+							aria-haspopup="true"
+							className="component-action dropdown-toggle"
+							data-toggle="dropdown"
+							href="#1"
+							id="dropdownAction1"
+							role="button"
+						>
+							<svg
+								className="lexicon-icon lexicon-icon-ellipsis-v"
+								focusable="false"
+								role="presentation"
+							>
+								<use href="/images/icons/icons.svg#ellipsis-v"></use>
+							</svg>
+						</a>
+						<ul
+							aria-labelledby=""
+							className="dropdown-menu dropdown-menu-right"
+						>
+							<li>
+								<a
+									className="dropdown-item"
+									href="#1"
+									role="button"
+								>
+									Remove
+								</a>
+							</li>
+							<li>
+								<a
+									className="dropdown-item"
+									href="#1"
+									role="button"
+								>
+									Download
+								</a>
+							</li>
+							<li>
+								<a
+									className="dropdown-item"
+									href="#1"
+									role="button"
+								>
+									Checkout
+								</a>
+							</li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 
 ```html
@@ -792,347 +929,602 @@ Add `.table-sm` to make tables more compact by cutting cell padding in half.
 Example markup for Nested Rows in Frontend Dataset.
 
 <div className="sheet-example">
-    <div className="table-responsive">
-        <table className="show-quick-actions-on-hover table table-list table-nested-rows table-striped" role="treegrid">
-            <caption>Caption: Table List with filler content</caption>
-            <thead>
-                <tr>
-                    <th scope="col">
-                        Label
-                    </th>
-                    <th scope="col">
-                        Scope
-                    </th>
-                    <th scope="col">
-                        System
-                    </th>
-                    <th scope="col">Modified Date</th>
-                    <th scope="col">
-                        Status
-                    </th>
-                    <th scope="col">
-                        <svg className="lexicon-icon lexicon-icon-caret-down" focusable="false" role="presentation">
-                            <use xlink:href="/images/icons/icons.svg#caret-down" />
-                        </svg>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr className="table-divider">
-                    <td colspan="6">Group 1</td>
-                </tr>
-                <tr aria-level="1" role="row">
-                    <td role="gridcell">
-                        <button className="component-action component-drag">
-                            <svg className="lexicon-icon lexicon-icon-drag" focusable="false" role="presentation">
-                                <use xlink:href="/images/icons/icons.svg#drag" />
-                            </svg>
-                        </button>
-                        <div className="autofit-row">
-                            <div className="autofit-col autofit-col-toggle"></div>
-                            <div className="autofit-col autofit-col-checkbox">
-                                <div className="custom-control custom-checkbox">
-                                    <label>
-                                        <input className="custom-control-input" type="checkbox" />
-                                        <span className="custom-control-label"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="autofit-col autofit-col-icon">
-                                <svg className="lexicon-icon lexicon-icon-folder" focusable="false" role="presentation">
-                                    <use xlink:href="/images/icons/icons.svg#folder" />
-                                </svg>
-                            </div>
-                            <div className="autofit-col autofit-col-expand">
-                                <span className="table-title">Root Object</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td role="gridcell">Company</td>
-                    <td role="gridcell">No</td>
-                    <td role="gridcell">June 12, 2023, 6:07:25PM</td>
-                    <td role="gridcell">
-                        <span className="label label-sm">Draft</span>
-                    </td>
-                    <td role="gridcell">
-                        <div className="quick-action-menu">
-                            <a className="component-action quick-action-item" href="#1" role="button">
-                                <svg className="lexicon-icon lexicon-icon-trash" focusable="false" role="presentation">
-                                    <use xlink:href="/images/icons/icons.svg#trash" />
-                                </svg>
-                            </a>
-                            <a className="component-action quick-action-item" href="#1" role="button">
-                                <svg className="lexicon-icon lexicon-icon-download" focusable="false" role="presentation">
-                                    <use xlink:href="/images/icons/icons.svg#download" />
-                                </svg>
-                            </a>
-                            <a className="component-action quick-action-item" href="#1" role="button">
-                                <svg className="lexicon-icon lexicon-icon-expand" focusable="false" role="presentation">
-                                    <use xlink:href="/images/icons/icons.svg#expand" />
-                                </svg>
-                            </a>
-                        </div>
-                        <div className="dropdown dropdown-action">
-                            <a aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" id="dropdownAction1" role="button">
-                                <svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
-                                    <use xlink:href="/images/icons/icons.svg#ellipsis-v" />
-                                </svg>
-                            </a>
-                            <ul aria-labelledby="" className="dropdown-menu dropdown-menu-right">
-                                <li><a className="dropdown-item" href="#1" role="button">Remove</a></li>
-                                <li><a className="dropdown-item" href="#1" role="button">Download</a></li>
-                                <li><a className="dropdown-item" href="#1" role="button">Checkout</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr aria-level="1" className="table-active" role="row">
-                    <td role="gridcell">
-                        <button className="component-action component-drag">
-                            <svg className="lexicon-icon lexicon-icon-drag" focusable="false" role="presentation">
-                                <use xlink:href="/images/icons/icons.svg#drag" />
-                            </svg>
-                        </button>
-                        <div className="autofit-row">
-                            <div className="autofit-col autofit-col-toggle">
-                                <button className="component-action" data-target="#tableCollapse01" type="button">
-                                    <span className="collapse-icon-closed">
-                                        <svg className="lexicon-icon lexicon-icon-angle-right" focusable="false" role="presentation">
-                                            <use xlink:href="/images/icons/icons.svg#angle-right" />
-                                        </svg>
-                                    </span>
-                                    <span className="collapse-icon-open">
-                                        <svg className="lexicon-icon lexicon-icon-angle-down" focusable="false" role="presentation">
-                                            <use xlink:href="/images/icons/icons.svg#angle-down" />
-                                        </svg>
-                                    </span>
-                                </button>
-                            </div>
-                            <div className="autofit-col autofit-col-checkbox">
-                                <div className="custom-control custom-checkbox">
-                                    <label>
-                                        <input className="custom-control-input" type="checkbox" />
-                                        <span className="custom-control-label"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="autofit-col autofit-col-expand">
-                                <span className="table-title">Root Object - First Level</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td role="gridcell">Company</td>
-                    <td role="gridcell">No</td>
-                    <td role="gridcell">June 12, 2023, 6:07:25PM</td>
-                    <td role="gridcell">
-                        <span className="label label-sm">Draft</span>
-                    </td>
-                    <td role="gridcell">
-                        <div className="quick-action-menu">
-                            <a className="component-action quick-action-item" href="#1" role="button">
-                                <svg className="lexicon-icon lexicon-icon-trash" focusable="false" role="presentation">
-                                    <use xlink:href="/images/icons/icons.svg#trash" />
-                                </svg>
-                            </a>
-                            <a className="component-action quick-action-item" href="#1" role="button">
-                                <svg className="lexicon-icon lexicon-icon-download" focusable="false" role="presentation">
-                                    <use xlink:href="/images/icons/icons.svg#download" />
-                                </svg>
-                            </a>
-                            <a className="component-action quick-action-item" href="#1" role="button">
-                                <svg className="lexicon-icon lexicon-icon-expand" focusable="false" role="presentation">
-                                    <use xlink:href="/images/icons/icons.svg#expand" />
-                                </svg>
-                            </a>
-                        </div>
-                        <div className="dropdown dropdown-action">
-                            <a aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" id="dropdownAction1" role="button">
-                                <svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
-                                    <use xlink:href="/images/icons/icons.svg#ellipsis-v" />
-                                </svg>
-                            </a>
-                            <ul aria-labelledby="" className="dropdown-menu dropdown-menu-right">
-                                <li><a className="dropdown-item" href="#1" role="button">Remove</a></li>
-                                <li><a className="dropdown-item" href="#1" role="button">Download</a></li>
-                                <li><a className="dropdown-item" href="#1" role="button">Checkout</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr aria-level="2" className="collapse" id="tableCollapse01" role="row">
-                    <td role="gridcell">
-                        <button className="component-action component-drag">
-                            <svg className="lexicon-icon lexicon-icon-drag" focusable="false" role="presentation">
-                                <use xlink:href="/images/icons/icons.svg#drag" />
-                            </svg>
-                        </button>
-                        <div className="autofit-row">
-                            <div className="autofit-col autofit-col-toggle"></div>
-                            <div className="autofit-col autofit-col-toggle">
-                                <button className="component-action" data-target="#tableCollapse02" type="button">
-                                    <span className="collapse-icon-closed">
-                                        <svg className="lexicon-icon lexicon-icon-angle-right" focusable="false" role="presentation">
-                                            <use xlink:href="/images/icons/icons.svg#angle-right" />
-                                        </svg>
-                                    </span>
-                                    <span className="collapse-icon-open">
-                                        <svg className="lexicon-icon lexicon-icon-angle-down" focusable="false" role="presentation">
-                                            <use xlink:href="/images/icons/icons.svg#angle-down" />
-                                        </svg>
-                                    </span>
-                                </button>
-                            </div>
-                            <div className="autofit-col autofit-col-checkbox">
-                                <div className="custom-control custom-checkbox">
-                                    <label>
-                                        <input className="custom-control-input" type="checkbox" />
-                                        <span className="custom-control-label"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="autofit-col autofit-col-expand">
-                                <span className="table-title">Second Level Object</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td role="gridcell">Company</td>
-                    <td role="gridcell">No</td>
-                    <td role="gridcell">June 13, 2023, 12:00PM</td>
-                    <td role="gridcell">--</td>
-                    <td role="gridcell">--</td>
-                </tr>
-                <tr aria-level="3" className="collapse" id="tableCollapse02" role="row">
-                    <td role="gridcell">
-                        <button className="component-action component-drag">
-                            <svg className="lexicon-icon lexicon-icon-drag" focusable="false" role="presentation">
-                                <use xlink:href="/images/icons/icons.svg#drag" />
-                            </svg>
-                        </button>
-                        <div className="autofit-row">
-                            <div className="autofit-col autofit-col-toggle"></div>
-                            <div className="autofit-col autofit-col-toggle"></div>
-                            <div className="autofit-col autofit-col-toggle"></div>
-                            <div className="autofit-col autofit-col-checkbox">
-                                <div className="custom-control custom-checkbox">
-                                    <label>
-                                        <input className="custom-control-input" type="checkbox" />
-                                        <span className="custom-control-label"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="autofit-col autofit-col-expand">
-                                <span className="table-title">Third Level Object</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td role="gridcell">Company</td>
-                    <td role="gridcell">No</td>
-                    <td role="gridcell">June 13, 2023, 12:00PM</td>
-                    <td role="gridcell">--</td>
-                    <td role="gridcell">--</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+	<div className="table-responsive">
+		<table
+			className="show-quick-actions-on-hover table table-list table-nested-rows table-striped"
+			role="treegrid"
+		>
+			<caption>Caption: Table List with filler content</caption>
+			<thead>
+				<tr>
+					<th scope="col">Label</th>
+					<th scope="col">Scope</th>
+					<th scope="col">System</th>
+					<th scope="col">Modified Date</th>
+					<th scope="col">Status</th>
+					<th scope="col">
+						<svg
+							className="lexicon-icon lexicon-icon-caret-down"
+							focusable="false"
+							role="presentation"
+						>
+							<use xlink:href="/images/icons/icons.svg#caret-down" />
+						</svg>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr className="table-divider">
+					<td colspan="6">Group 1</td>
+				</tr>
+				<tr aria-level="1" role="row">
+					<td role="gridcell">
+						<button className="component-action component-drag">
+							<svg
+								className="lexicon-icon lexicon-icon-drag"
+								focusable="false"
+								role="presentation"
+							>
+								<use xlink:href="/images/icons/icons.svg#drag" />
+							</svg>
+						</button>
+						<div className="autofit-row">
+							<div className="autofit-col autofit-col-toggle"></div>
+							<div className="autofit-col autofit-col-checkbox">
+								<div className="custom-control custom-checkbox">
+									<label>
+										<input
+											className="custom-control-input"
+											type="checkbox"
+										/>
+										<span className="custom-control-label"></span>
+									</label>
+								</div>
+							</div>
+							<div className="autofit-col autofit-col-icon">
+								<svg
+									className="lexicon-icon lexicon-icon-folder"
+									focusable="false"
+									role="presentation"
+								>
+									<use xlink:href="/images/icons/icons.svg#folder" />
+								</svg>
+							</div>
+							<div className="autofit-col autofit-col-expand">
+								<span className="table-title">Root Object</span>
+							</div>
+						</div>
+					</td>
+					<td role="gridcell">Company</td>
+					<td role="gridcell">No</td>
+					<td role="gridcell">June 12, 2023, 6:07:25PM</td>
+					<td role="gridcell">
+						<span className="label label-sm">Draft</span>
+					</td>
+					<td role="gridcell">
+						<div className="quick-action-menu">
+							<a
+								className="component-action quick-action-item"
+								href="#1"
+								role="button"
+							>
+								<svg
+									className="lexicon-icon lexicon-icon-trash"
+									focusable="false"
+									role="presentation"
+								>
+									<use xlink:href="/images/icons/icons.svg#trash" />
+								</svg>
+							</a>
+							<a
+								className="component-action quick-action-item"
+								href="#1"
+								role="button"
+							>
+								<svg
+									className="lexicon-icon lexicon-icon-download"
+									focusable="false"
+									role="presentation"
+								>
+									<use xlink:href="/images/icons/icons.svg#download" />
+								</svg>
+							</a>
+							<a
+								className="component-action quick-action-item"
+								href="#1"
+								role="button"
+							>
+								<svg
+									className="lexicon-icon lexicon-icon-expand"
+									focusable="false"
+									role="presentation"
+								>
+									<use xlink:href="/images/icons/icons.svg#expand" />
+								</svg>
+							</a>
+						</div>
+						<div className="dropdown dropdown-action">
+							<a
+								aria-expanded="false"
+								aria-haspopup="true"
+								className="component-action dropdown-toggle"
+								data-toggle="dropdown"
+								href="#1"
+								id="dropdownAction1"
+								role="button"
+							>
+								<svg
+									className="lexicon-icon lexicon-icon-ellipsis-v"
+									focusable="false"
+									role="presentation"
+								>
+									<use xlink:href="/images/icons/icons.svg#ellipsis-v" />
+								</svg>
+							</a>
+							<ul
+								aria-labelledby=""
+								className="dropdown-menu dropdown-menu-right"
+							>
+								<li>
+									<a
+										className="dropdown-item"
+										href="#1"
+										role="button"
+									>
+										Remove
+									</a>
+								</li>
+								<li>
+									<a
+										className="dropdown-item"
+										href="#1"
+										role="button"
+									>
+										Download
+									</a>
+								</li>
+								<li>
+									<a
+										className="dropdown-item"
+										href="#1"
+										role="button"
+									>
+										Checkout
+									</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr aria-level="1" className="table-active" role="row">
+					<td role="gridcell">
+						<button className="component-action component-drag">
+							<svg
+								className="lexicon-icon lexicon-icon-drag"
+								focusable="false"
+								role="presentation"
+							>
+								<use xlink:href="/images/icons/icons.svg#drag" />
+							</svg>
+						</button>
+						<div className="autofit-row">
+							<div className="autofit-col autofit-col-toggle">
+								<button
+									className="component-action"
+									data-target="#tableCollapse01"
+									type="button"
+								>
+									<span className="collapse-icon-closed">
+										<svg
+											className="lexicon-icon lexicon-icon-angle-right"
+											focusable="false"
+											role="presentation"
+										>
+											<use xlink:href="/images/icons/icons.svg#angle-right" />
+										</svg>
+									</span>
+									<span className="collapse-icon-open">
+										<svg
+											className="lexicon-icon lexicon-icon-angle-down"
+											focusable="false"
+											role="presentation"
+										>
+											<use xlink:href="/images/icons/icons.svg#angle-down" />
+										</svg>
+									</span>
+								</button>
+							</div>
+							<div className="autofit-col autofit-col-checkbox">
+								<div className="custom-control custom-checkbox">
+									<label>
+										<input
+											className="custom-control-input"
+											type="checkbox"
+										/>
+										<span className="custom-control-label"></span>
+									</label>
+								</div>
+							</div>
+							<div className="autofit-col autofit-col-expand">
+								<span className="table-title">
+									Root Object - First Level
+								</span>
+							</div>
+						</div>
+					</td>
+					<td role="gridcell">Company</td>
+					<td role="gridcell">No</td>
+					<td role="gridcell">June 12, 2023, 6:07:25PM</td>
+					<td role="gridcell">
+						<span className="label label-sm">Draft</span>
+					</td>
+					<td role="gridcell">
+						<div className="quick-action-menu">
+							<a
+								className="component-action quick-action-item"
+								href="#1"
+								role="button"
+							>
+								<svg
+									className="lexicon-icon lexicon-icon-trash"
+									focusable="false"
+									role="presentation"
+								>
+									<use xlink:href="/images/icons/icons.svg#trash" />
+								</svg>
+							</a>
+							<a
+								className="component-action quick-action-item"
+								href="#1"
+								role="button"
+							>
+								<svg
+									className="lexicon-icon lexicon-icon-download"
+									focusable="false"
+									role="presentation"
+								>
+									<use xlink:href="/images/icons/icons.svg#download" />
+								</svg>
+							</a>
+							<a
+								className="component-action quick-action-item"
+								href="#1"
+								role="button"
+							>
+								<svg
+									className="lexicon-icon lexicon-icon-expand"
+									focusable="false"
+									role="presentation"
+								>
+									<use xlink:href="/images/icons/icons.svg#expand" />
+								</svg>
+							</a>
+						</div>
+						<div className="dropdown dropdown-action">
+							<a
+								aria-expanded="false"
+								aria-haspopup="true"
+								className="component-action dropdown-toggle"
+								data-toggle="dropdown"
+								href="#1"
+								id="dropdownAction1"
+								role="button"
+							>
+								<svg
+									className="lexicon-icon lexicon-icon-ellipsis-v"
+									focusable="false"
+									role="presentation"
+								>
+									<use xlink:href="/images/icons/icons.svg#ellipsis-v" />
+								</svg>
+							</a>
+							<ul
+								aria-labelledby=""
+								className="dropdown-menu dropdown-menu-right"
+							>
+								<li>
+									<a
+										className="dropdown-item"
+										href="#1"
+										role="button"
+									>
+										Remove
+									</a>
+								</li>
+								<li>
+									<a
+										className="dropdown-item"
+										href="#1"
+										role="button"
+									>
+										Download
+									</a>
+								</li>
+								<li>
+									<a
+										className="dropdown-item"
+										href="#1"
+										role="button"
+									>
+										Checkout
+									</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr
+					aria-level="2"
+					className="collapse"
+					id="tableCollapse01"
+					role="row"
+				>
+					<td role="gridcell">
+						<button className="component-action component-drag">
+							<svg
+								className="lexicon-icon lexicon-icon-drag"
+								focusable="false"
+								role="presentation"
+							>
+								<use xlink:href="/images/icons/icons.svg#drag" />
+							</svg>
+						</button>
+						<div className="autofit-row">
+							<div className="autofit-col autofit-col-toggle"></div>
+							<div className="autofit-col autofit-col-toggle">
+								<button
+									className="component-action"
+									data-target="#tableCollapse02"
+									type="button"
+								>
+									<span className="collapse-icon-closed">
+										<svg
+											className="lexicon-icon lexicon-icon-angle-right"
+											focusable="false"
+											role="presentation"
+										>
+											<use xlink:href="/images/icons/icons.svg#angle-right" />
+										</svg>
+									</span>
+									<span className="collapse-icon-open">
+										<svg
+											className="lexicon-icon lexicon-icon-angle-down"
+											focusable="false"
+											role="presentation"
+										>
+											<use xlink:href="/images/icons/icons.svg#angle-down" />
+										</svg>
+									</span>
+								</button>
+							</div>
+							<div className="autofit-col autofit-col-checkbox">
+								<div className="custom-control custom-checkbox">
+									<label>
+										<input
+											className="custom-control-input"
+											type="checkbox"
+										/>
+										<span className="custom-control-label"></span>
+									</label>
+								</div>
+							</div>
+							<div className="autofit-col autofit-col-expand">
+								<span className="table-title">
+									Second Level Object
+								</span>
+							</div>
+						</div>
+					</td>
+					<td role="gridcell">Company</td>
+					<td role="gridcell">No</td>
+					<td role="gridcell">June 13, 2023, 12:00PM</td>
+					<td role="gridcell">--</td>
+					<td role="gridcell">--</td>
+				</tr>
+				<tr
+					aria-level="3"
+					className="collapse"
+					id="tableCollapse02"
+					role="row"
+				>
+					<td role="gridcell">
+						<button className="component-action component-drag">
+							<svg
+								className="lexicon-icon lexicon-icon-drag"
+								focusable="false"
+								role="presentation"
+							>
+								<use xlink:href="/images/icons/icons.svg#drag" />
+							</svg>
+						</button>
+						<div className="autofit-row">
+							<div className="autofit-col autofit-col-toggle"></div>
+							<div className="autofit-col autofit-col-toggle"></div>
+							<div className="autofit-col autofit-col-toggle"></div>
+							<div className="autofit-col autofit-col-checkbox">
+								<div className="custom-control custom-checkbox">
+									<label>
+										<input
+											className="custom-control-input"
+											type="checkbox"
+										/>
+										<span className="custom-control-label"></span>
+									</label>
+								</div>
+							</div>
+							<div className="autofit-col autofit-col-expand">
+								<span className="table-title">
+									Third Level Object
+								</span>
+							</div>
+						</div>
+					</td>
+					<td role="gridcell">Company</td>
+					<td role="gridcell">No</td>
+					<td role="gridcell">June 13, 2023, 12:00PM</td>
+					<td role="gridcell">--</td>
+					<td role="gridcell">--</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
 
 ## Inline Edit Table
 
 <div className="sheet-example">
-    <table className="table table-autofit table-list table-nowrap table-responsive">
-        <thead>
-            <tr>
-                <th>
-                    <span className="text-truncate-inline">
-                        <span className="text-truncate"></span>
-                    </span>
-                </th>
-                <th className="table-cell-expand">
-                    <span className="text-truncate-inline">
-                        <span className="text-truncate">Title</span>
-                    </span>
-                </th>
-                <th className="table-cell-expand">
-                    <span className="text-truncate-inline">
-                        <span className="text-truncate">Modified Date</span>
-                    </span>
-                </th>
-                <th className="table-column-text-end"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div className="custom-control custom-checkbox">
-                        <label>
-                            <input className="custom-control-input" type="checkbox" />
-                            <span className="custom-control-label"></span>
-                        </label>
-                    </div>
-                </td>
-                <td className="table-cell-expand">
-                    <div className="table-list-title">
-                        <a className="text-truncate-inline" href="#1">
-                            <span className="text-truncate">Web Content 342122-322-abcdefg</span>
-                        </a>
-                    </div>
-                </td>
-                <td className="table-cell-expand">
-                    <span className="text-truncate-inline">
-                        <span className="text-truncate">35 Seconds Ago</span>
-                    </span>
-                </td>
-                <td className="table-column-text-end">
-                    <div className="btn-group btn-group-nowrap">
-                        <div className="btn-group-item">
-                            <button className="btn btn-secondary btn-sm" type="button">Edit</button>
-                        </div>
-                        <div className="btn-group-item">
-                            <div className="dropdown dropdown-action">
-                                <a aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" id="dropdownAction1" role="button">
-                                    <svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
-                                        <use href="/images/icons/icons.svg#ellipsis-v"></use>
-                                    </svg>
-                                </a>
-                                <ul aria-labelledby="" className="dropdown-menu dropdown-menu-right">
-                                    <li><a className="dropdown-item" href="#1" role="button">Edit</a></li>
-                                    <li><a className="dropdown-item" href="#1" role="button">Recycle Bin</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div className="custom-control custom-checkbox">
-                        <label>
-                            <input className="custom-control-input" type="checkbox" />
-                            <span className="custom-control-label"></span>
-                        </label>
-                    </div>
-                </td>
-                <td className="table-cell-expand">
-                    <input className="form-control form-control-sm" type="text" value="Web Content B" />
-                </td>
-                <td className="table-cell-expand">
-                    <span className="text-truncate-inline">
-                        <span className="text-truncate">20 Minutes Ago</span>
-                    </span>
-                </td>
-                <td className="table-column-text-end">
-                    <div className="btn-group btn-group-nowrap">
-                        <div className="btn-group-item">
-                            <button className="btn btn-primary btn-sm" type="button">Save</button>
-                        </div>
-                        <div className="btn-group-item">
-                            <button className="btn btn-secondary btn-sm" type="button">Cancel</button>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+	<table className="table table-autofit table-list table-nowrap table-responsive">
+		<thead>
+			<tr>
+				<th>
+					<span className="text-truncate-inline">
+						<span className="text-truncate"></span>
+					</span>
+				</th>
+				<th className="table-cell-expand">
+					<span className="text-truncate-inline">
+						<span className="text-truncate">Title</span>
+					</span>
+				</th>
+				<th className="table-cell-expand">
+					<span className="text-truncate-inline">
+						<span className="text-truncate">Modified Date</span>
+					</span>
+				</th>
+				<th className="table-column-text-end"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<div className="custom-control custom-checkbox">
+						<label>
+							<input
+								className="custom-control-input"
+								type="checkbox"
+							/>
+							<span className="custom-control-label"></span>
+						</label>
+					</div>
+				</td>
+				<td className="table-cell-expand">
+					<div className="table-list-title">
+						<a className="text-truncate-inline" href="#1">
+							<span className="text-truncate">
+								Web Content 342122-322-abcdefg
+							</span>
+						</a>
+					</div>
+				</td>
+				<td className="table-cell-expand">
+					<span className="text-truncate-inline">
+						<span className="text-truncate">35 Seconds Ago</span>
+					</span>
+				</td>
+				<td className="table-column-text-end">
+					<div className="btn-group btn-group-nowrap">
+						<div className="btn-group-item">
+							<button
+								className="btn btn-secondary btn-sm"
+								type="button"
+							>
+								Edit
+							</button>
+						</div>
+						<div className="btn-group-item">
+							<div className="dropdown dropdown-action">
+								<a
+									aria-expanded="false"
+									aria-haspopup="true"
+									className="component-action dropdown-toggle"
+									data-toggle="dropdown"
+									href="#1"
+									id="dropdownAction1"
+									role="button"
+								>
+									<svg
+										className="lexicon-icon lexicon-icon-ellipsis-v"
+										focusable="false"
+										role="presentation"
+									>
+										<use href="/images/icons/icons.svg#ellipsis-v"></use>
+									</svg>
+								</a>
+								<ul
+									aria-labelledby=""
+									className="dropdown-menu dropdown-menu-right"
+								>
+									<li>
+										<a
+											className="dropdown-item"
+											href="#1"
+											role="button"
+										>
+											Edit
+										</a>
+									</li>
+									<li>
+										<a
+											className="dropdown-item"
+											href="#1"
+											role="button"
+										>
+											Recycle Bin
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div className="custom-control custom-checkbox">
+						<label>
+							<input
+								className="custom-control-input"
+								type="checkbox"
+							/>
+							<span className="custom-control-label"></span>
+						</label>
+					</div>
+				</td>
+				<td className="table-cell-expand">
+					<input
+						className="form-control form-control-sm"
+						type="text"
+						value="Web Content B"
+					/>
+				</td>
+				<td className="table-cell-expand">
+					<span className="text-truncate-inline">
+						<span className="text-truncate">20 Minutes Ago</span>
+					</span>
+				</td>
+				<td className="table-column-text-end">
+					<div className="btn-group btn-group-nowrap">
+						<div className="btn-group-item">
+							<button
+								className="btn btn-primary btn-sm"
+								type="button"
+							>
+								Save
+							</button>
+						</div>
+						<div className="btn-group-item">
+							<button
+								className="btn btn-secondary btn-sm"
+								type="button"
+							>
+								Cancel
+							</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 
 ```html
@@ -1575,47 +1967,64 @@ We have added `table-cell-minw-50`, `table-cell-minw-75`, `table-cell-minw-100`,
 The helpers `table-cell-ws-normal` and `table-cell-ws-nowrap` sets `white-space` to normal or nowrap on a specific table column, respectively.
 
 <div className="sheet-example">
-    <table className="table table-autofit">
-        <thead>
-            <tr>
-                <th></th>
-                <th>ID</th>
-                <th className="table-cell-minw-300 table-cell-expand">
-                    <a className="inline-item text-truncate-inline" href="#1">
-                        <span className="text-truncate">Title</span>
-                    </a>
-                </th>
-                <th className="table-cell-expand-small table-cell-ws-nowrap">Modified Date</th>
-                <th className="table-cell-expand-smaller">Display Date</th>
-                <th className="table-cell-minw-150 table-cell-expand-smallest">Author</th>
-                <th>Type</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div className="custom-control custom-checkbox">
-                        <label>
-                            <input className="custom-control-input" type="checkbox" />
-                            <span className="custom-control-label"></span>
-                        </label>
-                    </div>
-                </td>
-                <td>21146</td>
-                <td className="table-cell-minw-300 table-cell-expand">
-                    <div className="table-title">
-                        <span className="text-truncate-inline">
-                            <span className="text-truncate" title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.">Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.</span>
-                        </span>
-                    </div>
-                </td>
-                <td className="table-cell-expand-small table-cell-ws-nowrap">2 Hours Ago</td>
-                <td className="table-cell-expand-smaller">--</td>
-                <td className="table-cell-minw-150 table-cell-expand-smallest">Stanley Nelson</td>
-                <td>Folder</td>
-            </tr>
-        </tbody>
-    </table>
+	<table className="table table-autofit">
+		<thead>
+			<tr>
+				<th></th>
+				<th>ID</th>
+				<th className="table-cell-minw-300 table-cell-expand">
+					<a className="inline-item text-truncate-inline" href="#1">
+						<span className="text-truncate">Title</span>
+					</a>
+				</th>
+				<th className="table-cell-expand-small table-cell-ws-nowrap">
+					Modified Date
+				</th>
+				<th className="table-cell-expand-smaller">Display Date</th>
+				<th className="table-cell-minw-150 table-cell-expand-smallest">
+					Author
+				</th>
+				<th>Type</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<div className="custom-control custom-checkbox">
+						<label>
+							<input
+								className="custom-control-input"
+								type="checkbox"
+							/>
+							<span className="custom-control-label"></span>
+						</label>
+					</div>
+				</td>
+				<td>21146</td>
+				<td className="table-cell-minw-300 table-cell-expand">
+					<div className="table-title">
+						<span className="text-truncate-inline">
+							<span
+								className="text-truncate"
+								title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds."
+							>
+								Wings eu, pumpkin spice robusta, kopi-luwak
+								mocha caffeine froth grounds.
+							</span>
+						</span>
+					</div>
+				</td>
+				<td className="table-cell-expand-small table-cell-ws-nowrap">
+					2 Hours Ago
+				</td>
+				<td className="table-cell-expand-smaller">--</td>
+				<td className="table-cell-minw-150 table-cell-expand-smallest">
+					Stanley Nelson
+				</td>
+				<td>Folder</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 
 ```html
@@ -1683,49 +2092,58 @@ The helpers `table-cell-ws-normal` and `table-cell-ws-nowrap` sets `white-space`
 `table-heading-nowrap` keeps headings on one line.
 
 <div className="sheet-example">
-    <table className="table table-autofit table-heading-nowrap">
-        <thead>
-            <tr>
-                <th></th>
-                <th>ID</th>
-                <th className="table-cell-expand">
-                    <span className="text-truncate-inline">
-                        <span className="text-truncate">Title</span>
-                    </span>
-                </th>
-                <th>Status</th>
-                <th>Modified Date</th>
-                <th>Display Date</th>
-                <th>Author</th>
-                <th>Type</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div className="custom-control custom-checkbox">
-                        <label>
-                            <input className="custom-control-input" type="checkbox" />
-                            <span className="custom-control-label"></span>
-                        </label>
-                    </div>
-                </td>
-                <td>21146</td>
-                <td className="table-cell-expand">
-                    <div className="table-title">
-                        <span className="text-truncate-inline">
-                            <span className="text-truncate" title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.">Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.</span>
-                        </span>
-                    </div>
-                </td>
-                <td>--</td>
-                <td>2 Hours Ago</td>
-                <td>--</td>
-                <td>Stanley Nelson</td>
-                <td>Folder</td>
-            </tr>
-        </tbody>
-    </table>
+	<table className="table table-autofit table-heading-nowrap">
+		<thead>
+			<tr>
+				<th></th>
+				<th>ID</th>
+				<th className="table-cell-expand">
+					<span className="text-truncate-inline">
+						<span className="text-truncate">Title</span>
+					</span>
+				</th>
+				<th>Status</th>
+				<th>Modified Date</th>
+				<th>Display Date</th>
+				<th>Author</th>
+				<th>Type</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<div className="custom-control custom-checkbox">
+						<label>
+							<input
+								className="custom-control-input"
+								type="checkbox"
+							/>
+							<span className="custom-control-label"></span>
+						</label>
+					</div>
+				</td>
+				<td>21146</td>
+				<td className="table-cell-expand">
+					<div className="table-title">
+						<span className="text-truncate-inline">
+							<span
+								className="text-truncate"
+								title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds."
+							>
+								Wings eu, pumpkin spice robusta, kopi-luwak
+								mocha caffeine froth grounds.
+							</span>
+						</span>
+					</div>
+				</td>
+				<td>--</td>
+				<td>2 Hours Ago</td>
+				<td>--</td>
+				<td>Stanley Nelson</td>
+				<td>Folder</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 
 ```html
@@ -1787,49 +2205,58 @@ The helpers `table-cell-ws-normal` and `table-cell-ws-nowrap` sets `white-space`
 `table-nowrap` keeps everything on one line.
 
 <div className="sheet-example">
-    <table className="table table-autofit table-nowrap">
-        <thead>
-            <tr>
-                <th></th>
-                <th>ID</th>
-                <th className="table-cell-expand">
-                    <span className="text-truncate-inline">
-                        <span className="text-truncate">Title</span>
-                    </span>
-                </th>
-                <th>Status</th>
-                <th>Modified Date</th>
-                <th>Display Date</th>
-                <th>Author</th>
-                <th>Type</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div className="custom-control custom-checkbox">
-                        <label>
-                            <input className="custom-control-input" type="checkbox" />
-                            <span className="custom-control-label"></span>
-                        </label>
-                    </div>
-                </td>
-                <td>21146</td>
-                <td className="table-cell-expand">
-                    <div className="table-title">
-                        <span className="text-truncate-inline">
-                            <span className="text-truncate" title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.">Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.</span>
-                        </span>
-                    </div>
-                </td>
-                <td>--</td>
-                <td>2 Hours Ago</td>
-                <td>--</td>
-                <td>Stanley Nelson</td>
-                <td>Folder</td>
-            </tr>
-        </tbody>
-    </table>
+	<table className="table table-autofit table-nowrap">
+		<thead>
+			<tr>
+				<th></th>
+				<th>ID</th>
+				<th className="table-cell-expand">
+					<span className="text-truncate-inline">
+						<span className="text-truncate">Title</span>
+					</span>
+				</th>
+				<th>Status</th>
+				<th>Modified Date</th>
+				<th>Display Date</th>
+				<th>Author</th>
+				<th>Type</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<div className="custom-control custom-checkbox">
+						<label>
+							<input
+								className="custom-control-input"
+								type="checkbox"
+							/>
+							<span className="custom-control-label"></span>
+						</label>
+					</div>
+				</td>
+				<td>21146</td>
+				<td className="table-cell-expand">
+					<div className="table-title">
+						<span className="text-truncate-inline">
+							<span
+								className="text-truncate"
+								title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds."
+							>
+								Wings eu, pumpkin spice robusta, kopi-luwak
+								mocha caffeine froth grounds.
+							</span>
+						</span>
+					</div>
+				</td>
+				<td>--</td>
+				<td>2 Hours Ago</td>
+				<td>--</td>
+				<td>Stanley Nelson</td>
+				<td>Folder</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 
 ### Image
@@ -1837,56 +2264,69 @@ The helpers `table-cell-ws-normal` and `table-cell-ws-nowrap` sets `white-space`
 `table-img` is a helper that sets the max-height to 100px on an image inside a table. Depending on your use case, you may need to use it with the `autofit-row` pattern.
 
 <div className="sheet-example">
-    <table className="table table-autofit table-nowrap">
-        <thead>
-            <tr>
-                <th></th>
-                <th>ID</th>
-                <th className="table-cell-expand">
-                    <span className="text-truncate-inline">
-                        <span className="text-truncate">Title</span>
-                    </span>
-                </th>
-                <th>Status</th>
-                <th>Modified Date</th>
-                <th>Display Date</th>
-                <th>Author</th>
-                <th>Type</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div className="custom-control custom-checkbox">
-                        <label>
-                            <input className="custom-control-input" type="checkbox" />
-                            <span className="custom-control-label"></span>
-                        </label>
-                    </div>
-                </td>
-                <td>21146</td>
-                <td className="table-cell-expand">
-                    <div className="autofit-row">
-                        <div className="autofit-col">
-                            <img alt="thumbnail" className="table-img" src="/images/thumbnail_coffee.jpg" />
-                        </div>
-                        <div className="autofit-col autofit-col-expand">
-                            <div className="table-title">
-                                <span className="text-truncate-inline">
-                                    <span className="text-truncate" title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.">Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </td>
-                <td>--</td>
-                <td>2 Hours Ago</td>
-                <td>--</td>
-                <td>Stanley Nelson</td>
-                <td>Folder</td>
-            </tr>
-        </tbody>
-    </table>
+	<table className="table table-autofit table-nowrap">
+		<thead>
+			<tr>
+				<th></th>
+				<th>ID</th>
+				<th className="table-cell-expand">
+					<span className="text-truncate-inline">
+						<span className="text-truncate">Title</span>
+					</span>
+				</th>
+				<th>Status</th>
+				<th>Modified Date</th>
+				<th>Display Date</th>
+				<th>Author</th>
+				<th>Type</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<div className="custom-control custom-checkbox">
+						<label>
+							<input
+								className="custom-control-input"
+								type="checkbox"
+							/>
+							<span className="custom-control-label"></span>
+						</label>
+					</div>
+				</td>
+				<td>21146</td>
+				<td className="table-cell-expand">
+					<div className="autofit-row">
+						<div className="autofit-col">
+							<img
+								alt="thumbnail"
+								className="table-img"
+								src="/images/thumbnail_coffee.jpg"
+							/>
+						</div>
+						<div className="autofit-col autofit-col-expand">
+							<div className="table-title">
+								<span className="text-truncate-inline">
+									<span
+										className="text-truncate"
+										title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds."
+									>
+										Wings eu, pumpkin spice robusta,
+										kopi-luwak mocha caffeine froth grounds.
+									</span>
+								</span>
+							</div>
+						</div>
+					</div>
+				</td>
+				<td>--</td>
+				<td>2 Hours Ago</td>
+				<td>--</td>
+				<td>Stanley Nelson</td>
+				<td>Folder</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 
 ```html

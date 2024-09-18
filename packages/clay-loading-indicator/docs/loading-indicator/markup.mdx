@@ -13,13 +13,20 @@ packageUse: "import LoadingIndicator from '@clayui/loading-indicator';"
 ## Loading Animation
 
 <div className="clay-site-alert alert alert-danger">
-	This component received a breaking style update. Please see <a href="#css-loading-animation-reverting-to-the-dotted-animation">reverting to the Dotted Loading Animation</a> for instructions on how to revert it.
+	This component received a breaking style update. Please see{' '}
+	<a href="#css-loading-animation-reverting-to-the-dotted-animation">
+		reverting to the Dotted Loading Animation
+	</a>
+	for instructions on how to revert it.
 </div>
 
 The `loading-animation` indicator is to be used with small components such as badges, buttons, inputs, tables rows, etc. This component takes on the `currentColor` and `font-size`.
 
 <div className="sheet-example">
-	<span aria-hidden="true" className="loading-animation loading-animation-secondary loading-animation-sm"></span>
+	<span
+		aria-hidden="true"
+		className="loading-animation loading-animation-secondary loading-animation-sm"
+	></span>
 </div>
 
 ```html
@@ -34,7 +41,10 @@ The `loading-animation` indicator is to be used with small components such as ba
 The `loading-animation-squares` indicator uses 2 square shapes taken from the Liferay logo. It helps us include some details from the brand in our product interfaces. Use this indicator only for bigger components such as cards, modals, sidebars, dashboards, etc. This component takes on the `currentColor` and the current `font-size`.
 
 <div className="sheet-example">
-	<span aria-hidden="true" className="loading-animation-squares loading-animation-lg loading-animation-primary"></span>
+	<span
+		aria-hidden="true"
+		className="loading-animation-squares loading-animation-lg loading-animation-primary"
+	></span>
 </div>
 
 ```html
@@ -53,7 +63,10 @@ The Loading Animation components ship with four sizes. The Sass map, `$loading-a
 The modifier class `loading-animation-xs` forces the loading animation indicator size to be 10px.
 
 <div className="sheet-example">
-	<span aria-hidden="true" className="loading-animation loading-animation-secondary loading-animation-xs"></span>
+	<span
+		aria-hidden="true"
+		className="loading-animation loading-animation-secondary loading-animation-xs"
+	></span>
 </div>
 
 ```html
@@ -68,7 +81,10 @@ The modifier class `loading-animation-xs` forces the loading animation indicator
 The modifier class `loading-animation-sm` forces the Loading Animation indicator size to be 16px.
 
 <div className="sheet-example">
-	<span aria-hidden="true" className="loading-animation loading-animation-secondary loading-animation-sm"></span>
+	<span
+		aria-hidden="true"
+		className="loading-animation loading-animation-secondary loading-animation-sm"
+	></span>
 </div>
 
 ```html
@@ -83,7 +99,10 @@ The modifier class `loading-animation-sm` forces the Loading Animation indicator
 The modifier class `loading-animation-md` forces the Loading Animation indicator size to be 32px.
 
 <div className="sheet-example">
-	<span aria-hidden="true" className="loading-animation-squares loading-animation-primary loading-animation-md"></span>
+	<span
+		aria-hidden="true"
+		className="loading-animation-squares loading-animation-primary loading-animation-md"
+	></span>
 </div>
 
 ```html
@@ -98,7 +117,10 @@ The modifier class `loading-animation-md` forces the Loading Animation indicator
 The modifier class `loading-animation-lg` forces the Loading Animation indicator size to be 64px.
 
 <div className="sheet-example">
-	<span aria-hidden="true" className="loading-animation-squares loading-animation-primary loading-animation-lg"></span>
+	<span
+		aria-hidden="true"
+		className="loading-animation-squares loading-animation-primary loading-animation-lg"
+	></span>
 </div>
 
 ```html
@@ -117,7 +139,10 @@ The Loading Animation component has three variants, primary, secondary, and ligh
 The modifier class `loading-animation-primary` forces the Loading Animation indicator color to be `$primary`.
 
 <div className="sheet-example">
-	<span aria-hidden="true" className="loading-animation-squares loading-animation-md loading-animation-primary"></span>
+	<span
+		aria-hidden="true"
+		className="loading-animation-squares loading-animation-md loading-animation-primary"
+	></span>
 </div>
 
 ```html
@@ -132,7 +157,10 @@ The modifier class `loading-animation-primary` forces the Loading Animation indi
 The modifier class `loading-animation-secondary` forces the Loading Animation indicator color to be `$secondary`.
 
 <div className="sheet-example">
-	<span aria-hidden="true" className="loading-animation loading-animation-sm loading-animation-secondary"></span>
+	<span
+		aria-hidden="true"
+		className="loading-animation loading-animation-sm loading-animation-secondary"
+	></span>
 </div>
 
 ```html
@@ -149,10 +177,16 @@ The modifier class `loading-animation-light` forces the Loading Animation indica
 <div className="sheet-example">
 	<div className="row bg-dark py-3">
 		<div className="col-md-3">
-			<span aria-hidden="true" className="loading-animation loading-animation-sm loading-animation-light"></span>
+			<span
+				aria-hidden="true"
+				className="loading-animation loading-animation-sm loading-animation-light"
+			></span>
 		</div>
 		<div className="col-md-3">
-			<span aria-hidden="true" className="loading-animation-squares loading-animation-md loading-animation-light"></span>
+			<span
+				aria-hidden="true"
+				className="loading-animation-squares loading-animation-md loading-animation-light"
+			></span>
 		</div>
 	</div>
 </div>
@@ -291,27 +325,27 @@ Copy and paste the code below into your `_clay_variables.scss` file.
 
 ```css
 $btn-primary: (
-	loading-animation: 'loading-animation-light',
+	loading-animation: 'loading-animation-light'
 ) !default;
 
 $btn-success: (
-	loading-animation: 'loading-animation-light',
+	loading-animation: 'loading-animation-light'
 ) !default;
 
 $btn-info: (
-	loading-animation: 'loading-animation-light',
+	loading-animation: 'loading-animation-light'
 ) !default;
 
 $btn-warning: (
-	loading-animation: 'loading-animation-light',
+	loading-animation: 'loading-animation-light'
 ) !default;
 
 $btn-danger: (
-	loading-animation: 'loading-animation-light',
+	loading-animation: 'loading-animation-light'
 ) !default;
 
 $btn-dark: (
-	loading-animation: 'loading-animation-light',
+	loading-animation: 'loading-animation-light'
 ) !default;
 
 $loading-icon-font-size: 2.5rem !default;
@@ -354,14 +388,14 @@ $loading-animation: (
 		position: absolute,
 		top: 0,
 		transform: scale(0.33334),
-		width: 1em,
-	),
+		width: 1em
+	)
 ) !default;
 
 $loading-animation-sizes: (
 	loading-animation-sm: (
-		font-size: $loading-icon-font-size-sm,
-	),
+		font-size: $loading-icon-font-size-sm
+	)
 ) !default;
 
 $loading-animation-palette: () !default;
@@ -377,8 +411,8 @@ $loading-animation-palette: map-deep-merge(
 			ball-5-color: rgba(#fff, 0.1),
 			after: (
 				animation-name: loading-animation-light,
-				color: #fff,
-			),
+				color: #fff
+			)
 		),
 		'.loading-animation.loading-animation-light': (
 			mixin-name: 'clay-loading-animation-variant',
@@ -390,9 +424,9 @@ $loading-animation-palette: map-deep-merge(
 			ball-5-color: rgba(#fff, 0.1),
 			after: (
 				animation-name: loading-animation-light,
-				color: #fff,
-			),
-		),
+				color: #fff
+			)
+		)
 	),
 	$loading-animation-palette
 );

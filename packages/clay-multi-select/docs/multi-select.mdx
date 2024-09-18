@@ -10,7 +10,7 @@ Multi Select is an aggregate component of the `@clayui/form` package, consisting
 
 ```jsx preview
 import {Provider} from '@clayui/core';
-import MultiSelect from '@clayui/multi-select'
+import MultiSelect from '@clayui/multi-select';
 import React, {useState} from 'react';
 
 import '@clayui/css/lib/css/atlas.css';
@@ -21,19 +21,19 @@ export default function App() {
 		{
 			label: 'one',
 			value: '1',
-		}
+		},
 	]);
 
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<MultiSelect
-          inputName="myInput"
-          items={items}
-          onChange={setValue}
-          onItemsChange={setItems}
-          value={value}
-        />
+					inputName="myInput"
+					items={items}
+					onChange={setValue}
+					onItemsChange={setItems}
+					value={value}
+				/>
 			</div>
 		</Provider>
 	);
@@ -50,7 +50,7 @@ Usually a MultiSelect has an autocomplete to help the user choose existing tags.
 
 ```jsx preview
 import {Provider} from '@clayui/core';
-import MultiSelect from '@clayui/multi-select'
+import MultiSelect from '@clayui/multi-select';
 import React, {useState} from 'react';
 
 import '@clayui/css/lib/css/atlas.css';
@@ -61,7 +61,7 @@ export default function App() {
 		{
 			label: 'one',
 			value: '1',
-		}
+		},
 	]);
 
 	const sourceItems = [
@@ -87,13 +87,13 @@ export default function App() {
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<MultiSelect
-          inputName="myInput"
-          items={items}
-          onChange={setValue}
-          onItemsChange={setItems}
-          sourceItems={sourceItems}
-          value={value}
-        />
+					inputName="myInput"
+					items={items}
+					onChange={setValue}
+					onItemsChange={setItems}
+					sourceItems={sourceItems}
+					value={value}
+				/>
 			</div>
 		</Provider>
 	);
@@ -106,7 +106,7 @@ According to the Lexicon specification a `Select` button can be grouped with Mul
 
 ```jsx preview
 import {Provider} from '@clayui/core';
-import MultiSelect from '@clayui/multi-select'
+import MultiSelect from '@clayui/multi-select';
 import ClayForm, {ClayInput} from '@clayui/form';
 import Button from '@clayui/button';
 import React, {useState} from 'react';
@@ -119,7 +119,7 @@ export default function App() {
 		{
 			label: 'one',
 			value: '1',
-		}
+		},
 	]);
 
 	const sourceItems = [
@@ -145,27 +145,27 @@ export default function App() {
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<ClayForm.Group>
-          <ClayInput.Group>
-            <ClayInput.GroupItem>
-              <MultiSelect
-                inputName="myInput"
-                items={items}
-                onChange={setValue}
-                onItemsChange={setItems}
-                sourceItems={sourceItems}
-                value={value}
-              />
-            </ClayInput.GroupItem>
-            <ClayInput.GroupItem shrink>
-              <Button
-                displayType="secondary"
-                onClick={() => alert('Click')}
-              >
-                {'Select'}
-              </Button>
-            </ClayInput.GroupItem>
-          </ClayInput.Group>
-        </ClayForm.Group>
+					<ClayInput.Group>
+						<ClayInput.GroupItem>
+							<MultiSelect
+								inputName="myInput"
+								items={items}
+								onChange={setValue}
+								onItemsChange={setItems}
+								sourceItems={sourceItems}
+								value={value}
+							/>
+						</ClayInput.GroupItem>
+						<ClayInput.GroupItem shrink>
+							<Button
+								displayType="secondary"
+								onClick={() => alert('Click')}
+							>
+								{'Select'}
+							</Button>
+						</ClayInput.GroupItem>
+					</ClayInput.Group>
+				</ClayForm.Group>
 			</div>
 		</Provider>
 	);
@@ -178,7 +178,7 @@ An input needs validation so you can add some composition props with `<ClayInput
 
 ```jsx preview
 import {Provider} from '@clayui/core';
-import MultiSelect from '@clayui/multi-select'
+import MultiSelect from '@clayui/multi-select';
 import ClayForm, {ClayInput} from '@clayui/form';
 import Button from '@clayui/button';
 import React, {useState} from 'react';
@@ -191,7 +191,7 @@ export default function App() {
 		{
 			label: 'one',
 			value: '1',
-		}
+		},
 	]);
 
 	const sourceItems = [
@@ -217,39 +217,37 @@ export default function App() {
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<ClayForm.Group className="has-error">
-          <label>{'MultiSelect'}</label>
+					<label>{'MultiSelect'}</label>
 
-          <ClayInput.Group>
-            <ClayInput.GroupItem>
-              <MultiSelect
-                inputName="myInput"
-                items={items}
-                onChange={setValue}
-                onItemsChange={setItems}
-                sourceItems={sourceItems}
-                value={value}
-              />
+					<ClayInput.Group>
+						<ClayInput.GroupItem>
+							<MultiSelect
+								inputName="myInput"
+								items={items}
+								onChange={setValue}
+								onItemsChange={setItems}
+								sourceItems={sourceItems}
+								value={value}
+							/>
 
-              <ClayForm.FeedbackGroup>
-                <ClayForm.FeedbackItem>
-                  <ClayForm.FeedbackIndicator
-                    symbol="info-circle"
-                  />
+							<ClayForm.FeedbackGroup>
+								<ClayForm.FeedbackItem>
+									<ClayForm.FeedbackIndicator symbol="info-circle" />
 
-                  {'You made an error'}
-                </ClayForm.FeedbackItem>
-              </ClayForm.FeedbackGroup>
-            </ClayInput.GroupItem>
-            <ClayInput.GroupItem shrink>
-              <Button
-                displayType="secondary"
-                onClick={() => alert('Click')}
-              >
-                {'Select'}
-              </Button>
-            </ClayInput.GroupItem>
-          </ClayInput.Group>
-        </ClayForm.Group>
+									{'You made an error'}
+								</ClayForm.FeedbackItem>
+							</ClayForm.FeedbackGroup>
+						</ClayInput.GroupItem>
+						<ClayInput.GroupItem shrink>
+							<Button
+								displayType="secondary"
+								onClick={() => alert('Click')}
+							>
+								{'Select'}
+							</Button>
+						</ClayInput.GroupItem>
+					</ClayInput.Group>
+				</ClayForm.Group>
 			</div>
 		</Provider>
 	);
@@ -262,7 +260,7 @@ To customize Autocomplete content to stylize to your needs and also have filter 
 
 ```jsx preview
 import {Provider} from '@clayui/core';
-import MultiSelect from '@clayui/multi-select'
+import MultiSelect from '@clayui/multi-select';
 import Sticker from '@clayui/sticker';
 import Icon from '@clayui/icon';
 import React, {useState} from 'react';
@@ -296,35 +294,35 @@ export default function App() {
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<MultiSelect
-          inputName="myInput"
-          items={items}
-          onChange={setValue}
-          onItemsChange={setItems}
-          sourceItems={sourceItems}
-          value={value}
-        >
-          {(item) => (
-            <MultiSelect.Item
-              key={item.value}
-              textValue={item.label}
-            >
-              <div className="autofit-row autofit-row-center">
-                <div className="autofit-col mr-3">
-                  <Sticker
-                    className="sticker-user-icon"
-                    size="lg"
-                  >
-                    <Icon symbol="user" />
-                  </Sticker>
-                </div>
-                <div className="autofit-col">
-                  <strong>{item.label}</strong>
-                  <span>{item.email}</span>
-                </div>
-              </div>
-            </MultiSelect.Item>
-          )}
-        </MultiSelect>
+					inputName="myInput"
+					items={items}
+					onChange={setValue}
+					onItemsChange={setItems}
+					sourceItems={sourceItems}
+					value={value}
+				>
+					{(item) => (
+						<MultiSelect.Item
+							key={item.value}
+							textValue={item.label}
+						>
+							<div className="autofit-row autofit-row-center">
+								<div className="autofit-col mr-3">
+									<Sticker
+										className="sticker-user-icon"
+										size="lg"
+									>
+										<Icon symbol="user" />
+									</Sticker>
+								</div>
+								<div className="autofit-col">
+									<strong>{item.label}</strong>
+									<span>{item.email}</span>
+								</div>
+							</div>
+						</MultiSelect.Item>
+					)}
+				</MultiSelect>
 			</div>
 		</Provider>
 	);
@@ -352,20 +350,20 @@ export default function App() {
 		{
 			label: 'one',
 			value: '1',
-		}
+		},
 	]);
 
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<MultiSelect
-          inputName="multiSelectSmallInput"
-          items={items}
-          onChange={setValue}
-          onItemsChange={setItems}
-          size="sm"
-          value={value}
-        />
+					inputName="multiSelectSmallInput"
+					items={items}
+					onChange={setValue}
+					onItemsChange={setItems}
+					size="sm"
+					value={value}
+				/>
 			</div>
 		</Provider>
 	);
@@ -389,7 +387,7 @@ export default function App() {
 		{
 			label: 'one',
 			value: '1',
-		}
+		},
 	]);
 
 	const sourceItems = [
@@ -415,27 +413,27 @@ export default function App() {
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<ClayForm.Group>
-          <ClayInput.Group className="input-group-sm">
-            <ClayInput.GroupItem>
-              <MultiSelect
-                inputName="myInput"
-                items={items}
-                onChange={setValue}
-                onItemsChange={setItems}
-                sourceItems={sourceItems}
-                value={value}
-              />
-            </ClayInput.GroupItem>
-            <ClayInput.GroupItem shrink>
-              <Button
-                displayType="secondary"
-                onClick={() => alert('Click')}
-              >
-                {'Select'}
-              </Button>
-            </ClayInput.GroupItem>
-          </ClayInput.Group>
-        </ClayForm.Group>
+					<ClayInput.Group className="input-group-sm">
+						<ClayInput.GroupItem>
+							<MultiSelect
+								inputName="myInput"
+								items={items}
+								onChange={setValue}
+								onItemsChange={setItems}
+								sourceItems={sourceItems}
+								value={value}
+							/>
+						</ClayInput.GroupItem>
+						<ClayInput.GroupItem shrink>
+							<Button
+								displayType="secondary"
+								onClick={() => alert('Click')}
+							>
+								{'Select'}
+							</Button>
+						</ClayInput.GroupItem>
+					</ClayInput.Group>
+				</ClayForm.Group>
 			</div>
 		</Provider>
 	);

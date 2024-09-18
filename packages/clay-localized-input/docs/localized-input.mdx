@@ -107,7 +107,9 @@ export default function App() {
 					onSelectedLocaleChange={setSelectedLocale}
 					onTranslationsChange={setTranslations}
 					prependContent={prepend}
-					resultFormatter={(value) => "https://liferay.com" + prepend + value}
+					resultFormatter={(value) =>
+						'https://liferay.com' + prepend + value
+					}
 					selectedLocale={selectedLocale}
 					translations={translations}
 				/>

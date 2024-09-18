@@ -40,38 +40,58 @@ import React from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const colStyles = {
+	const colStyles = {
 		backgroundColor: '#E7E7ED',
 		border: '1px solid #CDCED9',
 		paddingBottom: '.75rem',
 		paddingTop: '.75rem',
 	};
-  
+
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<Layout.ContainerFluid view>
-          <Layout.Row justify="start">
-            <Layout.Col size={4} style={colStyles}>{'One of two columns'}</Layout.Col>
-            <Layout.Col size={4} style={colStyles}>{'One of two columns'}</Layout.Col>
-          </Layout.Row>
-          <Layout.Row justify="center">
-            <Layout.Col size={4} style={colStyles}>{'One of two columns'}</Layout.Col>
-            <Layout.Col size={4} style={colStyles}>{'One of two columns'}</Layout.Col>
-          </Layout.Row>
-          <Layout.Row justify="end">
-            <Layout.Col size={4} style={colStyles}>{'One of two columns'}</Layout.Col>
-            <Layout.Col size={4} style={colStyles}>{'One of two columns'}</Layout.Col>
-          </Layout.Row>
-          <Layout.Row justify="around">
-            <Layout.Col size={4} style={colStyles}>{'One of two columns'}</Layout.Col>
-            <Layout.Col size={4} style={colStyles}>{'One of two columns'}</Layout.Col>
-          </Layout.Row>
-          <Layout.Row justify="between">
-            <Layout.Col size={4} style={colStyles}>{'One of two columns'}</Layout.Col>
-            <Layout.Col size={4} style={colStyles}>{'One of two columns'}</Layout.Col>
-          </Layout.Row>
-        </Layout.ContainerFluid>
+					<Layout.Row justify="start">
+						<Layout.Col size={4} style={colStyles}>
+							{'One of two columns'}
+						</Layout.Col>
+						<Layout.Col size={4} style={colStyles}>
+							{'One of two columns'}
+						</Layout.Col>
+					</Layout.Row>
+					<Layout.Row justify="center">
+						<Layout.Col size={4} style={colStyles}>
+							{'One of two columns'}
+						</Layout.Col>
+						<Layout.Col size={4} style={colStyles}>
+							{'One of two columns'}
+						</Layout.Col>
+					</Layout.Row>
+					<Layout.Row justify="end">
+						<Layout.Col size={4} style={colStyles}>
+							{'One of two columns'}
+						</Layout.Col>
+						<Layout.Col size={4} style={colStyles}>
+							{'One of two columns'}
+						</Layout.Col>
+					</Layout.Row>
+					<Layout.Row justify="around">
+						<Layout.Col size={4} style={colStyles}>
+							{'One of two columns'}
+						</Layout.Col>
+						<Layout.Col size={4} style={colStyles}>
+							{'One of two columns'}
+						</Layout.Col>
+					</Layout.Row>
+					<Layout.Row justify="between">
+						<Layout.Col size={4} style={colStyles}>
+							{'One of two columns'}
+						</Layout.Col>
+						<Layout.Col size={4} style={colStyles}>
+							{'One of two columns'}
+						</Layout.Col>
+					</Layout.Row>
+				</Layout.ContainerFluid>
 			</div>
 		</Provider>
 	);
@@ -92,45 +112,45 @@ export default function App() {
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<Layout.ContentRow padded>
-          <Layout.ContentCol>
-            <div className="form-check">
-              <label className="form-check-label">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  value=""
-                />
-              </label>
-            </div>
-          </Layout.ContentCol>
-          <Layout.ContentCol expand>
-            <Layout.ContentSection>
-              <h6>
-                <span className="text-truncate-inline">
-                  <span className="text-truncate">
-                    Alberto Calvo, modified 2 hours ago.
-                  </span>
-                </span>
-              </h6>
-              <p>
-                <span className="text-truncate-inline">
-                  <a className="text-truncate" href="#1">
-                    ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual
-                  </a>
-                </span>
-              </p>
-            </Layout.ContentSection>
-          </Layout.ContentCol>
-          <Layout.ContentCol>
-            <svg
-              className="lexicon-icon lexicon-icon-ellipsis-v"
-              focusable="false"
-              role="presentation"
-            >
-              <use href="/images/icons/icons.svg#ellipsis-v" />
-            </svg>
-          </Layout.ContentCol>
-        </Layout.ContentRow>
+					<Layout.ContentCol>
+						<div className="form-check">
+							<label className="form-check-label">
+								<input
+									className="form-check-input"
+									type="checkbox"
+									value=""
+								/>
+							</label>
+						</div>
+					</Layout.ContentCol>
+					<Layout.ContentCol expand>
+						<Layout.ContentSection>
+							<h6>
+								<span className="text-truncate-inline">
+									<span className="text-truncate">
+										Alberto Calvo, modified 2 hours ago.
+									</span>
+								</span>
+							</h6>
+							<p>
+								<span className="text-truncate-inline">
+									<a className="text-truncate" href="#1">
+										ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual
+									</a>
+								</span>
+							</p>
+						</Layout.ContentSection>
+					</Layout.ContentCol>
+					<Layout.ContentCol>
+						<svg
+							className="lexicon-icon lexicon-icon-ellipsis-v"
+							focusable="false"
+							role="presentation"
+						>
+							<use href="/images/icons/icons.svg#ellipsis-v" />
+						</svg>
+					</Layout.ContentCol>
+				</Layout.ContentRow>
 			</div>
 		</Provider>
 	);

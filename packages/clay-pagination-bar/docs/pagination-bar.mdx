@@ -22,35 +22,33 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<PaginationBar>
-  				<PaginationBar.DropDown
-  					items={[
-  						{
-  							label: '10',
-  							onClick: () => {},
-  						},
-  					]}
-  					trigger={
-  						<Button displayType="unstyled">
-  							{'10 items per page'}
+				<PaginationBar>
+					<PaginationBar.DropDown
+						items={[
+							{
+								label: '10',
+								onClick: () => {},
+							},
+						]}
+						trigger={
+							<Button displayType="unstyled">
+								{'10 items per page'}
 
-  							<Icon
-  								symbol="caret-double-l"
-  							/>
-  						</Button>
-  					}
-  				/>
+								<Icon symbol="caret-double-l" />
+							</Button>
+						}
+					/>
 
-  				<PaginationBar.Results>
-  					Showing a handful of items...
-  				</PaginationBar.Results>
+					<PaginationBar.Results>
+						Showing a handful of items...
+					</PaginationBar.Results>
 
-  				<ClayPaginationWithBasicItems
-  					defaultActive={1}
-  					ellipsisProps={{'aria-label': 'More', title: 'More'}}
-  					totalPages={10}
-  				/>
-  			</PaginationBar>
+					<ClayPaginationWithBasicItems
+						defaultActive={1}
+						ellipsisProps={{'aria-label': 'More', title: 'More'}}
+						totalPages={10}
+					/>
+				</PaginationBar>
 			</div>
 		</Provider>
 	);
@@ -67,7 +65,7 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const [delta, setDelta] = useState(4);
+	const [delta, setDelta] = useState(4);
 
 	const deltas = [
 		{
@@ -89,15 +87,15 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-    		<ClayPaginationBarWithBasicItems
-     			defaultActive={1}
-     			activeDelta={delta}
-     			deltas={deltas}
-     			ellipsisBuffer={3}
-     			ellipsisProps={{'aria-label': 'More', title: 'More'}}
-     			onDeltaChange={setDelta}
-     			totalItems={21}
-    		/>
+				<ClayPaginationBarWithBasicItems
+					defaultActive={1}
+					activeDelta={delta}
+					deltas={deltas}
+					ellipsisBuffer={3}
+					ellipsisProps={{'aria-label': 'More', title: 'More'}}
+					onDeltaChange={setDelta}
+					totalItems={21}
+				/>
 			</div>
 		</Provider>
 	);
@@ -114,20 +112,20 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const [delta, setDelta] = useState(5);
+	const [delta, setDelta] = useState(5);
 
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-    		<ClayPaginationBarWithBasicItems
-     			activeDelta={delta}
-     			defaultActive={1}
-     			ellipsisBuffer={3}
-     			ellipsisProps={{'aria-label': 'More', title: 'More'}}
-     			onDeltaChange={setDelta}
-     			showDeltasDropDown={false}
-     			totalItems={21}
-    		/>
+				<ClayPaginationBarWithBasicItems
+					activeDelta={delta}
+					defaultActive={1}
+					ellipsisBuffer={3}
+					ellipsisProps={{'aria-label': 'More', title: 'More'}}
+					onDeltaChange={setDelta}
+					showDeltasDropDown={false}
+					totalItems={21}
+				/>
 			</div>
 		</Provider>
 	);

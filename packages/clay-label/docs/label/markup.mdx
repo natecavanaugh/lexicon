@@ -123,20 +123,20 @@ The map `$label-palette` allows generating any number of label variants. If a ke
 ```css
 $label-palette: (
 	primary: (
-		background-color: $primary,
+		background-color: $primary
 	),
 	'.label-primary-2': (
-		extend: '%label-primary',
+		extend: '%label-primary'
 	),
 	'%label-tertiary': (
-		background-color: green,
+		background-color: green
 	),
 	'.label-tertiary': (
-		extend: '%label-tertiary',
+		extend: '%label-tertiary'
 	),
 	'.label-quaternary': (
-		extend: '%label-tertiary',
-	),
+		extend: '%label-tertiary'
+	)
 );
 ```
 
@@ -183,17 +183,17 @@ The map `$label-sizes` allows generating any number of label size variants. If a
 ```css
 $label-sizes: (
 	label-lg: (
-		font-size: 16px,
+		font-size: 16px
 	),
 	'.label-xl': (
-		extend: '%label-lg',
+		extend: '%label-lg'
 	),
 	'%label-sm': (
-		font-size: 12px,
+		font-size: 12px
 	),
 	'.label-sm': (
-		extend: '%label-sm',
-	),
+		extend: '%label-sm'
+	)
 );
 ```
 
@@ -233,18 +233,30 @@ Outputs:
 		<span className="label-item label-item-before">
 			<span className="sticker">
 				<span className="sticker-overlay">
-					<img alt="thumbnail" className="sticker-img" src="/images/thumbnail_dock.jpg" />
+					<img
+						alt="thumbnail"
+						className="sticker-img"
+						src="/images/thumbnail_dock.jpg"
+					/>
 				</span>
 			</span>
 		</span>
 		<span className="label-item label-item-before">
-			<svg className="lexicon-icon lexicon-icon-times-circle" focusable="false" role="presentation">
+			<svg
+				className="lexicon-icon lexicon-icon-times-circle"
+				focusable="false"
+				role="presentation"
+			>
 				<use xlink:href="/images/icons/icons.svg#times-circle"></use>
 			</svg>
 		</span>
 		<span className="label-item label-item-before">
 			<button className="btn btn-unstyled" type="button">
-				<svg className="lexicon-icon lexicon-icon-add-cell" focusable="false" role="presentation">
+				<svg
+					className="lexicon-icon lexicon-icon-add-cell"
+					focusable="false"
+					role="presentation"
+				>
 					<use xlink:href="/images/icons/icons.svg#add-cell"></use>
 				</svg>
 			</button>
@@ -254,7 +266,11 @@ Outputs:
 		</span>
 		<span className="label-item label-item-after">
 			<button aria-label="Close" className="close" type="button">
-				<svg className="lexicon-icon lexicon-icon-times" focusable="false" role="presentation">
+				<svg
+					className="lexicon-icon lexicon-icon-times"
+					focusable="false"
+					role="presentation"
+				>
 					<use xlink:href="/images/icons/icons.svg#times"></use>
 				</svg>
 			</button>
@@ -285,17 +301,29 @@ Outputs:
 		<span className="label-item label-item-before">
 			<span className="sticker">
 				<span className="sticker-overlay">
-					<img alt="thumbnail" className="sticker-img" src="/images/thumbnail_dock.jpg" />
+					<img
+						alt="thumbnail"
+						className="sticker-img"
+						src="/images/thumbnail_dock.jpg"
+					/>
 				</span>
 			</span>
 		</span>
 		<span className="label-item label-item-before">
-			<svg className="lexicon-icon lexicon-icon-times-circle" focusable="false" role="presentation">
+			<svg
+				className="lexicon-icon lexicon-icon-times-circle"
+				focusable="false"
+				role="presentation"
+			>
 				<use xlink:href="/images/icons/icons.svg#times-circle"></use>
 			</svg>
 		</span>
 		<span className="label-item label-item-before">
-			<svg className="lexicon-icon lexicon-icon-add-cell" focusable="false" role="presentation">
+			<svg
+				className="lexicon-icon lexicon-icon-add-cell"
+				focusable="false"
+				role="presentation"
+			>
 				<use xlink:href="/images/icons/icons.svg#add-cell"></use>
 			</svg>
 		</span>
@@ -304,7 +332,11 @@ Outputs:
 		</span>
 		<span className="label-item label-item-after">
 			<button aria-label="Close" className="close" type="button">
-				<svg className="lexicon-icon lexicon-icon-times" focusable="false" role="presentation">
+				<svg
+					className="lexicon-icon lexicon-icon-times"
+					focusable="false"
+					role="presentation"
+				>
 					<use xlink:href="/images/icons/icons.svg#times"></use>
 				</svg>
 			</button>
@@ -339,30 +371,53 @@ Implementing Interactive Labels require custom javascript.
 		<span className="label-item label-item-before">
 			<span className="sticker">
 				<span className="sticker-overlay">
-					<img alt="thumbnail" className="sticker-img" src="/images/thumbnail_dock.jpg" />
+					<img
+						alt="thumbnail"
+						className="sticker-img"
+						src="/images/thumbnail_dock.jpg"
+					/>
 				</span>
 			</span>
 		</span>
 		<span className="label-item label-item-before">
 			<button className="btn btn-unstyled" type="button" tabindex="-1">
-				<svg className="lexicon-icon lexicon-icon-times-circle" focusable="false" role="presentation">
+				<svg
+					className="lexicon-icon lexicon-icon-times-circle"
+					focusable="false"
+					role="presentation"
+				>
 					<use xlink:href="/images/icons/icons.svg#times-circle"></use>
 				</svg>
 			</button>
 		</span>
 		<span className="label-item label-item-before">
 			<a href="#1" role="button" tabindex="-1">
-				<svg className="lexicon-icon lexicon-icon-add-cell" focusable="false" role="presentation">
+				<svg
+					className="lexicon-icon lexicon-icon-add-cell"
+					focusable="false"
+					role="presentation"
+				>
 					<use xlink:href="/images/icons/icons.svg#add-cell"></use>
 				</svg>
 			</a>
 		</span>
 		<span className="label-item label-item-expand">
-			<a href="#1" tabindex="-1">Interactive Label</a>
+			<a href="#1" tabindex="-1">
+				Interactive Label
+			</a>
 		</span>
 		<span className="label-item label-item-after">
-			<button aria-label="Close" className="close" tabindex="-1" type="button">
-				<svg className="lexicon-icon lexicon-icon-times" focusable="false" role="presentation">
+			<button
+				aria-label="Close"
+				className="close"
+				tabindex="-1"
+				type="button"
+			>
+				<svg
+					className="lexicon-icon lexicon-icon-times"
+					focusable="false"
+					role="presentation"
+				>
 					<use xlink:href="/images/icons/icons.svg#times"></use>
 				</svg>
 			</button>

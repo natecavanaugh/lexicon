@@ -23,11 +23,15 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<Pagination>
-  				<Pagination.Item>{1}</Pagination.Item>
-  				<Pagination.Ellipsis aria-label="More" title="More" items={[2,3,4,5]} />
-  				<Pagination.Item>{'End'}</Pagination.Item>
-  			</Pagination>
+				<Pagination>
+					<Pagination.Item>{1}</Pagination.Item>
+					<Pagination.Ellipsis
+						aria-label="More"
+						title="More"
+						items={[2, 3, 4, 5]}
+					/>
+					<Pagination.Item>{'End'}</Pagination.Item>
+				</Pagination>
 			</div>
 		</Provider>
 	);
@@ -51,13 +55,13 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-		    <ClayPaginationWithBasicItems
-     			active={active}
-     			ellipsisBuffer={2}
-     			ellipsisProps={{'aria-label': 'More', title: 'More'}}
-     			onActiveChange={setActive}
-     			totalPages={25}
-    		/>
+				<ClayPaginationWithBasicItems
+					active={active}
+					ellipsisBuffer={2}
+					ellipsisProps={{'aria-label': 'More', title: 'More'}}
+					onActiveChange={setActive}
+					totalPages={25}
+				/>
 			</div>
 		</Provider>
 	);

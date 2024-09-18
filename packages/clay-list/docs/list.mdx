@@ -20,52 +20,58 @@ export default function App() {
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<List>
-          <List.Header>This is a header</List.Header>
-          <List.Item flex>
-            <List.ItemField>Item 1</List.ItemField>
+					<List.Header>This is a header</List.Header>
+					<List.Item flex>
+						<List.ItemField>Item 1</List.ItemField>
 
-            <List.ItemField>ItemField</List.ItemField>
+						<List.ItemField>ItemField</List.ItemField>
 
-            <List.ItemField expand>
-              <List.ItemTitle>Item Title and expanded</List.ItemTitle>
-              <List.ItemText>Item Text</List.ItemText>
-            </List.ItemField>
+						<List.ItemField expand>
+							<List.ItemTitle>
+								Item Title and expanded
+							</List.ItemTitle>
+							<List.ItemText>Item Text</List.ItemText>
+						</List.ItemField>
 
-            <List.ItemField>ItemField</List.ItemField>
-          </List.Item>
+						<List.ItemField>ItemField</List.ItemField>
+					</List.Item>
 
-          <List.Item flex>
-            <List.ItemField>Item 2</List.ItemField>
-            <List.ItemField expand>
-              <List.ItemTitle>Item Title and expanded</List.ItemTitle>
-              <List.ItemText>Hover this item for action menu</List.ItemText>
-            </List.ItemField>
-            <List.ItemField>
-              <List.QuickActionMenu>
-                <List.QuickActionMenu.Item
-                  aria-label="Delete"
-                  title="Delete"
-                  onClick={() => alert('Clicked the trash!')}
-                  symbol="trash"
-                />
+					<List.Item flex>
+						<List.ItemField>Item 2</List.ItemField>
+						<List.ItemField expand>
+							<List.ItemTitle>
+								Item Title and expanded
+							</List.ItemTitle>
+							<List.ItemText>
+								Hover this item for action menu
+							</List.ItemText>
+						</List.ItemField>
+						<List.ItemField>
+							<List.QuickActionMenu>
+								<List.QuickActionMenu.Item
+									aria-label="Delete"
+									title="Delete"
+									onClick={() => alert('Clicked the trash!')}
+									symbol="trash"
+								/>
 
-                <List.QuickActionMenu.Item
-                  aria-label="Settings"
-                  title="Settings"
-                  onClick={() => alert('Clicked the cog!')}
-                  symbol="cog"
-                />
-              </List.QuickActionMenu>
-            </List.ItemField>
-          </List.Item>
+								<List.QuickActionMenu.Item
+									aria-label="Settings"
+									title="Settings"
+									onClick={() => alert('Clicked the cog!')}
+									symbol="cog"
+								/>
+							</List.QuickActionMenu>
+						</List.ItemField>
+					</List.Item>
 
-          <List.Header>This is another header</List.Header>
-          <List.Item flex>
-            <List.ItemField>Item 3</List.ItemField>
+					<List.Header>This is another header</List.Header>
+					<List.Item flex>
+						<List.ItemField>Item 3</List.ItemField>
 
-            <List.ItemField>ItemField</List.ItemField>
-          </List.Item>
-        </List>
+						<List.ItemField>ItemField</List.ItemField>
+					</List.Item>
+				</List>
 			</div>
 		</Provider>
 	);
@@ -90,33 +96,31 @@ export default function App() {
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<List showQuickActionsOnHover>
-          <List.Item flex>
-            <List.ItemField expand>
-              <List.ItemTitle>
-                Item 1
-              </List.ItemTitle>
-              <List.ItemText>
-                Hover this item for quick action menu
-              </List.ItemText>
-            </List.ItemField>
-            <List.ItemField>
-              <List.QuickActionMenu>
-                <List.QuickActionMenu.Item
-                  aria-label="Delete"
-                  title="Delete"
-                  onClick={() => alert('Clicked the trash!')}
-                  symbol="trash"
-                />
-                <List.QuickActionMenu.Item
-                  aria-label="Settings"
-                  title="Settings"
-                  onClick={() => alert('Clicked the cog!')}
-                  symbol="cog"
-                />
-              </List.QuickActionMenu>
-            </List.ItemField>
-          </List.Item>
-        </List>
+					<List.Item flex>
+						<List.ItemField expand>
+							<List.ItemTitle>Item 1</List.ItemTitle>
+							<List.ItemText>
+								Hover this item for quick action menu
+							</List.ItemText>
+						</List.ItemField>
+						<List.ItemField>
+							<List.QuickActionMenu>
+								<List.QuickActionMenu.Item
+									aria-label="Delete"
+									title="Delete"
+									onClick={() => alert('Clicked the trash!')}
+									symbol="trash"
+								/>
+								<List.QuickActionMenu.Item
+									aria-label="Settings"
+									title="Settings"
+									onClick={() => alert('Clicked the cog!')}
+									symbol="cog"
+								/>
+							</List.QuickActionMenu>
+						</List.ItemField>
+					</List.Item>
+				</List>
 			</div>
 		</Provider>
 	);

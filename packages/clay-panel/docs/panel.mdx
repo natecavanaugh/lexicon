@@ -20,14 +20,14 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<Panel
-  				collapsable
-  				displayTitle="Title"
-  				displayType="secondary"
-  				showCollapseIcon={true}
-  			>
-  				<Panel.Body>{'Body!'}</Panel.Body>
-  			</Panel>
+				<Panel
+					collapsable
+					displayTitle="Title"
+					displayType="secondary"
+					showCollapseIcon={true}
+				>
+					<Panel.Body>{'Body!'}</Panel.Body>
+				</Panel>
 			</div>
 		</Provider>
 	);
@@ -50,25 +50,25 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<Panel
-  				collapsable
-  				displayTitle={
-  					<Panel.Title>
-  						<h3>{'Title'}</h3>
-  						<span>{'If field '}</span>
-  						<Label displayType="success">{'Country'}</Label>
-  						<Label>{'Is Equal To'}</Label>
-  						<span>{'value '}</span>
-  						<Label displayType="info">{'Brazil'}</Label>
-  						<span>{'enable '}</span>
-  						<Label displayType="success">{'State'}</Label>
-  					</Panel.Title>
-  				}
-  				displayType="secondary"
-  				showCollapseIcon={true}
-  			>
-  				<Panel.Body>{'Body!'}</Panel.Body>
-  			</Panel>
+				<Panel
+					collapsable
+					displayTitle={
+						<Panel.Title>
+							<h3>{'Title'}</h3>
+							<span>{'If field '}</span>
+							<Label displayType="success">{'Country'}</Label>
+							<Label>{'Is Equal To'}</Label>
+							<span>{'value '}</span>
+							<Label displayType="info">{'Brazil'}</Label>
+							<span>{'enable '}</span>
+							<Label displayType="success">{'State'}</Label>
+						</Panel.Title>
+					}
+					displayType="secondary"
+					showCollapseIcon={true}
+				>
+					<Panel.Body>{'Body!'}</Panel.Body>
+				</Panel>
 			</div>
 		</Provider>
 	);

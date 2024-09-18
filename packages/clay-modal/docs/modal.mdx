@@ -24,11 +24,7 @@ export default function App() {
 			<div className="p-4">
 				<>
 					{open && (
-						<Modal
-							observer={observer}
-							size="lg"
-							status="info"
-						>
+						<Modal observer={observer} size="lg" status="info">
 							<Modal.Header>Documents</Modal.Header>
 							<Modal.Body>
 								<p>Do you want to save your documents?</p>
@@ -36,10 +32,17 @@ export default function App() {
 							<Modal.Footer
 								last={
 									<Button.Group spaced>
-										<Button displayType="secondary" onClick={() => onOpenChange(false)}>
+										<Button
+											displayType="secondary"
+											onClick={() => onOpenChange(false)}
+										>
 											Cancel
 										</Button>
-										<Button onClick={() => onOpenChange(false)}>Save changes</Button>
+										<Button
+											onClick={() => onOpenChange(false)}
+										>
+											Save changes
+										</Button>
 									</Button.Group>
 								}
 							/>
@@ -127,9 +130,7 @@ export default function App() {
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<>
-					<Modal.Header>
-						{'Modal Title'}
-					</Modal.Header>
+					<Modal.Header>{'Modal Title'}</Modal.Header>
 
 					<br />
 
@@ -139,9 +140,7 @@ export default function App() {
 								<Modal.TitleSection>
 									<Modal.Title>
 										<Modal.TitleIndicator>
-											<Icon
-												symbol="info-circle"
-											/>
+											<Icon symbol="info-circle" />
 										</Modal.TitleIndicator>
 										{'Modal Title'}
 									</Modal.Title>
@@ -162,9 +161,7 @@ export default function App() {
 							displayType="unstyled"
 							onClick={() => {}}
 						>
-							<Icon
-								symbol="times"
-							/>
+							<Icon symbol="times" />
 						</Button>
 					</Modal.Header>
 				</>
@@ -239,7 +236,7 @@ function Example() {
 		>
 			Open Modal
 		</Button>
-	)
+	);
 }
 ```
 

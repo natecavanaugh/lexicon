@@ -18,19 +18,19 @@ import React from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const colStyles = {
+	const colStyles = {
 		backgroundColor: '#E7E7ED',
 		border: '1px solid #CDCED9',
 		paddingBottom: '.75rem',
 		paddingTop: '.75rem',
 	};
-  
+
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<Link displayType="primary" href="#link-styles">
-          Primary
-        </Link>
+					Primary
+				</Link>
 			</div>
 		</Provider>
 	);
@@ -43,20 +43,20 @@ Additionally, if you want to customize every Link component in your app, you are
 
 ```jsx
 const ConfirmBeforeNavigate = ({children, href, ...otherProps}) => (
-  <a
-    {...otherProps}
-    href={href}
-    onClick={e =>
-      window.confirm('r u sure?') ? undefined : e.preventDefault()
-    }
-  >
-    {children}
-  </a>
+	<a
+		{...otherProps}
+		href={href}
+		onClick={(e) =>
+			window.confirm('r u sure?') ? undefined : e.preventDefault()
+		}
+	>
+		{children}
+	</a>
 );
 
 <ClayLinkContext.Provider value={ConfirmBeforeNavigate}>
-  <div>
-    <ClayLink href="#">Click me</ClayLink>
-  </div>
-</ClayLinkContext.Provider>
+	<div>
+		<ClayLink href="#">Click me</ClayLink>
+	</div>
+</ClayLinkContext.Provider>;
 ```

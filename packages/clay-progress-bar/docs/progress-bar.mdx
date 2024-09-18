@@ -21,15 +21,15 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<>
-  				<ProgressBar value={50}/>
+				<>
+					<ProgressBar value={50} />
 
-  				<ProgressBar value={100}/>
+					<ProgressBar value={100} />
 
-  				<ProgressBar value={20}/>
+					<ProgressBar value={20} />
 
-  				<ProgressBar value={20}/>
-  			</>
+					<ProgressBar value={20} />
+				</>
 			</div>
 		</Provider>
 	);
@@ -55,17 +55,17 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<>
-  				<ProgressBar value={0}/>
+				<>
+					<ProgressBar value={0} />
 
-  				<ProgressBar value={50}/>
+					<ProgressBar value={50} />
 
-  				<ProgressBar value={100}/>
+					<ProgressBar value={100} />
 
-  				<ProgressBar value={50} warn/>
+					<ProgressBar value={50} warn />
 
-  				<ProgressBar value={100} warn/>
-  			</>
+					<ProgressBar value={100} warn />
+				</>
 			</div>
 		</Provider>
 	);
@@ -87,29 +87,25 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<>
-   				<ProgressBar
-    				feedback
-    				value={99}
-     			>
-      				<div className="progress-group-addon">99% Completed</div>
-     			</ProgressBar>
+				<>
+					<ProgressBar feedback value={99}>
+						<div className="progress-group-addon">
+							99% Completed
+						</div>
+					</ProgressBar>
 
-         	<ProgressBar
-    				feedback
-    				value={100}
-     			>
-    				<div className="progress-group-addon">100% Completed</div>
-     			</ProgressBar>
+					<ProgressBar feedback value={100}>
+						<div className="progress-group-addon">
+							100% Completed
+						</div>
+					</ProgressBar>
 
-     			<ProgressBar
-    				feedback
-    				value={99}
-    				warn
-     			>
-    				<div className="progress-group-addon">99% Completed</div>
-     			</ProgressBar>
-  			</>
+					<ProgressBar feedback value={99} warn>
+						<div className="progress-group-addon">
+							99% Completed
+						</div>
+					</ProgressBar>
+				</>
 			</div>
 		</Provider>
 	);

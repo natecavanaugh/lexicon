@@ -36,9 +36,7 @@ export default function App() {
 						</Link>
 					</NavigationBar.Item>
 					<NavigationBar.Item active={active === 'Item 2'}>
-						<Button
-							onClick={() => setActive('Item 2')}
-						>
+						<Button onClick={() => setActive('Item 2')}>
 							Item 2
 						</Button>
 					</NavigationBar.Item>
@@ -81,8 +79,8 @@ import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
 	const btnStyle = {
-		padding: "5.5px 16px 5.5px 16px",
-		borderColor: "var(--indigo)"
+		padding: '5.5px 16px 5.5px 16px',
+		borderColor: 'var(--indigo)',
 	};
 
 	return (
@@ -90,13 +88,31 @@ export default function App() {
 			<div className="p-4">
 				<NavigationBar triggerLabel="Item 1" spritemap={spritemap}>
 					<NavigationBar.Item active>
-							<button className="btn btn-unstyled" style={btnStyle} type="button">Item 1</button>
+						<button
+							className="btn btn-unstyled"
+							style={btnStyle}
+							type="button"
+						>
+							Item 1
+						</button>
 					</NavigationBar.Item>
 					<NavigationBar.Item>
-							<button className="btn btn-unstyled" style={btnStyle} type="button">Item 2</button>
+						<button
+							className="btn btn-unstyled"
+							style={btnStyle}
+							type="button"
+						>
+							Item 2
+						</button>
 					</NavigationBar.Item>
 					<NavigationBar.Item>
-							<button className="btn btn-unstyled" style={btnStyle} type="button">Item 3</button>
+						<button
+							className="btn btn-unstyled"
+							style={btnStyle}
+							type="button"
+						>
+							Item 3
+						</button>
 					</NavigationBar.Item>
 				</NavigationBar>
 			</div>

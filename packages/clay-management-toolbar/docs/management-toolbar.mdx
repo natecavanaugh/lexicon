@@ -46,24 +46,26 @@ export default function App() {
 										type="text"
 									/>
 									<ClayInput.GroupInsetItem after tag="span">
-									<ClayButtonWithIcon
-										aria-label="Close search"
-										className="navbar-breakpoint-d-none"
-										displayType="unstyled"
-										onClick={() => setSearchMobile(false)}
-										symbol="times"
-									/>
-									<ClayButtonWithIcon
-										aria-label="Search"
-										displayType="unstyled"
-										symbol="search"
-										type="submit"
-									/>
+										<ClayButtonWithIcon
+											aria-label="Close search"
+											className="navbar-breakpoint-d-none"
+											displayType="unstyled"
+											onClick={() =>
+												setSearchMobile(false)
+											}
+											symbol="times"
+										/>
+										<ClayButtonWithIcon
+											aria-label="Search"
+											displayType="unstyled"
+											symbol="search"
+											type="submit"
+										/>
 									</ClayInput.GroupInsetItem>
 								</ClayInput.GroupItem>
 							</ClayInput.Group>
 						</ManagementToolbar.Search>
-						
+
 						<ManagementToolbar.Item>
 							<Button
 								aria-label="Info"
@@ -109,7 +111,7 @@ export default function App() {
 		{label: 'Filter Action 1', onClick: () => alert('Filter clicked')},
 		{label: 'Filter Action 2', onClick: () => alert('Filter clicked')},
 	];
-	
+
 	const viewTypes = [
 		{
 			label: 'List',
@@ -132,7 +134,7 @@ export default function App() {
 	const [searchMobile, setSearchMobile] = useState(false);
 	const [checked, setChecked] = useState(false);
 
-	const viewTypeActive = viewTypes.find(type => type.active);
+	const viewTypeActive = viewTypes.find((type) => type.active);
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
@@ -141,7 +143,9 @@ export default function App() {
 						<ManagementToolbar.ItemList>
 							<ManagementToolbar.Item>
 								<ClayCheckbox
-									aria-label={checked ? 'Unselect all' : 'Select all'}
+									aria-label={
+										checked ? 'Unselect all' : 'Select all'
+									}
 									checked={checked}
 									onChange={(event) =>
 										setChecked(event.target.checked)
@@ -195,7 +199,9 @@ export default function App() {
 											aria-label="Close search"
 											className="navbar-breakpoint-d-none"
 											displayType="unstyled"
-											onClick={() => setSearchMobile(false)}
+											onClick={() =>
+												setSearchMobile(false)
+											}
 											symbol="times"
 										/>
 										<ClayButtonWithIcon
@@ -244,7 +250,7 @@ export default function App() {
 											<Icon
 												symbol={
 													viewTypeActive
-														? (viewTypeActive.symbolLeft)
+														? viewTypeActive.symbolLeft
 														: ''
 												}
 											/>
