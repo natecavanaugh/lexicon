@@ -9,12 +9,11 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"@clayui/autocomplete": "^3.111.0",
-		"@clayui/core": "^3.111.0",
-		"@clayui/css": "^3.111.0",
-		"@clayui/form": "^3.111.0",
+		"@clayui/css": "^3.119.1",
+		"@clayui/form": "^3.119.0",
+		"@clayui/icon": "^3.111.0",
 		"@clayui/link": "^3.111.0",
-		"@clayui/navigation-bar": "^3.111.0",
+		"@clayui/navigation-bar": "^3.119.0",
 		"@codesandbox/sandpack-react": "^2.18.2",
 		"@codesandbox/sandpack-themes": "^2.0.21",
 		"@docsearch/react": "^3.5.2",

@@ -175,86 +175,35 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
-"@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
   version "7.24.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.24.0.tgz#584c450063ffda59697021430cb47101b085951e"
   integrity sha512-Chk32uHMg6TnQdvw2e9IlqPpFX/6NLuK0Ys2PqLb7/gL5uFn9mXvK715FGLlOLQrcO4qIkNHkvPGktzzXexsFw==
   dependencies:
     regenerator-runtime "^0.14.0"
 
-"@clayui/autocomplete@^3.111.0":
-  version "3.111.0"
-  resolved "https://registry.yarnpkg.com/@clayui/autocomplete/-/autocomplete-3.111.0.tgz#30b48498a22e9e25487564a6ba819e6f067bfc37"
-  integrity sha512-gL1uD3F3kWU58njZE1HTKEkSXsAydj/1eZ5oppp8SdJ0+I3LlZE0zLzYCE5AzJSV/5DzvLfxUCsgwY316G9Bag==
-  dependencies:
-    "@clayui/core" "^3.111.0"
-    "@clayui/drop-down" "^3.111.0"
-    "@clayui/form" "^3.111.0"
-    "@clayui/loading-indicator" "^3.111.0"
-    "@clayui/shared" "^3.111.0"
-    classnames "^2.2.6"
-    fuzzy "^0.1.3"
-
-"@clayui/button@^3.111.0":
-  version "3.111.0"
-  resolved "https://registry.yarnpkg.com/@clayui/button/-/button-3.111.0.tgz#070e18c62dbf8ee1342238f0c5fa6b16e158eaad"
-  integrity sha512-3hstjJDzpDUUpT7qpb09zgdeWb/ile8Mh9S3Bu0iH7M6a+glRUrzLnFrOToKX+ACtb4LBi/PGul1KKiIu8vLGw==
+"@clayui/button@^3.116.0":
+  version "3.116.0"
+  resolved "https://registry.yarnpkg.com/@clayui/button/-/button-3.116.0.tgz#2f8c4baff8e4d88a266a91be4c2dc4fd12bb76c5"
+  integrity sha512-zTk5hYh9r7HEvL+ro3m9hr3UpO1hmNNhRV3IKN00T/51c4B6aiFd0reEJ8IrD9StoeXBnS5ySKXCcZc6l4RWzw==
   dependencies:
     "@clayui/icon" "^3.111.0"
     classnames "^2.2.6"
     warning "^4.0.3"
 
-"@clayui/core@^3.111.0":
-  version "3.111.0"
-  resolved "https://registry.yarnpkg.com/@clayui/core/-/core-3.111.0.tgz#e185b42c6eb672bcc8b37c296df5d5a7b4bae0ef"
-  integrity sha512-TIUQKOQ0O7/jZc/ci2QHBYV5jcUw4dRDVesdqlD0pmfntyzdU5TAAMAxlCs/W4AEf+dL/mak096IGvAHd/GGvg==
-  dependencies:
-    "@clayui/button" "^3.111.0"
-    "@clayui/form" "^3.111.0"
-    "@clayui/icon" "^3.111.0"
-    "@clayui/layout" "^3.111.0"
-    "@clayui/link" "^3.111.0"
-    "@clayui/loading-indicator" "^3.111.0"
-    "@clayui/modal" "^3.111.0"
-    "@clayui/provider" "^3.111.0"
-    "@clayui/shared" "^3.111.0"
-    "@clayui/table" "^3.111.0"
-    "@tanstack/react-virtual" "3.0.0-beta.54"
-    aria-hidden "^1.2.2"
-    classnames "^2.2.6"
-    fuzzy "^0.1.3"
-    react-dnd "^11.1.1"
-    react-dnd-html5-backend "^11.1.1"
-    react-transition-group "^4.4.1"
+"@clayui/css@^3.119.1":
+  version "3.119.1"
+  resolved "https://registry.yarnpkg.com/@clayui/css/-/css-3.119.1.tgz#4a8726c92a341c0af29dc6ae013de85095bbc14e"
+  integrity sha512-JLrH3NTOfm4NC6i0fzrsJhkqoO0jSXmjD5cLBRGy3OHGkO/kCxfbIldTI6mhwgFfE6A+9QD4xxNx5sNBvR8Hfw==
 
-"@clayui/css@^3.111.0":
-  version "3.111.0"
-  resolved "https://registry.yarnpkg.com/@clayui/css/-/css-3.111.0.tgz#d8481b6f0e25c3d4fe89d4401db0077419d49362"
-  integrity sha512-8hIKXKw5NSRdwlF8aQV4KxPMZLAgn0hrGaOQYPjUlQAKECN2bzA+uYY4zeFW+wZWfy0eWFG3CLhLZfhS9aYjCg==
-
-"@clayui/drop-down@^3.111.0":
-  version "3.111.0"
-  resolved "https://registry.yarnpkg.com/@clayui/drop-down/-/drop-down-3.111.0.tgz#b9a8ff1d22e258cff0e8d4d47be6fdb9f7491cda"
-  integrity sha512-zDImiR6o88F3F8JYqHnWpHyQJWzbd1p9P5gKkV43ciGkil/HWjTBdcjUbtUZywdS7tv8dRbX4gl8+4pTZmM0Vg==
+"@clayui/form@^3.119.0":
+  version "3.119.0"
+  resolved "https://registry.yarnpkg.com/@clayui/form/-/form-3.119.0.tgz#88207d71ea551e65af3e55430c42203e85a379ed"
+  integrity sha512-TMuXkiDCjzf2sUDwYNsMGfnpxpjLlMP1AiOsBeHp61FVB8qNx30PQGtcDgF1ywBYE5Lne1THbPhjKSThtOEPFQ==
   dependencies:
-    "@clayui/button" "^3.111.0"
-    "@clayui/core" "^3.111.0"
-    "@clayui/form" "^3.111.0"
+    "@clayui/button" "^3.116.0"
     "@clayui/icon" "^3.111.0"
-    "@clayui/link" "^3.111.0"
-    "@clayui/shared" "^3.111.0"
-    classnames "^2.2.6"
-    react-transition-group "^4.4.1"
-    warning "^4.0.3"
-
-"@clayui/form@^3.111.0":
-  version "3.111.0"
-  resolved "https://registry.yarnpkg.com/@clayui/form/-/form-3.111.0.tgz#cba850ed445a4327a2098843e0f0c783be8288ca"
-  integrity sha512-h7Gp0zfEMYLQ4Wm8O1IiGhrfGo32Qr2FFv4Vexq9YZYMRjqYL2R9lcZ+3/U9il2L40OehKIyjRhusMUrGbVndg==
-  dependencies:
-    "@clayui/button" "^3.111.0"
-    "@clayui/icon" "^3.111.0"
-    "@clayui/shared" "^3.111.0"
+    "@clayui/shared" "^3.119.0"
     classnames "^2.2.6"
 
 "@clayui/icon@^3.111.0":
@@ -280,35 +229,16 @@
   dependencies:
     classnames "^2.2.6"
 
-"@clayui/loading-indicator@^3.111.0":
-  version "3.111.0"
-  resolved "https://registry.yarnpkg.com/@clayui/loading-indicator/-/loading-indicator-3.111.0.tgz#6494950f8c770a49ed2b1053c530d2b66ef6f83b"
-  integrity sha512-Odr47uf5HRJJ3VrLgUE8IayeR/vvQ5OggC3A4JC+1TpqH3UQCjFFTcE2DuaPCqNxy2h/lTBUQ76O9+Ca4bYWjw==
+"@clayui/navigation-bar@^3.119.0":
+  version "3.119.0"
+  resolved "https://registry.yarnpkg.com/@clayui/navigation-bar/-/navigation-bar-3.119.0.tgz#356d16f28003f9f54f21b304d4fcd7a7928651fc"
+  integrity sha512-CBVOpM740e6a/k6abIbSVjwZo1mrb+2rPnzIsGA0M/80QFRudLwqj/bG6tkkx7gsHZ72TyK5DJ7FOnb5ZqRf5Q==
   dependencies:
-    classnames "^2.2.6"
-
-"@clayui/modal@^3.111.0":
-  version "3.111.0"
-  resolved "https://registry.yarnpkg.com/@clayui/modal/-/modal-3.111.0.tgz#933992d0085ccdf463f802a472bb7c7c7ed41bb3"
-  integrity sha512-VJQPpkq8HL8TlI6wnW6RtGPpK+2ecWS8lB3mKgPXih0bLoU8p2N3/NRU3XHElLGPAt1gAQCSciEyDReTUqOFzw==
-  dependencies:
-    "@clayui/button" "^3.111.0"
-    "@clayui/icon" "^3.111.0"
-    "@clayui/shared" "^3.111.0"
-    aria-hidden "^1.2.2"
-    classnames "^2.2.6"
-    warning "^4.0.3"
-
-"@clayui/navigation-bar@^3.111.0":
-  version "3.111.0"
-  resolved "https://registry.yarnpkg.com/@clayui/navigation-bar/-/navigation-bar-3.111.0.tgz#1ccaeea2e013c4819ddd6bdd36125c7362a65582"
-  integrity sha512-aFo356Z2KeNXINWn+maB8Cjq+0xeaADxGCqa1V4e/5kuHb8DR9N6imqL96MNfSDkkHWo+YWsRW8HEPtHm8jn5g==
-  dependencies:
-    "@clayui/button" "^3.111.0"
+    "@clayui/button" "^3.116.0"
     "@clayui/icon" "^3.111.0"
     "@clayui/layout" "^3.111.0"
     "@clayui/provider" "^3.111.0"
-    "@clayui/shared" "^3.111.0"
+    "@clayui/shared" "^3.119.0"
     classnames "^2.2.6"
     react-transition-group "^4.4.1"
     warning "^4.0.3"
@@ -320,25 +250,18 @@
   dependencies:
     "@clayui/icon" "^3.111.0"
 
-"@clayui/shared@^3.111.0":
-  version "3.111.0"
-  resolved "https://registry.yarnpkg.com/@clayui/shared/-/shared-3.111.0.tgz#dff824840b44333c487cb558dd0fbcb829580953"
-  integrity sha512-dWRNx44Q1cx85PZ7swsd/wC7LrFFD2039ejLDuk4B4dExDDgQcnA1Yt7+49/taCOY+5iO0Gluhv61lNZ8OWxzQ==
+"@clayui/shared@^3.119.0":
+  version "3.119.0"
+  resolved "https://registry.yarnpkg.com/@clayui/shared/-/shared-3.119.0.tgz#1f4ea5ff516f384ed88966c9086319933290d58e"
+  integrity sha512-bH+oj7aZSdQ9Cq2IQJdXhuvF5CgWvfus4XQwbgeLUzlFTVjupfG14viuIB5D2UVFQGhX6FzmtTmkGp4ZmcH0mg==
   dependencies:
-    "@clayui/button" "^3.111.0"
+    "@clayui/button" "^3.116.0"
     "@clayui/link" "^3.111.0"
     "@clayui/provider" "^3.111.0"
     aria-hidden "^1.2.2"
     classnames "^2.2.6"
     dom-align "^1.12.2"
     warning "^4.0.3"
-
-"@clayui/table@^3.111.0":
-  version "3.111.0"
-  resolved "https://registry.yarnpkg.com/@clayui/table/-/table-3.111.0.tgz#50a0ece07a3ce40ffb0265d8585ff0792299cafe"
-  integrity sha512-x7cJiGCkr9aoy1eHb84IQ2mtBQSBDe6L08+NlANhY7MNeGkY+Pa1CIdwVPeIQO2aBKDFQDXiprhqjZFbzpk8OA==
-  dependencies:
-    classnames "^2.2.6"
 
 "@codemirror/autocomplete@^6.0.0", "@codemirror/autocomplete@^6.4.0":
   version "6.13.0"
@@ -809,21 +732,6 @@
   resolved "https://registry.yarnpkg.com/@preact/signals-core/-/signals-core-1.7.0.tgz#3ffb886bfac80ff14dac365dd09184a289a2e64c"
   integrity sha512-bEZLgmJGSBVP5PUPDowhPW3bVdMmp9Tr5OEl+SQK+8Tv9T7UsIfyN905cfkmmeqw8z4xp8T6zrl4M1uj9+HAfg==
 
-"@react-dnd/asap@^4.0.0":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@react-dnd/asap/-/asap-4.0.1.tgz#5291850a6b58ce6f2da25352a64f1b0674871aab"
-  integrity sha512-kLy0PJDDwvwwTXxqTFNAAllPHD73AycE9ypWeln/IguoGBEbvFcPDbCV03G52bEcC5E+YgupBE0VzHGdC8SIXg==
-
-"@react-dnd/invariant@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@react-dnd/invariant/-/invariant-2.0.0.tgz#09d2e81cd39e0e767d7da62df9325860f24e517e"
-  integrity sha512-xL4RCQBCBDJ+GRwKTFhGUW8GXa4yoDfJrPbLblc3U09ciS+9ZJXJ3Qrcs/x2IODOdIE5kQxvMmE2UKyqUictUw==
-
-"@react-dnd/shallowequal@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@react-dnd/shallowequal/-/shallowequal-2.0.0.tgz#a3031eb54129f2c66b2753f8404266ec7bf67f0a"
-  integrity sha512-Pc/AFTdwZwEKJxFJvlxrSmGe/di+aAOBn60sremrpLo6VI/6cmiUYNNwlI5KNYttg7uypzA3ILPMPgxB2GYZEg==
-
 "@react-hook/intersection-observer@^3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@react-hook/intersection-observer/-/intersection-observer-3.1.1.tgz#6b8fdb80d133c9c28bc8318368ecb3a1f8befc50"
@@ -907,18 +815,6 @@
     "@swc/counter" "^0.1.3"
     tslib "^2.4.0"
 
-"@tanstack/react-virtual@3.0.0-beta.54":
-  version "3.0.0-beta.54"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-virtual/-/react-virtual-3.0.0-beta.54.tgz#755979455adf13f2584937204a3f38703e446037"
-  integrity sha512-D1mDMf4UPbrtHRZZriCly5bXTBMhylslm4dhcHqTtDJ6brQcgGmk8YD9JdWBGWfGSWPKoh2x1H3e7eh+hgPXtQ==
-  dependencies:
-    "@tanstack/virtual-core" "3.0.0-beta.54"
-
-"@tanstack/virtual-core@3.0.0-beta.54":
-  version "3.0.0-beta.54"
-  resolved "https://registry.yarnpkg.com/@tanstack/virtual-core/-/virtual-core-3.0.0-beta.54.tgz#12259d007911ad9fce1388385c54a9141f4ecdc4"
-  integrity sha512-jtkwqdP2rY2iCCDVAFuaNBH3fiEi29aTn2RhtIoky8DTTiCdc48plpHHreLwmv1PICJ4AJUUESaq3xa8fZH8+g==
-
 "@ts-morph/common@~0.23.0":
   version "0.23.0"
   resolved "https://registry.yarnpkg.com/@ts-morph/common/-/common-0.23.0.tgz#bd4ddbd3f484f29476c8bd985491592ae5fc147e"
@@ -973,14 +869,6 @@
   integrity sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==
   dependencies:
     "@types/unist" "*"
-
-"@types/hoist-non-react-statics@^3.3.1":
-  version "3.3.5"
-  resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.5.tgz#dab7867ef789d87e2b4b0003c9d65c49cc44a494"
-  integrity sha512-SbcrWzkKBw2cdwRTwQAswfpB9g9LJWfjtUeW/jvNwbhC8cpmmNYVePa+ncbUe0rGTQ7G3Ff6mYUN2VMfLVr+Sg==
-  dependencies:
-    "@types/react" "*"
-    hoist-non-react-statics "^3.3.0"
 
 "@types/json-schema@^7.0.9":
   version "7.0.15"
@@ -1819,15 +1707,6 @@ direction@^2.0.0:
   resolved "https://registry.yarnpkg.com/direction/-/direction-2.0.1.tgz#71800dd3c4fa102406502905d3866e65bdebb985"
   integrity sha512-9S6m9Sukh1cZNknO1CWAr2QAWsbKLafQiyM5gZ7VgXHeuaoUwffKN4q6NC4A/Mf9iiPlOXQEKW/Mv/mh9/3YFA==
 
-dnd-core@^11.1.3:
-  version "11.1.3"
-  resolved "https://registry.yarnpkg.com/dnd-core/-/dnd-core-11.1.3.tgz#f92099ba7245e49729d2433157031a6267afcc98"
-  integrity sha512-QugF55dNW+h+vzxVJ/LSJeTeUw9MCJ2cllhmVThVPEtF16ooBkxj0WBE5RB+AceFxMFo1rO6bJKXtqKl+JNnyA==
-  dependencies:
-    "@react-dnd/asap" "^4.0.0"
-    "@react-dnd/invariant" "^2.0.0"
-    redux "^4.0.4"
-
 doctrine@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.1.0.tgz#5cd01fc101621b42c4cd7f5d1a66243716d3f39d"
@@ -2564,11 +2443,6 @@ functions-have-names@^1.2.3:
   resolved "https://registry.yarnpkg.com/functions-have-names/-/functions-have-names-1.2.3.tgz#0404fe4ee2ba2f607f0e0ec3c80bae994133b834"
   integrity sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==
 
-fuzzy@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/fuzzy/-/fuzzy-0.1.3.tgz#4c76ec2ff0ac1a36a9dccf9a00df8623078d4ed8"
-  integrity sha512-/gZffu4ykarLrCiP3Ygsa86UAo1E5vEVlvTrpkKywXSbP9Xhln3oSp9QSV57gEq3JFFpGJ4GZ+5zdEp3FcUh4w==
-
 get-intrinsic@^1.1.1, get-intrinsic@^1.1.3, get-intrinsic@^1.2.1, get-intrinsic@^1.2.2, get-intrinsic@^1.2.3, get-intrinsic@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/get-intrinsic/-/get-intrinsic-1.2.4.tgz#e385f5a4b5227d449c3eabbad05494ef0abbeadd"
@@ -2951,13 +2825,6 @@ hastscript@^8.0.0:
     hast-util-parse-selector "^4.0.0"
     property-information "^6.0.0"
     space-separated-tokens "^2.0.0"
-
-hoist-non-react-statics@^3.3.0:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
-  integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
-  dependencies:
-    react-is "^16.7.0"
 
 hosted-git-info@^2.1.4:
   version "2.8.9"
@@ -5219,23 +5086,6 @@ react-devtools-inline@4.4.0:
   dependencies:
     es6-symbol "^3"
 
-react-dnd-html5-backend@^11.1.1:
-  version "11.1.3"
-  resolved "https://registry.yarnpkg.com/react-dnd-html5-backend/-/react-dnd-html5-backend-11.1.3.tgz#2749f04f416ec230ea193f5c1fbea2de7dffb8f7"
-  integrity sha512-/1FjNlJbW/ivkUxlxQd7o3trA5DE33QiRZgxent3zKme8DwF4Nbw3OFVhTRFGaYhHFNL1rZt6Rdj1D78BjnNLw==
-  dependencies:
-    dnd-core "^11.1.3"
-
-react-dnd@^11.1.1:
-  version "11.1.3"
-  resolved "https://registry.yarnpkg.com/react-dnd/-/react-dnd-11.1.3.tgz#f9844f5699ccc55dfc81462c2c19f726e670c1af"
-  integrity sha512-8rtzzT8iwHgdSC89VktwhqdKKtfXaAyC4wiqp0SywpHG12TTLvfOoL6xNEIUWXwIEWu+CFfDn4GZJyynCEuHIQ==
-  dependencies:
-    "@react-dnd/shallowequal" "^2.0.0"
-    "@types/hoist-non-react-statics" "^3.3.1"
-    dnd-core "^11.1.3"
-    hoist-non-react-statics "^3.3.0"
-
 react-dom@^18:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
@@ -5244,7 +5094,7 @@ react-dom@^18:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-is@^16.13.1, react-is@^16.7.0:
+react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -5329,13 +5179,6 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
-
-redux@^4.0.4:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-4.2.1.tgz#c08f4306826c49b5e9dc901dee0452ea8fce6197"
-  integrity sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==
-  dependencies:
-    "@babel/runtime" "^7.9.2"
 
 reflect.getprototypeof@^1.0.4:
   version "1.0.5"
