@@ -252,6 +252,7 @@ function Props({
 		) {
 			return (
 				<div
+					key={index}
 					style={{
 						display: 'flex',
 						flexDirection: 'column',

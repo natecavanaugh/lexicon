@@ -51,7 +51,7 @@ export function Sidebar({items, tree}: Props) {
 				</ul>
 			))}
 
-			{tree && <Tree children={tree} depth={0} />}
+			{tree && <Tree depth={0}>{tree}</Tree>}
 		</nav>
 	);
 }
@@ -62,14 +62,18 @@ type TreeProps = {
 };
 
 function Tree({children, depth}: TreeProps) {
-	return children.map((item) => (
-		<ul key={item.pathname} className={styles.sidebar_nav}>
-			<p className={styles.sidebar_nav_title}>{item.label}</p>
-			{!!item.children.length && (
-				<Item children={item.children} depth={depth + 1} />
-			)}
-		</ul>
-	));
+	return (
+		<>
+			{children.map((item) => (
+				<ul key={item.pathname} className={styles.sidebar_nav}>
+					<p className={styles.sidebar_nav_title}>{item.label}</p>
+					{!!item.children.length && (
+						<Item depth={depth + 1}>{item.children}</Item>
+					)}
+				</ul>
+			))}
+		</>
+	);
 }
 
 function Item({children, depth}: TreeProps) {
@@ -86,7 +90,7 @@ function Item({children, depth}: TreeProps) {
 							{item.label}
 						</ClayLink>
 						{!!item.children.length && (
-							<Item children={item.children} depth={depth + 1} />
+							<Item depth={depth + 1}>{item.children}</Item>
 						)}
 					</li>
 				))}
