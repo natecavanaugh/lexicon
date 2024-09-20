@@ -83,28 +83,27 @@ export interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	translucent?: boolean;
 }
 
-const ClayButton = React.forwardRef<HTMLButtonElement, IProps>(
-	(
-		{
-			alert,
-			block,
-			borderless,
-			children,
-			className,
-			dark,
-			displayType = 'primary',
-			monospaced,
-			outline,
-			rounded,
-			size = 'regular',
-			small,
-			translucent,
-			type = 'button',
-			...otherProps
-		}: IProps,
-		ref
-	) => {
-		const childArray = React.Children.toArray(children);
+function ButtonInner(
+	{
+		alert,
+		block,
+		borderless,
+		children,
+		className,
+		dark,
+		displayType = 'primary',
+		monospaced,
+		outline,
+		rounded,
+		size = 'regular',
+		small,
+		translucent,
+		type = 'button',
+		...otherProps
+	}: IProps,
+	ref: React.Ref<HTMLButtonElement>
+) {
+	const childArray = React.Children.toArray(children);
 
 	warning(
 		!(
@@ -117,38 +116,13 @@ const ClayButton = React.forwardRef<HTMLButtonElement, IProps>(
 		'Button Accessibility: Component has only the Icon declared. Define an `aria-label` or `aria-labelledby` attribute that labels the interactive button that screen readers can read. The `title` attribute is optional but consult your design team.'
 	);
 
-		if (displayType === 'beta') {
-			displayType = 'info';
-			translucent = true;
-		} else if (displayType === 'beta-dark') {
-			dark = true;
-			displayType = 'info';
-			translucent = true;
-		}
-
-		return (
-			<button
-				className={classNames(className, 'btn', {
-					'alert-btn': alert,
-					'btn-block': block,
-					'btn-monospaced': monospaced,
-					'btn-outline-borderless': borderless,
-					'btn-sm': small && (!size || size === 'regular'),
-					'btn-translucent': translucent,
-					'clay-dark': dark,
-					[`btn-${displayType}`]:
-						displayType && !outline && !borderless,
-					[`btn-outline-${displayType}`]:
-						displayType && (outline || borderless),
-					[`btn-${size}`]: size && size !== 'regular',
-				})}
-				ref={ref}
-				type={type}
-				{...otherProps}
-			>
-				{children}
-			</button>
-		);
+	if (displayType === 'beta') {
+		displayType = 'info';
+		translucent = true;
+	} else if (displayType === 'beta-dark') {
+		dark = true;
+		displayType = 'info';
+		translucent = true;
 	}
 
 	return (
@@ -158,15 +132,23 @@ const ClayButton = React.forwardRef<HTMLButtonElement, IProps>(
 				'btn-block': block,
 				'btn-monospaced': monospaced,
 				'btn-outline-borderless': borderless,
-				'btn-sm': small && !size,
+				'btn-sm': small && (!size || size === 'regular'),
 				'btn-translucent': translucent,
 				'clay-dark': dark,
-				[`btn-${displayType}`]:
-					displayType && !outline && !borderless,
+				[`btn-${displayType}`]: displayType && !outline && !borderless,
 				[`btn-outline-${displayType}`]:
+					displayType && (outline || borderless),
+				'rounded-pill': rounded,
+				[`btn-${size}`]: size && size !== 'regular',
+			})}
+			ref={ref}
+			type={type}
+			{...otherProps}
+		>
+			{children}
 		</button>
 	);
-};
+}
 
 type ForwardRef = {
 	displayName: string;
