@@ -113,12 +113,10 @@
 	"workspaces": {
 		"packages": [
 			"packages/*",
-			"clayui.com",
-			"www"
+			"clayui.com"
 		],
 		"nohoist": [
 			"gatsby",
-			"next",
 			"**/@storybook/**/webpack",
 			"**/@storybook/**/webpack/**"
 		]
