@@ -5,7 +5,7 @@ description: 'Practical guidelines to start using Clay, a quick guide on how to 
 
 Clay follows some fundamentals and we recommend that you read more about this before you start using it in your application.
 
--   [Composing](/docs/introduction/composition)
+-   [Composing](https://clayui.com/docs/introduction/composition)
 
 ### Install with NPM or Yarn
 
@@ -49,9 +49,11 @@ If you want a specific version of CSS, specify the desired version.
 
 Example:
 
-```diff
-- https://cdn.jsdelivr.net/npm/@clayui/css/lib/css/atlas.css
-+ https://cdn.jsdelivr.net/npm/@clayui/css@3.0.0/lib/css/atlas.css
+```html
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/@clayui/css@3.0.0/lib/css/atlas.css"
+/>
 ```
 
 ### Quick start
@@ -73,7 +75,7 @@ Example:
 <div className="clay-site-alert alert alert-warning">
 	<strong className="lead">Warning</strong>
 	To ensure that Clay functions correctly, please remember to import the CSS package
-	from @clayui/css into your React entrypoint component, as demonstrated in the
+	from `@clayui/css` into your React entrypoint component, as demonstrated in the
 	example below.
 </div>
 
@@ -95,21 +97,20 @@ Use the **codesandbox** below as your text editor and environment so we can foll
 	sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 />
 
-Let's use the **DropDown** component (`@clayui/drop-down`) and understand how the compositing philosophy works for this component so you can start replicating on other components.
+Let's use the **DropDown** component `@clayui/drop-down` and understand how the compositing philosophy works for this component so you can start replicating on other components.
 
 <div className="clay-site-alert alert alert-info">
 	<strong className="lead">Info</strong>
-	You can check the <a href="/docs/components/drop-down.html" target="_blank">
-		ClayDropDown
-	</a> package documentation for its API and usage philosophy.
+	You can check the [ClayDropDown](https://clayui.com/docs/components/drop-down)
+	package documentation for its API and usage philosophy.
 </div>
 
 Before we get started, let's import the main packages that we will use to create a low-level Drop Down with Clay components.
 
-```js
-import {ClayCheckbox, ClayRadio} from '@clayui/form';
-import ClayButton from '@clayui/button';
-import ClayDropDown from '@clayui/drop-down';
+```jsx
+import {ClayCheckbox, ClayRadio} from '@clayui&#x2215;form';
+import ClayButton from '@clayui&#x2215;button';
+import ClayDropDown from '@clayui&#x2215;drop-down';
 ```
 
 <div className="clay-site-alert alert alert-info">
@@ -118,7 +119,7 @@ import ClayDropDown from '@clayui/drop-down';
 	the environment if you want to test with other Clay components.
 </div>
 
-As you learned from [Clay's compositional philosophy](/docs/introduction/composition), we are using a low-level DropDown component, as its essence is a controlled component and for that you need to control DropDown's expand state. Let's use React's [`useState`](https://reactjs.org/docs/hooks-reference.html#usestate) to control the state.
+As you learned from [Clay's compositional philosophy](https://clayui.com/docs/introduction/composition), we are using a low-level DropDown component, as its essence is a controlled component and for that you need to control DropDown's expand state. Let's use React's [useState](https://reactjs.org/docs/hooks-reference.html#usestate) to control the state.
 
 ```js
 const [expand, setExpand] = useState(false);
@@ -173,7 +174,7 @@ Low-level components in Clay allow you to compose and add your own rules, allowi
 See the same example above being reflected in a high-level component.
 
 ```js
-import ClayDropDown, {ClayDropDownWithItems} from '@clayui/drop-down';
+import ClayDropDown, {ClayDropDownWithItems} from '@clayui&#x2215;drop-down';
 ```
 
 ```jsx

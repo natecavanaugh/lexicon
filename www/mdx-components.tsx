@@ -3,6 +3,7 @@ import {CodeBlock} from 'mdxts/components';
 import Link from 'next/link';
 import {Sandpack} from '@/app/_components/Sandpack.server';
 import styles from './mdx-components.module.css';
+import React from 'react';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
 	return {
@@ -42,7 +43,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 				</As>
 			);
 		},
-		pre: ({children, preview, language, ...otherProps}: any) => {
+		pre: ({children, preview, language, value, ...otherProps}: any) => {
 			if (preview) {
 				return (
 					<Sandpack language={language}>
@@ -54,6 +55,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 			return (
 				<CodeBlock
 					{...otherProps}
+					value={value}
 					allowCopy
 					className={{
 						container: styles.code_editor,
