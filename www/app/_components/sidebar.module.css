@@ -35,6 +35,11 @@
   font-size: 18px;
 }
 
+.sidebar_nav li a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .sidebar_nav li a:hover {
   color: #B3472D;
 }

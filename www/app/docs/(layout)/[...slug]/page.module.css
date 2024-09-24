@@ -17,6 +17,15 @@
   margin-bottom: 5px;
 }
 
+.toc_list a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.toc_list a:hover {
+    color: #B3472D;
+}
+
 .content {
   --color-separator: #F5F5F8;
   --color-foreground-secondary: #B3482E;
