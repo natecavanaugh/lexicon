@@ -83,84 +83,86 @@ export interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	translucent?: boolean;
 }
 
-function ButtonInner(
-	{
-		alert,
-		block,
-		borderless,
-		children,
-		className,
-		dark,
-		displayType = 'primary',
-		monospaced,
-		outline,
-		rounded,
-		size = 'regular',
-		small,
-		translucent,
-		type = 'button',
-		...otherProps
-	}: IProps,
-	ref: React.Ref<HTMLButtonElement>
-) {
-	const childArray = React.Children.toArray(children);
-
-	warning(
-		!(
-			childArray.length === 1 &&
-			// @ts-ignore
-			childArray[0].type?.displayName === 'ClayIcon' &&
-			typeof otherProps['aria-label'] !== 'string' &&
-			typeof otherProps['aria-labelledby'] !== 'string'
-		),
-		'Button Accessibility: Component has only the Icon declared. Define an `aria-label` or `aria-labelledby` attribute that labels the interactive button that screen readers can read. The `title` attribute is optional but consult your design team.'
-	);
-
-	if (displayType === 'beta') {
-		displayType = 'info';
-		translucent = true;
-	} else if (displayType === 'beta-dark') {
-		dark = true;
-		displayType = 'info';
-		translucent = true;
-	}
-
-	return (
-		<button
-			className={classNames(className, 'btn', {
-				'alert-btn': alert,
-				'btn-block': block,
-				'btn-monospaced': monospaced,
-				'btn-outline-borderless': borderless,
-				'btn-sm': small && (!size || size === 'regular'),
-				'btn-translucent': translucent,
-				'clay-dark': dark,
-				[`btn-${displayType}`]: displayType && !outline && !borderless,
-				[`btn-outline-${displayType}`]:
-					displayType && (outline || borderless),
-				'rounded-pill': rounded,
-				[`btn-${size}`]: size && size !== 'regular',
-			})}
-			ref={ref}
-			type={type}
-			{...otherProps}
-		>
-			{children}
-		</button>
-	);
+export interface IForwardRef<T, P = {}>
+	extends React.ForwardRefExoticComponent<P & React.RefAttributes<T>> {
+	Group: typeof Group;
 }
 
-type ForwardRef = {
-	displayName: string;
-	Group: typeof Group;
-	(props: IProps & {ref?: React.Ref<HTMLButtonElement>}): JSX.Element;
-};
+function forwardRef<T, P = {}>(component: React.RefForwardingComponent<T, P>) {
+	return React.forwardRef<T, P>(component) as IForwardRef<T, P>;
+}
 
-const Button = React.forwardRef(ButtonInner) as unknown as ForwardRef;
+const Button = forwardRef(
+	(
+		{
+			alert,
+			block,
+			borderless,
+			children,
+			className,
+			dark,
+			displayType = 'primary',
+			monospaced,
+			outline,
+			rounded,
+			size = 'regular',
+			small,
+			translucent,
+			type = 'button',
+			...otherProps
+		}: IProps,
+		ref: React.Ref<HTMLButtonElement>
+	) => {
+		const childArray = React.Children.toArray(children);
+
+		warning(
+			!(
+				childArray.length === 1 &&
+				// @ts-ignore
+				childArray[0].type?.displayName === 'ClayIcon' &&
+				typeof otherProps['aria-label'] !== 'string' &&
+				typeof otherProps['aria-labelledby'] !== 'string'
+			),
+			'Button Accessibility: Component has only the Icon declared. Define an `aria-label` or `aria-labelledby` attribute that labels the interactive button that screen readers can read. The `title` attribute is optional but consult your design team.'
+		);
+
+		if (displayType === 'beta') {
+			displayType = 'info';
+			translucent = true;
+		} else if (displayType === 'beta-dark') {
+			dark = true;
+			displayType = 'info';
+			translucent = true;
+		}
+
+		return (
+			<button
+				className={classNames(className, 'btn', {
+					'alert-btn': alert,
+					'btn-block': block,
+					'btn-monospaced': monospaced,
+					'btn-outline-borderless': borderless,
+					'btn-sm': small && (!size || size === 'regular'),
+					'btn-translucent': translucent,
+					'clay-dark': dark,
+					[`btn-${displayType}`]:
+						displayType && !outline && !borderless,
+					[`btn-outline-${displayType}`]:
+						displayType && (outline || borderless),
+					'rounded-pill': rounded,
+					[`btn-${size}`]: size && size !== 'regular',
+				})}
+				ref={ref}
+				type={type}
+				{...otherProps}
+			>
+				{children}
+			</button>
+		);
+	}
+);
 
 Button.Group = Group;
-
 Button.displayName = 'ClayButton';
 
-export {Button};
 export default Button;
