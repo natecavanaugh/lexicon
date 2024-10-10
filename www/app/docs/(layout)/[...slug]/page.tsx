@@ -42,12 +42,26 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
 
 export default async function Page({params}: Props) {
 	const document = await data.get(params.slug);
-	const component = await data.get(['packages', ...params.slug.slice(1)]);
 	const paths = data.paths();
 
 	if (!document) {
 		notFound();
 	}
+
+	const components = document.frontMatter.packageTypes
+		? (
+				await Promise.all(
+					document.frontMatter.packageTypes.map(
+						async (item: string) =>
+							await data.get(['packages', ...item.split('/')])
+					)
+				)
+		  ).filter(Boolean)
+		: [];
+	const types = components
+		.map((item) => item.exportedTypes)
+		.flat()
+		.filter((item) => item.name !== 'default');
 
 	const markupPath = [...params.slug, 'markup'];
 	const Content = document.Content!;
@@ -85,7 +99,7 @@ export default async function Page({params}: Props) {
 				/>
 				<Content />
 
-				{component && component.exportedTypes.length > 0 && (
+				{types.length > 0 && (
 					<div
 						style={{
 							display: 'flex',
@@ -96,7 +110,7 @@ export default async function Page({params}: Props) {
 							API Reference
 						</h2>
 
-						{component.exportedTypes.map((type, index) => {
+						{types.map((type, index) => {
 							const isActive = true;
 							return (
 								<div
@@ -218,7 +232,25 @@ export default async function Page({params}: Props) {
 				<ul className={styles.toc_list}>
 					{[
 						...document.headings,
-						...(component ? component.headings : []),
+						...(types.length > 0
+							? [
+									{
+										text: 'API Reference',
+										id: 'api-reference',
+										depth: 2,
+									},
+							  ]
+							: []),
+						...(types.length > 0
+							? components
+									.map((item) => item.headings)
+									.flat()
+									.filter(
+										(item) =>
+											item.text !== 'API Reference' &&
+											item.text !== 'default'
+									)
+							: []),
 					].map((item) => (
 						<li
 							style={{marginLeft: `${(item.depth - 2) * 10}px`}}
