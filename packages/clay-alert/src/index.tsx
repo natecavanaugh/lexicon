@@ -8,8 +8,8 @@ import ClayLayout from '@clayui/layout';
 import classNames from 'classnames';
 import React from 'react';
 
-import Footer from './Footer';
-import ToastContainer from './ToastContainer';
+import {ClayAlertFooter} from './Footer';
+import {ClayToastContainer} from './ToastContainer';
 
 const useAutoClose = (autoClose?: boolean | number, onClose = () => {}) => {
 	const startedTime = React.useRef<number>(0);
@@ -128,12 +128,7 @@ const ICON_MAP = {
 
 const VARIANTS = ['inline', 'feedback'];
 
-function ClayAlert(props: IClayAlertProps): JSX.Element & {
-	Footer: typeof Footer;
-	ToastContainer: typeof ToastContainer;
-};
-
-function ClayAlert({
+const ClayAlert = ({
 	actions,
 	autoClose,
 	children,
@@ -147,7 +142,7 @@ function ClayAlert({
 	title,
 	variant,
 	...otherProps
-}: IClayAlertProps) {
+}: IClayAlertProps) => {
 	const {pauseAutoCloseTimer, startAutoCloseTimer} = useAutoClose(
 		autoClose,
 		onClose
@@ -208,7 +203,7 @@ function ClayAlert({
 							{children}
 
 							{variant !== 'inline' && actions && (
-								<Footer>{actions}</Footer>
+								<ClayAlertFooter>{actions}</ClayAlertFooter>
 							)}
 						</ClayLayout.ContentSection>
 					</ClayLayout.ContentCol>
@@ -235,9 +230,11 @@ function ClayAlert({
 			</ConditionalContainer>
 		</div>
 	);
-}
+};
 
-ClayAlert.Footer = Footer;
-ClayAlert.ToastContainer = ToastContainer;
+ClayAlert.displayName = 'ClayAlert';
+ClayAlert.Footer = ClayAlertFooter;
+ClayAlert.ToastContainer = ClayToastContainer;
 
+export {ClayAlertFooter, ClayToastContainer, ClayAlert};
 export default ClayAlert;

@@ -18,7 +18,7 @@ export interface IToastContainerProps
 		| Array<React.ReactElement<IClayAlertProps>>;
 }
 
-const ClayToastContainer = ({
+export const ClayToastContainer = ({
 	children,
 	className,
 	...otherProps
@@ -35,4 +35,4 @@ const ClayToastContainer = ({
 	);
 };
 
-export default ClayToastContainer;
+ClayToastContainer.displayName = 'ClayToastContainer';
