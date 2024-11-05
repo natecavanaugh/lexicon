@@ -140,14 +140,21 @@ const ItemLegacy = React.forwardRef<HTMLLIElement, IProps>(function ItemLegacy(
 	);
 });
 
-const Item = React.forwardRef<HTMLLIElement, IProps>((props: IProps, ref) => {
-	const {onActiveDescendant} = useAutocompleteState();
+const Item = React.forwardRef<HTMLLIElement, IProps>(
+	({children, match = '', ...otherProps}: IProps, ref) => {
+		const {onActiveDescendant} = useAutocompleteState();
 
-	const Component = onActiveDescendant! ? NewItem : ItemLegacy;
+		const Component = onActiveDescendant! ? NewItem : ItemLegacy;
 
-	return <Component {...props} ref={ref} />;
-});
+		return (
+			<Component match={match} {...otherProps} ref={ref}>
+				{children}
+			</Component>
+		);
+	}
+);
 
 Item.displayName = 'Item';
 
+export {Item};
 export default Item;

@@ -49,83 +49,85 @@ const hasItems = (children?: React.ReactNode) => {
 	}).filter(Boolean);
 };
 
-type IProps<T> = IAutocompleteProps<T> & {
+interface IProps<T> extends IAutocompleteProps<T> {
 	/**
 	 * Div component to render. It can be a one component that will replace the markup.
 	 */
 	component?: React.ForwardRefExoticComponent<any>;
-};
-
-function ClayAutocompleteInner<T extends Record<string, any> | string | number>(
-	{
-		children,
-		className,
-		component: Component = AutocompleteMarkup,
-		...otherProps
-	}: IProps<T>,
-	ref: React.Ref<HTMLInputElement>
-) {
-	const containerElementRef = React.useRef<null | HTMLDivElement>(null);
-	const [loading, setLoading] = React.useState(false);
-
-	const isNewBehavior =
-		hasItems(children).length >= 1 || children instanceof Function;
-
-	const Container = isNewBehavior ? React.Fragment : FocusScope;
-
-	return (
-		<Container>
-			<Component
-				{...(isNewBehavior ? {} : otherProps)}
-				className={className}
-				ref={(r: any) => {
-					if (r) {
-						containerElementRef.current = r;
-
-						if (typeof ref === 'function') {
-							ref(r);
-						} else if (ref !== null) {
-							(ref as React.MutableRefObject<any>).current = r;
-						}
-					}
-				}}
-			>
-				{isNewBehavior ? (
-					<Autocomplete<T>
-						containerElementRef={containerElementRef}
-						{...otherProps}
-					>
-						{children}
-					</Autocomplete>
-				) : (
-					<LegacyContext.Provider
-						value={{
-							containerElementRef,
-							loading,
-							onLoadingChange: (loading: boolean) =>
-								setLoading(loading),
-						}}
-					>
-						{children}
-					</LegacyContext.Provider>
-				)}
-			</Component>
-		</Container>
-	);
 }
 
-type ForwardRef = {
+export interface IForwardRef<T, P = {}>
+	extends React.ForwardRefExoticComponent<P & React.RefAttributes<T>> {
 	DropDown: typeof DropDown;
 	Input: typeof Input;
 	Item: typeof Item;
 	LoadingIndicator: typeof LoadingIndicator;
-	displayName: string;
-	<T>(props: IProps<T> & {ref?: React.Ref<HTMLInputElement>}): JSX.Element;
-};
+}
 
-const ClayAutocomplete = React.forwardRef(
-	ClayAutocompleteInner
-) as unknown as ForwardRef;
+function forwardRef<T, P = {}>(component: React.RefForwardingComponent<T, P>) {
+	return React.forwardRef<T, P>(component) as IForwardRef<T, P>;
+}
+
+const ClayAutocomplete = forwardRef(
+	<T extends Record<string, any> | string | number>(
+		{
+			children,
+			className,
+			component: Component = AutocompleteMarkup,
+			...otherProps
+		}: IProps<T>,
+		ref: React.Ref<HTMLInputElement>
+	) => {
+		const containerElementRef = React.useRef<null | HTMLDivElement>(null);
+		const [loading, setLoading] = React.useState(false);
+
+		const isNewBehavior =
+			hasItems(children).length >= 1 || children instanceof Function;
+
+		const Container = isNewBehavior ? React.Fragment : FocusScope;
+
+		return (
+			<Container>
+				<Component
+					{...(isNewBehavior ? {} : otherProps)}
+					className={className}
+					ref={(r: any) => {
+						if (r) {
+							containerElementRef.current = r;
+
+							if (typeof ref === 'function') {
+								ref(r);
+							} else if (ref !== null) {
+								(ref as React.MutableRefObject<any>).current =
+									r;
+							}
+						}
+					}}
+				>
+					{isNewBehavior ? (
+						<Autocomplete<T>
+							containerElementRef={containerElementRef}
+							{...otherProps}
+						>
+							{children}
+						</Autocomplete>
+					) : (
+						<LegacyContext.Provider
+							value={{
+								containerElementRef,
+								loading,
+								onLoadingChange: (loading: boolean) =>
+									setLoading(loading),
+							}}
+						>
+							{children}
+						</LegacyContext.Provider>
+					)}
+				</Component>
+			</Container>
+		);
+	}
+);
 
 ClayAutocomplete.DropDown = DropDown;
 ClayAutocomplete.Input = Input;
@@ -134,6 +136,6 @@ ClayAutocomplete.LoadingIndicator = LoadingIndicator;
 
 ClayAutocomplete.displayName = 'ClayAutocomplete';
 
-export {Autocomplete, Item};
+export {ClayAutocomplete, Autocomplete, Item};
 
 export default ClayAutocomplete;
