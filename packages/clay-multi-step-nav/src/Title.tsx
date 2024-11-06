@@ -12,8 +12,9 @@ export type Props = {
 	children?: React.ReactNode;
 };
 
-const ClayMultiStepNavTitle = ({children}: Props) => (
+const MultiStepNavTitle = ({children}: Props) => (
 	<div className="multi-step-title">{children}</div>
 );
 
-export default ClayMultiStepNavTitle;
+export {MultiStepNavTitle};
+export default MultiStepNavTitle;

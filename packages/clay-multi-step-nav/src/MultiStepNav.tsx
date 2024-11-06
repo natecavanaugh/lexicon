@@ -33,14 +33,7 @@ export interface IProps extends React.HTMLAttributes<HTMLOListElement> {
 	indicatorLabel?: 'bottom' | 'top';
 }
 
-function ClayMultiStepNav(props: IProps): JSX.Element & {
-	Divider: typeof ClayMultiStepNavDivider;
-	Indicator: typeof ClayMultiStepNavIndicator;
-	Item: typeof ClayMultiStepNavItem;
-	Title: typeof ClayMultiStepNavTitle;
-};
-
-function ClayMultiStepNav({
+function MultiStepNav({
 	autoCollapse = true,
 	center,
 	children,
@@ -65,9 +58,10 @@ function ClayMultiStepNav({
 	);
 }
 
-ClayMultiStepNav.Divider = ClayMultiStepNavDivider;
-ClayMultiStepNav.Indicator = ClayMultiStepNavIndicator;
-ClayMultiStepNav.Item = ClayMultiStepNavItem;
-ClayMultiStepNav.Title = ClayMultiStepNavTitle;
+MultiStepNav.Divider = ClayMultiStepNavDivider;
+MultiStepNav.Indicator = ClayMultiStepNavIndicator;
+MultiStepNav.Item = ClayMultiStepNavItem;
+MultiStepNav.Title = ClayMultiStepNavTitle;
 
-export default ClayMultiStepNav;
+export {MultiStepNav};
+export default MultiStepNav;

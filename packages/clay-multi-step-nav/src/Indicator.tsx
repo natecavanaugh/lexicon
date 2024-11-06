@@ -38,7 +38,7 @@ export type Props = {
 	subTitle?: React.ReactText;
 };
 
-const ClayMultiStepNavIndicator = React.forwardRef<HTMLDivElement, Props>(
+const MultiStepNavIndicator = React.forwardRef<HTMLDivElement, Props>(
 	({complete, innerRef, label, onClick, spritemap, subTitle}: Props, ref) => {
 		const {state} = useContext(ItemContext);
 
@@ -67,6 +67,7 @@ const ClayMultiStepNavIndicator = React.forwardRef<HTMLDivElement, Props>(
 	}
 );
 
-ClayMultiStepNavIndicator.displayName = 'ClayMultiStepNavIndicator';
+MultiStepNavIndicator.displayName = 'ClayMultiStepNavIndicator';
 
-export default ClayMultiStepNavIndicator;
+export {MultiStepNavIndicator};
+export default MultiStepNavIndicator;

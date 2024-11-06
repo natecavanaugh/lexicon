@@ -5,6 +5,7 @@
 
 import React from 'react';
 
-const ClayMultiStepNavDivider = () => <div className="multi-step-divider" />;
+const MultiStepNavDivider = () => <div className="multi-step-divider" />;
 
-export default ClayMultiStepNavDivider;
+export {MultiStepNavDivider};
+export default MultiStepNavDivider;

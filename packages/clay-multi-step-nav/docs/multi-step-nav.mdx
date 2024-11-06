@@ -5,6 +5,11 @@ lexiconDefinition: 'https://liferay.design/lexicon/core-components/forms/multi-s
 packageNpm: '@clayui/multi-step-nav'
 storybookPath: 'design-system-components-multistepnav'
 packageUse: "import MultiStepNav from '@clayui/multi-step-nav';"
+packageTypes:
+    [
+        'clay-multi-step-nav/src/multi-step-nav',
+        'clay-multi-step-nav/src/multi-step-nav-with-basic-items',
+    ]
 ---
 
 It's used when a major or big task has to be divided into smaller task, with the aim of letting the user breath in the process and providing them with a sense of progression.
@@ -180,8 +185,8 @@ export default function App() {
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<ClayMultiStepNavWithBasicItems
-					active={active}
-					onActiveChange={setActive}
+					active={value}
+					onActiveChange={setValue}
 					state="error"
 					steps={steps}
 				/>
@@ -251,9 +256,9 @@ export default function App() {
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<ClayMultiStepNavWithBasicItems
-					active={active}
+					active={value}
 					maxStepsShown={2}
-					onActiveChange={setActive}
+					onActiveChange={setValue}
 					steps={steps}
 				/>
 			</div>
