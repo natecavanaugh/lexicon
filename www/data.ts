@@ -12,16 +12,35 @@ export const documents = createSource(
 	}
 );
 
-export const packages = createSource(
-	// TODO: Temporary
-	'../packages/clay-core/src/tree-view/**/*.tsx',
-	{
-		baseDirectory: '../packages/clay-core/src',
-		basePathname: 'packages',
-		outputDirectory: ['lib'],
-	}
+const packagesOptions = {
+	baseDirectory: 'packages',
+	basePathname: 'packages',
+};
+
+// TODO: This is a temporary implementation, we couldn't make it work with
+// just one createSource call for all packages, probably due to the way
+// our monorepo is organized.
+export const packages = mergeSources(
+	createSource('../packages/clay-autocomplete/src/**/*.tsx', packagesOptions),
+	createSource('../packages/clay-badge/src/**/*.tsx', packagesOptions),
+	createSource('../packages/clay-button/src/**/*.tsx', packagesOptions),
+	createSource('../packages/clay-multi-select/src/**/*.tsx', packagesOptions),
+	createSource('../packages/clay-breadcrumb/src/**/*.tsx', packagesOptions),
+	createSource(
+		'../packages/clay-multi-step-nav/src/**/*.tsx',
+		packagesOptions
+	),
+	createSource('../packages/clay-alert/src/**/*.tsx', packagesOptions),
+	createSource(
+		'../packages/clay-core/src/tree-view/**/*.tsx',
+		packagesOptions
+	),
+	createSource(
+		'../packages/clay-core/src/vertical-bar/**/*.tsx',
+		packagesOptions
+	)
 );
 
 export const sidebar = mergeSources(docs, documents);
 
-export const data = mergeSources(docs, documents, packages);
+export const data = mergeSources(docs, documents);
