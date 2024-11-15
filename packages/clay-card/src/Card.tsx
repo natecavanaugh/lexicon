@@ -77,15 +77,6 @@ const ClayCard = ({
 	);
 };
 
-function ClayCardHybrid(props: IProps): JSX.Element & {
-	AspectRatio: typeof AspectRatio;
-	Body: typeof Body;
-	Caption: typeof Caption;
-	Description: typeof Description;
-	Group: typeof Group;
-	Row: typeof Row;
-};
-
 function ClayCardHybrid({
 	children,
 	horizontal,

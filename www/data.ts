@@ -38,7 +38,8 @@ export const packages = mergeSources(
 	createSource(
 		'../packages/clay-core/src/vertical-bar/**/*.tsx',
 		packagesOptions
-	)
+	),
+	createSource('../packages/clay-card/src/**/*.tsx', packagesOptions)
 );
 
 export const sidebar = mergeSources(docs, documents);
