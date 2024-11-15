@@ -220,10 +220,7 @@ const TIME_FORMAT_12H = 'hh:mm aa';
 const normalizeTime = (date: Date) =>
 	setDate(date, {hours: 12, milliseconds: 0, minutes: 0, seconds: 0});
 
-/**
- * ClayDatePicker component.
- */
-const ClayDatePicker = React.forwardRef<HTMLInputElement, IProps>(
+const DatePicker = React.forwardRef<HTMLInputElement, IProps>(
 	(
 		{
 			ariaLabels = {
@@ -833,7 +830,7 @@ function fromRangeToString(range: [Date, Date], dateFormat: string) {
 	)}`;
 }
 
-ClayDatePicker.displayName = 'ClayDatePicker';
+DatePicker.displayName = 'ClayDatePicker';
 
-export {FirstDayOfWeek};
-export default ClayDatePicker;
+export {DatePicker, FirstDayOfWeek};
+export default DatePicker;
