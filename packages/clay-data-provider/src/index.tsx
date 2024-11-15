@@ -43,7 +43,7 @@ interface IState {
 	networkStatus?: NetworkStatus;
 }
 
-const ClayDataProvider = ({
+const DataProvider = ({
 	children,
 	notifyOnNetworkStatusChange = false,
 	...otherProps
@@ -89,5 +89,5 @@ const ClayDataProvider = ({
 	);
 };
 
-export {useResource, FetchPolicy, NetworkStatus, Sorting};
-export default ClayDataProvider;
+export {DataProvider, useResource, FetchPolicy, NetworkStatus, Sorting};
+export default DataProvider;

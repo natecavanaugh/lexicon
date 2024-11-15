@@ -40,7 +40,11 @@ export const packages = mergeSources(
 		packagesOptions
 	),
 	createSource('../packages/clay-card/src/**/*.tsx', packagesOptions),
-	createSource('../packages/clay-color-picker/src/**/*.tsx', packagesOptions)
+	createSource('../packages/clay-color-picker/src/**/*.tsx', packagesOptions),
+	createSource(
+		'../packages/clay-data-provider/src/**/*.tsx',
+		packagesOptions
+	),
 );
 
 export const sidebar = mergeSources(docs, documents);
