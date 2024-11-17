@@ -149,20 +149,7 @@ const List = React.forwardRef<
 
 let counter = 0;
 
-function ClayDropDown<T>(props: IProps<T>): JSX.Element & {
-	Action: typeof Action;
-	Caption: typeof Caption;
-	Divider: typeof Divider;
-	Group: typeof Group;
-	Help: typeof Help;
-	Item: typeof Item;
-	ItemList: typeof ItemList;
-	Menu: typeof Menu;
-	Search: typeof Search;
-	Section: typeof Section;
-};
-
-function ClayDropDown<T>({
+function DropDown<T>({
 	active,
 	alignmentByViewport,
 	alignmentPosition,
@@ -418,17 +405,17 @@ export function FocusMenu<T>({
 	return children;
 }
 
-ClayDropDown.Action = Action;
-ClayDropDown.Caption = Caption;
-ClayDropDown.Divider = Divider;
-ClayDropDown.Group = Group;
-ClayDropDown.Help = Help;
-ClayDropDown.Menu = Menu;
-ClayDropDown.Item = Item;
-ClayDropDown.ItemList = ItemList;
-ClayDropDown.Search = Search;
-ClayDropDown.Section = Section;
+DropDown.Action = Action;
+DropDown.Caption = Caption;
+DropDown.Divider = Divider;
+DropDown.Group = Group;
+DropDown.Help = Help;
+DropDown.Menu = Menu;
+DropDown.Item = Item;
+DropDown.ItemList = ItemList;
+DropDown.Search = Search;
+DropDown.Section = Section;
 
 export {Align};
 
-export default ClayDropDown;
+export default DropDown;

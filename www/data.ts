@@ -45,7 +45,8 @@ export const packages = mergeSources(
 		'../packages/clay-data-provider/src/**/*.tsx',
 		packagesOptions
 	),
-	createSource('../packages/clay-date-picker/src/**/*.tsx', packagesOptions)
+	createSource('../packages/clay-date-picker/src/**/*.tsx', packagesOptions),
+	createSource('../packages/clay-drop-down/src/**/*.tsx', packagesOptions)
 );
 
 export const sidebar = mergeSources(docs, documents);
