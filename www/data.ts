@@ -39,6 +39,10 @@ export const packages = mergeSources(
 		'../packages/clay-core/src/vertical-bar/**/*.tsx',
 		packagesOptions
 	),
+	createSource(
+		'../packages/clay-core/src/focus-trap/**/*.tsx',
+		packagesOptions
+	),
 	createSource('../packages/clay-card/src/**/*.tsx', packagesOptions),
 	createSource('../packages/clay-color-picker/src/**/*.tsx', packagesOptions),
 	createSource(
