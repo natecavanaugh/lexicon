@@ -95,7 +95,7 @@ export interface IProps<T>
 	hasLeftSymbols?: boolean;
 
 	/**
-	 * Prop to pass DOM element attributes to <DropDown.Menu />.
+	 * Prop to pass DOM element attributes to DropDown.Menu.
 	 */
 	menuElementAttrs?: React.HTMLAttributes<HTMLDivElement> &
 		Pick<React.ComponentProps<typeof Menu>, 'containerProps'>;
