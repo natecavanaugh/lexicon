@@ -43,4 +43,5 @@ const Search = ({children, onlySearch, showMobile, ...otherProps}: IProps) => {
 	);
 };
 
+export {Search};
 export default Search;

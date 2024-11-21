@@ -23,4 +23,5 @@ const ItemList = ({children, expand}: IProps) => (
 	</ul>
 );
 
+export {ItemList};
 export default ItemList;

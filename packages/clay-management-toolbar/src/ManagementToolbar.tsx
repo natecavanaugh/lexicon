@@ -18,13 +18,7 @@ interface IProps extends React.HTMLAttributes<HTMLElement> {
 	active?: boolean;
 }
 
-function ClayManagementToolbar(props: IProps): JSX.Element & {
-	Item: typeof Item;
-	ItemList: typeof ItemList;
-	Search: typeof Search;
-};
-
-function ClayManagementToolbar({
+function ManagementToolbar({
 	active = false,
 	children,
 	className,
@@ -47,8 +41,9 @@ function ClayManagementToolbar({
 	);
 }
 
-ClayManagementToolbar.Item = Item;
-ClayManagementToolbar.ItemList = ItemList;
-ClayManagementToolbar.Search = Search;
+ManagementToolbar.Item = Item;
+ManagementToolbar.ItemList = ItemList;
+ManagementToolbar.Search = Search;
 
-export default ClayManagementToolbar;
+export {ManagementToolbar, Item, ItemList, Search};
+export default ManagementToolbar;

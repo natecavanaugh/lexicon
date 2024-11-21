@@ -29,4 +29,5 @@ const ResultsBarItem = ({
 	</li>
 );
 
+export {ResultsBarItem};
 export default ResultsBarItem;
