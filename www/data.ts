@@ -36,6 +36,10 @@ export const packages = mergeSources(
 		packagesOptions
 	),
 	createSource(
+		'../packages/clay-core/src/typography/**/*.tsx',
+		packagesOptions
+	),
+	createSource(
 		'../packages/clay-core/src/vertical-bar/**/*.tsx',
 		packagesOptions
 	),
