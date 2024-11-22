@@ -26,7 +26,7 @@ export interface IItemProps
 	symbol: string;
 }
 
-const ClayListQuickActionMenuItem = React.forwardRef<
+export const QuickActionMenuItem = React.forwardRef<
 	HTMLAnchorElement & HTMLButtonElement,
 	IItemProps
 >(({className, href, spritemap, symbol, ...otherProps}: IItemProps, ref) => {
@@ -48,6 +48,6 @@ const ClayListQuickActionMenuItem = React.forwardRef<
 	);
 });
 
-ClayListQuickActionMenuItem.displayName = 'ClayListQuickActionMenuItem';
+QuickActionMenuItem.displayName = 'ClayListQuickActionMenuItem';
 
-export default ClayListQuickActionMenuItem;
+export default QuickActionMenuItem;

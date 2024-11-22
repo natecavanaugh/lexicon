@@ -12,7 +12,7 @@ export interface IProps extends React.HTMLAttributes<HTMLParagraphElement> {
 	 */
 	subtext?: boolean;
 }
-const ClayListItemText = React.forwardRef<HTMLParagraphElement, IProps>(
+const ItemText = React.forwardRef<HTMLParagraphElement, IProps>(
 	({children, className, subtext, ...otherProps}: IProps, ref) => (
 		<p
 			{...otherProps}
@@ -27,6 +27,7 @@ const ClayListItemText = React.forwardRef<HTMLParagraphElement, IProps>(
 	)
 );
 
-ClayListItemText.displayName = 'ClayListItemText';
+ItemText.displayName = 'ClayListItemText';
 
-export default ClayListItemText;
+export {ItemText};
+export default ItemText;

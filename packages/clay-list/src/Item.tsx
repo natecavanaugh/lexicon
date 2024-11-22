@@ -33,7 +33,7 @@ export interface IProps extends React.HTMLAttributes<HTMLLIElement> {
 	header?: boolean;
 }
 
-const ClayListItem = React.forwardRef<HTMLLIElement, IProps>(
+const Item = React.forwardRef<HTMLLIElement, IProps>(
 	(
 		{
 			action = false,
@@ -78,6 +78,7 @@ const ClayListItem = React.forwardRef<HTMLLIElement, IProps>(
 	}
 );
 
-ClayListItem.displayName = 'ClayListItem';
+Item.displayName = 'ClayListItem';
 
-export default ClayListItem;
+export {Item};
+export default Item;

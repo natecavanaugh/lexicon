@@ -193,7 +193,7 @@ const ListItem = ({
 	);
 };
 
-export const ClayListWithItems = ({
+export const ListWithItems = ({
 	className,
 	itemIdentifier = 'id',
 	items = [],
