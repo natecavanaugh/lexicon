@@ -52,7 +52,7 @@ const defaultSubmitProps = {
 	type: 'button',
 };
 
-const ClayDropDownSearch = ({
+export const Search = ({
 	className,
 	defaultValue = '',
 	formProps = {},
@@ -118,4 +118,4 @@ const ClayDropDownSearch = ({
 	);
 };
 
-export default ClayDropDownSearch;
+export default Search;

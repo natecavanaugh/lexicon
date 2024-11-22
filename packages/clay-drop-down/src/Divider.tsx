@@ -5,8 +5,8 @@
 
 import React from 'react';
 
-const ClayDropDownDivider = () => (
+export const Divider = () => (
 	<li className="dropdown-divider" role="separator" />
 );
 
-export default ClayDropDownDivider;
+export default Divider;

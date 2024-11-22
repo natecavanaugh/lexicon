@@ -416,6 +416,5 @@ DropDown.ItemList = ItemList;
 DropDown.Search = Search;
 DropDown.Section = Section;
 
-export {Align};
-
+export {DropDown, Align};
 export default DropDown;

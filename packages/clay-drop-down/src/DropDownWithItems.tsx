@@ -130,7 +130,7 @@ export interface IProps
 	helpText?: string;
 
 	/**
-	 * Prop to pass DOM element attributes to <DropDown.Menu />.
+	 * Prop to pass DOM element attributes to DropDown.Menu.
 	 */
 	menuElementAttrs?: React.ComponentProps<
 		typeof ClayDropDown

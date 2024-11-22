@@ -27,12 +27,7 @@ export interface IProps<T>
 
 let counter = 0;
 
-function ClayDropDownGroup<T>({
-	children,
-	header,
-	items,
-	role = 'group',
-}: IProps<T>) {
+export function Group<T>({children, header, items, role = 'group'}: IProps<T>) {
 	const ariaLabel = useMemo(() => {
 		counter++;
 
@@ -79,6 +74,6 @@ function ClayDropDownGroup<T>({
 	);
 }
 
-ClayDropDownGroup.displayName = 'Group';
+Group.displayName = 'Group';
 
-export default ClayDropDownGroup;
+export default Group;

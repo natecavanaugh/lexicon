@@ -58,7 +58,7 @@ export interface IProps
 	symbolRight?: string;
 }
 
-const ClayDropDownItem = React.forwardRef<HTMLLIElement, IProps>(
+export const Item = React.forwardRef<HTMLLIElement, IProps>(
 	(
 		{
 			active,
@@ -148,6 +148,6 @@ const ClayDropDownItem = React.forwardRef<HTMLLIElement, IProps>(
 	}
 );
 
-ClayDropDownItem.displayName = 'ClayDropDownItem';
+Item.displayName = 'ClayDropDownItem';
 
-export default ClayDropDownItem;
+export default Item;
