@@ -60,7 +60,8 @@ export const packages = mergeSources(
 		'../packages/clay-management-toolbar/src/**/*.tsx',
 		packagesOptions
 	),
-	createSource('../packages/clay-modal/src/**/*.tsx', packagesOptions)
+	createSource('../packages/clay-modal/src/**/*.tsx', packagesOptions),
+	createSource('../packages/clay-icon/src/**/*.tsx', packagesOptions)
 );
 
 export const sidebar = mergeSources(docs, documents);
