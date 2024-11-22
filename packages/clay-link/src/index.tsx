@@ -105,7 +105,7 @@ const defaultMessages = {
 	opensNewWindow: '(Opens a new window)',
 };
 
-const ClayLink = React.forwardRef<HTMLAnchorElement, IProps>(
+export const Link = React.forwardRef<HTMLAnchorElement, IProps>(
 	(
 		{
 			block,
@@ -186,8 +186,8 @@ const ClayLink = React.forwardRef<HTMLAnchorElement, IProps>(
 	}
 );
 
-ClayLink.displayName = 'ClayLink';
+Link.displayName = 'ClayLink';
 
 export {ClayLinkContext};
 
-export default ClayLink;
+export default Link;
