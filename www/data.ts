@@ -65,8 +65,15 @@ export const packages = mergeSources(
 	createSource('../packages/clay-label/src/**/*.tsx', packagesOptions),
 	createSource('../packages/clay-layout/src/**/*.tsx', packagesOptions),
 	createSource('../packages/clay-link/src/**/*.tsx', packagesOptions),
-	createSource('../packages/clay-list/src/**/*.tsx', packagesOptions)
-	createSource('../packages/clay-loading-indicator/src/**/*.tsx', packagesOptions)
+	createSource('../packages/clay-list/src/**/*.tsx', packagesOptions),
+	createSource(
+		'../packages/clay-loading-indicator/src/**/*.tsx',
+		packagesOptions
+	),
+	createSource(
+		'../packages/clay-localized-input/src/**/*.tsx',
+		packagesOptions
+	)
 );
 
 export const sidebar = mergeSources(docs, documents);
