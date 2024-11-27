@@ -15,7 +15,7 @@ export interface IPaginationItemProps
 	href?: string;
 }
 
-const ClayPaginationItem = ({
+export const Item = ({
 	as: As = ClayLink,
 	active = false,
 	children,
@@ -52,5 +52,3 @@ const ClayPaginationItem = ({
 		</li>
 	);
 };
-
-export default ClayPaginationItem;

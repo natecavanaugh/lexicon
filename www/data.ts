@@ -88,7 +88,8 @@ export const packages = mergeSources(
 	createSource(
 		'../packages/clay-core/src/overlay-mask/**/*.tsx',
 		packagesOptions
-	)
+	),
+	createSource('../packages/clay-pagination/src/**/*.tsx', packagesOptions)
 );
 
 export const sidebar = mergeSources(docs, documents);
