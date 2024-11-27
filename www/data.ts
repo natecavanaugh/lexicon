@@ -79,7 +79,8 @@ export const packages = mergeSources(
 	createSource(
 		'../packages/clay-core/src/vertical-nav/**/*.tsx',
 		packagesOptions
-	)
+	),
+	createSource('../packages/clay-core/src/nav/**/*.tsx', packagesOptions)
 );
 
 export const sidebar = mergeSources(docs, documents);
