@@ -84,6 +84,10 @@ export const packages = mergeSources(
 	createSource(
 		'../packages/clay-navigation-bar/src/**/*.tsx',
 		packagesOptions
+	),
+	createSource(
+		'../packages/clay-core/src/overlay-mask/**/*.tsx',
+		packagesOptions
 	)
 );
 
