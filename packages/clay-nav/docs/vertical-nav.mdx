@@ -5,6 +5,12 @@ lexiconDefinition: 'https://liferay.design/lexicon/core-components/navigation/ve
 packageNpm: '@clayui/nav'
 storybookPath: 'design-system-components-verticalnav--default'
 packageUse: "import {ClayVerticalNav} from '@clayui/nav';"
+packageTypes:
+    [
+        'clay-nav/src/vertical',
+        'clay-core/src/vertical-nav/item',
+        'clay-core/src/vertical-nav/trigger',
+    ]
 ---
 
 ## Example
@@ -96,6 +102,8 @@ import Icon from '@clayui/icon';
 import React, {useState} from 'react';
 
 import '@clayui/css/lib/css/atlas.css';
+
+const noIcons = ['1', '5'];
 
 export default function App() {
 	return (

@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-import Button from './Button';
+import Button, {IProps} from './Button';
 import ClayButtonWithIcon from './ButtonWithIcon';
 import Group from './Group';
 
 export type {Props as ButtonWithIconProps} from './ButtonWithIcon';
-export {ClayButtonWithIcon, Group, Button};
+export {ClayButtonWithIcon, Group, Button, IProps as ButtonProps};
 export default Button;

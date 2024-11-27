@@ -74,6 +74,11 @@ export const packages = mergeSources(
 	createSource(
 		'../packages/clay-localized-input/src/**/*.tsx',
 		packagesOptions
+	),
+	createSource('../packages/clay-nav/src/**/*.tsx', packagesOptions),
+	createSource(
+		'../packages/clay-core/src/vertical-nav/**/*.tsx',
+		packagesOptions
 	)
 );
 

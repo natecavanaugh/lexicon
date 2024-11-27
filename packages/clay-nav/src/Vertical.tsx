@@ -101,11 +101,6 @@ export interface IProps extends React.ComponentProps<typeof VerticalNav> {
 	spritemap?: string;
 }
 
-function ClayVerticalNav(props: IProps): JSX.Element & {
-	Trigger: typeof VerticalNav.Trigger;
-	Item: typeof VerticalNav.Item;
-};
-
 function ClayVerticalNav({
 	activeLabel,
 	children,

@@ -3,4 +3,4 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-export {VerticalNav} from './VerticalNav';
+export {VerticalNav, Item, Trigger} from './VerticalNav';
