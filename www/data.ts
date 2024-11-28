@@ -96,7 +96,8 @@ export const packages = mergeSources(
 	),
 	createSource('../packages/clay-panel/src/**/*.tsx', packagesOptions),
 	createSource('../packages/clay-core/src/picker/**/*.tsx', packagesOptions),
-	createSource('../packages/clay-popover/src/**/*.tsx', packagesOptions)
+	createSource('../packages/clay-popover/src/**/*.tsx', packagesOptions),
+	createSource('../packages/clay-progress-bar/src/**/*.tsx', packagesOptions)
 );
 
 export const sidebar = mergeSources(docs, documents);
