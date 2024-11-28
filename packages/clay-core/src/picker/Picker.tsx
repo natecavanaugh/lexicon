@@ -137,7 +137,6 @@ export type Props<T> = {
 	UNSAFE_menuClassName?: string;
 
 	/**
-	 * Property intended for internal use only.
 	 * @ignore
 	 */
 	UNSAFE_behavior?: 'secondary';

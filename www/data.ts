@@ -95,6 +95,7 @@ export const packages = mergeSources(
 		packagesOptions
 	),
 	createSource('../packages/clay-panel/src/**/*.tsx', packagesOptions),
+	createSource('../packages/clay-core/src/picker/**/*.tsx', packagesOptions)
 );
 
 export const sidebar = mergeSources(docs, documents);
