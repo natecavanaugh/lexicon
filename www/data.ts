@@ -93,7 +93,8 @@ export const packages = mergeSources(
 	createSource(
 		'../packages/clay-pagination-bar/src/**/*.tsx',
 		packagesOptions
-	)
+	),
+	createSource('../packages/clay-panel/src/**/*.tsx', packagesOptions),
 );
 
 export const sidebar = mergeSources(docs, documents);

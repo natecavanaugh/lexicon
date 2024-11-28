@@ -37,7 +37,7 @@ export interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	small?: boolean;
 }
 
-const ClayPanelGroup = ({
+export const Group = ({
 	children,
 	className,
 	fluid,
@@ -62,5 +62,3 @@ const ClayPanelGroup = ({
 		</div>
 	);
 };
-
-export default ClayPanelGroup;
