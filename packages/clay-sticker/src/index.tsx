@@ -27,18 +27,21 @@ export type DisplayType =
 	| 'outline-8'
 	| 'outline-9';
 
-type Shape = 'circle' | 'user-icon';
-
-type Position = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
-
-type Size = 'lg' | 'sm' | 'xl';
-
 export interface IClayStickerProps
 	extends React.HTMLAttributes<HTMLSpanElement> {
 	/**
 	 * Determines the color of the sticker.
 	 */
-	displayType?: DisplayType;
+	displayType?:
+		| 'danger'
+		| 'dark'
+		| 'info'
+		| 'light'
+		| 'primary'
+		| 'secondary'
+		| 'success'
+		| 'unstyled'
+		| 'warning';
 
 	/**
 	 * Turns the sticker inline
@@ -54,30 +57,32 @@ export interface IClayStickerProps
 	/**
 	 * Position of the sticker in relation to the contents.
 	 */
-	position?: Position;
+	position?: 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
 
 	/**
 	 * Shape of the sticker.
 	 */
-	shape?: Shape;
+	shape?: 'circle' | 'user-icon';
 
 	/**
 	 * Sticker size.
 	 */
-	size?: Size;
+	size?: 'lg' | 'sm' | 'xl';
 }
 
-const Overlay = ({
-	children,
-	className,
-	inline,
-	...otherProps
-}: React.HTMLAttributes<HTMLSpanElement> & {
+interface IOverylayProps extends React.HTMLAttributes<HTMLSpanElement> {
 	/**
 	 * Flag to indicate if `inline-item` class should be applied
 	 */
 	inline?: boolean;
-}) => (
+}
+
+export const Overlay = ({
+	children,
+	className,
+	inline,
+	...otherProps
+}: IOverylayProps) => (
 	<span
 		className={classNames(className, 'sticker-overlay', {
 			'inline-item': inline,
@@ -88,19 +93,14 @@ const Overlay = ({
 	</span>
 );
 
-const Image = ({
+export const Image = ({
 	className,
 	...otherProps
 }: React.ImgHTMLAttributes<HTMLImageElement>) => (
 	<img className={classNames(className, 'sticker-img')} {...otherProps} />
 );
 
-function ClaySticker(props: IClayStickerProps): JSX.Element & {
-	Image: typeof Image;
-	Overlay: typeof Overlay;
-};
-
-function ClaySticker({
+export function Sticker({
 	children,
 	className,
 	displayType,
@@ -127,7 +127,7 @@ function ClaySticker({
 	);
 }
 
-ClaySticker.Image = Image;
-ClaySticker.Overlay = Overlay;
+Sticker.Image = Image;
+Sticker.Overlay = Overlay;
 
-export default ClaySticker;
+export default Sticker;
