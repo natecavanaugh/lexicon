@@ -23,7 +23,7 @@ const delay = (fn: Function, val: number = 150) =>
 		fn();
 	}, val);
 
-const TabPane = React.forwardRef<HTMLDivElement, ITabPaneProps>(
+export const TabPane = React.forwardRef<HTMLDivElement, ITabPaneProps>(
 	function TabPane(
 		{
 			active = false,
