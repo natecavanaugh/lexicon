@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-import ClayTooltip from './Tooltip';
-import ClayTooltipProvider from './TooltipProvider';
+import {Tooltip} from './Tooltip';
+import {TooltipProvider} from './TooltipProvider';
 
-export {ClayTooltipProvider};
+export {Tooltip, TooltipProvider as ClayTooltipProvider};
 
-export default ClayTooltip;
+export default Tooltip;

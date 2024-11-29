@@ -13,7 +13,7 @@ import {
 import React, {useCallback, useEffect, useReducer, useRef} from 'react';
 import warning from 'warning';
 
-import ClayTooltip from './Tooltip';
+import {Tooltip} from './Tooltip';
 import {Align, useAlign} from './useAlign';
 import {useClosestTitle} from './useClosestTitle';
 import {useTooltipState} from './useTooltipState';
@@ -78,7 +78,7 @@ interface IPropsBase {
 	autoAlign?: boolean;
 
 	/**
-	 * Props to add to the <ClayPortal/>.
+	 * Props to add to the `<ClayPortal/>`.
 	 */
 	containerProps?: IPortalBaseProps;
 
@@ -109,7 +109,7 @@ interface IPropsWithScope extends IPropsBase {
 	scope: string;
 }
 
-const TooltipProvider = ({
+export const TooltipProvider = ({
 	autoAlign = true,
 	children,
 	containerProps = {},
@@ -291,7 +291,7 @@ const TooltipProvider = ({
 
 	const tooltip = isOpen && (
 		<ClayPortal {...containerProps}>
-			<ClayTooltip alignPosition={align} ref={tooltipRef} show>
+			<Tooltip alignPosition={align} ref={tooltipRef} show>
 				{setAsHTML && typeof titleContent === 'string' ? (
 					<span
 						dangerouslySetInnerHTML={{
@@ -301,7 +301,7 @@ const TooltipProvider = ({
 				) : (
 					titleContent
 				)}
-			</ClayTooltip>
+			</Tooltip>
 		</ClayPortal>
 	);
 
@@ -331,5 +331,3 @@ const TooltipProvider = ({
 		</>
 	);
 };
-
-export default TooltipProvider;
