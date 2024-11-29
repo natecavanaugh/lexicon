@@ -104,7 +104,8 @@ export const packages = mergeSources(
 	createSource('../packages/clay-tabs/src/**/*.tsx', packagesOptions),
 	createSource('../packages/clay-time-picker/src/**/*.tsx', packagesOptions),
 	createSource('../packages/clay-toolbar/src/**/*.tsx', packagesOptions),
-	createSource('../packages/clay-tooltip/src/**/*.tsx', packagesOptions)
+	createSource('../packages/clay-tooltip/src/**/*.tsx', packagesOptions),
+	createSource('../packages/clay-upper-toolbar/src/**/*.tsx', packagesOptions)
 );
 
 export const sidebar = mergeSources(docs, documents);
