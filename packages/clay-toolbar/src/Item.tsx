@@ -13,7 +13,7 @@ export interface IProps extends React.HTMLAttributes<HTMLLIElement> {
 	expand?: boolean;
 }
 
-const Item = ({children, className, expand, ...otherProps}: IProps) => {
+export const Item = ({children, className, expand, ...otherProps}: IProps) => {
 	return (
 		<li
 			className={classNames(className, 'tbar-item', {
@@ -27,5 +27,3 @@ const Item = ({children, className, expand, ...otherProps}: IProps) => {
 };
 
 Item.displayName = 'ClayToolbarItem';
-
-export default Item;

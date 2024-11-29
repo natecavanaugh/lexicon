@@ -14,7 +14,12 @@ export interface IProps extends React.ComponentProps<typeof ClayLink> {
 	disabled?: boolean;
 }
 
-const Link = ({children, className, disabled, ...otherProps}: IProps) => (
+export const Link = ({
+	children,
+	className,
+	disabled,
+	...otherProps
+}: IProps) => (
 	<ClayLink
 		className={classNames(className, 'component-link tbar-link', {
 			disabled,
@@ -26,5 +31,3 @@ const Link = ({children, className, disabled, ...otherProps}: IProps) => (
 );
 
 Link.displayName = 'ClayToolbarLink';
-
-export default Link;

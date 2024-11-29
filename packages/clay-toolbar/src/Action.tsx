@@ -24,7 +24,7 @@ export interface IProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 	symbol: string;
 }
 
-const Action = ({
+export const Action = ({
 	className,
 	disabled,
 	spritemap,
@@ -41,5 +41,3 @@ const Action = ({
 );
 
 Action.displayName = 'ClayToolbarAction';
-
-export default Action;

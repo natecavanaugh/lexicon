@@ -13,7 +13,7 @@ export interface IProps extends React.HTMLAttributes<HTMLUListElement> {
 	wrap?: boolean;
 }
 
-const Nav = ({children, className, wrap, ...otherProps}: IProps) => (
+export const Nav = ({children, className, wrap, ...otherProps}: IProps) => (
 	<ul
 		className={classNames(className, 'tbar-nav', {
 			'tbar-nav-wrap': wrap,
@@ -25,5 +25,3 @@ const Nav = ({children, className, wrap, ...otherProps}: IProps) => (
 );
 
 Nav.displayName = 'ClayToolbarNav';
-
-export default Nav;
