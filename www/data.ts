@@ -5,7 +5,7 @@ export const docs = createSource('./docs/**/*.mdx', {
 });
 
 export const documents = createSource(
-	'../packages/clay-(core|alert|autocomplete|badge|breadcrumb|button|card|color-picker|data-provider|date-picker|drop-down|empty-state|icon|label|layout|link|list|loading-indicator|localized-input|management-toolbar|modal|multi-select|multi-step-nav|nav|navigation-bar|pagination|pagination-bar|panel|popover|progress-bar|provider|slider|sticker|table|tabs|time-picker|toolbar|tooltip|upper-toolbar)/docs/**/*.mdx',
+	'../packages/clay-(core|alert|form|autocomplete|badge|breadcrumb|button|card|color-picker|data-provider|date-picker|drop-down|empty-state|icon|label|layout|link|list|loading-indicator|localized-input|management-toolbar|modal|multi-select|multi-step-nav|nav|navigation-bar|pagination|pagination-bar|panel|popover|progress-bar|provider|slider|sticker|table|tabs|time-picker|toolbar|tooltip|upper-toolbar)/docs/**/*.mdx',
 	{
 		baseDirectory: 'docs',
 		basePathname: 'components',
@@ -105,7 +105,11 @@ export const packages = mergeSources(
 	createSource('../packages/clay-time-picker/src/**/*.tsx', packagesOptions),
 	createSource('../packages/clay-toolbar/src/**/*.tsx', packagesOptions),
 	createSource('../packages/clay-tooltip/src/**/*.tsx', packagesOptions),
-	createSource('../packages/clay-upper-toolbar/src/**/*.tsx', packagesOptions)
+	createSource(
+		'../packages/clay-upper-toolbar/src/**/*.tsx',
+		packagesOptions
+	),
+	createSource('../packages/clay-form/src/**/*.tsx', packagesOptions)
 );
 
 export const sidebar = mergeSources(docs, documents);
