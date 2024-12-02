@@ -58,7 +58,7 @@ interface IGroupProps
 	value?: React.ReactText;
 }
 
-const ClayRadioGroup = ({
+export const RadioGroup = ({
 	children,
 	className,
 	defaultValue,
@@ -99,4 +99,4 @@ const ClayRadioGroup = ({
 	);
 };
 
-export default ClayRadioGroup;
+export default RadioGroup;
