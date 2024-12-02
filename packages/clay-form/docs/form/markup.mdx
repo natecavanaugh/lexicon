@@ -8,7 +8,11 @@ packageUse: "import ClayForm, {ClayInput} from '@clayui/form';"
 ---
 
 <div className="clay-site-alert alert alert-warning">
-	Don't forget to check <a href="https://www.w3.org/TR/wai-aria-practices/#aria_lh_form">WAI-ARIA</a> accessibility pratices for Form Elements when writting your markup.
+	Don't forget to check{' '}
+	<a href="https://www.w3.org/TR/wai-aria-practices/#aria_lh_form">
+		WAI-ARIA
+	</a>{' '}
+	accessibility pratices for Form Elements when writting your markup.
 </div>
 
 The `.form-group` class is the easiest way to add some structure to forms. It provides a flexible class that encourages proper grouping of labels, controls, optional help text, and form validation messaging. By default it only applies `margin-bottom`, but it picks up additional styles in `.form-inline` as needed. Use it with `<fieldset>`s, `<div>`s, or nearly any other element.
@@ -16,11 +20,21 @@ The `.form-group` class is the easiest way to add some structure to forms. It pr
 <div className="sheet-example">
 	<div className="form-group">
 		<label for="firstNameInput">First Name</label>
-		<input className="form-control" id="firstNameInput" placeholder="First Name" type="text" />
+		<input
+			className="form-control"
+			id="firstNameInput"
+			placeholder="First Name"
+			type="text"
+		/>
 	</div>
 	<div className="form-group">
 		<label for="lastNameInput">Last Name</label>
-		<input className="form-control" id="lastNameInput" placeholder="Last Name" type="text" />
+		<input
+			className="form-control"
+			id="lastNameInput"
+			placeholder="Last Name"
+			type="text"
+		/>
 	</div>
 </div>
 
@@ -56,7 +70,9 @@ To set a maximum width on a `.form-group-item` use `max-width: 200px;`.
 To make a `.form-group-item` shrink to the size of its content add `.form-group-item-shrink`. This component should only be used for static content, such as labels or buttons. This component doesn't work well with dynamically added content, such as form helper text, use the `max-width` method above instead.
 
 <div className="clay-site-alert alert alert-warning">
-	Form Group Autofit doesn't support <code className="gatsby-code-text">label</code>'s with long text that breaks to new lines or multiple new lines above the input.
+	Form Group Autofit doesn't support{' '}
+	<code className="gatsby-code-text">label</code>'s with long text that breaks
+	to new lines or multiple new lines above the input.
 </div>
 
 <div className="sheet-example">
@@ -395,16 +411,31 @@ Create horizontal forms by placing each `input` inside `form-group-item` and `la
 				<label>Name</label>
 			</div>
 			<div className="form-group-item">
-				<input aria-label="First Name" className="form-control" placeholder="First" type="text" />
+				<input
+					aria-label="First Name"
+					className="form-control"
+					placeholder="First"
+					type="text"
+				/>
 				<div className="form-feedback-group">
 					<div className="form-text">Your first name.</div>
 				</div>
 			</div>
 			<div className="form-group-item">
-				<input aria-label="Middle Name" className="form-control" placeholder="Middle" type="text" />
+				<input
+					aria-label="Middle Name"
+					className="form-control"
+					placeholder="Middle"
+					type="text"
+				/>
 			</div>
 			<div className="form-group-item">
-				<input aria-label="Last Name" className="form-control" placeholder="Last" type="text" />
+				<input
+					aria-label="Last Name"
+					className="form-control"
+					placeholder="Last"
+					type="text"
+				/>
 			</div>
 		</div>
 		<div className="form-group-autofit">
@@ -412,7 +443,12 @@ Create horizontal forms by placing each `input` inside `form-group-item` and `la
 				<label for="formInlineAutofitCustomAddress1">Address 1</label>
 			</div>
 			<div className="form-group-item">
-				<input className="form-control" id="formInlineAutofitCustomAddress1" placeholder="Address 1" type="text" />
+				<input
+					className="form-control"
+					id="formInlineAutofitCustomAddress1"
+					placeholder="Address 1"
+					type="text"
+				/>
 			</div>
 		</div>
 		<div className="form-group-autofit">
@@ -420,16 +456,25 @@ Create horizontal forms by placing each `input` inside `form-group-item` and `la
 				<label for="formInlineAutofitCustomAddress2">Address 2</label>
 			</div>
 			<div className="form-group-item">
-				<input className="form-control" id="formInlineAutofitCustomAddress2" placeholder="Address 2" type="text" />
+				<input
+					className="form-control"
+					id="formInlineAutofitCustomAddress2"
+					placeholder="Address 2"
+					type="text"
+				/>
 			</div>
 		</div>
 		<div className="form-group">
 			<div className="btn-group">
 				<div className="btn-group-item">
-					<button className="btn btn-primary" type="submit">Submit</button>
+					<button className="btn btn-primary" type="submit">
+						Submit
+					</button>
 				</div>
 				<div className="btn-group-item">
-					<a className="btn btn-secondary" href="#1" role="button">Clear</a>
+					<a className="btn btn-secondary" href="#1" role="button">
+						Clear
+					</a>
 				</div>
 			</div>
 		</div>
@@ -505,10 +550,14 @@ Create horizontal forms by placing each `input` inside `form-group-item` and `la
 	<div className="form-group">
 		<div className="btn-group">
 			<div className="btn-group-item">
-				<button className="btn btn-primary" type="submit">Submit</button>
+				<button className="btn btn-primary" type="submit">
+					Submit
+				</button>
 			</div>
 			<div className="btn-group-item">
-				<a className="btn btn-secondary" href="#1" role="button">Clear</a>
+				<a className="btn btn-secondary" href="#1" role="button"
+					>Clear</a
+				>
 			</div>
 		</div>
 	</div>

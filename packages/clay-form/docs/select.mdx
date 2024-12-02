@@ -23,7 +23,7 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const options = [
+	const options = [
 		{
 			label: 'Option 1',
 			value: '1',
@@ -37,18 +37,15 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<ClaySelect
-  				aria-label="Select Label"
-  				id="mySelectId"
-  			>
-  				{options.map(item => (
-  					<ClaySelect.Option
-  						key={item.value}
-  						label={item.label}
-  						value={item.value}
-  					/>
-  				))}
-  			</ClaySelect>
+				<ClaySelect aria-label="Select Label" id="mySelectId">
+					{options.map((item) => (
+						<ClaySelect.Option
+							key={item.value}
+							label={item.label}
+							value={item.value}
+						/>
+					))}
+				</ClaySelect>
 			</div>
 		</Provider>
 	);
@@ -67,7 +64,7 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const options = [
+	const options = [
 		{
 			label: 'Option 1',
 			value: '1',
@@ -81,11 +78,11 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<ClaySelectWithOption
-  				aria-label="Select Label"
-  				id="mySelectId"
-  				options={options}
-  			/>
+				<ClaySelectWithOption
+					aria-label="Select Label"
+					id="mySelectId"
+					options={options}
+				/>
 			</div>
 		</Provider>
 	);

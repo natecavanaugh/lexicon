@@ -8,11 +8,15 @@ storybookPath: 'design-system-components-duallistbox'
 ---
 
 <div className="clay-site-alert alert alert-warning">
-	Don't forget to check <a href="https://www.w3.org/TR/wai-aria-practices/#aria_lh_form">WAI-ARIA</a> accessibility pratices for Form Elements when writting your markup.
+	Don't forget to check{' '}
+	<a href="https://www.w3.org/TR/wai-aria-practices/#aria_lh_form">
+		WAI-ARIA
+	</a>{' '}
+	accessibility pratices for Form Elements when writting your markup.
 </div>
 
 <div className="sheet-example">
-    <div className="form-group">
+	<div className="form-group">
 		<div className="clay-dual-listbox">
 			<div className="clay-dual-listbox-item clay-dual-listbox-item-expand">
 				<label for="_9d5cxj5xm">
@@ -21,7 +25,12 @@ storybookPath: 'design-system-components-duallistbox'
 					</span>
 				</label>
 				<div className="clay-reorder clay-reorder-footer-end">
-					<select className="form-control form-control-inset" id="_9d5cxj5xm" multiple size="7">
+					<select
+						className="form-control form-control-inset"
+						id="_9d5cxj5xm"
+						multiple
+						size="7"
+					>
 						<option value="twitter">Twitter</option>
 						<option value="linkedin">Linkedin</option>
 						<option value="facebook">Facebook</option>
@@ -29,16 +38,30 @@ storybookPath: 'design-system-components-duallistbox'
 					<div className="clay-reorder-underlay form-control"></div>
 					<div className="clay-reorder-footer">
 						<div className="btn-group" role="group">
-							<button className="btn btn-monospaced btn-secondary btn-sm" type="button">
+							<button
+								className="btn btn-monospaced btn-secondary btn-sm"
+								type="button"
+							>
 								<span className="inline-item">
-									<svg className="lexicon-icon lexicon-icon-caret-top" focusable="false" role="presentation">
-									   <use xlink:href="/images/icons/icons.svg#caret-top" />
+									<svg
+										className="lexicon-icon lexicon-icon-caret-top"
+										focusable="false"
+										role="presentation"
+									>
+										<use xlink:href="/images/icons/icons.svg#caret-top" />
 									</svg>
 								</span>
 							</button>
-							<button className="btn btn-monospaced btn-secondary btn-sm" type="button">
+							<button
+								className="btn btn-monospaced btn-secondary btn-sm"
+								type="button"
+							>
 								<span className="inline-item">
-									<svg className="lexicon-icon lexicon-icon-caret-bottom" focusable="false" role="presentation">
+									<svg
+										className="lexicon-icon lexicon-icon-caret-bottom"
+										focusable="false"
+										role="presentation"
+									>
 										<use xlink:href="/images/icons/icons.svg#caret-bottom" />
 									</svg>
 								</span>
@@ -47,42 +70,61 @@ storybookPath: 'design-system-components-duallistbox'
 					</div>
 				</div>
 			</div>
-    		<div className="clay-dual-listbox-item clay-dual-listbox-actions">
-    			<div className="btn-group-vertical">
-    				<button className="btn btn-monospaced btn-secondary btn-sm" type="button">
-    					<span className="inline-item">
-    						<svg className="lexicon-icon lexicon-icon-caret-right" focusable="false" role="presentation">
-    							<use xlink:href="/images/icons/icons.svg#caret-right" />
-    						</svg>
-    					</span>
-    				</button>
-    				<button className="btn btn-monospaced btn-secondary btn-sm" type="button">
-    					<span className="inline-item">
-    						<svg className="lexicon-icon lexicon-icon-caret-left" focusable="false" role="presentation">
-    							<use xlink:href="/images/icons/icons.svg#caret-left" />
-    						</svg>
-    					</span>
-    				</button>
-    			</div>
-    		</div>
-    		<div className="clay-dual-listbox-item clay-dual-listbox-item-expand">
-    			<label for="_957gwvjvl">
-    				<span className="text-truncate-inline">
-    					<span className="text-truncate">Available</span>
-    				</span>
-    			</label>
-    			<div className="clay-reorder">
-    				<select className="form-control form-control-inset" id="_957gwvjvl" multiple size="7">
-    					<option value="addthis">AddThis</option>
-    					<option value="delicious">Delicious</option>
-    					<option value="digg">Digg</option>
-    					<option value="evernote">Evernote</option>
-    				</select>
-    				<div className="clay-reorder-underlay form-control"></div>
-    			</div>
-    		</div>
-    	</div>
-    </div>
+			<div className="clay-dual-listbox-item clay-dual-listbox-actions">
+				<div className="btn-group-vertical">
+					<button
+						className="btn btn-monospaced btn-secondary btn-sm"
+						type="button"
+					>
+						<span className="inline-item">
+							<svg
+								className="lexicon-icon lexicon-icon-caret-right"
+								focusable="false"
+								role="presentation"
+							>
+								<use xlink:href="/images/icons/icons.svg#caret-right" />
+							</svg>
+						</span>
+					</button>
+					<button
+						className="btn btn-monospaced btn-secondary btn-sm"
+						type="button"
+					>
+						<span className="inline-item">
+							<svg
+								className="lexicon-icon lexicon-icon-caret-left"
+								focusable="false"
+								role="presentation"
+							>
+								<use xlink:href="/images/icons/icons.svg#caret-left" />
+							</svg>
+						</span>
+					</button>
+				</div>
+			</div>
+			<div className="clay-dual-listbox-item clay-dual-listbox-item-expand">
+				<label for="_957gwvjvl">
+					<span className="text-truncate-inline">
+						<span className="text-truncate">Available</span>
+					</span>
+				</label>
+				<div className="clay-reorder">
+					<select
+						className="form-control form-control-inset"
+						id="_957gwvjvl"
+						multiple
+						size="7"
+					>
+						<option value="addthis">AddThis</option>
+						<option value="delicious">Delicious</option>
+						<option value="digg">Digg</option>
+						<option value="evernote">Evernote</option>
+					</select>
+					<div className="clay-reorder-underlay form-control"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 ```html

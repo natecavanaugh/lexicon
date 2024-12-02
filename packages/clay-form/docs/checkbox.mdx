@@ -19,15 +19,15 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const [value, setValue] = useState(false);
+	const [value, setValue] = useState(false);
 
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<ClayCheckbox
-  				checked={value}
-  				onChange={() => setValue(val => !val)}
-  			/>
+				<ClayCheckbox
+					checked={value}
+					onChange={() => setValue((val) => !val)}
+				/>
 			</div>
 		</Provider>
 	);
@@ -48,21 +48,21 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const [value, setValue] = useState(false);
+	const [value, setValue] = useState(false);
 
 	const data = {
-		id: 'test'
+		id: 'test',
 	};
 
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<ClayCheckbox
-  				aria-label="I'm checked indefinitely"
-  				checked={true}
-  				containerProps={data}
-  				onChange={() => setValue(val => !val)}
-  			/>
+				<ClayCheckbox
+					aria-label="I'm checked indefinitely"
+					checked={true}
+					containerProps={data}
+					onChange={() => setValue((val) => !val)}
+				/>
 			</div>
 		</Provider>
 	);
@@ -81,17 +81,17 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const [value, setValue] = useState(false);
+	const [value, setValue] = useState(false);
 
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<ClayCheckbox
-  				aria-label="Option 1"
-  				checked={value}
-  				onChange={() => setValue(val => !val)}
-  				label="Option 1"
-  			/>
+				<ClayCheckbox
+					aria-label="Option 1"
+					checked={value}
+					onChange={() => setValue((val) => !val)}
+					label="Option 1"
+				/>
 			</div>
 		</Provider>
 	);
@@ -110,34 +110,34 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const [value, setValue] = useState(false);
+	const [value, setValue] = useState(false);
 
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<>
-  				<ClayCheckbox
-  					aria-label="Option 1"
-  					checked={value}
-  					onChange={() => setValue(val => !val)}
-  					label="Option 1"
-  					inline
-  				/>
-  				<ClayCheckbox
-  					aria-label="Option 2"
-  					checked={value}
-  					onChange={() => setValue(val => !val)}
-  					label="Option 2"
-  					inline
-  				/>
-  				<ClayCheckbox
-  					aria-label="Option 3"
-  					checked={value}
-  					onChange={() => setValue(val => !val)}
-  					label="Option 3"
-  					inline
-  				/>
-  			</>
+				<>
+					<ClayCheckbox
+						aria-label="Option 1"
+						checked={value}
+						onChange={() => setValue((val) => !val)}
+						label="Option 1"
+						inline
+					/>
+					<ClayCheckbox
+						aria-label="Option 2"
+						checked={value}
+						onChange={() => setValue((val) => !val)}
+						label="Option 2"
+						inline
+					/>
+					<ClayCheckbox
+						aria-label="Option 3"
+						checked={value}
+						onChange={() => setValue((val) => !val)}
+						label="Option 3"
+						inline
+					/>
+				</>
 			</div>
 		</Provider>
 	);
@@ -156,17 +156,17 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const [value, setValue] = useState(false);
+	const [value, setValue] = useState(false);
 
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<ClayCheckbox
-  				aria-label="I'm indeterminate"
-  				checked={value}
-  				onChange={() => setValue(val => !val)}
-  				indeterminate
-  			/>
+				<ClayCheckbox
+					aria-label="I'm indeterminate"
+					checked={value}
+					onChange={() => setValue((val) => !val)}
+					indeterminate
+				/>
 			</div>
 		</Provider>
 	);

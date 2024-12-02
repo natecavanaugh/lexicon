@@ -68,20 +68,20 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const [value, setValue] = useState('foo');
+	const [value, setValue] = useState('foo');
 
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<ClayRadioGroup
-  				onSelectedValueChange={setValue}
-  				selectedValue={value}
-  				style={{display: 'flex', justifyContent: 'space-around'}}
-  			>
-  				<ClayToggle label="Foo" value="foo" />
-  				<ClayToggle label="Bar" value="bar" />
-  				<ClayToggle label="Baz" value="baz" />
-  			</ClayRadioGroup>
+				<ClayRadioGroup
+					onSelectedValueChange={setValue}
+					selectedValue={value}
+					style={{display: 'flex', justifyContent: 'space-around'}}
+				>
+					<ClayToggle label="Foo" value="foo" />
+					<ClayToggle label="Bar" value="bar" />
+					<ClayToggle label="Baz" value="baz" />
+				</ClayRadioGroup>
 			</div>
 		</Provider>
 	);
@@ -100,45 +100,45 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const [toggled1, setToggle1] = useState(false);
-  const [toggled2, setToggle2] = useState(false);
-  const [toggled3, setToggle3] = useState(false);
+	const [toggled1, setToggle1] = useState(false);
+	const [toggled2, setToggle2] = useState(false);
+	const [toggled3, setToggle3] = useState(false);
 
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<div className="form-group">
-  				<ClayToggle
-  					label="Checkbox"
-  					onToggle={setToggle1}
-  					sizing="sm"
-  					toggled={toggled1}
-  				/>
-  			</div>
+				<div className="form-group">
+					<ClayToggle
+						label="Checkbox"
+						onToggle={setToggle1}
+						sizing="sm"
+						toggled={toggled1}
+					/>
+				</div>
 
-  			<div className="form-group">
-  				<ClayToggle
-  					label="with symbol"
-  					onToggle={setToggle2}
-  					sizing="sm"
-  					spritemap={spritemap}
-  					symbol={{
-  						off: 'times',
-  						on: 'check',
-  					}}
-  					toggled={toggled2}
-  				/>
-  			</div>
+				<div className="form-group">
+					<ClayToggle
+						label="with symbol"
+						onToggle={setToggle2}
+						sizing="sm"
+						spritemap={spritemap}
+						symbol={{
+							off: 'times',
+							on: 'check',
+						}}
+						toggled={toggled2}
+					/>
+				</div>
 
-  			<div className="form-group">
-  				<ClayToggle
-  					disabled
-  					label="Disabled"
-  					onToggle={setToggle3}
-  					sizing="sm"
-  					toggled={toggled3}
-  				/>
-  			</div>
+				<div className="form-group">
+					<ClayToggle
+						disabled
+						label="Disabled"
+						onToggle={setToggle3}
+						sizing="sm"
+						toggled={toggled3}
+					/>
+				</div>
 			</div>
 		</Provider>
 	);

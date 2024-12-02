@@ -25,35 +25,39 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<>
-  				<Form.Group>
-  					<ClayInput.Group>
-  						<ClayInput.GroupItem shrink>
-  							<ClayButton displayType="secondary" type="submit">Search</ClayButton>
-  						</ClayInput.GroupItem>
-  						<ClayInput.GroupItem>
-  							<ClayInput placeholder="Search Query" type="text" />
-  						</ClayInput.GroupItem>
-  					</ClayInput.Group>
-  				</Form.Group>
-  				<Form.Group>
-  					<ClayInput.Group>
-  						<ClayInput.GroupItem shrink>
-  							<ClayInput.GroupText>
-  								$
-  							</ClayInput.GroupText>
-  						</ClayInput.GroupItem>
-  						<ClayInput.GroupItem>
-  							<ClayInput placeholder="5,000" type="text" />
-  						</ClayInput.GroupItem>
-  						<ClayInput.GroupItem shrink>
-  							<ClayInput.GroupText>
-  								.00
-  							</ClayInput.GroupText>
-  						</ClayInput.GroupItem>
-  					</ClayInput.Group>
-  				</Form.Group>
-  			</>
+				<>
+					<Form.Group>
+						<ClayInput.Group>
+							<ClayInput.GroupItem shrink>
+								<ClayButton
+									displayType="secondary"
+									type="submit"
+								>
+									Search
+								</ClayButton>
+							</ClayInput.GroupItem>
+							<ClayInput.GroupItem>
+								<ClayInput
+									placeholder="Search Query"
+									type="text"
+								/>
+							</ClayInput.GroupItem>
+						</ClayInput.Group>
+					</Form.Group>
+					<Form.Group>
+						<ClayInput.Group>
+							<ClayInput.GroupItem shrink>
+								<ClayInput.GroupText>$</ClayInput.GroupText>
+							</ClayInput.GroupItem>
+							<ClayInput.GroupItem>
+								<ClayInput placeholder="5,000" type="text" />
+							</ClayInput.GroupItem>
+							<ClayInput.GroupItem shrink>
+								<ClayInput.GroupText>.00</ClayInput.GroupText>
+							</ClayInput.GroupItem>
+						</ClayInput.Group>
+					</Form.Group>
+				</>
 			</div>
 		</Provider>
 	);
@@ -75,47 +79,51 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<>
-  				<Form.Group>
-  					<ClayInput.Group>
-  						<ClayInput.GroupItem shrink prepend>
-  							<ClayButton displayType="secondary" type="submit">Search</ClayButton>
-  						</ClayInput.GroupItem>
-  						<ClayInput.GroupItem append>
-  							<ClayInput placeholder="Search Query" type="text" />
-  						</ClayInput.GroupItem>
-  					</ClayInput.Group>
-  				</Form.Group>
-  				<Form.Group>
-  					<ClayInput.Group>
-  						<ClayInput.GroupItem prepend>
-  							<ClayInput placeholder="Email" type="text" />
-  						</ClayInput.GroupItem>
-  						<ClayInput.GroupItem append shrink>
-  							<ClayInput.GroupText>
-  								@liferay.com
-  							</ClayInput.GroupText>
-  						</ClayInput.GroupItem>
-  					</ClayInput.Group>
-  				</Form.Group>
-  				<Form.Group>
-  					<ClayInput.Group>
-  						<ClayInput.GroupItem shrink prepend>
-  							<ClayInput.GroupText>
-  								$
-  							</ClayInput.GroupText>
-  						</ClayInput.GroupItem>
-  						<ClayInput.GroupItem prepend>
-  							<ClayInput placeholder="5,000" type="text" />
-  						</ClayInput.GroupItem>
-  						<ClayInput.GroupItem append shrink>
-  							<ClayInput.GroupText>
-  								.00
-  							</ClayInput.GroupText>
-  						</ClayInput.GroupItem>
-  					</ClayInput.Group>
-  				</Form.Group>
-  			</>
+				<>
+					<Form.Group>
+						<ClayInput.Group>
+							<ClayInput.GroupItem shrink prepend>
+								<ClayButton
+									displayType="secondary"
+									type="submit"
+								>
+									Search
+								</ClayButton>
+							</ClayInput.GroupItem>
+							<ClayInput.GroupItem append>
+								<ClayInput
+									placeholder="Search Query"
+									type="text"
+								/>
+							</ClayInput.GroupItem>
+						</ClayInput.Group>
+					</Form.Group>
+					<Form.Group>
+						<ClayInput.Group>
+							<ClayInput.GroupItem prepend>
+								<ClayInput placeholder="Email" type="text" />
+							</ClayInput.GroupItem>
+							<ClayInput.GroupItem append shrink>
+								<ClayInput.GroupText>
+									@liferay.com
+								</ClayInput.GroupText>
+							</ClayInput.GroupItem>
+						</ClayInput.Group>
+					</Form.Group>
+					<Form.Group>
+						<ClayInput.Group>
+							<ClayInput.GroupItem shrink prepend>
+								<ClayInput.GroupText>$</ClayInput.GroupText>
+							</ClayInput.GroupItem>
+							<ClayInput.GroupItem prepend>
+								<ClayInput placeholder="5,000" type="text" />
+							</ClayInput.GroupItem>
+							<ClayInput.GroupItem append shrink>
+								<ClayInput.GroupText>.00</ClayInput.GroupText>
+							</ClayInput.GroupItem>
+						</ClayInput.Group>
+					</Form.Group>
+				</>
 			</div>
 		</Provider>
 	);
@@ -135,21 +143,21 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<Form.Group>
-  				<ClayInput.Group>
-  					<ClayInput.GroupItem shrink>
-  						<ClayInput.GroupText>
-  							@
-  						</ClayInput.GroupText>
-  					</ClayInput.GroupItem>
-  					<ClayInput.GroupItem prepend>
-  						<ClayInput placeholder="Username" type="text" />
-  					</ClayInput.GroupItem>
-  					<ClayInput.GroupItem append shrink>
-  						<ClayButton displayType="secondary" type="submit">Submit</ClayButton>
-  					</ClayInput.GroupItem>
-  				</ClayInput.Group>
-  			</Form.Group>
+				<Form.Group>
+					<ClayInput.Group>
+						<ClayInput.GroupItem shrink>
+							<ClayInput.GroupText>@</ClayInput.GroupText>
+						</ClayInput.GroupItem>
+						<ClayInput.GroupItem prepend>
+							<ClayInput placeholder="Username" type="text" />
+						</ClayInput.GroupItem>
+						<ClayInput.GroupItem append shrink>
+							<ClayButton displayType="secondary" type="submit">
+								Submit
+							</ClayButton>
+						</ClayInput.GroupItem>
+					</ClayInput.Group>
+				</Form.Group>
 			</div>
 		</Provider>
 	);
@@ -171,26 +179,22 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<Form.Group>
-  				<ClayInput.Group stacked>
-  					<ClayInput.GroupItem prepend>
-  						<ClayInput placeholder="Email" type="text" />
-  					</ClayInput.GroupItem>
-  					<ClayInput.GroupItem shrink prepend>
-  						<ClayInput.GroupText>
-  							@
-  						</ClayInput.GroupText>
-  					</ClayInput.GroupItem>
-  					<ClayInput.GroupItem prepend>
-  						<ClayInput placeholder="liferay" type="text" />
-  					</ClayInput.GroupItem>
-  					<ClayInput.GroupItem append shrink>
-  						<ClayInput.GroupText>
-  							.com
-  						</ClayInput.GroupText>
-  					</ClayInput.GroupItem>
-  				</ClayInput.Group>
-  			</Form.Group>
+				<Form.Group>
+					<ClayInput.Group stacked>
+						<ClayInput.GroupItem prepend>
+							<ClayInput placeholder="Email" type="text" />
+						</ClayInput.GroupItem>
+						<ClayInput.GroupItem shrink prepend>
+							<ClayInput.GroupText>@</ClayInput.GroupText>
+						</ClayInput.GroupItem>
+						<ClayInput.GroupItem prepend>
+							<ClayInput placeholder="liferay" type="text" />
+						</ClayInput.GroupItem>
+						<ClayInput.GroupItem append shrink>
+							<ClayInput.GroupText>.com</ClayInput.GroupText>
+						</ClayInput.GroupItem>
+					</ClayInput.Group>
+				</Form.Group>
 			</div>
 		</Provider>
 	);

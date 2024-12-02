@@ -65,24 +65,24 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<ClayDualListBox
-                disableLTR={firstSelectBoxItems.length === 0}
-			    disableRTL={secondSelectBoxItems.length === 0}
-  				items={items}
-  				left={{
-  					label: 'In Use',
-  					onSelectChange: setLeftSelected,
-  					selected: leftSelected,
-  				}}
-  				onItemsChange={setItems}
-  				right={{
-  					label: 'Available',
-  					onSelectChange: setRightSelected,
-  					selected: rightSelected,
-  				}}
-  				size={8}
-  				spritemap={spritemap}
-  			/>
+				<ClayDualListBox
+                    disableLTR={firstSelectBoxItems.length === 0}
+			        disableRTL={secondSelectBoxItems.length === 0}
+					items={items}
+					left={{
+						label: 'In Use',
+						onSelectChange: setLeftSelected,
+						selected: leftSelected,
+					}}
+					onItemsChange={setItems}
+					right={{
+						label: 'Available',
+						onSelectChange: setRightSelected,
+						selected: rightSelected,
+					}}
+					size={8}
+					spritemap={spritemap}
+				/>
 			</div>
 		</Provider>
 	);

@@ -21,7 +21,7 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const selectBoxItems = [
+	const selectBoxItems = [
 		{
 			label: 'Reddit',
 			value: 'reddit',
@@ -39,14 +39,14 @@ export default function App() {
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
-  			<ClaySelectBox
-  				items={items}
-  				label="In Use"
-  				multiple
-  				onItemsChange={setItems}
-  				onSelectChange={setValue}
-  				value={value}
-  			/>
+				<ClaySelectBox
+					items={items}
+					label="In Use"
+					multiple
+					onItemsChange={setItems}
+					onSelectChange={setValue}
+					value={value}
+				/>
 			</div>
 		</Provider>
 	);
