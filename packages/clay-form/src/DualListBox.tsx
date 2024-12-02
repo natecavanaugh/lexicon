@@ -121,7 +121,7 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const defaultError = 'The maximum number of items for {0} is {1}';
 
-const ClayDualListBox = ({
+const DualListBox = ({
 	ariaLabels = {
 		error: defaultError,
 		transferLTR: 'Transfer Item Left to Right',
@@ -274,4 +274,4 @@ const ClayDualListBox = ({
 	);
 };
 
-export default ClayDualListBox;
+export default DualListBox;
