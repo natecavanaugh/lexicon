@@ -3,7 +3,6 @@ title: 'Input'
 description: 'This section demonstrates the different text input types.'
 lexiconDefinition: 'https://liferay.design/lexicon/core-components/forms/text-input/'
 packageNpm: '@clayui/form'
-navigationParent: 'docs/components/form.html'
 packageUse: "import {ClayCheckbox} from '@clayui/form';"
 storybookPath: 'design-system-components-input'
 ---

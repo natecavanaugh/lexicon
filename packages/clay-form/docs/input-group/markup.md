@@ -3,7 +3,6 @@ title: 'Input Group'
 description: 'A Text Input with added elements that provide a more complex input structure.'
 lexiconDefinition: 'https://liferay.design/lexicon/core-components/forms/input-group/'
 packageNpm: '@clayui/form'
-navigationParent: 'docs/components/form.html'
 packageUse: "import ClayForm, {ClayInput} from '@clayui/form';"
 storybookPath: 'design-system-components-inputgroup'
 ---
