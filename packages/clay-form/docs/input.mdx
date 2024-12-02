@@ -6,11 +6,12 @@ packageNpm: '@clayui/form'
 navigationParent: 'docs/components/form.html'
 packageUse: "import {ClayCheckbox} from '@clayui/form';"
 storybookPath: 'design-system-components-input'
+packageTypes: ['clay-form/src/input']
 ---
 
 `ClayInput` is exported from the `@clayui/form` package, consisting of some low-level utilities that provides the ability to create Inputs and Input Groups.
 
-### Basic Usage
+## Basic Usage
 
 ```jsx preview
 import {Provider} from '@clayui/core';
@@ -37,7 +38,7 @@ export default function App() {
 }
 ```
 
-### Using another elements as an input
+## Using another elements as an input
 
 If you want to use another component instead of input for enter text typed things, you can just pass this tag to `component` property, like the example below:
 

@@ -26,7 +26,7 @@ interface IGroupItemProps extends React.HTMLAttributes<HTMLDivElement> {
 	shrink?: boolean;
 }
 
-const ClayInputGroupItem = React.forwardRef<HTMLDivElement, IGroupItemProps>(
+export const InputGroupItem = React.forwardRef<HTMLDivElement, IGroupItemProps>(
 	(
 		{
 			append,
@@ -52,7 +52,7 @@ const ClayInputGroupItem = React.forwardRef<HTMLDivElement, IGroupItemProps>(
 	)
 );
 
-ClayInputGroupItem.displayName = 'ClayInputGroupItem';
+InputGroupItem.displayName = 'ClayInputGroupItem';
 
 interface IGroupProps extends React.HTMLAttributes<HTMLDivElement> {
 	/**
@@ -68,7 +68,7 @@ interface IGroupProps extends React.HTMLAttributes<HTMLDivElement> {
 	stacked?: boolean;
 }
 
-const ClayInputGroup = React.forwardRef<HTMLDivElement, IGroupProps>(
+export const InputGroup = React.forwardRef<HTMLDivElement, IGroupProps>(
 	(
 		{children, className, small, stacked, ...otherProps}: IGroupProps,
 		ref
@@ -86,9 +86,9 @@ const ClayInputGroup = React.forwardRef<HTMLDivElement, IGroupProps>(
 	)
 );
 
-ClayInputGroup.displayName = 'ClayInputGroup';
+InputGroup.displayName = 'ClayInputGroup';
 
-const ClayInputGroupText = React.forwardRef<
+export const InputGroupText = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
 >(({children, className, ...otherProps}, ref) => (
@@ -101,7 +101,7 @@ const ClayInputGroupText = React.forwardRef<
 	</div>
 ));
 
-ClayInputGroupText.displayName = 'ClayInputGroupText';
+InputGroupText.displayName = 'ClayInputGroupText';
 
 interface IGroupInsetProps
 	extends React.HTMLAttributes<
@@ -125,7 +125,7 @@ interface IGroupInsetProps
 	tag?: 'div' | 'span' | 'label';
 }
 
-const ClayInputGroupInsetItem = React.forwardRef<
+const InputGroupInsetItem = React.forwardRef<
 	HTMLDivElement | HTMLSpanElement | HTMLLabelElement,
 	IGroupInsetProps
 >(
@@ -153,7 +153,7 @@ const ClayInputGroupInsetItem = React.forwardRef<
 	)
 );
 
-ClayInputGroupInsetItem.displayName = 'ClayInputGroupInsetItem';
+InputGroupInsetItem.displayName = 'ClayInputGroupInsetItem';
 
 interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	/**
@@ -177,7 +177,19 @@ interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	sizing?: 'lg' | 'regular' | 'sm';
 }
 
-const ClayInput = React.forwardRef<HTMLInputElement, IProps>(
+export interface IForwardRef<T, P = {}>
+	extends React.ForwardRefExoticComponent<P & React.RefAttributes<T>> {
+	Group: typeof InputGroup;
+	GroupInsetItem: typeof InputGroupInsetItem;
+	GroupItem: typeof InputGroupItem;
+	GroupText: typeof InputGroupText;
+}
+
+function forwardRef<T, P = {}>(component: React.RefForwardingComponent<T, P>) {
+	return React.forwardRef<T, P>(component) as IForwardRef<T, P>;
+}
+
+export const Input = forwardRef<HTMLInputElement, IProps>(
 	(
 		{
 			className,
@@ -204,11 +216,10 @@ const ClayInput = React.forwardRef<HTMLInputElement, IProps>(
 	)
 );
 
-ClayInput.displayName = 'ClayInput';
+Input.displayName = 'ClayInput';
+Input.Group = InputGroup;
+Input.GroupInsetItem = InputGroupInsetItem;
+Input.GroupItem = InputGroupItem;
+Input.GroupText = InputGroupText;
 
-export default Object.assign(ClayInput, {
-	Group: ClayInputGroup,
-	GroupInsetItem: ClayInputGroupInsetItem,
-	GroupItem: ClayInputGroupItem,
-	GroupText: ClayInputGroupText,
-});
+export default Input;
