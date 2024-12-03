@@ -22,7 +22,7 @@ export interface IToggleProps
 	value?: string;
 }
 
-const ClayToggle = React.forwardRef<HTMLLabelElement, IToggleProps>(
+export const Toggle = React.forwardRef<HTMLLabelElement, IToggleProps>(
 	(
 		{
 			checked,
@@ -124,6 +124,6 @@ const ClayToggle = React.forwardRef<HTMLLabelElement, IToggleProps>(
 	}
 );
 
-ClayToggle.displayName = 'ClayToggle';
+Toggle.displayName = 'ClayToggle';
 
-export default ClayToggle;
+export default Toggle;
