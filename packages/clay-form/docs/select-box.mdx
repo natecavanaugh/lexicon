@@ -5,6 +5,7 @@ lexiconDefinition: 'https://liferay.design/lexicon/core-components/dual-listbox/
 packageNpm: '@clayui/form'
 packageUse: "import {ClaySelectBox} from '@clayui/form';"
 storybookPath: 'design-system-components-selectbox'
+packageTypes: ['clay-form/src/select-box']
 ---
 
 ## Introduction
@@ -21,7 +22,7 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-	const selectBoxItems = [
+	const [items, setItems] = useState([
 		{
 			label: 'Reddit',
 			value: 'reddit',
@@ -34,7 +35,8 @@ export default function App() {
 			label: 'Twitter',
 			value: 'twitter',
 		},
-	];
+	]);
+	const [value, setValue] = useState([]);
 
 	return (
 		<Provider spritemap="/public/icons.svg">
