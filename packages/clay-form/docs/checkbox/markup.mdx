@@ -492,17 +492,32 @@ Custom checkboxes can also utilize the `:indeterminate` pseudo class when manual
 <div className="sheet-example">
 	<div className="custom-control custom-radio">
 		<label>
-			<input checked="" className="custom-control-input" id="radio1" name="customRadio" type="radio" />
+			<input
+				checked=""
+				className="custom-control-input"
+				id="radio1"
+				name="customRadio"
+				type="radio"
+			/>
 			<span className="custom-control-label">
-				<span className="custom-control-label-text">Toggle this custom radio</span>
+				<span className="custom-control-label-text">
+					Toggle this custom radio
+				</span>
 			</span>
 		</label>
 	</div>
 	<div className="custom-control custom-radio">
 		<label>
-			<input className="custom-control-input" id="radio1" name="customRadio" type="radio" />
+			<input
+				className="custom-control-input"
+				id="radio1"
+				name="customRadio"
+				type="radio"
+			/>
 			<span className="custom-control-label">
-				<span className="custom-control-label-text">Or toggle this other custom radio</span>
+				<span className="custom-control-label-text">
+					Or toggle this other custom radio
+				</span>
 			</span>
 		</label>
 	</div>
@@ -543,7 +558,7 @@ Custom checkboxes can also utilize the `:indeterminate` pseudo class when manual
 ```
 
 <script>
-{`(function() {
+	{`(function() {
 	var indeterminateCheckbox = document.querySelectorAll('.clay-site-custom-checkbox-indeterminate .custom-control-input');
 
 	indeterminateCheckbox.forEach(function(checkbox) {
