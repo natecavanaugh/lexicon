@@ -66,9 +66,46 @@ export default async function Page({params}: Props) {
 	const markupPath = [...params.slug, 'markup'];
 	const Content = document.Content!;
 
+	const tocContent = (
+		<>
+			<p className="text-5 font-weight-semi-bold">Table of Contents</p>
+			<ul className={styles.toc_list}>
+				{[
+					...document.headings,
+					...(types.length > 0
+						? [
+								{
+									text: 'API Reference',
+									id: 'api-reference',
+									depth: 2,
+								},
+						  ]
+						: []),
+					...(types.length > 0
+						? components
+								.map((item) => item.headings)
+								.flat()
+								.filter(
+									(item) =>
+										item.text !== 'API Reference' &&
+										item.text !== 'default'
+								)
+						: []),
+				].map((item) => (
+					<li
+						style={{marginLeft: `${(item.depth - 2) * 10}px`}}
+						key={item.id}
+					>
+						<a href={`#${item.id}`}>{item.text}</a>
+					</li>
+				))}
+			</ul>
+		</>
+	);
+
 	return (
 		<div className={styles.content}>
-			<div style={{minWidth: '826px'}}>
+			<div className={styles.article}>
 				<Heading
 					title={document.frontMatter!.title}
 					description={document.frontMatter!.description}
@@ -97,6 +134,9 @@ export default async function Page({params}: Props) {
 						)
 					}
 				/>
+
+				<div className={styles.toc_mobile}>{tocContent}</div>
+
 				<Content />
 
 				{types.length > 0 && (
@@ -225,42 +265,7 @@ export default async function Page({params}: Props) {
 				</div>
 			</div>
 
-			<div className={styles.toc}>
-				<p className="text-5 font-weight-semi-bold">
-					Table of Contents
-				</p>
-				<ul className={styles.toc_list}>
-					{[
-						...document.headings,
-						...(types.length > 0
-							? [
-									{
-										text: 'API Reference',
-										id: 'api-reference',
-										depth: 2,
-									},
-							  ]
-							: []),
-						...(types.length > 0
-							? components
-									.map((item) => item.headings)
-									.flat()
-									.filter(
-										(item) =>
-											item.text !== 'API Reference' &&
-											item.text !== 'default'
-									)
-							: []),
-					].map((item) => (
-						<li
-							style={{marginLeft: `${(item.depth - 2) * 10}px`}}
-							key={item.id}
-						>
-							<a href={`#${item.id}`}>{item.text}</a>
-						</li>
-					))}
-				</ul>
-			</div>
+			<div className={styles.toc}>{tocContent}</div>
 		</div>
 	);
 }

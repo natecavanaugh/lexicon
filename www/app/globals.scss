@@ -37,6 +37,12 @@ a {
 	text-decoration: none;
 }
 
+@media (max-width: 520px) {
+	.DocSearch-Button {
+		width: 50% !important;
+	}
+}
+
 .DocSearch-Button {
 	border: 1px solid #e7e7ed !important;
 	margin: 0 !important;
