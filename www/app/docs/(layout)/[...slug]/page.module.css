@@ -1,3 +1,7 @@
+.code_inline {
+	text-wrap: auto !important;
+}
+
 .toc {
 	position: sticky;
 	top: 40px;

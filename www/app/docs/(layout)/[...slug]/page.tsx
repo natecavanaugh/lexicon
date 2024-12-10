@@ -144,6 +144,7 @@ export default async function Page({params}: Props) {
 						style={{
 							display: 'flex',
 							flexDirection: 'column',
+							overflow: 'hidden',
 						}}
 					>
 						<h2 className="text-7 mb-4 mt-5" id="api-reference">
@@ -448,6 +449,7 @@ function Props({
 							display: 'flex',
 							alignItems: 'center',
 							gap: 8,
+							flexWrap: 'wrap',
 						}}
 					>
 						<h4
@@ -475,9 +477,11 @@ function Props({
 								display: 'flex',
 								alignItems: 'center',
 								gap: '0.25rem',
+								flexWrap: 'wrap',
 							}}
 						>
 							<CodeInline
+								className={styles.code_inline}
 								value={propType.text}
 								language="typescript"
 								paddingX="0.5rem"
@@ -487,14 +491,14 @@ function Props({
 							{propType.defaultValue ? (
 								<span
 									style={{
-										flexShrink: 0,
-										display: 'flex',
 										alignItems: 'center',
+										display: 'flex',
 										gap: '0.25rem',
 									}}
 								>
 									={' '}
 									<CodeInline
+										className={styles.code_inline}
 										value={propType.defaultValue}
 										language="typescript"
 									/>
