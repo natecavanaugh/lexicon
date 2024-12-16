@@ -11,7 +11,7 @@ import React, {useEffect, useLayoutEffect} from 'react';
 
 import {ChildrenFunction, Collection, useCollection} from '../collection';
 import {Item, Menu} from '../drop-down';
-import {Cell} from './Cell';
+import {ForwardCell} from './Cell';
 import {Scope, ScopeContext} from './ScopeContext';
 import {useTable} from './context';
 
@@ -85,7 +85,7 @@ export const Head = function HeadInner<T extends Record<string, any>>(
 					<Collection<T> collection={collection} />
 
 					{columnsVisibility && (
-						<Cell keyValue="visibility" width="72px">
+						<ForwardCell keyValue="visibility" width="72px">
 							<Menu
 								UNSAFE_focusableElements={[
 									'input[role="switch"]',
@@ -212,7 +212,7 @@ export const Head = function HeadInner<T extends Record<string, any>>(
 									)
 								}
 							</Menu>
-						</Cell>
+						</ForwardCell>
 					)}
 				</tr>
 			</ScopeContext.Provider>
