@@ -20,35 +20,38 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-  const [toggled1, setToggle1] = useState(false);
-  const [toggled2, setToggle2] = useState(false);
-  const [toggled3, setToggle3] = useState(false);
+	const [toggled1, setToggle1] = useState(false);
+	const [toggled2, setToggle2] = useState(false);
+	const [toggled3, setToggle3] = useState(false);
 
 	return (
 		<Provider spritemap="/public/icons.svg">
-			<div className="p-4" style={{display: 'flex', justifyContent: 'space-around'}}>
-  			<ClayToggle
-  				label="Checkbox"
-  				onToggle={setToggle1}
-  				toggled={toggled1}
-  			/>
+			<div
+				className="p-4"
+				style={{display: 'flex', justifyContent: 'space-around'}}
+			>
+				<ClayToggle
+					label="Checkbox"
+					onToggle={setToggle1}
+					toggled={toggled1}
+				/>
 
-  			<ClayToggle
-  				label="with symbol"
-  				onToggle={setToggle2}
-  				symbol={{
-  					off: 'times',
-  					on: 'check',
-  				}}
-  				toggled={toggled2}
-  			/>
+				<ClayToggle
+					label="with symbol"
+					onToggle={setToggle2}
+					symbol={{
+						off: 'times',
+						on: 'check',
+					}}
+					toggled={toggled2}
+				/>
 
-  			<ClayToggle
-  				disabled
-  				label="Disabled"
-  				onToggle={setToggle3}
-  				toggled={toggled3}
-  			/>
+				<ClayToggle
+					disabled
+					label="Disabled"
+					onToggle={setToggle3}
+					toggled={toggled3}
+				/>
 			</div>
 		</Provider>
 	);
