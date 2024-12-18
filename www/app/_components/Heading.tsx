@@ -10,7 +10,8 @@ type Props = {
 	description?: string;
 	title: string;
 	path: Array<string>;
-	markup: boolean;
+	markup?: boolean;
+	design?: boolean;
 	npmPackage?: string;
 	use?: React.ReactNode;
 };
@@ -20,9 +21,39 @@ export default function Heading({
 	title,
 	path,
 	markup,
+	design,
 	npmPackage,
 	use,
 }: Props) {
+	const slugBase = path.filter(
+		(item) => item !== 'design' && item !== 'markup'
+	);
+	const items = [
+		{
+			active: !path.includes('markup') && !path.includes('design'),
+			href: `/docs/${slugBase.join('/')}`,
+			label: 'React',
+		},
+		...(markup
+			? [
+					{
+						active: path.includes('markup'),
+						href: `/docs/${slugBase.join('/')}/markup`,
+						label: 'HTML/CSS',
+					},
+			  ]
+			: []),
+		...(design
+			? [
+					{
+						active: path.includes('design'),
+						href: `/docs/${slugBase.join('/')}/design`,
+						label: 'Design',
+					},
+			  ]
+			: []),
+	];
+
 	return (
 		<div className={styles.heading_container}>
 			<h1 className="text-10">{title}</h1>
@@ -31,64 +62,47 @@ export default function Heading({
 			)}
 
 			{npmPackage && (
-				<>
-					<table className={classNames('table', styles.table)}>
-						<tbody>
-							<tr>
-								<th>install</th>
-								<td>yarn add {npmPackage}</td>
-							</tr>
-							<tr>
-								<th>version</th>
-								<td>
-									<img
-										alt="NPM Version"
-										src={`https://img.shields.io/npm/v/${npmPackage}?style=flat-square&logo=npm&label=%20&labelColor=%23fff&color=%23fff`}
-									/>
-								</td>
-							</tr>
-							<tr>
-								<th>use</th>
-								<td>{use}</td>
-							</tr>
-						</tbody>
-					</table>
+				<table className={classNames('table', styles.table)}>
+					<tbody>
+						<tr>
+							<th>install</th>
+							<td>yarn add {npmPackage}</td>
+						</tr>
+						<tr>
+							<th>version</th>
+							<td>
+								<img
+									alt="NPM Version"
+									src={`https://img.shields.io/npm/v/${npmPackage}?style=flat-square&logo=npm&label=%20&labelColor=%23fff&color=%23fff`}
+								/>
+							</td>
+						</tr>
+						<tr>
+							<th>use</th>
+							<td>{use}</td>
+						</tr>
+					</tbody>
+				</table>
+			)}
 
-					{markup && (
-						<ClayLinkContext.Provider value={Link as any}>
-							<NavigationBar
-								triggerLabel="Navigation"
-								className={styles.nav}
+			{(markup || design) && (
+				<ClayLinkContext.Provider value={Link as any}>
+					<NavigationBar
+						triggerLabel="Navigation"
+						className={styles.nav}
+					>
+						{items.map((item) => (
+							<NavigationBar.Item
+								key={item.label}
+								active={item.active}
 							>
-								<NavigationBar.Item
-									active={!path.includes('markup')}
-								>
-									<ClayLink
-										href={`/docs/${path
-											.filter((item) => item !== 'markup')
-											.join('/')}`}
-									>
-										React
-									</ClayLink>
-								</NavigationBar.Item>
-
-								<NavigationBar.Item
-									active={path.includes('markup')}
-								>
-									<ClayLink
-										href={`/docs/${path.join('/')}${
-											path.includes('markup')
-												? ''
-												: '/markup'
-										}`}
-									>
-										HTML/CSS
-									</ClayLink>
-								</NavigationBar.Item>
-							</NavigationBar>
-						</ClayLinkContext.Provider>
-					)}
-				</>
+								<ClayLink href={item.href}>
+									{item.label}
+								</ClayLink>
+							</NavigationBar.Item>
+						))}
+					</NavigationBar>
+				</ClayLinkContext.Provider>
 			)}
 		</div>
 	);
