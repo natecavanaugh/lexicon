@@ -46,6 +46,12 @@
 	margin-bottom: $multi-step-item-margin-bottom;
 	position: relative;
 
+	&:last-child {
+		.multi-step-divider {
+			display: none;
+		}
+	}
+
 	&.active {
 		.multi-step-icon {
 			background-color: $multi-step-icon-active-bg;
@@ -259,6 +265,7 @@
 	padding-left: $multi-step-icon-padding-left;
 	padding-right: $multi-step-icon-padding-right;
 	padding-top: $multi-step-icon-padding-top;
+	position: relative;
 
 	@include transition($multi-step-icon-transition);
 
@@ -315,6 +322,30 @@
 	}
 }
 
+.multi-step-nav-center {
+	@include clay-css($multi-step-nav-center);
+
+	.multi-step-item {
+		$_item: setter(map-get($multi-step-nav-center, multi-step-item), ());
+
+		@include clay-css($_item);
+	}
+
+	.multi-step-divider {
+		@include clay-css(map-get($multi-step-nav-center, multi-step-divider));
+	}
+
+	.multi-step-indicator {
+		@include clay-css(
+			map-get($multi-step-nav-center, multi-step-indicator)
+		);
+	}
+
+	.multi-step-title {
+		@include clay-css(map-get($multi-step-nav-center, multi-step-title));
+	}
+}
+
 .multi-step-nav-collapse-sm {
 	@include media-breakpoint-down(sm) {
 		flex-wrap: nowrap;
@@ -337,6 +368,29 @@
 			.multi-step-title {
 				margin-left: 0;
 				max-width: none;
+				transform: none;
+			}
+		}
+
+		&.multi-step-nav-center {
+			.multi-step-item {
+				flex-grow: 0;
+				width: auto;
+			}
+
+			.multi-step-item-expand {
+				flex-grow: 1;
+				width: 75px;
+			}
+
+			.multi-step-divider {
+				left: auto;
+				margin-left: $multi-step-icon-size;
+				width: auto;
+			}
+
+			.multi-step-indicator {
+				left: auto;
 				transform: none;
 			}
 		}

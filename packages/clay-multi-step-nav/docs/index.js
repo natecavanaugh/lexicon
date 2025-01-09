@@ -79,6 +79,76 @@ const MultiStepNav = () => {
 	);
 };
 
+const multiStepNavCenterImportsCode = `import ClayMultiStepNav from '@clayui/multi-step-nav';
+`;
+
+const multiStepNavCenterCode = `const Component = () => {
+	const [value, setValue] = useState(1);
+
+	const steps = [
+		{
+			subTitle: 'Step 01',
+			title: 'Ticket Buyer Information',
+		},
+		{
+			subTitle: 'Step 02',
+			title: 'Attendee Information',
+		},
+		{
+			subTitle: 'Step 03',
+			title: 'Payment Information',
+		},
+		{
+			subTitle: 'Step 04',
+			title: 'Completed',
+		},
+	];
+
+	return (
+		<ClayMultiStepNav center>
+			{steps.map(({subTitle, title}, i) => {
+				const complete = value > i;
+
+				return (
+					<ClayMultiStepNav.Item
+						active={value === i}
+						expand={i + 1 !== steps.length}
+						key={i}
+						state={complete ? 'complete' : undefined}
+					>
+						<ClayMultiStepNav.Title>
+							{title}
+						</ClayMultiStepNav.Title>
+						<ClayMultiStepNav.Divider />
+						<ClayMultiStepNav.Indicator
+							complete={complete}
+							label={1 + i}
+							onClick={() => setValue(i)}
+							subTitle={subTitle}
+						/>
+					</ClayMultiStepNav.Item>
+				);
+			})}
+		</ClayMultiStepNav>
+	);
+}
+
+render(<Component />)`;
+
+const MultiStepNavCenter = () => {
+	const scope = {
+		ClayMultiStepNav,
+	};
+
+	return (
+		<Editor
+			code={multiStepNavCenterCode}
+			imports={multiStepNavCenterImportsCode}
+			scope={scope}
+		/>
+	);
+};
+
 const multiStepNavWithBasicItemsImportsCode = `import {ClayMultiStepNavWithBasicItems} from '@clayui/multi-step-nav';
 `;
 
@@ -183,4 +253,9 @@ const MultiStepNavError = () => {
 	);
 };
 
-export {MultiStepNav, MultiStepNavError, MultiStepNavWithBasicItems};
+export {
+	MultiStepNav,
+	MultiStepNavCenter,
+	MultiStepNavError,
+	MultiStepNavWithBasicItems,
+};

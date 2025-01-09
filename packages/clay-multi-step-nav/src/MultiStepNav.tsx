@@ -18,6 +18,11 @@ export interface IProps extends React.HTMLAttributes<HTMLOListElement> {
 	autoCollapse?: boolean;
 
 	/**
+	 * Flag to indicate if nav should add the `multi-step-nav-center` class.
+	 */
+	center?: boolean;
+
+	/**
 	 * Flag to indicate if nav should add `multi-step-item-fixed-width` class.
 	 */
 	fixedWidth?: boolean;
@@ -37,6 +42,7 @@ function ClayMultiStepNav(props: IProps): JSX.Element & {
 
 function ClayMultiStepNav({
 	autoCollapse = true,
+	center,
 	children,
 	className,
 	fixedWidth,
@@ -47,6 +53,7 @@ function ClayMultiStepNav({
 		<ol
 			className={classNames('multi-step-nav', className, {
 				'multi-step-item-fixed-width': fixedWidth,
+				'multi-step-nav-center': center,
 				'multi-step-nav-collapse-sm': autoCollapse,
 				[`multi-step-indicator-label-${indicatorLabel}`]:
 					indicatorLabel,

@@ -12,31 +12,31 @@ export default {
 	title: 'Design System/Components/MultiStepNav',
 };
 
-export const Default = () => {
+export const Default = (args: any) => {
 	const [value, setValue] = useState<number>(1);
 
 	const steps = [
 		{
-			subTitle: 'SubOne',
-			title: 'One',
+			subTitle: 'Step 01',
+			title: 'Ticket Buyer Information',
 		},
 		{
-			subTitle: 'SubTwo',
-			title: 'Two',
+			subTitle: 'Step 02',
+			title: 'Attendee Information',
 		},
 		{
-			subTitle: 'SubThree',
-			title: 'Three',
+			subTitle: 'Step 03',
+			title: 'Payment Information',
 		},
 		{
-			subTitle: 'SubFour',
-			title: 'Four',
+			subTitle: 'Step 04',
+			title: 'Completed',
 		},
 	];
 
 	return (
 		<div className="sheet">
-			<ClayMultiStepNav>
+			<ClayMultiStepNav center={args.center}>
 				{steps.map(({subTitle, title}, i: number) => {
 					const complete = value > i;
 
@@ -63,6 +63,10 @@ export const Default = () => {
 			</ClayMultiStepNav>
 		</div>
 	);
+};
+
+Default.args = {
+	center: false,
 };
 
 export const MultiStepNavWithBasicItems = (args: any) => {

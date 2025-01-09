@@ -96,6 +96,32 @@ $multi-step-item-margin-bottom: 10px !default;
 $multi-step-item-width: 75px !default;
 $multi-step-item-fixed-width: 150px !default;
 
+$multi-step-nav-center: () !default;
+$multi-step-nav-center: map-deep-merge(
+	(
+		padding: 0,
+		text-align: center,
+		multi-step-item: (
+			flex-grow: 1,
+			width: $multi-step-item-width,
+		),
+		multi-step-divider: (
+			left: 50%,
+			margin-left: 1rem,
+			width: calc(100% - #{$multi-step-icon-size}),
+		),
+		multi-step-indicator: (
+			left: 50%,
+			transform: translateX(-50%),
+		),
+		multi-step-title: (
+			margin-left: 12.5%,
+			max-width: 75%,
+		),
+	),
+	$multi-step-nav-center
+);
+
 $multi-step-title-center: () !default;
 $multi-step-title-center: map-deep-merge(
 	(

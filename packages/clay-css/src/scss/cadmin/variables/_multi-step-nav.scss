@@ -83,6 +83,32 @@ $cadmin-multi-step-item-margin-bottom: 10px !default;
 $cadmin-multi-step-item-width: 75px !default;
 $cadmin-multi-step-item-fixed-width: 150px !default;
 
+$cadmin-multi-step-nav-center: () !default;
+$cadmin-multi-step-nav-center: map-deep-merge(
+	(
+		padding: 0,
+		text-align: center,
+		multi-step-item: (
+			flex-grow: 1,
+			width: $cadmin-multi-step-item-width,
+		),
+		multi-step-divider: (
+			left: 50%,
+			margin-left: 1rem,
+			width: calc(100% - #{$cadmin-multi-step-icon-size}),
+		),
+		multi-step-indicator: (
+			left: 50%,
+			transform: translateX(-50%),
+		),
+		multi-step-title: (
+			margin-left: 12.5%,
+			max-width: 75%,
+		),
+	),
+	$cadmin-multi-step-nav-center
+);
+
 // data-multi-step-icon::before See https://issues.liferay.com/browse/LPS-147457.
 
 $cadmin-multi-step-item-error: () !default;
