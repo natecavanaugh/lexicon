@@ -96,7 +96,7 @@ interface IProps extends React.HTMLAttributes<HTMLSelectElement> {
 	/**
 	 * Handler that triggers when a new item is selected.
 	 */
-	onSelectChange: (val: Array<string>) => void;
+	onSelectChange: (value: Array<string>) => void;
 
 	/**
 	 *  Selected indexes, most commonly used in combination with the  Dual Listbox component
@@ -135,7 +135,7 @@ export const getSelectedIndexes = (
 		return acc;
 	}, []);
 
-export const SelectBox = ({
+const SelectBox = ({
 	ariaLabels = {
 		reorderDown: 'Reorder Down',
 		reorderUp: 'Reorder Up',

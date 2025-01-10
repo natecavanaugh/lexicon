@@ -580,5 +580,4 @@ function normalizeValueHex(value: string) {
 	return value;
 }
 
-export {ColorPicker};
 export default ColorPicker;

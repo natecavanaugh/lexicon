@@ -11,9 +11,10 @@ import React from 'react';
 import Form from './Form';
 import ClaySelectBox, {TItem, getSelectedIndexes} from './SelectBox';
 
-type TItems = Array<Array<TItem>>;
-
-function swapArrayItems(arrays: TItems, selectedIndexes: Array<number>) {
+function swapArrayItems(
+	arrays: Array<Array<TItem>>,
+	selectedIndexes: Array<number>
+) {
 	const [sourceArray, targetArray] = arrays;
 
 	const newTargetArray = [...targetArray!];
@@ -31,7 +32,7 @@ function swapArrayItems(arrays: TItems, selectedIndexes: Array<number>) {
 	return [newSourceArray, newTargetArray];
 }
 
-interface IBoxProps {
+type BoxProps = {
 	/**
 	 * Id of the selectbox to be used with the label
 	 */
@@ -51,7 +52,7 @@ interface IBoxProps {
 	 * Array of selected items in the left Select Box.
 	 */
 	selected?: Array<string>;
-}
+};
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	/**
@@ -81,22 +82,22 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	/**
 	 * Items spread across two arrays that will be displayed in the two Select Boxes.
 	 */
-	items: TItems;
+	items: Array<Array<TItem>>;
 
 	/**
 	 * Handler that triggers when the content of the items prop are changed. Caused by either reordering or transfering of items.
 	 */
-	onItemsChange: (val: TItems) => void;
+	onItemsChange: (value: Array<Array<TItem>>) => void;
 
 	/**
 	 * Props for the left Select Box.
 	 */
-	left?: IBoxProps;
+	left?: BoxProps;
 
 	/**
 	 * Props for the right Select Box.
 	 */
-	right?: IBoxProps;
+	right?: BoxProps;
 
 	/**
 	 * Amount of items that can fit inside the both Select Boxes before a scrollbar is introduced.
