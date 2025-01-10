@@ -28,7 +28,6 @@ import Menu from './Menu';
 import Search from './Search';
 import Section from './Section';
 
-import type {ICollectionProps} from '@clayui/core';
 import type {
 	AlignPoints,
 	IPortalBaseProps,
@@ -39,10 +38,21 @@ const {Collection} = __NOT_PUBLIC_COLLECTION;
 
 interface IProps<T>
 	extends Omit<
-			React.HTMLAttributes<HTMLDivElement | HTMLLIElement>,
-			'children'
-		>,
-		Omit<ICollectionProps<T, unknown>, 'virtualize'> {
+		React.HTMLAttributes<HTMLDivElement | HTMLLIElement>,
+		'children'
+	> {
+	/**
+	 * Children content to render a dynamic or static content.
+	 */
+	children:
+		| React.ReactNode
+		| ((item: T, index?: number) => React.ReactElement);
+
+	/**
+	 * Property to render content with dynamic data.
+	 */
+	items?: Array<T>;
+
 	/**
 	 * Flag to indicate if the DropDown menu is active or not (controlled).
 	 *
