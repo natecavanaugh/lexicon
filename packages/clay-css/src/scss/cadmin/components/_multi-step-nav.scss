@@ -167,8 +167,11 @@
 				}
 			}
 
-			&:focus {
-				box-shadow: $cadmin-multi-step-icon-disabled-focus-box-shadow;
+			@at-root {
+				&.focus,
+				#{$focus-visible-selector} {
+					box-shadow: $cadmin-multi-step-icon-disabled-focus-box-shadow;
+				}
 			}
 		}
 
@@ -260,12 +263,15 @@
 		text-decoration: $cadmin-multi-step-icon-hover-text-decoration;
 	}
 
-	&:focus {
-		background-color: $cadmin-multi-step-icon-focus-bg;
-		box-shadow: $cadmin-multi-step-icon-focus-box-shadow;
-		color: $cadmin-multi-step-icon-focus-color;
-		outline: $cadmin-multi-step-icon-focus-outline;
-		text-decoration: $cadmin-multi-step-icon-focus-text-decoration;
+	@at-root {
+		&.focus,
+		#{$focus-visible-selector} {
+			background-color: $cadmin-multi-step-icon-focus-bg;
+			box-shadow: $cadmin-multi-step-icon-focus-box-shadow;
+			color: $cadmin-multi-step-icon-focus-color;
+			outline: $cadmin-multi-step-icon-focus-outline;
+			text-decoration: $cadmin-multi-step-icon-focus-text-decoration;
+		}
 	}
 
 	&[data-multi-step-icon]:before {

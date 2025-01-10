@@ -181,8 +181,11 @@
 				}
 			}
 
-			&:focus {
-				box-shadow: $multi-step-icon-disabled-focus-box-shadow;
+			@at-root {
+				&.focus,
+				#{$focus-visible-selector} {
+					box-shadow: $multi-step-icon-disabled-focus-box-shadow;
+				}
 			}
 		}
 
@@ -270,12 +273,15 @@
 		text-decoration: $multi-step-icon-hover-text-decoration;
 	}
 
-	&:focus {
-		background-color: $multi-step-icon-focus-bg;
-		box-shadow: $multi-step-icon-focus-box-shadow;
-		color: $multi-step-icon-focus-color;
-		outline: $multi-step-icon-focus-outline;
-		text-decoration: $multi-step-icon-focus-text-decoration;
+	@at-root {
+		&.focus,
+		#{$focus-visible-selector} {
+			background-color: $multi-step-icon-focus-bg;
+			box-shadow: $multi-step-icon-focus-box-shadow;
+			color: $multi-step-icon-focus-color;
+			outline: $multi-step-icon-focus-outline;
+			text-decoration: $multi-step-icon-focus-text-decoration;
+		}
 	}
 
 	&[data-multi-step-icon]::before {
