@@ -6,6 +6,8 @@ import type {JavaScriptFileExport} from 'renoun/file-system';
 import {CodeInline, MDXRenderer, MDXComponents} from 'renoun/components';
 import {ComponentsCollection} from '@/data';
 
+import {ErrorBoundary} from './ErrorBoundary';
+
 const mdxComponents = {
 	p: (props) => <p {...props} style={{margin: 0}} />,
 	code: (props) => <MDXComponents.code {...props} paddingY="0" />,
@@ -35,10 +37,22 @@ export type APIReferenceProps =
 
 /** Displays type documentation for all types exported from a file path or types related to a collection export source. */
 export function APIReference(props: APIReferenceProps) {
+	const path = (props.source as string).split('/');
+
 	return (
-		<Suspense fallback="Loading API references...">
-			<APIReferenceAsync {...props} />
-		</Suspense>
+		<ErrorBoundary
+			fallback={
+				<div className="alert alert-danger">
+					<strong className="lead">Error:</strong> An error occurred
+					while generating the Table API for the{' '}
+					{path[path.length - 1]} component.
+				</div>
+			}
+		>
+			<Suspense fallback="Loading API references...">
+				<APIReferenceAsync {...props} />
+			</Suspense>
+		</ErrorBoundary>
 	);
 }
 
