@@ -1,0 +1,31 @@
+@use 'sass:math' as *;
+
+@import 'atlas-variables';
+@import 'atlas.scss';
+
+.btn-cta {
+	@extend .btn;
+	padding: 0.67rem 1.25rem;
+}
+
+.lexicon-icon-list {
+	&:after {
+		clear: both;
+		content: '';
+		display: block;
+		height: 0;
+		visibility: hidden;
+	}
+
+	li span {
+		margin-left: 4px;
+	}
+}
+
+@media (min-width: 768px) {
+	.lexicon-icon-list li {
+		float: left;
+		padding: 5px;
+		width: 25%;
+	}
+}
