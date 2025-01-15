@@ -22,7 +22,7 @@ import React, {useState} from 'react';
 import '@clayui/css/lib/css/atlas.css';
 
 export default function App() {
-    const moveBoxesOptions = [
+	const moveBoxesOptions = [
 		[
 			{
 				label: 'Discord',
@@ -61,14 +61,14 @@ export default function App() {
 	const [leftSelected, setLeftSelected] = useState([]);
 	const [rightSelected, setRightSelected] = useState([]);
 
-    const [firstSelectBoxItems, secondSelectBoxItems] = items;
+	const [firstSelectBoxItems, secondSelectBoxItems] = items;
 
 	return (
 		<Provider spritemap="/public/icons.svg">
 			<div className="p-4">
 				<ClayDualListBox
-                    disableLTR={firstSelectBoxItems.length === 0}
-			        disableRTL={secondSelectBoxItems.length === 0}
+					disableLTR={firstSelectBoxItems.length === 0}
+					disableRTL={secondSelectBoxItems.length === 0}
 					items={items}
 					left={{
 						label: 'In Use',

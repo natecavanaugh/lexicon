@@ -85,7 +85,7 @@ The `center` boolean property centers the `multi-step-nav`.
 
 ```jsx preview
 import {Provider} from '@clayui/core';
-import MultiStepNav from '@clayui/multi-step-nav'
+import MultiStepNav from '@clayui/multi-step-nav';
 import React, {useState} from 'react';
 
 import '@clayui/css/lib/css/atlas.css';
@@ -126,9 +126,7 @@ export default function App() {
 								key={i}
 								state={complete ? 'complete' : undefined}
 							>
-								<MultiStepNav.Title>
-									{title}
-								</MultiStepNav.Title>
+								<MultiStepNav.Title>{title}</MultiStepNav.Title>
 								<MultiStepNav.Divider />
 								<MultiStepNav.Indicator
 									complete={complete}
