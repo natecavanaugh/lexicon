@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 	const collection = await BlogCollection.getSources();
 
 	return collection.map((entry) => ({
-		slug: entry.getPath().split('/').slice(1),
+		slug: entry.getPath().split('/').slice(2),
 	}));
 }
 
