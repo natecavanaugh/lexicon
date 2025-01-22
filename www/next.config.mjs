@@ -4,13 +4,15 @@ import {remarkPlugins, rehypePlugins} from 'renoun/mdx';
 import webpack from 'webpack';
 import path from 'path';
 
+import {unwrapMdxBlockElements} from './plugins/remark-unwrap-paragraphs/index.mjs';
+
 // @ts-ignore
 import clay from '@clayui/css';
 
 const withMDX = createMDXPlugin({
 	extension: /\.mdx?$/,
 	options: {
-		remarkPlugins,
+		remarkPlugins: [...remarkPlugins, unwrapMdxBlockElements],
 		rehypePlugins: [...rehypePlugins, rehypeMdxCodeProps],
 	},
 });
