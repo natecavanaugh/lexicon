@@ -66,6 +66,7 @@ export async function DocsLayout({slug}: Props) {
 				<Heading
 					title={frontmatter.title}
 					description={frontmatter.description}
+					lexicon={frontmatter.lexiconDefinition}
 					path={slug}
 					markup={!!fileMarkup}
 					design={!!fileDesign}
@@ -121,7 +122,7 @@ export async function DocsLayout({slug}: Props) {
 
 				<div className={styles.author_container}>
 					<a
-						className="link-primary mb-2"
+						className="link-primary mb-3"
 						href={file.getEditPath()}
 						target="_blank"
 						rel="noreferrer"
@@ -131,12 +132,17 @@ export async function DocsLayout({slug}: Props) {
 					>
 						Edit this page on GitHub
 					</a>
-					<p className="font-weight-semi-bold">Contributors</p>
-					<div className={styles.author_list}>
-						{authors.map((item) => (
-							<div key={item} className={styles.author} />
-						))}
-					</div>
+
+					{!!authors.length && (
+						<>
+							<p className="font-weight-semi-bold mb-1">
+								Contributors
+							</p>
+							<div className={styles.author_list}>
+								{authors.join(', ')}
+							</div>
+						</>
+					)}
 
 					{updatedAt && (
 						<p className="text-secondary">

@@ -2,6 +2,12 @@
   margin-bottom: 35px;
 }
 
+.heading_title {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
 .table {
   color: #6b6c7e;
   margin-bottom: 10px;

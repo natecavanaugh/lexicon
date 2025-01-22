@@ -252,6 +252,16 @@ const nextConfig = {
 				source: '/docs/components',
 			},
 			{
+				destination: '/docs/contribute',
+				permanent: true,
+				source: '/docs/contributing.html',
+			},
+			{
+				destination: '/docs/introduction/clay-in-jsps',
+				permanent: true,
+				source: '/docs/get-started/using-clay-in-jsps.html',
+			},
+			{
 				destination: '/docs/components/text',
 				permanent: true,
 				source: '/docs/components/text.html',

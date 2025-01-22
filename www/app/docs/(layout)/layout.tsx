@@ -1,4 +1,8 @@
-import {DocumentsCollection, ComponentDocumentsCollection} from '@/data';
+import {
+	DocumentsCollection,
+	CSSDocumentsCollection,
+	ComponentDocumentsCollection,
+} from '@/data';
 
 import {Sidebar} from '../../_components/Sidebar';
 import {Navbar} from '../../_components/Navbar';
@@ -13,6 +17,10 @@ export default function DocsLayout({children}: {children: React.ReactNode}) {
 					{
 						name: 'Components',
 						collection: ComponentDocumentsCollection,
+					},
+					{
+						name: 'CSS',
+						collection: CSSDocumentsCollection,
 					},
 				]}
 				path="docs"

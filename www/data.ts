@@ -12,6 +12,7 @@ const frontmatterSchema = z.object({
 	description: z.string(),
 	packageNpm: z.optional(z.string()),
 	packageUse: z.optional(z.string()),
+	lexiconDefinition: z.optional(z.string()),
 	packageTypes: z.optional(z.array(z.string())),
 });
 
@@ -65,13 +66,27 @@ export const BlogCollection = new Collection<BlogSchema>(
 export const DocumentsCollection = new Collection<ComponentDocumentsSchema>(
 	{
 		filePattern: '**/*.mdx',
-		baseDirectory: './docs',
+		baseDirectory: './docs/01.introduction',
+		basePath: 'introduction',
 		filter: (source) => isFileSystemSource(source) && source.isFile(),
 		schema: {
 			frontmatter: frontmatterSchema.parse,
 		},
 	},
-	(slug) => import(`./docs/${slug}.mdx`)
+	(slug) => import(`./docs/01.introduction/${slug}.mdx`)
+);
+
+export const CSSDocumentsCollection = new Collection<ComponentDocumentsSchema>(
+	{
+		filePattern: '**/*.mdx',
+		baseDirectory: './docs/css',
+		basePath: 'css',
+		filter: (source) => isFileSystemSource(source) && source.isFile(),
+		schema: {
+			frontmatter: frontmatterSchema.parse,
+		},
+	},
+	(slug) => import(`./docs/css/${slug}.mdx`)
 );
 
 const PATHS = [
@@ -145,7 +160,8 @@ export const ComponentDocumentsCollection =
 
 export const AllCollection = new CompositeCollection(
 	DocumentsCollection,
-	ComponentDocumentsCollection
+	ComponentDocumentsCollection,
+	CSSDocumentsCollection
 );
 
 type ComponentSchema = Record<string, React.ComponentType>;

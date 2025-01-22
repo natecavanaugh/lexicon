@@ -10,6 +10,7 @@ type Props = {
 	description?: string;
 	title: string;
 	path: Array<string>;
+	lexicon?: string;
 	markup?: boolean;
 	design?: boolean;
 	npmPackage?: string;
@@ -19,6 +20,7 @@ type Props = {
 export default function Heading({
 	description,
 	title,
+	lexicon,
 	path = [],
 	markup,
 	design,
@@ -56,7 +58,19 @@ export default function Heading({
 
 	return (
 		<div className={styles.heading_container}>
-			<h1 className="text-10">{title}</h1>
+			<div className={styles.heading_title}>
+				<h1 className="text-10">{title}</h1>
+				{lexicon && (
+					<a
+						className="badge badge-primary badge-translucent"
+						href={lexicon}
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						View in Lexicon
+					</a>
+				)}
+			</div>
 			{description && (
 				<p className="text-6 text-secondary">{description}</p>
 			)}
