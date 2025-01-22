@@ -16,6 +16,16 @@ export default function ClayLink({
 		<Link
 			{...otherProps}
 			href={href}
+			rel={
+				typeof href === 'string' && href.includes('http')
+					? 'noopener noreferrer'
+					: undefined
+			}
+			target={
+				typeof href === 'string' && href.includes('http')
+					? '_blank'
+					: undefined
+			}
 			className={classNames({
 				[styles.link_active]: pathname === href,
 			})}

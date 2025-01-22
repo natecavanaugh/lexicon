@@ -15,6 +15,7 @@ export default function DocsLayout({children}: {children: React.ReactNode}) {
 						collection: ComponentDocumentsCollection,
 					},
 				]}
+				path="docs"
 			/>
 			<div className={styles.main}>
 				<Navbar />

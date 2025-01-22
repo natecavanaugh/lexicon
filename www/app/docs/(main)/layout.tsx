@@ -14,11 +14,16 @@ export default function MainDocsLayout({
 					{
 						name: 'About',
 						items: [
-							{name: 'Blog', href: '#'},
+							{name: 'Blog', href: '/blog'},
 							{name: 'Contribute', href: '/docs/contribute'},
-							{name: 'Releases', href: '#'},
-							{name: 'Support', href: '#'},
-							{name: 'Lexicon', href: '#'},
+							{
+								name: 'Releases',
+								href: 'https://github.com/liferay/clay/releases',
+							},
+							{
+								name: 'Lexicon',
+								href: 'https://liferay.design/lexicon',
+							},
 						],
 					},
 					{

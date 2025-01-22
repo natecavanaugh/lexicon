@@ -32,6 +32,36 @@ export type ComponentDocumentsSchema = {
 	frontmatter: z.infer<typeof frontmatterSchema>;
 };
 
+const blogFrontmatterSchema = z.object({
+	title: z.string(),
+	author: z.array(z.string()),
+});
+
+type BlogSchema = {
+	default: MDXContent;
+	headings: MDXHeadings;
+	frontmatter: z.infer<typeof blogFrontmatterSchema>;
+};
+
+export const BlogCollection = new Collection<BlogSchema>(
+	{
+		filePattern: '**/*.mdx',
+		baseDirectory: './blog',
+		basePath: 'blog',
+		filter: (source) => isFileSystemSource(source) && source.isFile(),
+		sort: async (a, b) => {
+			const aTitle = a.getPath();
+			const bTitle = b.getPath();
+
+			return bTitle.localeCompare(aTitle);
+		},
+		schema: {
+			frontmatter: blogFrontmatterSchema.parse,
+		},
+	},
+	(slug) => import(`./blog/${slug}.mdx`)
+);
+
 export const DocumentsCollection = new Collection<ComponentDocumentsSchema>(
 	{
 		filePattern: '**/*.mdx',
@@ -143,3 +173,22 @@ export const ComponentsCollection = new Directory({
 });
 
 export type AllCollection = typeof AllCollection;
+
+export const AUTHORS = {
+	matuzalemsteles: {
+		name: 'Matuzalém Teles',
+		url: 'https://github.com/matuzalemsteles',
+	},
+	bryceosterhaus: {
+		name: 'Bryce Osterhaus',
+		url: 'https://github.com/bryceosterhaus',
+	},
+	patrickyeo: {
+		name: 'Patrick Yeo',
+		url: 'https://github.com/pat270',
+	},
+	julien: {
+		name: 'Julien Castelain',
+		url: 'https://github.com/julien',
+	},
+} as Record<string, {name: string; url: string}>;

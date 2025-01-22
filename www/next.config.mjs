@@ -239,6 +239,12 @@ const nextConfig = {
 
 		return [
 			{
+				destination:
+					'/blog/2022-05-02-api-consistency-improvements-for-controlled-and-uncontrolled-components',
+				permanent: false,
+				source: '/blog',
+			},
+			{
 				destination: '/docs/introduction/how-to-use-clay',
 				permanent: true,
 				source: '/docs/components',

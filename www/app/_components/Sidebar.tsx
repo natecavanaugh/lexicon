@@ -13,15 +13,16 @@ type Item = {
 
 type CollectionItem = {
 	name: string;
-	collection: Collection<ComponentDocumentsSchema>;
+	collection: Collection<ComponentDocumentsSchema | any>;
 };
 
 type Props = {
 	items?: Array<Item>;
-	collection?: AllCollection | Array<CollectionItem>;
+	path?: string;
+	collection?: AllCollection | Collection<any> | Array<CollectionItem>;
 };
 
-export function Sidebar({collection, items}: Props) {
+export function Sidebar({collection, path, items}: Props) {
 	const content = (
 		<>
 			{items?.map((item) => (
@@ -45,13 +46,16 @@ export function Sidebar({collection, items}: Props) {
 					<ul key={item.name} className={styles.sidebar_nav}>
 						<p className={styles.sidebar_nav_title}>{item.name}</p>
 						<ul>
-							<TreeCollection collection={item.collection} />
+							<TreeCollection
+								collection={item.collection}
+								path={path}
+							/>
 						</ul>
 					</ul>
 				))}
 
 			{collection && !Array.isArray(collection) && (
-				<TreeCollection collection={collection} />
+				<TreeCollection collection={collection} path={path} />
 			)}
 		</>
 	);
@@ -87,15 +91,20 @@ export function Sidebar({collection, items}: Props) {
 
 type TreeCollectionProps = {
 	collection: AllCollection | Collection<ComponentDocumentsSchema>;
+	path?: string;
 };
 
-async function TreeCollection({collection}: TreeCollectionProps) {
+async function TreeCollection({collection, path}: TreeCollectionProps) {
 	const entries = await collection.getSources();
 
 	return (
 		<>
 			{entries.map((entry) => (
-				<ListNavigation key={entry.getPath()} entry={entry} />
+				<ListNavigation
+					key={entry.getPath()}
+					entry={entry}
+					path={path}
+				/>
 			))}
 		</>
 	);
@@ -103,9 +112,10 @@ async function TreeCollection({collection}: TreeCollectionProps) {
 
 type ListNavigationProps = {
 	entry: FileSystemSource<any>;
+	path?: string;
 };
 
-async function ListNavigation({entry}: ListNavigationProps) {
+async function ListNavigation({entry, path: pathUrl}: ListNavigationProps) {
 	const path = entry.getPath();
 	const title = entry.getTitle();
 
@@ -116,10 +126,10 @@ async function ListNavigation({entry}: ListNavigationProps) {
 	const link = (
 		<li>
 			<ClayLink
-				href={`/docs${path}`}
+				href={`${pathUrl ? `/${pathUrl}` : ''}${path}`}
 				style={{textTransform: 'capitalize'}}
 			>
-				{title}
+				{title.replaceAll(/\d{4}\s\d{2}\s\d{2}/g, '')}
 			</ClayLink>
 		</li>
 	);
