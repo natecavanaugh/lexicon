@@ -152,87 +152,143 @@
 		);
 
 		@if ($enabled) {
-			@include clay-css($base);
-
-			&:first-child {
-				@include clay-css(map-get($map, first-child));
+			@if (length($base) != 0) {
+				@include clay-css($base);
 			}
 
-			&:last-child {
-				@include clay-css(map-get($map, last-child));
+			$_first-child: map-get($map, first-child);
+
+			@if ($_first-child) {
+				&:first-child {
+					@include clay-css($_first-child);
+				}
 			}
 
-			hr {
-				@include clay-css(map-get($map, hr));
+			$_last-child: map-get($map, last-child);
+
+			@if ($_last-child) {
+				&:last-child {
+					@include clay-css($_last-child);
+				}
 			}
 
-			&.alert-dismissible {
-				@include clay-css(setter(map-get($map, alert-dismissible), ()));
+			$_hr: map-get($map, hr);
 
+			@if ($_hr) {
+				hr {
+					@include clay-css($_hr);
+				}
+			}
+
+			$_alert-dismissible: map-get($map, alert-dismissible);
+
+			@if ($_alert-dismissible) {
+				&.alert-dismissible {
+					@include clay-css($_alert-dismissible);
+
+					$_container-fluid: map-get(
+						$_alert-dismissible,
+						container-fluid
+					);
+
+					@if ($_container-fluid) {
+					}
+					.container,
+					.container-fluid {
+						@include clay-css($_container-fluid);
+					}
+				}
+			}
+
+			@if (length($alert-indicator) != 0) {
+				.alert-indicator {
+					@include clay-css($alert-indicator);
+
+					$_lexicon-icon: map-get($alert-indicator, lexicon-icon);
+
+					@if ($_lexicon-icon) {
+						.lexicon-icon {
+							@include clay-css(
+								map-get($alert-indicator, lexicon-icon)
+							);
+						}
+					}
+
+					$_lead: map-get($alert-indicator, lead);
+
+					@if ($_lead) {
+						+ .lead {
+							@include clay-css(map-get($alert-indicator, lead));
+						}
+					}
+				}
+			}
+
+			$_alert-btn: map-get($map, alert-btn);
+
+			@if ($_alert-btn) {
+				.alert-btn {
+					@include clay-button-variant($_alert-btn);
+				}
+			}
+
+			$_btn-group: map-get($map, btn-group);
+
+			@if ($_btn-group) {
+				.btn-group {
+					@include clay-container($_btn-group);
+				}
+			}
+
+			$_btn-group-item: map-get($map, btn-group-item);
+
+			@if ($_btn-group-item) {
+				.btn-group-item {
+					@include clay-container($_btn-group-item);
+				}
+			}
+
+			@if (length($close) != 0) {
+				.close {
+					@include clay-close($close);
+				}
+			}
+
+			$_container-fluid: map-get($map, container-fluid);
+
+			@if ($_container-fluid) {
 				.container,
 				.container-fluid {
-					@include clay-css(
-						setter(
-							map-deep-get(
-								$map,
-								alert-dismissible,
-								container-fluid
-							),
-							()
-						)
-					);
+					@include clay-css($_container-fluid);
 				}
 			}
 
-			.alert-indicator {
-				@include clay-css($alert-indicator);
-
-				.lexicon-icon {
-					@include clay-css(map-get($alert-indicator, lexicon-icon));
-				}
-
-				+ .lead {
-					@include clay-css(map-get($alert-indicator, lead));
+			@if (length($lead) != 0) {
+				.lead {
+					@include clay-css($lead);
 				}
 			}
 
-			.alert-btn {
-				@include clay-button-variant(map-get($map, alert-btn));
+			@if (length($alert-link) != 0) {
+				.alert-link {
+					@include clay-link($alert-link);
+				}
 			}
 
-			.btn-group {
-				@include clay-container(map-get($map, btn-group));
+			$_compontent-title: map-get($map, compontent-title);
+
+			@if ($_compontent-title) {
+				.component-title {
+					@include clay-text-typography($_component-title);
+				}
 			}
 
-			.btn-group-item {
-				@include clay-container(map-get($map, btn-group-item));
-			}
+			$_component-subtitle: map-get($map, component-subtitle);
 
-			.close {
-				@include clay-close($close);
-			}
-
-			.container,
-			.container-fluid {
-				@include clay-css(setter(map-get($map, container-fluid), ()));
-			}
-
-			.lead {
-				@include clay-css($lead);
-			}
-
-			.alert-link {
-				@include clay-link($alert-link);
-			}
-
-			.component-title {
-				@include clay-text-typography(map-get($map, component-title));
-			}
-
-			.component-subtitle {
-				@include clay-text-typography(
-					map-get($map, component-subtitle)
-				);
+			@if ($_component-subtitle) {
+				.component-subtitle {
+					@include clay-text-typography($_component-subtitle);
+				}
 			}
 
 			@each $key, $properties in map-get($map, custom-selectors) {

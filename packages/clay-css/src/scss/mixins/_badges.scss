@@ -178,64 +178,106 @@
 		$badge-item-expand: setter(map-get($map, badge-item-expand), ());
 
 		@if ($enabled) {
-			@include clay-css($base);
+			@if (length($base) != 0) {
+				@include clay-css($base);
+			}
 
 			// Empty badges collapse automatically
 
-			&:empty {
-				@include clay-css(map-get($map, empty));
+			$_empty: map-get($map, empty);
+
+			@if ($_empty) {
+				&:empty {
+					@include clay-css(map-get($map, empty));
+				}
 			}
 
-			&[href],
-			&[type] {
-				@include clay-link($href);
+			@if (length($href) != 0) {
+				&[href],
+				&[type] {
+					@include clay-link($href);
+				}
 			}
 
-			a {
-				@include clay-link($link);
-			}
-
-			.badge-item {
-				@include clay-css($badge-item);
-
+			@if (length($link) != 0) {
 				a {
-					@include clay-link(map-get($badge-item, link));
-				}
-
-				.btn-unstyled {
-					@include clay-button-variant(
-						map-get($badge-item, btn-unstyled)
-					);
-				}
-
-				.close {
-					@include clay-close(map-get($badge-item, close));
-				}
-
-				.lexicon-icon {
-					@include clay-css(map-get($badge-item, lexicon-icon));
+					@include clay-link($link);
 				}
 			}
 
-			.badge-item-expand {
-				@include clay-css($badge-item-expand);
+			@if (length($badge-item) != 0) {
+				.badge-item {
+					@include clay-css($badge-item);
 
-				a {
-					@include clay-link(map-get($badge-item-expand, link));
+					$_link: map-get($badge-item, link);
+
+					@if ($_link) {
+						a {
+							@include clay-link($_link);
+						}
+					}
+
+					$_btn-unstyled: map-get($badge-item, btn-unstyled);
+
+					@if ($_btn-unstyled) {
+						.btn-unstyled {
+							@include clay-button-variant($_btn-unstyled);
+						}
+					}
+
+					$_close: map-get($badge-item, close);
+
+					@if ($_close) {
+						.close {
+							@include clay-close($_close);
+						}
+					}
+
+					$_lexicon-icon: map-get($badge-item, lexicon-icon);
+
+					@if ($_lexicon-icon) {
+						.lexicon-icon {
+							@include clay-css($_lexicon-icon);
+						}
+					}
 				}
 			}
 
-			.badge-item-before {
-				@include clay-css(map-get($map, badge-item-before));
+			@if (length($badge-item-expand) != 0) {
+				.badge-item-expand {
+					@include clay-css($badge-item-expand);
+
+					$_link: map-get($badge-item-expand, link);
+
+					@if ($_link) {
+						a {
+							@include clay-link($_link);
+						}
+					}
+				}
 			}
 
-			.badge-item-after {
-				@include clay-css(map-get($map, badge-item-after));
+			$_badge-item-before: map-get($map, badge-item-before);
+
+			@if ($_badge-item-before) {
+				.badge-item-before {
+					@include clay-css($_badge-item-before);
+				}
+			}
+
+			$_badge-item-after: map-get($map, badge-item-after);
+
+			@if ($_badge-item-after) {
+				.badge-item-after {
+					@include clay-css($_badge-item-after);
+				}
 			}
 
 			@if (map-get($c-inner, enabled)) {
-				> .c-inner {
-					@include clay-css($c-inner);
+				@if (length($c-inner) != 0) {
+					> .c-inner {
+						@include clay-css($c-inner);
+					}
 				}
 			}
 		}

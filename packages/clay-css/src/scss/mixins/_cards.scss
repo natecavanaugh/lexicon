@@ -60,26 +60,46 @@
 		);
 
 		@if ($enabled) {
-			@include clay-css($base);
-
-			&::before {
-				@include clay-css(map-get($map, before));
+			@if (length($base) != 0) {
+				@include clay-css($base);
 			}
 
-			&::after {
-				@include clay-css(map-get($map, after));
+			$_before: map-get($map, before);
+
+			@if ($_before) {
+				&::before {
+					@include clay-css($_before);
+				}
 			}
 
-			&:first-child {
-				@include clay-css(map-get($map, first-child));
+			$_after: map-get($map, after);
+
+			@if ($_after) {
+				&::after {
+					@include clay-css($_after);
+				}
 			}
 
-			&:last-child {
-				@include clay-css(map-get($map, last-child));
+			$_first-child: map-get($map, first-child);
+
+			@if ($_first-child) {
+				&:first-child {
+					@include clay-css($_first-child);
+				}
 			}
 
-			.autofit-col {
-				@include clay-css($autofit-col);
+			$_last-child: map-get($map, last-child);
+
+			@if ($_last-child) {
+				&:last-child {
+					@include clay-css($_last-child);
+				}
+			}
+
+			@if (length($autofit-col) != 0) {
+				.autofit-col {
+					@include clay-css($autofit-col);
+				}
 			}
 		}
 	}
@@ -681,335 +701,574 @@
 		);
 
 		@if ($enabled) {
-			@include clay-css($base);
-
-			&:hover,
-			&.hover {
-				@include clay-css($hover);
-
-				&::after {
-					@include clay-css(map-get($hover, after));
-				}
-
-				.card-title {
-					@include clay-link($hover-card-title);
-				}
-
-				.card-subtitle {
-					@include clay-link($hover-card-subtitle);
-				}
-
-				.card-text {
-					@include clay-link($hover-card-text);
-				}
-
-				.card-link {
-					@include clay-link($hover-card-link);
-				}
+			@if (length($base) != 0) {
+				@include clay-css($base);
 			}
 
-			@at-root {
-				&.focus,
-				#{$focus-visible-selector},
-				#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
-					@include clay-css($focus);
+			@if (length($hover) != 0) {
+				&:hover,
+				&.hover {
+					@include clay-css($hover);
 
-					&::after {
-						@include clay-css(map-get($focus, after));
+					$_after: map-get($hover, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
 					}
 
-					.card-title {
-						@include clay-link($focus-card-title);
+					@if (length($hover-card-title) != 0) {
+						.card-title {
+							@include clay-link($hover-card-title);
+						}
 					}
 
-					.card-subtitle {
-						@include clay-link($focus-card-subtitle);
+					@if (length($hover-card-subtitle) != 0) {
+						.card-subtitle {
+							@include clay-link($hover-card-subtitle);
+						}
 					}
 
-					.card-text {
-						@include clay-link($focus-card-text);
+					@if (length($hover-card-text) != 0) {
+						.card-text {
+							@include clay-link($hover-card-text);
+						}
 					}
 
-					.card-link {
-						@include clay-link($focus-card-link);
+					@if (length($hover-card-link) != 0) {
+						.card-link {
+							@include clay-link($hover-card-link);
+						}
 					}
 				}
 			}
 
-			&:active,
-			&.active {
-				@include clay-css($active);
+			@if (length($focus) != 0) {
+				@at-root {
+					&.focus,
+					#{$focus-visible-selector},
+					#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
+						@include clay-css($focus);
 
-				&::after {
-					@include clay-css(map-get($active, after));
-				}
+						$_after: map-get($focus, after);
 
-				.card-title {
-					@include clay-link($active-card-title);
-				}
+						@if ($_after) {
+							&::after {
+								@include clay-css($_after);
+							}
+						}
 
-				.card-subtitle {
-					@include clay-link($active-card-subtitle);
-				}
+						@if (length($focus-card-title) != 0) {
+							.card-title {
+								@include clay-link($focus-card-title);
+							}
+						}
 
-				.card-text {
-					@include clay-link($active-card-text);
-				}
+						@if (length($focus-card-subtitle) != 0) {
+							.card-subtitle {
+								@include clay-link($focus-card-subtitle);
+							}
+						}
 
-				.card-link {
-					@include clay-link($active-card-link);
+						@if (length($focus-card-text) != 0) {
+							.card-text {
+								@include clay-link($focus-card-text);
+							}
+						}
+
+						@if (length($focus-card-link) != 0) {
+							.card-link {
+								@include clay-link($focus-card-link);
+							}
+						}
+					}
 				}
 			}
 
-			&:disabled,
-			&.disabled {
-				@include clay-css(map-get($map, disabled));
+			@if (length($active) != 0) {
+				&:active,
+				&.active {
+					@include clay-css($active);
 
-				&::after {
-					@include clay-css(map-deep-get($map, disabled, after));
+					$_after: map-get($active, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
+
+					@if (length($active-card-title) != 0) {
+						.card-title {
+							@include clay-link($active-card-title);
+						}
+					}
+
+					@if (length($active-card-subtitle) != 0) {
+						.card-subtitle {
+							@include clay-link($active-card-subtitle);
+						}
+					}
+
+					@if (length($active-card-text) != 0) {
+						.card-text {
+							@include clay-link($active-card-text);
+						}
+					}
+
+					@if (length($active-card-link) != 0) {
+						.card-link {
+							@include clay-link($active-card-link);
+						}
+					}
 				}
+			}
 
-				.card-title {
-					@include clay-link(
-						map-deep-get($map, disabled, card-title)
+			$_disabled: map-get($map, disabled);
+
+			@if ($_disabled) {
+				&:disabled,
+				&.disabled {
+					@include clay-css($_disabled);
+
+					$_after: map-get($_disabled, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
+
+					$_card-title: map-get($_disabled, card-title);
+
+					@if ($_card-title) {
+						.card-title {
+							@include clay-link($_card-title);
+						}
+					}
+
+					$_card-subtitle: map-get($_disabled, card-subtitle);
+
+					@if ($_card-subtitle) {
+						.card-subtitle {
+							@include clay-link($_card-subtitle);
+						}
+					}
+
+					$_card-text: map-get($_disabled, card-text);
+
+					@if ($_card-text) {
+						.card-text {
+							@include clay-link($_card-text);
+						}
+					}
+
+					$_card-link: map-get($_disabled, card-link);
+
+					@if ($_card-link) {
+						.card-link {
+							@include clay-link($_card-link);
+						}
+					}
+				}
+			}
+
+			$_after-highlight: map-get($map, after-highlight);
+
+			@if ($_after-highlight) {
+				@include clay-after-highlight-variant($_after-highlight);
+			}
+
+			$_before: map-get($map, before);
+
+			@if ($_before) {
+				&::before {
+					@include clay-css($_before);
+				}
+			}
+
+			$_after: map-get($map, after);
+
+			@if ($_after) {
+				&::after {
+					@include clay-css($_after);
+				}
+			}
+
+			$_form-check-card: map-get($map, form-check-card);
+
+			@if ($_form-check-card) {
+				&.form-check-card {
+					@include clay-form-check-card-variant($_form-check-card);
+				}
+			}
+
+			$_aspect-ratio: map-get($map, aspect-ratio);
+
+			@if ($_aspect-ratio) {
+				.aspect-ratio {
+					@include clay-aspect-ratio-variant($_aspect-ratio);
+
+					@if ($aspect-ratio-checkered-fg) {
+						@include clay-bg-checkered($aspect-ratio-checkered-fg);
+					}
+
+					$_custom-control-label: map-deep-get(
+						$aspect-ratio,
+						custom-control,
+						label
+					);
+
+					@if ($_custom-control-label) {
+						.custom-control label,
+						.form-check-label {
+							@include clay-css($_custom-control-label);
+						}
+					}
+
+					$_label: map-get($aspect-ratio, label);
+
+					@if ($_label) {
+						.label {
+							@include clay-label-variant($_label);
+						}
+					}
+				}
+			}
+
+			$_aspect-ratio-item: map-get($map, aspect-ratio-item);
+
+			@if ($_aspect-ratio-item) {
+				.aspect-ratio-item {
+					@include clay-aspect-ratio-item-variant(
+						$_aspect-ratio-item
 					);
 				}
-
-				.card-subtitle {
-					@include clay-link(
-						map-deep-get($map, disabled, card-subtitle)
-					);
-				}
-
-				.card-text {
-					@include clay-link(map-deep-get($map, disabled, card-text));
-				}
-
-				.card-link {
-					@include clay-link(map-deep-get($map, disabled, card-link));
-				}
 			}
 
-			@include clay-after-highlight-variant(
-				setter(map-get($map, after-highlight), ())
+			$_aspect-ratio-item-top-left: map-get(
+				$map,
+				aspect-ratio-item-top-left
 			);
 
-			&::before {
-				@include clay-css(map-get($map, before));
-			}
-
-			&::after {
-				@include clay-css(map-get($map, after));
-			}
-
-			&.form-check-card {
-				@include clay-form-check-card-variant(
-					map-get($map, form-check-card)
-				);
-			}
-
-			.aspect-ratio {
-				@include clay-aspect-ratio-variant(map-get($map, aspect-ratio));
-
-				@if ($aspect-ratio-checkered-fg) {
-					@include clay-bg-checkered($aspect-ratio-checkered-fg);
+			@if ($_aspect-ratio-item-top-left) {
+				.aspect-ratio-item-top-left {
+					@include clay-css($_aspect-ratio-item-top-left);
 				}
+			}
 
-				.custom-control label,
-				.form-check-label {
-					@include clay-css(
-						map-deep-get($aspect-ratio, custom-control, label)
+			$_aspect-ratio-item-top-center: map-get(
+				$map,
+				aspect-ratio-item-top-center
+			);
+
+			@if ($_aspect-ratio-item-top-center) {
+				.aspect-ratio-item-top-center {
+					@include clay-css($_aspect-ratio-item-top-center);
+				}
+			}
+
+			$_aspect-ratio-item-top-right: map-get(
+				$map,
+				aspect-ratio-item-top-right
+			);
+
+			@if ($_aspect-ratio-item-top-right) {
+				.aspect-ratio-item-top-right {
+					@include clay-css($_aspect-ratio-item-top-right);
+				}
+			}
+
+			$_aspect-ratio-item-right-middle: map-get(
+				$map,
+				aspect-ratio-item-right-middle
+			);
+
+			@if ($_aspect-ratio-item-right-middle) {
+				.aspect-ratio-item-right-middle {
+					@include clay-css($_aspect-ratio-item-right-middle);
+				}
+			}
+
+			$_aspect-ratio-item-bottom-right: map-get(
+				$map,
+				aspect-ratio-item-bottom-right
+			);
+
+			@if ($_aspect-ratio-item-bottom-right) {
+				.aspect-ratio-item-bottom-right {
+					@include clay-css($_aspect-ratio-item-bottom-right);
+				}
+			}
+
+			$_aspect-ratio-item-bottom-center: map-get(
+				$map,
+				aspect-ratio-item-bottom-center
+			);
+
+			@if ($_aspect-ratio-item-bottom-center) {
+				.aspect-ratio-item-bottom-center {
+					@include clay-css($_aspect-ratio-item-bottom-center);
+				}
+			}
+
+			$_aspect-ratio-item-bottom-left: map-get(
+				$map,
+				aspect-ratio-item-bottom-left
+			);
+
+			@if ($_aspect-ratio-item-bottom-left) {
+				.aspect-ratio-item-bottom-left {
+					@include clay-css($_aspect-ratio-item-bottom-left);
+				}
+			}
+
+			$_hr: map-get($map, hr);
+
+			@if ($_hr) {
+				> hr {
+					@include clay-css($_hr);
+
+					$_before: map-get($_hr, before);
+
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
+					}
+
+					$_after: map-get($_hr, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
+				}
+			}
+
+			$_sticker: map-get($map, sticker);
+
+			@if ($_sticker) {
+				.sticker {
+					@include clay-sticker-variant($_sticker);
+				}
+			}
+
+			$_card: map-get($map, card);
+
+			@if ($_card) {
+				.card {
+					@include clay-css($_card);
+				}
+			}
+
+			$_card-header: map-get($map, card-header);
+
+			@if ($_card-header) {
+				.card-header {
+					@include clay-card-section-variant($_card-header);
+				}
+			}
+
+			@if (length($card-body) != 0) {
+				.card-body {
+					@include clay-card-section-variant($card-body);
+				}
+			}
+
+			$_card-footer: map-get($map, card-footer);
+
+			@if ($_card-footer) {
+				.card-footer {
+					@include clay-card-section-variant($_card-footer);
+				}
+			}
+
+			@if (length($card-row) != 0) {
+				.card-row {
+					@include clay-card-section-variant($card-row);
+				}
+			}
+
+			$_card-title: map-get($map, card-title);
+
+			@if ($_card-title) {
+				.card-title {
+					@include clay-link($_card-title);
+				}
+			}
+
+			$_card-subtitle: map-get($map, card-subtitle);
+
+			@if ($_card-subtitle) {
+				.card-subtitle {
+					@include clay-link($_card-subtitle);
+				}
+			}
+
+			$_card-text: map-get($map, card-text);
+
+			@if ($_card-text) {
+				.card-text {
+					@include clay-link($_card-text);
+				}
+			}
+
+			$_card-link: map-get($map, card-link);
+
+			@if ($_card-link) {
+				.card-link {
+					@include clay-link($_card-link);
+				}
+			}
+
+			$_card-divider: map-get($map, card-divider);
+
+			@if ($_card-divider) {
+				.card-divider {
+					@include clay-css($_card-divider);
+				}
+			}
+
+			@if (length($card-type-asset-icon) != 0) {
+				.card-type-asset-icon {
+					@include clay-css($card-type-asset-icon);
+
+					$_inline-item: map-get($card-type-asset-icon, inline-item);
+
+					@if ($_inline-item) {
+						.inline-item {
+							@include clay-css($_inline-item);
+						}
+					}
+
+					$_lexicon-icon: map-get(
+						$card-type-asset-icon,
+						lexicon-icon
 					);
-				}
 
-				.label {
-					@include clay-label-variant(map-get($aspect-ratio, label));
-				}
-			}
+					@if ($_lexicon-icon) {
+						> .lexicon-icon {
+							@include clay-css($_lexicon-icon);
+						}
+					}
 
-			.aspect-ratio-item {
-				@include clay-aspect-ratio-item-variant(
-					map-get($map, aspect-ratio-item)
-				);
-			}
+					@if (length($card-type-asset-icon-sticker) != 0) {
+						> .sticker {
+							@include clay-css($card-type-asset-icon-sticker);
 
-			.aspect-ratio-item-top-left {
-				@include clay-css(map-get($map, aspect-ratio-item-top-left));
-			}
-
-			.aspect-ratio-item-top-center {
-				@include clay-css(map-get($map, aspect-ratio-item-top-center));
-			}
-
-			.aspect-ratio-item-top-right {
-				@include clay-css(map-get($map, aspect-ratio-item-top-right));
-			}
-
-			.aspect-ratio-item-right-middle {
-				@include clay-css(
-					map-get($map, aspect-ratio-item-right-middle)
-				);
-			}
-
-			.aspect-ratio-item-bottom-right {
-				@include clay-css(
-					map-get($map, aspect-ratio-item-bottom-right)
-				);
-			}
-
-			.aspect-ratio-item-bottom-center {
-				@include clay-css(
-					map-get($map, aspect-ratio-item-bottom-center)
-				);
-			}
-
-			.aspect-ratio-item-bottom-left {
-				@include clay-css(map-get($map, aspect-ratio-item-bottom-left));
-			}
-
-			> hr {
-				@include clay-css(map-get($map, hr));
-
-				&::before {
-					@include clay-css(map-deep-get($map, hr, before));
-				}
-
-				&::after {
-					@include clay-css(map-deep-get($map, hr, after));
-				}
-			}
-
-			.sticker {
-				@include clay-sticker-variant(map-get($map, sticker));
-			}
-
-			.card {
-				@include clay-css(map-get($map, card));
-			}
-
-			.card-header {
-				@include clay-card-section-variant(map-get($map, card-header));
-			}
-
-			.card-body {
-				@include clay-card-section-variant($card-body);
-			}
-
-			.card-footer {
-				@include clay-card-section-variant(map-get($map, card-footer));
-			}
-
-			.card-row {
-				@include clay-card-section-variant($card-row);
-			}
-
-			.card-title {
-				@include clay-link(map-get($map, card-title));
-			}
-
-			.card-subtitle {
-				@include clay-link(map-get($map, card-subtitle));
-			}
-
-			.card-text {
-				@include clay-link(map-get($map, card-text));
-			}
-
-			.card-link {
-				@include clay-link(map-get($map, card-link));
-			}
-
-			.card-divider {
-				@include clay-css(map-get($map, card-divider));
-			}
-
-			.card-type-asset-icon {
-				@include clay-css($card-type-asset-icon);
-
-				.inline-item {
-					@include clay-css(
-						map-get($card-type-asset-icon, inline-item)
-					);
-				}
-
-				> .lexicon-icon {
-					@include clay-css(
-						map-get($card-type-asset-icon, lexicon-icon)
-					);
-				}
-
-				> .sticker {
-					@include clay-css($card-type-asset-icon-sticker);
-
-					.sticker-overlay {
-						@include clay-css(
-							map-get(
+							$_sticker-overlay: map-get(
 								$card-type-asset-icon-sticker,
 								sticker-overlay
-							)
-						);
+							);
+
+							@if ($_sticker-overlay) {
+							}
+							.sticker-overlay {
+								@include clay-css($_sticker-overlay);
+							}
+						}
 					}
 				}
 			}
 
-			.form-check-input {
-				&:hover {
-					~ .card {
-						@include clay-card-variant(
-							map-deep-get($map, custom-control, hover, card)
-						);
-					}
-				}
+			$_custom-control: map-get($map, custom-control);
 
-				&:focus {
-					~ .card {
-						@include clay-card-variant(
-							map-deep-get($map, custom-control, focus, card)
-						);
-					}
-				}
+			@if ($_custom-control) {
+				.form-check-input {
+					$_hover: map-get($_custom-control, hover);
 
-				&:active {
-					~ .card {
-						@include clay-card-variant(
-							map-deep-get($map, custom-control, active, card)
-						);
-					}
-				}
+					@if ($_hover) {
+						&:hover {
+							$_card: map-get($_hover, card);
 
-				&[disabled],
-				&:disabled {
-					~ .card {
-						@include clay-card-variant(
-							map-deep-get($map, custom-control, disabled, card)
-						);
+							@if ($_card) {
+								~ .card {
+									@include clay-card-variant($_card);
+								}
+							}
+						}
 					}
-				}
 
-				&:checked {
-					~ .card {
-						@include clay-card-variant(
-							map-deep-get($map, custom-control, checked, card)
-						);
+					$_focus: map-get($_custom-control, focus);
+
+					@if ($_focus) {
+						&:focus {
+							$_card: map-get($_focus, card);
+
+							@if ($_card) {
+								~ .card {
+									@include clay-card-variant($_card);
+								}
+							}
+						}
 					}
-				}
 
-				&:indeterminate {
-					~ .card {
-						@include clay-card-variant(
-							map-deep-get(
-								$map,
-								custom-control,
-								indeterminate,
-								card
-							)
-						);
+					$_active: map-get($_custom-control, active);
+
+					@if ($_active) {
+						&:active {
+							$_card: map-get($_active, card);
+
+							@if ($_card) {
+								~ .card {
+									@include clay-card-variant($_card);
+								}
+							}
+						}
+					}
+
+					$_disabled: map-get($_custom-control, disabled);
+
+					@if ($_disabled) {
+						&[disabled],
+						&:disabled {
+							$_card: map-get($_disabled, card);
+
+							@if ($_card) {
+								~ .card {
+									@include clay-card-variant($_card);
+								}
+							}
+						}
+					}
+
+					$_checked: map-get($_custom-control, checked);
+
+					@if ($_checked) {
+						&:checked {
+							$_card: map-get($_checked, card);
+
+							@if ($_card) {
+								~ .card {
+									@include clay-card-variant($_card);
+								}
+							}
+						}
+					}
+
+					$_indeterminate: map-get($_custom-control, indeterminate);
+
+					@if ($_indeterminate) {
+						&:indeterminate {
+							$_card: map-get($_indeterminate, card);
+
+							@if ($_card) {
+								~ .card {
+									@include clay-card-variant($_card);
+								}
+							}
+						}
 					}
 				}
 			}
 
-			.dropdown-action {
-				@include clay-button-variant($dropdown-action);
+			@if (length($dropdown-action) != 0) {
+				.dropdown-action {
+					@include clay-button-variant($dropdown-action);
+				}
 			}
 		}
 	}
@@ -1228,7 +1487,9 @@
 
 	@if ($enabled) {
 		.aspect-ratio {
-			@include clay-css($aspect-ratio);
+			@if (length($aspect-ratio) != 0) {
+				@include clay-css($aspect-ratio);
+			}
 
 			@if ($aspect-ratio-horizontal and $aspect-ratio-vertical) {
 				@include clay-aspect-ratio(
@@ -1248,16 +1509,22 @@
 			}
 		}
 
-		.card-body {
-			@include clay-css($card-body);
+		@if (length($card-body) != 0) {
+			.card-body {
+				@include clay-css($card-body);
+			}
 		}
 
-		.card-row {
-			@include clay-css($card-row);
+		@if (length($card-row) != 0) {
+			.card-row {
+				@include clay-css($card-row);
+			}
 		}
 
 		.card-type-asset-icon {
-			@include clay-css($card-type-asset-icon);
+			@if (length($card-type-asset-icon) != 0) {
+				@include clay-css($card-type-asset-icon);
+			}
 
 			.inline-item {
 				bottom: 0;
@@ -1272,19 +1539,28 @@
 				width: 100%;
 			}
 
-			> .sticker {
-				@include clay-css($card-type-asset-icon-sticker);
+			@if (length($card-type-asset-icon-sticker) != 0) {
+				> .sticker {
+					@include clay-css($card-type-asset-icon-sticker);
+				}
 			}
 
-			.sticker-overlay {
-				@include border-radius(
-					map-get($card-type-asset-icon-sticker, border-radius)
-				);
+			$_border-radius: map-get(
+				$card-type-asset-icon-sticker,
+				border-radius
+			);
+
+			@if ($_border-radius) {
+				.sticker-overlay {
+					@include border-radius($_border-radius);
+				}
 			}
 		}
 
-		.dropdown-action {
-			@include clay-css($dropdown-action);
+		@if (length($dropdown-action) != 0) {
+			.dropdown-action {
+				@include clay-css($dropdown-action);
+			}
 		}
 	}
 }
@@ -1378,21 +1654,29 @@
 	);
 
 	@if ($enabled) {
-		@include clay-css($map);
+		@if (length($map) != 0) {
+			@include clay-css($map);
+		}
 
 		.aspect-ratio {
-			@include clay-css($aspect-ratio);
+			@if (length($aspect-ratio) != 0) {
+				@include clay-css($aspect-ratio);
+			}
 
 			@if ($aspect-ratio-checkered-fg) {
 				@include clay-bg-checkered($aspect-ratio-checkered-fg);
 			}
 		}
 
-		.card-type-asset-icon {
-			@include clay-css($asset-icon);
+		@if (length($asset-icon) != 0) {
+			.card-type-asset-icon {
+				@include clay-css($asset-icon);
 
-			.lexicon-icon {
-				@include clay-css($asset-icon-lexicon-icon);
+				@if (length($asset-icon-lexicon-icon) != 0) {
+					.lexicon-icon {
+						@include clay-css($asset-icon-lexicon-icon);
+					}
+				}
 			}
 		}
 	}
@@ -1502,18 +1786,26 @@
 	);
 
 	@if ($enabled) {
-		@include clay-css($base);
-
-		.card-body {
-			@include clay-css($card-body);
+		@if (length($base) != 0) {
+			@include clay-css($base);
 		}
 
-		.dropdown-action {
-			@include clay-css($dropdown-action);
+		@if (length($card-body) != 0) {
+			.card-body {
+				@include clay-css($card-body);
+			}
 		}
 
-		.sticker {
-			@include clay-css($sticker);
+		@if (length($dropdown-action) != 0) {
+			.dropdown-action {
+				@include clay-css($dropdown-action);
+			}
+		}
+
+		@if (length($sticker) != 0) {
+			.sticker {
+				@include clay-css($sticker);
+			}
 		}
 	}
 }
@@ -1580,60 +1872,110 @@
 		$enabled: setter(map-get($map, enabled), true);
 
 		@if ($enabled) {
-			@include clay-css($map);
+			@if (length($map) != 0) {
+				@include clay-css($map);
+			}
 
-			&:hover {
-				.card {
-					@include clay-card-variant(map-deep-get($map, hover, card));
+			$_hover: map-get($map, hover);
+
+			@if ($_hover) {
+				&:hover {
+					$_card: map-get($_hover, card);
+
+					@if ($_card) {
+						.card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 
-			&.focus {
-				.card {
-					@include clay-card-variant(map-deep-get($map, focus, card));
+			$_focus: map-get($map, focus);
+
+			@if ($_focus) {
+				&.focus {
+					$_card: map-get($_focus, card);
+
+					@if ($_card) {
+						.card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 
-			&.active {
-				.card {
-					@include clay-card-variant(
-						map-deep-get($map, active, card)
-					);
+			$_active: map-get($map, active);
+
+			@if ($_active) {
+				&.active {
+					$_card: map-get($_active, card);
+
+					@if ($_card) {
+						.card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 
-			&.checked {
-				.card {
-					@include clay-card-variant(
-						map-deep-get($map, checked, card)
-					);
+			$_checked: map-get($map, checked);
+
+			@if ($_checked) {
+				&.checked {
+					$_card: map-get($_checked, card);
+
+					@if ($_card) {
+						.card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 
-			&.indeterminate {
-				.card {
-					@include clay-card-variant(
-						map-deep-get($map, indeterminate, card)
-					);
+			$_indeterminate: map-get($map, indeterminate);
+
+			@if ($_indeterminate) {
+				&.indeterminate {
+					$_card: map-get($_indeterminate, card);
+
+					@if ($_card) {
+						.card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 
-			.card {
-				@include clay-card-variant(map-get($map, card));
+			$_card: map-get($map, card);
+
+			@if ($_card) {
+				.card {
+					@include clay-card-variant($_card);
+				}
 			}
 
-			.form-check-input {
-				@include clay-css(map-get($map, form-check-input));
+			$_form-check-input: map-get($map, form-check-input);
+
+			@if ($_form-check-input) {
+				.form-check-input {
+					@include clay-css($_form-check-input);
+				}
 			}
 
-			.form-check-label {
-				@include clay-css(map-get($map, form-check-label));
+			$_form-check-label: map-get($map, form-check-label);
+
+			@if ($_form-check-label) {
+				.form-check-label {
+					@include clay-css($_form-check-label);
+				}
 			}
 
-			.custom-control {
-				@include clay-custom-control-variant(
-					map-get($map, custom-control)
-				);
+			$_custom-control: map-get($map, custom-control);
+
+			@if ($_custom-control) {
+				.custom-control {
+					@include clay-custom-control-variant($_custom-control);
+				}
 			}
 		}
 	}
