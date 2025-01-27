@@ -348,43 +348,59 @@
 		);
 
 		@if ($enabled) {
-			@include clay-css($base);
-
-			&:hover {
-				@include clay-css($hover);
+			@if (length($base) != 0) {
+				@include clay-css($base);
 			}
 
-			@at-root {
-				button#{&} {
-					#{$focus-visible-selector},
-					#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
-						@include clay-css($btn-focus);
+			@if (length($hover) != 0) {
+				&:hover {
+					@include clay-css($hover);
+				}
+			}
+
+			@if (length($btn-focus) != 0) {
+				@at-root {
+					button#{&} {
+						#{$focus-visible-selector},
+						#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
+							@include clay-css($btn-focus);
+						}
 					}
 				}
 			}
 
-			@at-root {
-				&.focus,
-				#{$focus-visible-selector},
-				#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
-					@include clay-css($focus);
+			@if (length($focus) != 0) {
+				@at-root {
+					&.focus,
+					#{$focus-visible-selector},
+					#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
+						@include clay-css($focus);
+					}
 				}
 			}
 
-			&:active {
-				@include clay-css($active);
-			}
-
-			&.active {
-				@include clay-css($active-class);
-			}
-
-			&:disabled,
-			&.disabled {
-				@include clay-css($disabled);
-
+			@if (length($active) != 0) {
 				&:active {
-					@include clay-css($disabled-active);
+					@include clay-css($active);
+				}
+			}
+
+			@if (length($active-class) != 0) {
+				&.active {
+					@include clay-css($active-class);
+				}
+			}
+
+			@if (length($disabled) != 0) {
+				&:disabled,
+				&.disabled {
+					@include clay-css($disabled);
+
+					@if (length($disabled-active) != 0) {
+						&:active {
+							@include clay-css($disabled-active);
+						}
+					}
 				}
 			}
 
@@ -394,8 +410,10 @@
 				}
 			}
 
-			.lexicon-icon {
-				@include clay-css($lexicon-icon);
+			@if (length($lexicon-icon) != 0) {
+				.lexicon-icon {
+					@include clay-css($lexicon-icon);
+				}
 			}
 		}
 	}

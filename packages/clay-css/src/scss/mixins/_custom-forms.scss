@@ -104,702 +104,960 @@
 		$enabled: setter(map-get($map, enabled), true);
 
 		@if ($enabled) {
-			@include clay-css($map);
-
-			~ .custom-control-label::before {
-				@include clay-css(
-					map-deep-get($map, custom-control-label, before)
-				);
+			@if (length($map) != 0) {
+				@include clay-css($map);
 			}
 
-			~ .custom-control-label::after {
-				@include clay-css(
-					map-deep-get($map, custom-control-label, after)
-				);
-			}
+			$_custom-control-label: map-get($map, custom-control-label);
 
-			~ .card {
-				@include clay-card-variant(map-deep-get($map, card));
-			}
+			@if ($_custom-control-label) {
+				~ .custom-control-label {
+					@include clay-css($_custom-control-label);
 
-			&:hover {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get($map, hover, custom-control-label, before)
-					);
+					$_before: map-get($_custom-control-label, before);
+
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
+					}
+
+					$_after: map-get($_custom-control-label, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
 				}
+			}
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get($map, hover, custom-control-label, after)
-					);
-				}
+			$_card: map-get($map, card);
 
+			@if ($_card) {
 				~ .card {
-					@include clay-card-variant(map-deep-get($map, hover, card));
+					@include clay-card-variant($_card);
 				}
 			}
 
-			@at-root {
-				#{$focus-visible-selector},
-				#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
-					~ .custom-control-label::before {
-						@include clay-css(
-							map-deep-get(
-								$map,
-								focus,
-								custom-control-label,
-								before
-							)
-						);
+			$_hover: map-get($map, hover);
+
+			@if ($_hover) {
+				&:hover {
+					@include clay-css($_hover);
+
+					$_custom-control-label: map-get(
+						$_hover,
+						custom-control-label
+					);
+
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
+
+							$_before: map-get($_custom-control-label, before);
+
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
 					}
 
-					~ .custom-control-label::after {
-						@include clay-css(
-							map-deep-get(
-								$map,
-								focus,
-								custom-control-label,
-								after
-							)
-						);
-					}
+					$_card: map-get($_hover, card);
 
-					~ .card {
-						@include clay-card-variant(
-							map-deep-get($map, focus, card)
-						);
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
 					}
 				}
 			}
 
-			&:active {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get($map, active, custom-control-label, before)
-					);
-				}
+			$_focus: map-get($map, focus);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get($map, active, custom-control-label, after)
-					);
-				}
+			@if ($_focus) {
+				@at-root {
+					#{$focus-visible-selector},
+					#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
+						$_custom-control-label: map-get(
+							$_focus,
+							custom-control-label
+						);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, active, card)
+						@if ($_custom-control-label) {
+							~ .custom-control-label {
+								@include clay-css($_custom-control-label);
+
+								$_before: map-get(
+									$_custom-control-label,
+									before
+								);
+
+								@if ($_before) {
+									&::before {
+										@include clay-css($_before);
+									}
+								}
+
+								$_after: map-get($_custom-control-label, after);
+
+								@if ($_after) {
+									&::after {
+										@include clay-css($_after);
+									}
+								}
+							}
+						}
+
+						$_card: map-get($_focus, card);
+
+						@if ($_card) {
+							~ .card {
+								@include clay-card-variant($_card);
+							}
+						}
+					}
+				}
+			}
+
+			$_active: map-get($map, active);
+
+			@if ($_active) {
+				&:active {
+					$_custom-control-label: map-get(
+						$_active,
+						custom-control-label
 					);
+
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							$_before: map-get($_custom-control-label, before);
+
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_active, card);
+
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 
 			// Use [disabled] and :disabled to work around https://github.com/twbs/bootstrap/issues/28247
 
-			&[disabled],
-			&:disabled {
-				@include clay-css(map-deep-get($map, disabled));
+			$_disabled: map-get($map, disabled);
 
-				~ .custom-control-label {
-					@include clay-css(
-						map-deep-get($map, disabled, custom-control-label)
-					);
-				}
+			@if ($_disabled) {
+				&[disabled],
+				&:disabled {
+					@include clay-css($_disabled);
 
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							disabled,
-							custom-control-label,
-							before
-						)
+					$_custom-control-label: map-get(
+						$_disabled,
+						custom-control-label
 					);
-				}
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							disabled,
-							custom-control-label,
-							after
-						)
-					);
-				}
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, disabled, card)
-					);
-				}
-			}
+							$_before: map-get($_custom-control-label, before);
 
-			&:checked {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							checked,
-							custom-control-label,
-							before
-						)
-					);
-				}
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get($map, checked, custom-control-label, after)
-					);
-				}
+							$_after: map-get($_custom-control-label, after);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, checked, card)
-					);
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_disabled, card);
+
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 
-			&[readonly] {
-				@include clay-css(map-deep-get($map, readonly));
+			$_readonly: map-get($map, readonly);
 
-				~ .custom-control-label {
-					@include clay-css(
-						map-deep-get($map, readonly, custom-control-label)
+			@if ($_readonly) {
+				&[readonly] {
+					@include clay-css($_readonly);
+
+					$_custom-control-label: map-get(
+						$_readonly,
+						custom-control-label
 					);
-				}
 
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							readonly,
-							custom-control-label,
-							before
-						)
-					);
-				}
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							readonly,
-							custom-control-label,
-							after
-						)
-					);
-				}
+							$_before: map-get($_custom-control-label, before);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, readonly, card)
-					);
-				}
-			}
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
 
-			&[readonly][disabled] {
-				@include clay-css(map-deep-get($map, readonly, disabled));
+							$_after: map-get($_custom-control-label, after);
 
-				~ .custom-control-label {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							readonly,
-							disabled,
-							custom-control-label
-						)
-					);
-				}
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
 
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							readonly,
-							disabled,
-							custom-control-label,
-							before
-						)
-					);
-				}
+					$_card: map-get($_readonly, card);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							readonly,
-							disabled,
-							custom-control-label,
-							after
-						)
-					);
-				}
-
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, readonly, disabled, card)
-					);
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 
-			&:checked {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							checked,
-							custom-control-label,
-							before
-						)
-					);
-				}
+			$_readonly-disabled: if(
+				$_readonly,
+				map-get($_readonly, disabled),
+				null
+			);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get($map, checked, custom-control-label, after)
-					);
-				}
+			@if ($_readonly-disabled) {
+				&[readonly][disabled] {
+					@include clay-css($_readonly-disabled);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, checked, card)
+					$_custom-control-label: map-get(
+						$_readonly-disabled,
+						custom-control-label
 					);
-				}
-			}
 
-			&:checked:hover {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							checked,
-							hover,
-							custom-control-label,
-							before
-						)
-					);
-				}
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							checked,
-							hover,
-							custom-control-label,
-							after
-						)
-					);
-				}
+							$_before: map-get($_custom-control-label, before);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, checked, hover, card)
-					);
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_readonly-disabled, card);
+
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 
-			@at-root {
+			$_checked: map-get($map, checked);
+
+			@if ($_checked) {
 				&:checked {
-					#{$focus-visible-selector},
-					#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
-						~ .custom-control-label::before {
-							@include clay-css(
-								map-deep-get(
-									$map,
-									checked,
-									focus,
-									custom-control-label,
-									before
-								)
-							);
-						}
+					$_custom-control-label: map-get(
+						$_checked,
+						custom-control-label
+					);
 
-						~ .custom-control-label::after {
-							@include clay-css(
-								map-deep-get(
-									$map,
-									checked,
-									focus,
-									custom-control-label,
-									after
-								)
-							);
-						}
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
 
+							$_before: map-get($_custom-control-label, before);
+
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_checked, card);
+
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
+				}
+			}
+
+			$_checked-hover: if($_checked, map-get($_checked, hover), null);
+
+			@if ($_checked-hover) {
+				&:checked:hover {
+					$_custom-control-label: map-get(
+						$_checked-hover,
+						custom-control-label
+					);
+
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
+
+							$_before: map-get($_custom-control-label, before);
+
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_checked-hover, card);
+
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
+				}
+			}
+
+			$_checked-focus: if($_checked, map-get($_checked, focus), null);
+
+			@if ($_checked-focus) {
+				@at-root {
+					&:checked {
+						#{$focus-visible-selector},
+						#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
+							$_custom-control-label: map-get(
+								$_checked-focus,
+								custom-control-label
+							);
+
+							@if ($_custom-control-label) {
+								~ .custom-control-label {
+									@include clay-css($_custom-control-label);
+
+									$_before: map-get(
+										$_custom-control-label,
+										before
+									);
+
+									@if ($_before) {
+										&::before {
+											@include clay-css($_before);
+										}
+									}
+
+									$_after: map-get(
+										$_custom-control-label,
+										after
+									);
+
+									@if ($_after) {
+									}
+									&::after {
+										@include clay-css($_after);
+									}
+								}
+							}
+
+							$_card: map-get($_checked-focus, card);
+
+							@if ($_card) {
+								~ .card {
+									@include clay-card-variant($_card);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			$_checked-active: if($_checked, map-get($_checked, active), null);
+
+			@if ($_checked-active) {
+				&:checked:active {
+					$_custom-control-label: map-get(
+						$_checked-active,
+						custom-control-label
+					);
+
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
+
+							$_before: map-get($_custom-control-label, before);
+
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_checked-active, card);
+
+					@if ($_card) {
 						~ .card {
 							@include clay-card-variant(
-								map-deep-get($map, checked, focus, card)
+								map-deep-get($map, checked, active, card)
 							);
 						}
 					}
 				}
 			}
 
-			&:checked:active {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							checked,
-							active,
-							custom-control-label,
-							before
-						)
-					);
-				}
+			$_checked-disabled: if(
+				$_checked,
+				map-get($_checked, disabled),
+				null
+			);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							checked,
-							active,
-							custom-control-label,
-							after
-						)
-					);
-				}
+			@if ($_checked-disabled) {
+				&:checked[disabled],
+				&:checked:disabled {
+					@include clay-css($_checked-disabled);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, checked, active, card)
+					$_custom-control-label: map-get(
+						$_checked-disabled,
+						custom-control-label
 					);
-				}
-			}
 
-			&:checked[disabled],
-			&:checked:disabled {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							checked,
-							disabled,
-							custom-control-label,
-							before
-						)
-					);
-				}
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							checked,
-							disabled,
-							custom-control-label,
-							after
-						)
-					);
-				}
+							$_before: map-get($_custom-control-label, before);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, checked, disabled, card)
-					);
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_checked-disabled, card);
+
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 
-			&:checked[readonly] {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							checked,
-							readonly,
-							custom-control-label,
-							before
-						)
-					);
-				}
+			$_checked-readonly: if(
+				$_checked,
+				map-get($_checked, readonly),
+				null
+			);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							checked,
-							readonly,
-							custom-control-label,
-							after
-						)
-					);
-				}
+			@if ($_checked-readonly) {
+				&:checked[readonly] {
+					@include clay-css($_checked-readonly);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, checked, readonly, card)
+					$_custom-control-label: map-get(
+						$_checked-readonly,
+						custom-control-label
 					);
-				}
-			}
 
-			&:checked[readonly][disabled] {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							checked,
-							readonly,
-							disabled,
-							custom-control-label,
-							before
-						)
-					);
-				}
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							checked,
-							readonly,
-							disabled,
-							custom-control-label,
-							after
-						)
-					);
-				}
+							$_before: map-get($_custom-control-label, before);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, checked, readonly, disabled, card)
-					);
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_checked-readonly, card);
+
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 
-			&:indeterminate {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							indeterminate,
-							custom-control-label,
-							before
-						)
-					);
-				}
+			$_checked-readonly-disabled: if(
+				$_checked-readonly,
+				map-get($_checked-readonly, disabled),
+				null
+			);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							indeterminate,
-							custom-control-label,
-							after
-						)
-					);
-				}
+			@if ($_checked-readonly-disabled) {
+				&:checked[readonly][disabled] {
+					@include clay-css($_checked-readonly-disabled);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, indeterminate, card)
+					$_custom-control-label: map-get(
+						$_checked-readonly-disabled,
+						custom-control-label
 					);
-				}
-			}
 
-			&:indeterminate:hover {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							indeterminate,
-							hover,
-							custom-control-label,
-							before
-						)
-					);
-				}
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							indeterminate,
-							hover,
-							custom-control-label,
-							after
-						)
-					);
-				}
+							$_before: map-get($_custom-control-label, before);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, indeterminate, hover, card)
-					);
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_checked-readonly-disabled, card);
+
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 
-			@at-root {
+			$_indeterminate: map-get($map, indeterminate);
+
+			@if ($_indeterminate) {
 				&:indeterminate {
-					#{$focus-visible-selector},
-					#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
-						~ .custom-control-label::before {
-							@include clay-css(
-								map-deep-get(
-									$map,
-									indeterminate,
-									focus,
-									custom-control-label,
-									before
-								)
-							);
-						}
+					@include clay-css($_indeterminate);
 
-						~ .custom-control-label::after {
-							@include clay-css(
-								map-deep-get(
-									$map,
-									indeterminate,
-									focus,
-									custom-control-label,
-									after
-								)
-							);
-						}
+					$_custom-control-label: map-get(
+						$_indeterminate,
+						custom-control-label
+					);
 
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
+
+							$_before: map-get($_custom-control-label, before);
+
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_indeterminate, card);
+
+					@if ($_card) {
 						~ .card {
-							@include clay-card-variant(
-								map-deep-get($map, indeterminate, focus, card)
-							);
+							@include clay-card-variant($_card);
 						}
 					}
 				}
 			}
 
-			&:indeterminate:active {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							indeterminate,
-							active,
-							custom-control-label,
-							before
-						)
-					);
-				}
+			$_indeterminate-hover: if(
+				$_indeterminate,
+				map-get($_indeterminate, hover),
+				null
+			);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							indeterminate,
-							active,
-							custom-control-label,
-							after
-						)
-					);
-				}
+			@if ($_indeterminate-hover) {
+				&:indeterminate:hover {
+					@include clay-css($_indeterminate-hover);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, indeterminate, active, card)
+					$_custom-control-label: map-get(
+						$_indeterminate-hover,
+						custom-control-label
 					);
-				}
-			}
 
-			&:indeterminate[disabled],
-			&:indeterminate:disabled {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							indeterminate,
-							disabled,
-							custom-control-label,
-							before
-						)
-					);
-				}
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							indeterminate,
-							disabled,
-							custom-control-label,
-							after
-						)
-					);
-				}
+							$_before: map-get($_custom-control-label, before);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, indeterminate, disabled, card)
-					);
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_indeterminate-hover, card);
+
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 
-			&:indeterminate[readonly] {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							indeterminate,
-							readonly,
-							custom-control-label,
-							before
-						)
-					);
-				}
+			$_indeterminate-focus: if(
+				$_indeterminate,
+				map-get($_indeterminate, focus),
+				null
+			);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							indeterminate,
-							readonly,
-							custom-control-label,
-							after
-						)
-					);
-				}
+			@if ($_indeterminate-focus) {
+				@at-root {
+					&:indeterminate {
+						#{$focus-visible-selector},
+						#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
+							@include clay-css($_indeterminate-focus);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get($map, indeterminate, readonly, card)
-					);
+							$_custom-control-label: map-get(
+								$_indeterminate-focus,
+								custom-control-label
+							);
+
+							@if ($_custom-control-label) {
+								~ .custom-control-label {
+									@include clay-css($_custom-control-label);
+
+									$_before: map-get(
+										$_custom-control-label,
+										before
+									);
+
+									@if ($_before) {
+										&::before {
+											@include clay-css($_before);
+										}
+									}
+
+									$_after: map-get(
+										$_custom-control-label,
+										after
+									);
+
+									@if ($_after) {
+										&::after {
+											@include clay-css($_after);
+										}
+									}
+								}
+							}
+
+							$_card: map-get($_indeterminate-focus, card);
+
+							@if ($_card) {
+								~ .card {
+									@include clay-card-variant($_card);
+								}
+							}
+						}
+					}
 				}
 			}
 
-			&:indeterminate[readonly][disabled] {
-				~ .custom-control-label::before {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							indeterminate,
-							readonly,
-							disabled,
-							custom-control-label,
-							before
-						)
-					);
-				}
+			$_indeterminate-active: if(
+				$_indeterminate,
+				map-get($_indeterminate, active),
+				null
+			);
 
-				~ .custom-control-label::after {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							indeterminate,
-							readonly,
-							disabled,
-							custom-control-label,
-							after
-						)
-					);
-				}
+			@if ($_indeterminate-active) {
+				&:indeterminate:active {
+					@include clay-css($_indeterminate-active);
 
-				~ .card {
-					@include clay-card-variant(
-						map-deep-get(
-							$map,
-							indeterminate,
-							readonly,
-							disabled,
-							card
-						)
+					$_custom-control-label: map-get(
+						$_indeterminate-active,
+						custom-control-label
 					);
+
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
+
+							$_before: map-get($_custom-control-label, before);
+
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_indeterminate-active, card);
+
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
+				}
+			}
+
+			$_indeterminate-disabled: if(
+				$_indeterminate,
+				map-get($_indeterminate, disabled),
+				null
+			);
+
+			@if ($_indeterminate-disabled) {
+				&:indeterminate[disabled],
+				&:indeterminate:disabled {
+					@include clay-css($_indeterminate-disabled);
+
+					$_custom-control-label: map-get(
+						$_indeterminate-disabled,
+						custom-control-label
+					);
+
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
+
+							$_before: map-get($_custom-control-label, before);
+
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_indeterminate-disabled, card);
+
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
+				}
+			}
+
+			$_indeterminate-readonly: if(
+				$_indeterminate,
+				map-get($_indeterminate, readonly),
+				null
+			);
+
+			@if ($_indeterminate-readonly) {
+				&:indeterminate[readonly] {
+					@include clay-css($_indeterminate-readonly);
+
+					$_custom-control-label: map-get(
+						$_indeterminate-readonly,
+						custom-control-label
+					);
+
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
+
+							$_before: map-get($_custom-control-label, before);
+
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_indeterminate-readonly, card);
+
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
+				}
+			}
+
+			$_indeterminate-readonly-disabled: if(
+				$_indeterminate-readonly,
+				map-get($_indeterminate-readonly, disabled),
+				null
+			);
+
+			@if ($_indeterminate-readonly-disabled) {
+				&:indeterminate[readonly][disabled] {
+					@include clay-css($_indeterminate-readonly-disabled);
+
+					$_custom-control-label: map-get(
+						$_indeterminate-readonly-disabled,
+						custom-control-label
+					);
+
+					@if ($_custom-control-label) {
+						~ .custom-control-label {
+							@include clay-css($_custom-control-label);
+
+							$_before: map-get($_custom-control-label, before);
+
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($_custom-control-label, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_card: map-get($_indeterminate-readonly-disabled, card);
+
+					@if ($_card) {
+						~ .card {
+							@include clay-card-variant($_card);
+						}
+					}
 				}
 			}
 		}
@@ -926,46 +1184,71 @@
 	@if (type-of($map) == 'map') {
 		$enabled: setter(map-get($map, enabled), true);
 
-		@include clay-css($map);
-
 		@if ($enabled) {
-			label {
-				@include clay-css(map-deep-get($map, label));
+			@if (length($map) != 0) {
+				@include clay-css($map);
 			}
 
-			.custom-control-label {
-				@include clay-css(map-deep-get($map, custom-control-label));
+			$_label: map-get($map, label);
 
-				&::before {
-					@include clay-css(
-						map-deep-get($map, custom-control-label, before)
-					);
-				}
-
-				&::after {
-					@include clay-css(
-						map-deep-get($map, custom-control-label, after)
-					);
+			@if ($_label) {
+				label {
+					@include clay-css($_label);
 				}
 			}
 
-			.custom-control-label-text {
-				@include clay-css(
-					map-deep-get($map, custom-control-label-text)
-				);
+			$_custom-control-label: map-get($map, custom-control-label);
 
-				small,
-				.small {
-					@include clay-css(
-						map-deep-get($map, custom-control-label-text, small)
-					);
+			@if ($_custom-control-label) {
+				.custom-control-label {
+					@include clay-css($_custom-control-label);
+
+					$_before: map-get($_custom-control-label, before);
+
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
+					}
+
+					$_after: map-get($_custom-control-label, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
 				}
 			}
 
-			.custom-control-input {
-				@include clay-custom-control-input-variant(
-					map-deep-get($map, custom-control-input)
-				);
+			$_custom-control-label-text: map-get(
+				$map,
+				custom-control-label-text
+			);
+
+			@if ($_custom-control-label-text) {
+				.custom-control-label-text {
+					@include clay-css($_custom-control-label-text);
+
+					$_small: map-get($_custom-control-label-text, small);
+
+					@if ($_small) {
+						small,
+						.small {
+							@include clay-css($_small);
+						}
+					}
+				}
+			}
+
+			$_custom-control-input: map-get($map, custom-control-input);
+
+			@if ($_custom-control-input) {
+				.custom-control-input {
+					@include clay-custom-control-input-variant(
+						$_custom-control-input
+					);
+				}
 			}
 		}
 	}

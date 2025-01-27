@@ -79,7 +79,9 @@
 		);
 
 		@if ($enabled) {
-			@include clay-css($base);
+			@if (length($base) != 0) {
+				@include clay-css($base);
+			}
 
 			@if ($breakpoint-down) {
 				@include media-breakpoint-down($breakpoint-down) {
@@ -87,124 +89,209 @@
 				}
 			}
 
-			&::before {
-				@include clay-css(map-get($map, before));
+			$_before: map-get($map, before);
+
+			@if ($_before) {
+				&::before {
+					@include clay-css($_before);
+				}
 			}
 
-			&::after {
-				@include clay-css(map-get($map, after));
+			$_after: map-get($map, after);
+
+			@if ($_after) {
+				&::after {
+					@include clay-css($_after);
+				}
 			}
 
-			&.show {
-				@include clay-css(map-get($map, show));
+			$_show: map-get($map, show);
+
+			@if ($_show) {
+				&.show {
+					@include clay-css($_show);
+				}
 			}
 
-			.dropdown-header {
-				@include clay-css(map-get($map, dropdown-header));
+			$_dropdown-header: map-get($map, dropdown-header);
+
+			@if ($_dropdown-header) {
+				.dropdown-header {
+					@include clay-css($_dropdown-header);
+				}
 			}
 
-			.dropdown-subheader {
-				@include clay-css(map-get($map, dropdown-subheader));
+			$_dropdown-subheader: map-get($map, dropdown-subheader);
+
+			@if ($_dropdown-subheader) {
+				.dropdown-subheader {
+					@include clay-css($_dropdown-subheader);
+				}
 			}
 
-			.dropdown-section {
-				@include clay-css(map-get($map, dropdown-section));
+			$_dropdown-section: map-get($map, dropdown-section);
+
+			@if ($_dropdown-section) {
+				.dropdown-section {
+					@include clay-css($_dropdown-section);
+				}
 			}
 
-			.dropdown-caption {
-				@include clay-css(map-get($map, dropdown-caption));
+			$_dropdown-caption: map-get($map, dropdown-caption);
+
+			@if ($_dropdown-caption) {
+				.dropdown-caption {
+					@include clay-css($_dropdown-caption);
+				}
 			}
 
-			.dropdown-item {
-				@include clay-dropdown-item-variant(
-					map-get($map, dropdown-item)
-				);
-			}
+			$_dropdown-item: map-get($map, dropdown-item);
 
-			.dropdown-item-scroll {
-				@include clay-dropdown-item-variant(
-					map-get($map, dropdown-item-scroll)
-				);
-			}
-
-			.dropdown-item-scroll-down {
-				@include clay-dropdown-item-variant(
-					map-get($map, dropdown-item-scroll-down)
-				);
-			}
-
-			.dropdown-item-scroll-up {
-				@include clay-dropdown-item-variant(
-					map-get($map, dropdown-item-scroll-up)
-				);
-			}
-
-			.dropdown-divider {
-				@include clay-css(map-get($map, dropdown-divider));
-			}
-
-			.dropdown-footer {
-				@include clay-css(map-get($map, dropdown-footer));
-			}
-
-			.alert {
-				@include clay-alert-variant(map-get($map, alert));
-			}
-
-			.alert-fluid {
-				@include clay-alert-variant(map-get($map, alert-fluid));
-			}
-
-			&.dropdown-menu-indicator-start {
-				$dropdown-menu-indicator-start: setter(
-					map-get($map, dropdown-menu-indicator-start),
-					()
-				);
-
-				@include clay-css($dropdown-menu-indicator-start);
-
+			@if ($_dropdown-item) {
 				.dropdown-item {
-					@include clay-dropdown-item-variant(
-						map-get($dropdown-menu-indicator-start, dropdown-item)
-					);
+					@include clay-dropdown-item-variant($_dropdown-item);
 				}
+			}
 
-				.dropdown-item-indicator-start {
-					@include clay-link(
-						map-get(
-							$dropdown-menu-indicator-start,
-							dropdown-item-indicator-start
-						)
+			$_dropdown-item-scroll: map-get($map, dropdown-item-scroll);
+
+			@if ($_dropdown-item-scroll) {
+				.dropdown-item-scroll {
+					@include clay-dropdown-item-variant($_dropdown-item-scroll);
+				}
+			}
+
+			$_dropdown-item-scroll-down: map-get(
+				$map,
+				dropdown-item-scroll-down
+			);
+
+			@if ($_dropdown-item-scroll-down) {
+				.dropdown-item-scroll-down {
+					@include clay-dropdown-item-variant(
+						$_dropdown-item-scroll-down
 					);
 				}
 			}
 
-			&.dropdown-menu-indicator-end {
-				$dropdown-menu-indicator-end: setter(
-					map-get($map, dropdown-menu-indicator-end),
-					()
-				);
+			$_dropdown-item-scroll-up: map-get($map, dropdown-item-scroll-up);
 
-				@include clay-css($dropdown-menu-indicator-end);
-
-				.dropdown-item {
+			@if ($_dropdown-item-scroll-up) {
+				.dropdown-item-scroll-up {
 					@include clay-dropdown-item-variant(
-						map-get($dropdown-menu-indicator-end, dropdown-item)
-					);
-				}
-
-				.dropdown-item-indicator-end {
-					@include clay-link(
-						map-get(
-							$dropdown-menu-indicator-end,
-							dropdown-item-indicator-end
-						)
+						$_dropdown-item-scroll-up
 					);
 				}
 			}
 
-			.inline-scroller {
-				@include clay-css(map-get($map, inline-scroller));
+			$_dropdown-divider: map-get($map, dropdown-divider);
+
+			@if ($_dropdown-divider) {
+				.dropdown-divider {
+					@include clay-css($_dropdown-divider);
+				}
+			}
+
+			$_dropdown-ooter: map-get($map, dropdown-ooter);
+
+			@if ($_dropdown-ooter) {
+				.dropdown-footer {
+					@include clay-css($_dropdown-footer);
+				}
+			}
+
+			$_alert: map-get($map, alert);
+
+			@if ($_alert) {
+				.alert {
+					@include clay-alert-variant($_alert);
+				}
+			}
+
+			$_alert-fluid: map-get($map, alert-fluid);
+
+			@if ($_alert-fluid) {
+				.alert-fluid {
+					@include clay-alert-variant($_alert-fluid);
+				}
+			}
+
+			$_dropdown-menu-indicator-start: map-get(
+				$map,
+				dropdown-menu-indicator-start
+			);
+
+			@if ($_dropdown-menu-indicator-start) {
+				&.dropdown-menu-indicator-start {
+					@include clay-css($_dropdown-menu-indicator-start);
+
+					$_dropdown-item: map-get(
+						$_dropdown-menu-indicator-start,
+						dropdown-item
+					);
+
+					@if ($_dropdown-item) {
+						.dropdown-item {
+							@include clay-dropdown-item-variant(
+								$_dropdown-item
+							);
+						}
+					}
+
+					$_dropdown-item-indicator-start: map-get(
+						$_dropdown-menu-indicator-start,
+						dropdown-item-indicator-start
+					);
+
+					@if ($_dropdown-item-indicator-start) {
+						.dropdown-item-indicator-start {
+							@include clay-link($_dropdown-item-indicator-start);
+						}
+					}
+				}
+			}
+
+			$_dropdown-menu-indicator-end: map-get(
+				$map,
+				dropdown-menu-indicator-end
+			);
+
+			@if ($_dropdown-menu-indicator-end) {
+				&.dropdown-menu-indicator-end {
+					@include clay-css($_dropdown-menu-indicator-end);
+
+					$_dropdown-item: map-get(
+						$_dropdown-menu-indicator-end,
+						dropdown-item
+					);
+
+					@if ($_dropdown-item) {
+						.dropdown-item {
+							@include clay-dropdown-item-variant(
+								$_dropdown-item
+							);
+						}
+					}
+
+					$_dropdown-item-indicator-end: map-get(
+						$_dropdown-menu-indicator-end,
+						dropdown-item-indicator-end
+					);
+
+					@if ($_dropdown-item-indicator-end) {
+						.dropdown-item-indicator-end {
+							@include clay-link($_dropdown-item-indicator-end);
+						}
+					}
+				}
+			}
+
+			$_inline-scroller: map-get($map, inline-scroller);
+
+			@if ($_inline-scroller) {
+				.inline-scroller {
+					@include clay-css($_inline-scroller);
+				}
 			}
 
 			$_media-breakpoint-down: map-get($map, media-breakpoint-down);
@@ -579,136 +666,214 @@
 		);
 
 		@if ($enabled) {
-			@include clay-css($base);
-
-			&:link {
-				$_link: setter(map-get($map, link), ());
-
-				@include clay-css($_link);
-
-				&::before {
-					@include clay-css(map-get($_link, before));
-				}
-
-				&::after {
-					@include clay-css(map-get($_link, after));
-				}
-
-				.c-kbd-inline {
-					@include clay-css(map-get($_link, c-kbd-inline));
-				}
+			@if (length($base) != 0) {
+				@include clay-css($base);
 			}
 
-			&:visited {
-				$_visited: setter(map-get($map, visited), ());
+			$_link: map-get($map, link);
 
-				@include clay-css($_visited);
+			@if ($_link) {
+				&:link {
+					@include clay-css($_link);
 
-				&::before {
-					@include clay-css(map-get($_visited, before));
-				}
+					$_before: map-get($_link, before);
 
-				&::after {
-					@include clay-css(map-get($_visited, after));
-				}
-
-				.c-kbd-inline {
-					@include clay-css(map-get($_visited, c-kbd-inline));
-				}
-			}
-
-			&:hover,
-			&.hover {
-				@include clay-css($hover);
-
-				&::before {
-					@include clay-css(map-get($hover, before));
-				}
-
-				&::after {
-					@include clay-css(map-get($hover, after));
-				}
-
-				.c-kbd-inline {
-					@include clay-css($hover-c-kbd-inline);
-				}
-			}
-
-			@at-root {
-				&.focus,
-				#{$focus-visible-selector},
-				#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
-					@include clay-css($focus);
-
-					&::before {
-						@include clay-css(map-get($focus, before));
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
 					}
 
-					&::after {
-						@include clay-css(map-get($focus, after));
+					$_after: map-get($_link, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
 					}
 
-					.c-kbd-inline {
-						@include clay-css($focus-c-kbd-inline);
+					$_c-kbd-inline: map-get($_link, c-kbd-inline);
+
+					@if ($_c-kbd-inline) {
+						.c-kbd-inline {
+							@include clay-css($_c-kbd-inline);
+						}
 					}
 				}
 			}
 
-			&:active {
-				@include clay-css($active);
+			$_visited: map-get($map, visited);
 
-				&::before {
-					@include clay-css(map-get($active, before));
-				}
+			@if ($_visited) {
+				&:visited {
+					@include clay-css($_visited);
 
-				&::after {
-					@include clay-css(map-get($active, after));
-				}
+					$_before: map-get($_visited, before);
 
-				label {
-					color: map-get($active, color);
-				}
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
+					}
 
-				.form-check-label {
-					color: map-get($active, color);
-					font-weight: map-get($active, font-weight);
-				}
+					$_after: map-get($_visited, after);
 
-				.custom-control-label {
-					font-weight: map-get($active, font-weight);
-				}
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
 
-				.c-kbd-inline {
-					@include clay-css($active-c-kbd-inline);
+					$_c-kbd-inline: map-get($_visited, c-kbd-inline);
+
+					@if ($_c-kbd-inline) {
+						.c-kbd-inline {
+							@include clay-css($_c-kbd-inline);
+						}
+					}
 				}
 			}
 
-			&.active {
-				@include clay-css($active-class);
+			@if (length($hover) != 0) {
+				&:hover,
+				&.hover {
+					@include clay-css($hover);
 
-				&::before {
-					@include clay-css(map-get($active-class, before));
+					$_before: map-get($hover, before);
+
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
+					}
+
+					$_after: map-get($hover, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
+
+					@if (length($hover-c-kbd-inline) != 0) {
+						.c-kbd-inline {
+							@include clay-css($hover-c-kbd-inline);
+						}
+					}
 				}
+			}
 
-				&::after {
-					@include clay-css(map-get($active-class, after));
+			@if (length($focus) != 0) {
+				@at-root {
+					&.focus,
+					#{$focus-visible-selector},
+					#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
+						@include clay-css($focus);
+
+						$_before: map-get($focus, before);
+
+						@if ($_before) {
+							&::before {
+								@include clay-css($_before);
+							}
+						}
+
+						$_after: map-get($focus, after);
+
+						@if ($_after) {
+							&::after {
+								@include clay-css($_after);
+							}
+						}
+
+						@if (length($focus-c-kbd-inline) != 0) {
+							.c-kbd-inline {
+								@include clay-css($focus-c-kbd-inline);
+							}
+						}
+					}
 				}
+			}
 
-				label {
-					color: map-get($active-class, color);
+			@if (length($active) != 0) {
+				&:active {
+					@include clay-css($active);
+
+					$_before: map-get($active, before);
+
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
+					}
+
+					$_after: map-get($active, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
+
+					label {
+						color: map-get($active, color);
+					}
+
+					.form-check-label {
+						color: map-get($active, color);
+						font-weight: map-get($active, font-weight);
+					}
+
+					.custom-control-label {
+						font-weight: map-get($active, font-weight);
+					}
+
+					@if (length($active-c-kbd-inline) != 0) {
+						.c-kbd-inline {
+							@include clay-css($active-c-kbd-inline);
+						}
+					}
 				}
+			}
 
-				.form-check-label {
-					color: map-get($active-class, color);
-					font-weight: map-get($active-class, font-weight);
-				}
+			@if (length($active-class) != 0) {
+				&.active {
+					@include clay-css($active-class);
 
-				.custom-control-label {
-					font-weight: map-get($active-class, font-weight);
-				}
+					$_before: map-get($active-class, before);
 
-				.c-kbd-inline {
-					@include clay-css($active-class-c-kbd-inline);
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
+					}
+
+					$_after: map-get($active-class, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
+
+					label {
+						color: map-get($active-class, color);
+					}
+
+					.form-check-label {
+						color: map-get($active-class, color);
+						font-weight: map-get($active-class, font-weight);
+					}
+
+					.custom-control-label {
+						font-weight: map-get($active-class, font-weight);
+					}
+
+					@if (length($active-class-c-kbd-inline) != 0) {
+						.c-kbd-inline {
+							@include clay-css($active-class-c-kbd-inline);
+						}
+					}
 				}
 			}
 
@@ -725,60 +890,100 @@
 				}
 			}
 
-			&:disabled,
-			&.disabled {
-				@include clay-css($disabled);
+			@if (length($disabled) != 0) {
+				&:disabled,
+				&.disabled {
+					@include clay-css($disabled);
 
-				&::before {
-					@include clay-css(map-get($disabled, before));
-				}
+					$_before: map-get($disabled, before);
 
-				&::after {
-					@include clay-css(map-get($disabled, after));
-				}
-
-				label,
-				.form-check-label {
-					color: map-get($disabled, color);
-				}
-
-				.c-kbd-inline {
-					@include clay-css($disabled-c-kbd-inline);
-				}
-
-				&:active {
-					@include clay-css($disabled-active);
-
-					&::before {
-						@include clay-css(map-get($disabled-active, before));
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
 					}
 
-					&::after {
-						@include clay-css(map-get($disabled-active, after));
+					$_after: map-get($disabled, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
+
+					label,
+					.form-check-label {
+						color: map-get($disabled, color);
+					}
+
+					@if (length($disabled-c-kbd-inline) != 0) {
+						.c-kbd-inline {
+							@include clay-css($disabled-c-kbd-inline);
+						}
+					}
+
+					@if (length($disabled-active) != 0) {
+						&:active {
+							@include clay-css($disabled-active);
+
+							$_before: map-get($disabled-active, before);
+
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($map, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
 					}
 				}
 			}
 
-			&.show {
-				$show: setter(map-get($map, show), ());
+			$_show: map-get($map, show);
 
-				@include clay-css($show);
+			@if ($_show) {
+				&.show {
+					@include clay-css($_show);
 
+					$_before: map-get($_show, before);
+
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
+					}
+
+					$_after: map-get($_show, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
+				}
+			}
+
+			$_before: map-get($map, before);
+
+			@if ($_before) {
 				&::before {
-					@include clay-css(map-get($show, before));
+					@include clay-css($_before);
 				}
+			}
 
+			$_after: map-get($map, after);
+
+			@if ($_after) {
 				&::after {
-					@include clay-css(map-get($show, after));
+					@include clay-css($_after);
 				}
-			}
-
-			&::before {
-				@include clay-css(map-get($map, before));
-			}
-
-			&::after {
-				@include clay-css(map-get($map, after));
 			}
 
 			@if (map-get($c-inner, enabled)) {
@@ -787,40 +992,66 @@
 				}
 			}
 
-			&.autofit-row {
-				@include clay-css(map-deep-get($map, '&.autofit-row'));
+			$_autofit-row: map-get($map, '&.autofit-row');
 
-				> .autofit-col {
-					@include clay-css(
-						map-deep-get($map, '&.autofit-row', autofit-col)
+			@if ($_autofit-row) {
+				&.autofit-row {
+					@include clay-css($_autofit-row);
+
+					$_autofit-col: map-get($_autofit-row, autofit-col);
+
+					@if ($_autofit-col) {
+						> .autofit-col {
+							@include clay-css($_autofit-col);
+						}
+					}
+
+					$_autofit-col-expand: map-get(
+						$_autofit-row,
+						autofit-col-expand
 					);
-				}
 
-				> .autofit-col-expand {
-					@include clay-css(
-						map-deep-get($map, '&.autofit-row', autofit-col-expand)
-					);
-				}
-			}
-
-			.autofit-row {
-				@include clay-css(map-get($map, autofit-row));
-
-				> .autofit-col {
-					@include clay-css(
-						map-deep-get($map, autofit-row, autofit-col)
-					);
-				}
-
-				> .autofit-col-expand {
-					@include clay-css(
-						map-deep-get($map, autofit-row, autofit-col-expand)
-					);
+					@if ($_autofit-col-expand) {
+						> .autofit-col-expand {
+							@include clay-css($_autofit-col-expand);
+						}
+					}
 				}
 			}
 
-			.c-kbd-inline {
-				@include clay-css(map-get($map, c-kbd-inline));
+			$_autofit-row: map-get($map, autofit-row);
+
+			@if ($_autofit-row) {
+				.autofit-row {
+					@include clay-css($_autofit-row);
+
+					$_autofit-col: map-get($_autofit-row, autofit-col);
+
+					@if ($_autofit-col) {
+						> .autofit-col {
+							@include clay-css($_autofit-col);
+						}
+					}
+
+					$_autofit-col-expand: map-get(
+						$_autofit-row,
+						autofit-col-expand
+					);
+
+					@if ($_autofit-col-expand) {
+						> .autofit-col-expand {
+							@include clay-css($_autofit-col-expand);
+						}
+					}
+				}
+			}
+
+			$_c-kbd-inline: map-get($map, c-kbd-inline);
+
+			@if ($_c-kbd-inline) {
+				.c-kbd-inline {
+					@include clay-css($_c-kbd-inline);
+				}
 			}
 
 			.form-check-label {
@@ -831,18 +1062,30 @@
 				font-weight: map-get($map, font-weight);
 			}
 
-			.inline-item {
-				$_inline-item: setter(map-get($map, inline-item), ());
+			$_inline-item: map-get($map, inline-item);
 
-				@include clay-css($_inline-item);
+			@if ($_inline-item) {
+				.inline-item {
+					@include clay-css($_inline-item);
 
-				.lexicon-icon {
-					@include clay-css(map-get($_inline-item, lexicon-icon));
+					$_lexicon-icon: map-get($_inline-item, lexicon-icon);
+
+					@if ($_lexicon-icon) {
+						.lexicon-icon {
+							@include clay-css(
+								map-get($_inline-item, lexicon-icon)
+							);
+						}
+					}
 				}
 			}
 
-			.label {
-				@include clay-label-variant(map-get($map, label));
+			$_label: map-get($map, label);
+
+			@if ($_label) {
+				.label {
+					@include clay-label-variant($_label);
+				}
 			}
 		}
 	}
