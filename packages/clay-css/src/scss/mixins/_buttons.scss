@@ -594,7 +594,9 @@
 		);
 
 		@if ($enabled) {
-			@include clay-css($base);
+			@if (length($base) != 0) {
+				@include clay-css($base);
+			}
 
 			@if ($breakpoint-down) {
 				@include media-breakpoint-down($breakpoint-down) {
@@ -608,314 +610,567 @@
 				}
 			}
 
-			&::before {
-				@include clay-css(map-get($map, before));
-			}
+			$_before: map-get($map, before);
 
-			&::after {
-				@include clay-css(map-get($map, after));
-			}
-
-			&:link {
-				$_link: setter(map-get($map, link), ());
-
-				@include clay-css($_link);
-
+			@if ($_before) {
 				&::before {
-					@include clay-css(map-get($_link, before));
-				}
-
-				&::after {
-					@include clay-css(map-get($_link, after));
-				}
-
-				.inline-item {
-					@include clay-css(map-get($_link, inline-item));
-				}
-
-				.inline-item-before {
-					@include clay-css(map-get($_link, inline-item-before));
-				}
-
-				.inline-item-middle {
-					@include clay-css(map-get($_link, inline-item-middle));
-				}
-
-				.inline-item-after {
-					@include clay-css(map-get($_link, inline-item-after));
+					@include clay-css($_before);
 				}
 			}
 
-			&:visited {
-				$_visited: setter(map-get($map, visited), ());
+			$_after: map-get($map, after);
 
-				@include clay-css($_visited);
-
-				&::before {
-					@include clay-css(map-get($_visited, before));
-				}
-
+			@if ($_after) {
 				&::after {
-					@include clay-css(map-get($_visited, after));
-				}
-
-				.inline-item {
-					@include clay-css(map-get($_visited, inline-item));
-				}
-
-				.inline-item-before {
-					@include clay-css(map-get($_visited, inline-item-before));
-				}
-
-				.inline-item-middle {
-					@include clay-css(map-get($_visited, inline-item-middle));
-				}
-
-				.inline-item-after {
-					@include clay-css(map-get($_visited, inline-item-after));
+					@include clay-css($_after);
 				}
 			}
 
-			&:hover {
-				@include clay-css($hover);
+			$_link: map-get($map, link);
 
-				&::before {
-					@include clay-css(map-deep-get($map, hover, before));
-				}
+			@if ($_link) {
+				&:link {
+					@include clay-css($_link);
 
-				&::after {
-					@include clay-css(map-deep-get($map, hover, after));
-				}
+					$_before: map-get($_link, before);
 
-				.inline-item {
-					@include clay-css(map-get($hover, inline-item));
-				}
-
-				.inline-item-before {
-					@include clay-css(map-get($hover, inline-item-before));
-				}
-
-				.inline-item-middle {
-					@include clay-css(map-get($hover, inline-item-middle));
-				}
-
-				.inline-item-after {
-					@include clay-css(map-get($hover, inline-item-after));
-				}
-			}
-
-			@at-root {
-				&.focus,
-				#{$focus-visible-selector},
-				#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
-					@include clay-css($focus);
-
-					&::before {
-						@include clay-css(map-deep-get($map, focus, before));
-					}
-
-					&::after {
-						@include clay-css(map-deep-get($map, focus, after));
-					}
-
-					&:hover {
-						@include clay-css(map-deep-get($map, focus, hover));
-
+					@if ($_before) {
 						&::before {
-							@include clay-css(
-								map-deep-get($map, focus, hover, before)
-							);
+							@include clay-css($_before);
 						}
+					}
 
+					$_after: map-get($_link, after);
+
+					@if ($_after) {
 						&::after {
-							@include clay-css(
-								map-deep-get($map, focus, hover, after)
-							);
+							@include clay-css($_after);
 						}
 					}
 
-					.inline-item {
-						@include clay-css(map-get($focus, inline-item));
+					$_inline-item: map-get($_link, inline-item);
+
+					@if ($_inline-item) {
+						.inline-item {
+							@include clay-css($_inline-item);
+						}
 					}
 
-					.inline-item-before {
-						@include clay-css(map-get($focus, inline-item-before));
+					$_inline-item-before: map-get($_link, inline-item-before);
+
+					@if ($_inline-item-before) {
+						.inline-item-before {
+							@include clay-css($_inline-item-before);
+						}
 					}
 
-					.inline-item-middle {
-						@include clay-css(map-get($focus, inline-item-middle));
+					$_inline-item-middle: map-get($_link, inline-item-middle);
+
+					@if ($_inline-item-middle) {
+						.inline-item-middle {
+							@include clay-css($_inline-item-middle);
+						}
 					}
 
-					.inline-item-after {
-						@include clay-css(map-get($focus, inline-item-after));
+					$_inline-item-after: map-get($_link, inline-item-after);
+
+					@if ($_inline-item-after) {
+						.inline-item-after {
+							@include clay-css($_inline-item-after);
+						}
 					}
 				}
 			}
 
-			&:active {
-				@include clay-css($active);
+			$_visited: map-get($map, visited);
 
-				&::before {
-					@include clay-css(map-deep-get($map, active, before));
+			@if ($_visited) {
+				&:visited {
+					@include clay-css($_visited);
+
+					$_before: map-get($_visited, before);
+
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
+					}
+
+					$_after: map-get($_visited, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
+
+					$_inline-item: map-get($_visited, inline-item);
+
+					@if ($_inline-item) {
+						.inline-item {
+							@include clay-css($_inline-item);
+						}
+					}
+
+					$_inline-item-before: map-get(
+						$_visited,
+						inline-item-before
+					);
+
+					@if ($_inline-item-before) {
+						.inline-item-before {
+							@include clay-css($_inline-item-before);
+						}
+					}
+
+					$_inline-item-middle: map-get(
+						$_visited,
+						inline-item-middle
+					);
+
+					@if ($_inline-item-middle) {
+						.inline-item-middle {
+							@include clay-css($_inline-item-middle);
+						}
+					}
+
+					$_inline-item-after: map-get($_visited, inline-item-after);
+
+					@if ($_inline-item-after) {
+						.inline-item-after {
+							@include clay-css($_inline-item-after);
+						}
+					}
 				}
+			}
 
-				&::after {
-					@include clay-css(map-deep-get($map, active, after));
+			@if (length($hover) != 0) {
+				&:hover {
+					@include clay-css($hover);
+
+					$_before: map-get($hover, before);
+
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
+					}
+
+					$_after: map-get($hover, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
+
+					$_inline-item: map-get($hover, inline-item);
+
+					@if ($_inline-item) {
+						.inline-item {
+							@include clay-css($_inline-item);
+						}
+					}
+
+					$_inline-item-before: map-get($hover, inline-item-before);
+
+					@if ($_inline-item-before) {
+						.inline-item-before {
+							@include clay-css($_inline-item-before);
+						}
+					}
+
+					$_inline-item-middle: map-get($hover, inline-item-middle);
+
+					@if ($_inline-item-middle) {
+						.inline-item-middle {
+							@include clay-css($_inline-item-middle);
+						}
+					}
+
+					$_inline-item-after: map-get($hover, inline-item-after);
+
+					@if ($_inline-item-after) {
+						.inline-item-after {
+							@include clay-css($_inline-item-after);
+						}
+					}
 				}
+			}
 
+			@if (length($focus) != 0) {
 				@at-root {
+					&.focus,
 					#{$focus-visible-selector},
 					#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
-						@include clay-css($active-focus);
+						@include clay-css($focus);
 
-						&::before {
-							@include clay-css(
-								map-deep-get($map, active, focus, before)
-							);
+						$_before: map-get($focus, before);
+
+						@if ($_before) {
+							&::before {
+								@include clay-css($_before);
+							}
 						}
 
-						&::after {
-							@include clay-css(
-								map-deep-get($map, active, focus, after)
-							);
+						$_after: map-get($focus, after);
+
+						@if ($_after) {
+							&::after {
+								@include clay-css($_after);
+							}
 						}
-					}
-				}
 
-				.inline-item {
-					@include clay-css(map-get($active, inline-item));
-				}
+						$_hover: map-get($focus, hover);
 
-				.inline-item-before {
-					@include clay-css(map-get($active, inline-item-before));
-				}
+						@if ($_hover) {
+							&:hover {
+								@include clay-css($_hover);
 
-				.inline-item-middle {
-					@include clay-css(map-get($active, inline-item-middle));
-				}
+								$_before: map-get($_hover, before);
 
-				.inline-item-after {
-					@include clay-css(map-get($active, inline-item-after));
-				}
-			}
+								@if ($_before) {
+									&::before {
+										@include clay-css($_before);
+									}
+								}
 
-			&.active {
-				@include clay-css($active-class);
+								$_after: map-get($_hover, after);
 
-				&::before {
-					@include clay-css(map-deep-get($map, active-class, before));
-				}
+								@if ($_after) {
+									&::after {
+										@include clay-css($_after);
+									}
+								}
+							}
+						}
 
-				&::after {
-					@include clay-css(map-get($map, active-class-after));
-				}
+						$_inline-item: map-get($focus, inline-item);
 
-				@at-root {
-					#{$focus-visible-selector},
-					#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
-						@include clay-css(
-							map-deep-get($map, active-class, focus)
+						@if ($_inline-item) {
+							.inline-item {
+								@include clay-css($_inline-item);
+							}
+						}
+
+						$_inline-item-before: map-get(
+							$focus,
+							inline-item-before
 						);
+
+						@if ($_inline-item-before) {
+							.inline-item-before {
+								@include clay-css($_inline-item-before);
+							}
+						}
+
+						$_inline-item-middle: map-get(
+							$focus,
+							inline-item-middle
+						);
+
+						@if ($_inline-item-middle) {
+							.inline-item-middle {
+								@include clay-css($_inline-item-middle);
+							}
+						}
+
+						$_inline-item-after: map-get($focus, inline-item-after);
+
+						@if ($_inline-item-after) {
+							.inline-item-after {
+								@include clay-css($_inline-item-after);
+							}
+						}
 					}
-				}
-
-				.inline-item {
-					@include clay-css(map-get($active-class, inline-item));
-				}
-
-				.inline-item-before {
-					@include clay-css(
-						map-get($active-class, inline-item-before)
-					);
-				}
-
-				.inline-item-middle {
-					@include clay-css(
-						map-get($active-class, inline-item-middle)
-					);
-				}
-
-				.inline-item-after {
-					@include clay-css(
-						map-get($active-class, inline-item-after)
-					);
 				}
 			}
 
-			&:disabled,
-			&.disabled {
-				@include clay-css($disabled);
-
-				&::before {
-					@include clay-css(map-deep-get($map, disabled, before));
-				}
-
-				&::after {
-					@include clay-css(map-deep-get($map, disabled, after));
-				}
-
-				@at-root {
-					#{$focus-visible-selector},
-					#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
-						@include clay-css(map-get($disabled, focus));
-
-						&::before {
-							@include clay-css(
-								map-deep-get($map, disabled, focus, before)
-							);
-						}
-
-						&::after {
-							@include clay-css(
-								map-deep-get($map, disabled, focus, after)
-							);
-						}
-					}
-				}
-
+			@if (length($active) != 0) {
 				&:active {
-					@include clay-css($disabled-active);
+					@include clay-css($active);
 
-					&::before {
-						@include clay-css(
-							map-deep-get($map, disabled, active, before)
-						);
+					$_before: map-get($active, before);
+
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
 					}
 
-					&::after {
-						@include clay-css(
-							map-deep-get($map, disabled, active, after)
-						);
+					$_after: map-get($active, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
 					}
-				}
 
-				.inline-item {
-					@include clay-css(map-get($disabled, inline-item));
-				}
+					$_focus: map-get($active, focus);
 
-				.inline-item-before {
-					@include clay-css(map-get($disabled, inline-item-before));
-				}
+					@if ($_focus) {
+						@at-root {
+							#{$focus-visible-selector},
+							#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
+								@include clay-css($_focus);
 
-				.inline-item-middle {
-					@include clay-css(map-get($disabled, inline-item-middle));
-				}
+								$_before: map-get($_focus, before);
 
-				.inline-item-after {
-					@include clay-css(map-get($disabled, inline-item-after));
+								@if ($_before) {
+									&::before {
+										@include clay-css($_before);
+									}
+								}
+
+								$_after: map-get($_focus, after);
+
+								@if ($_after) {
+									&::after {
+										@include clay-css($_after);
+									}
+								}
+							}
+						}
+					}
+
+					$_inline-item: map-get($active, inline-item);
+
+					@if ($_inline-item) {
+						.inline-item {
+							@include clay-css($_inline-item);
+						}
+					}
+
+					$_inline-item-before: map-get($active, inline-item-before);
+
+					@if ($_inline-item-before) {
+						.inline-item-before {
+							@include clay-css($_inline-item-before);
+						}
+					}
+
+					$_inline-item-middle: map-get($active, inline-item-middle);
+
+					@if ($_inline-item-middle) {
+						.inline-item-middle {
+							@include clay-css($_inline-item-middle);
+						}
+					}
+
+					$_inline-item-after: map-get($active, inline-item-after);
+
+					@if ($_inline-item-after) {
+						.inline-item-after {
+							@include clay-css($_inline-item-after);
+						}
+					}
 				}
 			}
 
-			&[aria-expanded='true'],
-			&.show {
-				@include clay-css($show);
+			@if (length($active-class) != 0) {
+				&.active {
+					@include clay-css($active-class);
 
-				&::before {
-					@include clay-css(map-deep-get($map, show, before));
+					$_before: map-get($active-class, before);
+
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
+					}
+
+					$_after: map-get($active-class, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
+
+					$_focus: map-get($active-class, focus);
+
+					@if ($_focus) {
+						@at-root {
+							#{$focus-visible-selector},
+							#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
+								@include clay-css($_focus);
+							}
+						}
+					}
+
+					$_inline-item: map-get($active-class, inline-item);
+
+					@if ($_inline-item) {
+						.inline-item {
+							@include clay-css($_inline-item);
+						}
+					}
+
+					$_inline-item-before: map-get(
+						$active-class,
+						inline-item-before
+					);
+
+					@if ($_inline-item-before) {
+						.inline-item-before {
+							@include clay-css($_inline-item-before);
+						}
+					}
+
+					$_inline-item-middle: map-get(
+						$active-class,
+						inline-item-middle
+					);
+
+					@if ($_inline-item-middle) {
+						.inline-item-middle {
+							@include clay-css($_inline-item-middle);
+						}
+					}
+
+					$_inline-item-after: map-get(
+						$active-class,
+						inline-item-after
+					);
+
+					@if ($_inline-item-after) {
+						.inline-item-after {
+							@include clay-css($_inline-item-after);
+						}
+					}
 				}
+			}
 
-				&::after {
-					@include clay-css(map-deep-get($map, show, after));
+			@if (length($disabled) != 0) {
+				&:disabled,
+				&.disabled {
+					@include clay-css($disabled);
+
+					$_before: map-get($disabled, before);
+
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
+					}
+
+					$_after: map-get($disabled, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
+
+					$_focus: map-get($disabled, focus);
+
+					@if ($_focus) {
+						@at-root {
+							#{$focus-visible-selector},
+							#{if($c-prefers-focus-selector,$c-prefers-focus-selector,clay-insert-before('.cadmin', '.c-prefers-focus ', '&:focus'))} {
+								@include clay-css($_focus);
+
+								$_before: map-get($_focus, before);
+
+								@if ($_before) {
+									&::before {
+										@include clay-css($_before);
+									}
+								}
+
+								$_after: map-get($_focus, after);
+
+								@if ($_after) {
+									&::after {
+										@include clay-css($_after);
+									}
+								}
+							}
+						}
+					}
+
+					@if (length($disabled-active) != 0) {
+						&:active {
+							@include clay-css($disabled-active);
+
+							$_before: map-get($disabled-active, before);
+
+							@if ($_before) {
+								&::before {
+									@include clay-css($_before);
+								}
+							}
+
+							$_after: map-get($disabled-active, after);
+
+							@if ($_after) {
+								&::after {
+									@include clay-css($_after);
+								}
+							}
+						}
+					}
+
+					$_inline-item: map-get($disabled, inline-item);
+
+					@if ($_inline-item) {
+						.inline-item {
+							@include clay-css($_inline-item);
+						}
+					}
+
+					$_inline-item-before: map-get(
+						$disabled,
+						inline-item-before
+					);
+
+					@if ($_inline-item-before) {
+						.inline-item-before {
+							@include clay-css($_inline-item-before);
+						}
+					}
+
+					$_inline-item-middle: map-get(
+						$disabled,
+						inline-item-middle
+					);
+
+					@if ($_inline-item-middle) {
+						.inline-item-middle {
+							@include clay-css($_inline-item-middle);
+						}
+					}
+
+					$_inline-item-after: map-get($disabled, inline-item-after);
+
+					@if ($_inline-item-after) {
+						.inline-item-after {
+							@include clay-css($_inline-item-after);
+						}
+					}
+				}
+			}
+
+			@if (length($show) != 0) {
+				&[aria-expanded='true'],
+				&.show {
+					@include clay-css($show);
+
+					$_before: map-get($show, before);
+
+					@if ($_before) {
+						&::before {
+							@include clay-css($_before);
+						}
+					}
+
+					$_after: map-get($show, after);
+
+					@if ($_after) {
+						&::after {
+							@include clay-css($_after);
+						}
+					}
 				}
 			}
 
@@ -925,42 +1180,65 @@
 				}
 			}
 
-			.lexicon-icon {
-				@include clay-css($lexicon-icon);
-			}
-
-			.inline-item {
-				@include clay-css($inline-item);
-
+			@if (length($lexicon-icon) != 0) {
 				.lexicon-icon {
-					@include clay-css(map-get($inline-item, lexicon-icon));
+					@include clay-css($lexicon-icon);
 				}
 			}
 
-			.inline-item-before {
-				@include clay-css(map-get($map, inline-item-before));
+			@if (length($inline-item) != 0) {
+				.inline-item {
+					@include clay-css($inline-item);
+
+					$_lexicon-icon: map-get($inline-item, lexicon-icon);
+
+					@if ($_lexicon-icon) {
+						.lexicon-icon {
+							@include clay-css($_lexicon-icon);
+						}
+					}
+				}
 			}
 
-			.inline-item-middle {
-				@include clay-css(map-get($map, inline-item-middle));
+			$_inline-item-before: map-get($map, inline-item-before);
 
-				+ .inline-item-middle {
-					@include clay-css(
-						map-deep-get(
-							$map,
-							inline-item-middle,
-							inline-item-middle
-						)
+			@if ($_inline-item-before) {
+				.inline-item-before {
+					@include clay-css($_inline-item-before);
+				}
+			}
+
+			$_inline-item-middle: map-get($map, inline-item-middle);
+
+			@if ($_inline-item-middle) {
+				.inline-item-middle {
+					@include clay-css($_inline-item-middle);
+
+					$_inline-item-middle: map-get(
+						$_inline-item-middle,
+						inline-item-middle
 					);
+
+					@if ($_inline-item-middle) {
+						+ .inline-item-middle {
+							@include clay-css($_inline-item-middle);
+						}
+					}
 				}
 			}
 
-			.inline-item-after {
-				@include clay-css(map-get($map, inline-item-after));
+			$_inline-item-after: map-get($map, inline-item-after);
+
+			@if ($_inline-item-after) {
+				.inline-item-after {
+					@include clay-css($_inline-item-after);
+				}
 			}
 
-			.btn-section {
-				@include clay-css($section);
+			@if (length($section) != 0) {
+				.btn-section {
+					@include clay-css($section);
+				}
 			}
 
 			.loading-animation {
